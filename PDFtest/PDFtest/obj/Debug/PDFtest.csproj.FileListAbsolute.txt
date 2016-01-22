@@ -1,0 +1,13 @@
+C:\Users\Anthony J. Fiori\Desktop\PDFtest\PDFtest\bin\Debug\PDFtest.exe.config
+C:\Users\Anthony J. Fiori\Desktop\PDFtest\PDFtest\bin\Debug\PDFtest.exe
+C:\Users\Anthony J. Fiori\Desktop\PDFtest\PDFtest\bin\Debug\PDFtest.pdb
+C:\Users\Anthony J. Fiori\Desktop\PDFtest\PDFtest\bin\Debug\itextsharp.dll
+C:\Users\Anthony J. Fiori\Desktop\PDFtest\PDFtest\bin\Debug\itextsharp.pdfa.dll
+C:\Users\Anthony J. Fiori\Desktop\PDFtest\PDFtest\bin\Debug\itextsharp.xtra.dll
+C:\Users\Anthony J. Fiori\Desktop\PDFtest\PDFtest\bin\Debug\itextsharp.xml
+C:\Users\Anthony J. Fiori\Desktop\PDFtest\PDFtest\obj\Debug\PDFtest.csprojResolveAssemblyReference.cache
+C:\Users\Anthony J. Fiori\Desktop\PDFtest\PDFtest\obj\Debug\PDFtest.Form1.resources
+C:\Users\Anthony J. Fiori\Desktop\PDFtest\PDFtest\obj\Debug\PDFtest.Properties.Resources.resources
+C:\Users\Anthony J. Fiori\Desktop\PDFtest\PDFtest\obj\Debug\PDFtest.csproj.GenerateResource.Cache
+C:\Users\Anthony J. Fiori\Desktop\PDFtest\PDFtest\obj\Debug\PDFtest.exe
+C:\Users\Anthony J. Fiori\Desktop\PDFtest\PDFtest\obj\Debug\PDFtest.pdb

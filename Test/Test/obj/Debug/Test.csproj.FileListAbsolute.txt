@@ -1,0 +1,9 @@
+C:\Users\Anthony J. Fiori\Desktop\Test\Test\bin\Debug\Test.exe.config
+C:\Users\Anthony J. Fiori\Desktop\Test\Test\bin\Debug\Test.exe
+C:\Users\Anthony J. Fiori\Desktop\Test\Test\bin\Debug\Test.pdb
+C:\Users\Anthony J. Fiori\Desktop\Test\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+C:\Users\Anthony J. Fiori\Desktop\Test\Test\obj\Debug\Test.Form1.resources
+C:\Users\Anthony J. Fiori\Desktop\Test\Test\obj\Debug\Test.Properties.Resources.resources
+C:\Users\Anthony J. Fiori\Desktop\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
+C:\Users\Anthony J. Fiori\Desktop\Test\Test\obj\Debug\Test.exe
+C:\Users\Anthony J. Fiori\Desktop\Test\Test\obj\Debug\Test.pdb
