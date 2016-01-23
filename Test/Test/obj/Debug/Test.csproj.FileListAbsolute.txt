@@ -7,6 +7,9 @@ C:\Users\Anthony J. Fiori\Desktop\Test\Test\obj\Debug\Test.Properties.Resources.
 C:\Users\Anthony J. Fiori\Desktop\Test\Test\obj\Debug\Test.csproj.GenerateResource.Cache
 C:\Users\Anthony J. Fiori\Desktop\Test\Test\obj\Debug\Test.exe
 C:\Users\Anthony J. Fiori\Desktop\Test\Test\obj\Debug\Test.pdb
+<<<<<<< HEAD
 C:\Users\RunningEXE\Desktop\AS_Capstone\Test\Test\bin\Debug\Test.exe.config
 C:\Users\RunningEXE\Desktop\AS_Capstone\Test\Test\obj\Debug\Test.exe
 C:\Users\RunningEXE\Desktop\AS_Capstone\Test\Test\obj\Debug\Test.pdb
+=======
+>>>>>>> 935662b1edfe0617974f56ad6cc9d2383e14828f

@@ -30,7 +30,10 @@
         {
             this.btnButtonPDF = new System.Windows.Forms.Button();
             this.txtInfo = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
             this.mail = new System.Windows.Forms.Button();
+=======
+>>>>>>> 935662b1edfe0617974f56ad6cc9d2383e14828f
             this.SuspendLayout();
             // 
             // btnButtonPDF
@@ -50,6 +53,7 @@
             this.txtInfo.Size = new System.Drawing.Size(100, 20);
             this.txtInfo.TabIndex = 1;
             // 
+<<<<<<< HEAD
             // mail
             // 
             this.mail.Location = new System.Drawing.Point(69, 144);
@@ -60,12 +64,17 @@
             this.mail.UseVisualStyleBackColor = true;
             this.mail.Click += new System.EventHandler(this.mail_Click);
             // 
+=======
+>>>>>>> 935662b1edfe0617974f56ad6cc9d2383e14828f
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(348, 238);
+<<<<<<< HEAD
             this.Controls.Add(this.mail);
+=======
+>>>>>>> 935662b1edfe0617974f56ad6cc9d2383e14828f
             this.Controls.Add(this.txtInfo);
             this.Controls.Add(this.btnButtonPDF);
             this.Name = "Form1";
@@ -79,7 +88,10 @@
 
         private System.Windows.Forms.Button btnButtonPDF;
         private System.Windows.Forms.TextBox txtInfo;
+<<<<<<< HEAD
         private System.Windows.Forms.Button mail;
+=======
+>>>>>>> 935662b1edfe0617974f56ad6cc9d2383e14828f
     }
 }
 
