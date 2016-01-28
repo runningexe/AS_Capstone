@@ -7,3 +7,9 @@ C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.csproj.GenerateResource.Cache
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.exe
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.pdb
+C:\Users\Anthony J. Fiori\Desktop\AS_Capstone-master\AS_Capstone-master\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.exe.config
+C:\Users\Anthony J. Fiori\Desktop\AS_Capstone-master\AS_Capstone-master\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.exe
+C:\Users\Anthony J. Fiori\Desktop\AS_Capstone-master\AS_Capstone-master\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.pdb
+C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.exe.config
+C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.exe
+C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.pdb
