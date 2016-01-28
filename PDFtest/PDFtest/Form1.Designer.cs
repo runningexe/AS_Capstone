@@ -32,6 +32,8 @@
             this.txtInfo = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.mail = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnButtonPDF
@@ -71,6 +73,24 @@
             this.checkBox2.Text = "checkBox2";
             this.checkBox2.UseVisualStyleBackColor = true;
             // 
+            // mail
+            // 
+            this.mail.Location = new System.Drawing.Point(63, 173);
+            this.mail.Name = "mail";
+            this.mail.Size = new System.Drawing.Size(75, 23);
+            this.mail.TabIndex = 2;
+            this.mail.Text = "button1";
+            this.mail.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(185, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 155);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -78,6 +98,8 @@
             this.ClientSize = new System.Drawing.Size(348, 238);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.mail);
             this.Controls.Add(this.txtInfo);
             this.Controls.Add(this.btnButtonPDF);
             this.Name = "Form1";
@@ -91,8 +113,14 @@
 
         private System.Windows.Forms.Button btnButtonPDF;
         private System.Windows.Forms.TextBox txtInfo;
+
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
+
+
+        private System.Windows.Forms.Button mail;
+        private System.Windows.Forms.Button button1;
+
     }
 }
 
