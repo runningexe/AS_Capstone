@@ -10,11 +10,12 @@ using System.Windows.Forms;
 
 namespace DailyCensusReport
 {
-    public partial class Form1 : Form
+    public partial class frmDailyCensusReport : Form
     {
-        public Form1()
+        public frmDailyCensusReport()
         {
             InitializeComponent();
         }
+
     }
 }
