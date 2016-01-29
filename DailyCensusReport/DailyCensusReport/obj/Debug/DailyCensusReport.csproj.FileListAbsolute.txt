@@ -1,15 +1,17 @@
-C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.exe.config
-C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.exe
-C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.pdb
-C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.csprojResolveAssemblyReference.cache
-C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.frmDailyCensusReport.resources
-C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.Properties.Resources.resources
-C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.csproj.GenerateResource.Cache
-C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.exe
-C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.pdb
 C:\Users\Anthony J. Fiori\Desktop\AS_Capstone-master\AS_Capstone-master\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.exe.config
 C:\Users\Anthony J. Fiori\Desktop\AS_Capstone-master\AS_Capstone-master\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.exe
 C:\Users\Anthony J. Fiori\Desktop\AS_Capstone-master\AS_Capstone-master\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.pdb
 C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.exe.config
 C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.exe
 C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.pdb
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.exe.config
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.exe
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.pdb
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.exe
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.pdb
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.csprojResolveAssemblyReference.cache
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.frmDailyCensusReport.resources
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.Properties.Resources.resources
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.ViewRecordsForm.resources
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.csproj.GenerateResource.Cache
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.frmMainForm.resources

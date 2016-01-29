@@ -16,7 +16,7 @@ namespace DailyCensusReport
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmDailyCensusReport());
+            Application.Run(new frmMainForm());
         }
     }
 }
