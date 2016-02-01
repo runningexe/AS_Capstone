@@ -15,11 +15,7 @@ namespace DailyCensusReport
         public frmDailyCensusReport()
         {
             InitializeComponent();
-
-         
         }
-
-
 
         private void frmDailyCensusReport_Load(object sender, EventArgs e)
         {
@@ -28,7 +24,7 @@ namespace DailyCensusReport
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            int unitID = 1;
+            int unitID = 
             string currentCensus = Convert.ToString(txtCCICU.Text);
             string availBeds = Convert.ToString(txtABICU.Text);
             string numOfIsoPatients = Convert.ToString(txtISOICU.Text);
