@@ -15,31 +15,31 @@ namespace DailyCensusReport
         public frmDailyCensusReport()
         {
             InitializeComponent();
+
+         
         }
 
-        private SubmitRecord addRecord = new SubmitRecord();
+
 
         private void frmDailyCensusReport_Load(object sender, EventArgs e)
         {
-           
+         
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            int unitID = 1;
+            string currentCensus = Convert.ToString(txtCCICU.Text);
+            string availBeds = Convert.ToString(txtABICU.Text);
+            string numOfIsoPatients = Convert.ToString(txtISOICU.Text);
+            string potentialDCs = Convert.ToString(txtICUDC.Text);
+            string notes = Convert.ToString(rtbICUNotes.Text);
+            string currentCapStat = Convert.ToString(txtCCSICU.Text);
+
+            //SubmitRecord sr = new SubmitRecord();
+            SubmitRecord.AddRecord(unitID, currentCensus, availBeds, numOfIsoPatients, potentialDCs, notes, currentCapStat);
+            
            
-        }
-
-        private void fillToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.spICUTableAdapter.Fill(this.sE265_AJF1130DataSet.spICU, new System.Nullable<int>(((int)(System.Convert.ChangeType(unitIDToolStripTextBox.Text, typeof(int))))));
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
         }
     }
 }

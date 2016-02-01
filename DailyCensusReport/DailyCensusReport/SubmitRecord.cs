@@ -19,7 +19,7 @@ namespace DailyCensusReport
 
         public SubmitRecord() { }
 
-        public SubmitRecord (int unitID, string currentCensus, string availBeds, string numOfIsoPatiens, string potentialDCs, string notes)
+        public SubmitRecord (int unitID, string currentCensus, string availBeds, string numOfIsoPatients, string potentialDCs, string notes, string currentCapStat)
         {
             this.UnitID = unitID;
             this.CurrentCensus = currentCensus;
@@ -27,6 +27,7 @@ namespace DailyCensusReport
             this.IsolationPatients = numOfIsoPatiens;
             this.PotentialDCs = potentialDCs;
             this.Notes = notes;
+            this.CurrentCapStat = currentCapStat;
         }
 
         #region Properties
@@ -36,9 +37,10 @@ namespace DailyCensusReport
         public string IsolationPatients { get; set; }
         public string PotentialDCs { get; set; }
         public string Notes { get; set; }
+        public string CurrentCapStat { get; set; }
         #endregion
 
-        public static bool AddRecord(int unitID, string currentCensus, string availBeds, string numOfIsoPatients, string potentialDCs, string notes)
+        public static bool AddRecord(int unitID, string currentCensus, string availBeds, string numOfIsoPatients, string potentialDCs, string notes, string currentCapStat)
 
         {
 
@@ -51,9 +53,10 @@ namespace DailyCensusReport
             sqlCmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitID;
             sqlCmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = currentCensus;
             sqlCmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = availBeds;
-            sqlCmd.Parameters.Add("@numOfIsoPatients", SqlDbType.VarChar, 50).Value = numOfIsoPatients;
-            sqlCmd.Parameters.Add("@potentialDCs", SqlDbType.VarChar, 50).Value = potentialDCs;
+            sqlCmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = numOfIsoPatients;
+            sqlCmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = potentialDCs;
             sqlCmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = notes;
+            sqlCmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = currentCapStat;
 
             try
             {

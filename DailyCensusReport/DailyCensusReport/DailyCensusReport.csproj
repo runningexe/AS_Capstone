@@ -70,7 +70,6 @@
     </Compile>
     <Compile Include="SubmitRecord.cs" />
     <Compile Include="ViewRecord.cs" />
-    <Compile Include="ViewRecordDB.cs" />
     <Compile Include="ViewRecordsForm.cs">
       <SubType>Form</SubType>
     </Compile>
