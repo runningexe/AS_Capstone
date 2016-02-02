@@ -13,8 +13,8 @@ namespace DailyCensusReport
         {
             string connectionString =
                 "Data Source=sql.neit.edu;Initial Catalog=SE265_AJF1130;User ID=001246352  ;Password= 02272014";
-            SqlConnection cn = new SqlConnection(connectionString);
-            return cn;
+            SqlConnection connect = new SqlConnection(connectionString);
+            return connect;
         }
     }
 }

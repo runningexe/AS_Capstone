@@ -25,7 +25,7 @@ namespace DailyCensusReport
         //}
 
         //#region Properties
-        //public int UnitID { get; set; }
+        //public int unitID { get; set; }
         //public string CurrentCensus { get; set; }
         //public string AvailBeds { get; set; }
         //public string IsolationPatients { get; set; }
@@ -41,22 +41,22 @@ namespace DailyCensusReport
             //this add to database based what is giving.
             SqlConnection connect = DBConnect.GetConnection();
 
-            SqlCommand sqlCmd = new SqlCommand("spInsertICU", connect);
-            sqlCmd.CommandType = CommandType.StoredProcedure;
-            sqlCmd.CommandText = "spInsertICU";
-            //sqlCmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitID;
-            sqlCmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = currentCensus;
-            sqlCmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = availBeds;
-            sqlCmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = numOfIsoPatients;
-            sqlCmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = potentialDCs;
-            sqlCmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = notes;
-            sqlCmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = currentCapStat;
+            SqlCommand cmd = new SqlCommand("spInsertICU", connect);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "spInsertICU";
+            //cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitID;
+            cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = currentCensus;
+            cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = availBeds;
+            cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = numOfIsoPatients;
+            cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = potentialDCs;
+            cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = notes;
+            cmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = currentCapStat;
 
             try
             {
                 connect.Open();
                 //executes then check to see if correct.
-                int count = sqlCmd.ExecuteNonQuery();
+                int count = cmd.ExecuteNonQuery();
                 if (count > 0)
                     return true;
                 else
@@ -72,32 +72,32 @@ namespace DailyCensusReport
             }
         }
 
-        private static int GetUserID(DateTime date)
-        {
-            SqlConnection conn = DBConnect.GetConnection();
-            SqlCommand sqlCommand = new SqlCommand("spCensus", conn);
+        //private static int GetUserID(DateTime date)
+        //{
+        //    SqlConnection connect = DBConnect.GetConnection();
+        //    SqlCommand cmd = new SqlCommand("spCensus", connect);
 
-            DataTable dt = new DataTable();
-            sqlCommand.CommandType = CommandType.StoredProcedure;
-            sqlCommand.Parameters.Add("@date", SqlDbType.DateTime).Value = date;
+        //    DataTable dt = new DataTable();
+        //    cmd.CommandType = CommandType.StoredProcedure;
+        //    cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = date;
 
-            try
-            {
-                conn.Open();
+        //    try
+        //    {
+        //        connect.Open();
 
-                SqlDataAdapter da = new SqlDataAdapter(sqlCommand);
-                da.Fill(dt);
-            }
-            catch (Exception exc)
-            {
-                exc.ToString();
-            }
-            finally
-            {
-                conn.Close();
-            }
+        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //        da.Fill(dt);
+        //    }
+        //    catch (Exception exc)
+        //    {
+        //        exc.ToString();
+        //    }
+        //    finally
+        //    {
+        //        connect.Close();
+        //    }
 
-            return unitId;
-        }
+        //    return unitID;
+        //}
     }
 }

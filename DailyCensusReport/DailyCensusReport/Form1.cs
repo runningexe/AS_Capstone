@@ -24,7 +24,7 @@ namespace DailyCensusReport
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            int unitID = 
+            int unitID = 1;
             string currentCensus = Convert.ToString(txtCCICU.Text);
             string availBeds = Convert.ToString(txtABICU.Text);
             string numOfIsoPatients = Convert.ToString(txtISOICU.Text);
@@ -33,9 +33,16 @@ namespace DailyCensusReport
             string currentCapStat = Convert.ToString(txtCCSICU.Text);
 
             //SubmitRecord sr = new SubmitRecord();
-            SubmitRecord.AddRecord(unitID, currentCensus, availBeds, numOfIsoPatients, potentialDCs, notes, currentCapStat);
+            SubmitRecord.AddRecord(unitID,currentCensus, availBeds, numOfIsoPatients, potentialDCs, notes, currentCapStat);
             
            
+        }
+
+        private void btnViewRecord_Click(object sender, EventArgs e)
+        {
+            this.Show();
+            ViewRecordsForm openVR = new ViewRecordsForm();
+            openVR.Show(); 
         }
     }
 }

@@ -28,6 +28,13 @@ namespace DailyCensusReport
             frmDailyCensusReport openFromMain = new frmDailyCensusReport();
             openFromMain.Show();                
         }
+
+        private void btnMainViewRecord_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ViewRecordsForm openVR = new ViewRecordsForm();
+            openVR.Show(); 
+        }
     }
 
 }

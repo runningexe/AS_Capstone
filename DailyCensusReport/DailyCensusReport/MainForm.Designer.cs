@@ -40,6 +40,7 @@
             this.btnMainViewRecord.TabIndex = 0;
             this.btnMainViewRecord.Text = "View Record(s)";
             this.btnMainViewRecord.UseVisualStyleBackColor = true;
+            this.btnMainViewRecord.Click += new System.EventHandler(this.btnMainViewRecord_Click);
             // 
             // btnMainAddRecord
             // 
