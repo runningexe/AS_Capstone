@@ -31,30 +31,33 @@ namespace DailyCensusReport
 
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+//DateTime Picker
+        private void  dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            DateTime dtp = Convert.ToDateTime(DPRecordDate);
-            SqlConnection connect = DBConnect.GetConnection();
-            SqlCommand cmd = new SqlCommand("spCensus", connect);
-            
-            cmd.Parameters.AddWithValue("@date", SqlDbType.DateTime).Value = dtp;
-            
-            //SqlDataReader reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
 
-              try
-                {
-                    connect.Open();
-        //executes then check to see if correct.
-                    int count = cmd.ExecuteNonQuery();
-                }
-                catch (SqlException ex)
-                {
-                    throw ex;
-                }
-                finally
-                {
-                    connect.Close();
-               }
+            SqlConnection cn = DBConnect.GetConnection();
+
+            SqlCommand cmd = new SqlCommand("spCensus", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@date", SqlDbType.VarChar).Value = DPRecordDate.Value;
+            
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            try
+            {
+                cn.Open();
+                da.Fill(dt);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                cn.Close();
+            }
+            RecordView.Rows.Add(dt.Rows[0]);
         }
     }
 }
