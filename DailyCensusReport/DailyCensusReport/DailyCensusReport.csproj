@@ -77,11 +77,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SE265_AJF1130DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SE265_AJF1130DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SE265_AJF1130DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="SubmitRecord.cs" />
     <Compile Include="ViewRecord.cs" />
     <Compile Include="ViewRecordsForm.cs">
@@ -128,17 +123,6 @@
     </None>
     <None Include="SE265_AJF1130DataSet.xss">
       <DependentUpon>SE265_AJF1130DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="SE265_AJF1130DataSet1.xsc">
-      <DependentUpon>SE265_AJF1130DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="SE265_AJF1130DataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SE265_AJF1130DataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SE265_AJF1130DataSet1.xss">
-      <DependentUpon>SE265_AJF1130DataSet1.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

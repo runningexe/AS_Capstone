@@ -16,40 +16,48 @@ namespace DailyCensusReport
             InitializeComponent();
         }
 
+        private void iCUBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.iCUBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sE265_AJF1130DataSet);
+
+        }
 
         private void ViewRecordsForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet1.Census' table. You can move, or remove it, as needed.
-            this.censusTableAdapter1.Fill(this.sE265_AJF1130DataSet1.Census);
+            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.ICU' table. You can move, or remove it, as needed.
+            this.iCUTableAdapter.Fill(this.sE265_AJF1130DataSet.ICU);
 
         }
 
-        private void DPRecordDate_ValueChanged(object sender, EventArgs e)
+//DateTime Picker
+        private void  dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            DPRecordDate.CustomFormat = "yyyy-MM-dd";
-            ViewRecord getRecord = new ViewRecord();
-            getRecord.RecordDate = DPRecordDate.Value;
-            DateTime date = default(DateTime);
-            ViewRecord.ViewRecordID(date);
-           
+            DataTable dt = new DataTable();
 
-        }
+            SqlConnection cn = DBConnect.GetConnection();
 
-        private void get_DateToolStripButton_Click(object sender, EventArgs e)
-        {
+            SqlCommand cmd = new SqlCommand("spCensus", cn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add("@date", SqlDbType.VarChar).Value = DPRecordDate.Value;
+            
+
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
             try
             {
-                this.censusTableAdapter1.Get_Date(this.sE265_AJF1130DataSet1.Census, DPRecordDate.ToString());
+                cn.Open();
+                da.Fill(dt);
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+
             }
-
+            finally
+            {
+                cn.Close();
+            }
+            RecordView.Rows.Add(dt.Rows[0]);
         }
-
-
-        //DateTime Picker
-
     }
 }

@@ -44,7 +44,7 @@ namespace DailyCensusReport
             SqlCommand cmd = new SqlCommand("spInsertICU", connect);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "spInsertICU";
-            //cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitID;
+            cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitID;
             cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = currentCensus;
             cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = availBeds;
             cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = numOfIsoPatients;
