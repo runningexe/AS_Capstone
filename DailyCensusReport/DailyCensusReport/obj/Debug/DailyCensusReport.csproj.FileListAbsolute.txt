@@ -22,3 +22,6 @@ C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusRepor
 C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.csproj.GenerateResource.Cache
 C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.exe
 C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.pdb
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.dll
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.pdfa.dll
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.xtra.dll

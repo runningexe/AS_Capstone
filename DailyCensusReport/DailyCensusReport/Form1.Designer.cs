@@ -287,7 +287,6 @@
             this.Name = "frmDailyCensusReport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Daily Census Report";
-            this.Load += new System.EventHandler(this.frmDailyCensusReport_Load);
             this.tlpHeaders.ResumeLayout(false);
             this.tlpHeaders.PerformLayout();
             this.tlpICU.ResumeLayout(false);
