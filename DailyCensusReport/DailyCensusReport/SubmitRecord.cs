@@ -10,30 +10,6 @@ namespace DailyCensusReport
 {
     public class SubmitRecord
     {
-
-        //public SubmitRecord() { }
-
-        //public SubmitRecord (int unitID, string currentCensus, string availBeds, string numOfIsoPatients, string potentialDCs, string notes, string currentCapStat)
-        //{
-        //    this.UnitID = unitID;
-        //    this.CurrentCensus = currentCensus;
-        //    this.AvailBeds = availBeds;
-        //    this.IsolationPatients = numOfIsoPatients;
-        //    this.PotentialDCs = potentialDCs;
-        //    this.Notes = notes;D
-        //    this.CurrentCapStat = currentCapStat;
-        //}
-
-        //#region Properties
-        //public int unitID { get; set; }
-        //public string CurrentCensus { get; set; }
-        //public string AvailBeds { get; set; }
-        //public string IsolationPatients { get; set; }
-        //public string PotentialDCs { get; set; }
-        //public string Notes { get; set; }
-        //public string CurrentCapStat { get; set; }
-        //#endregion
-
         public static bool AddRecord(int unitID, string currentCensus, string availBeds, string numOfIsoPatients, string potentialDCs, string notes, string currentCapStat)
 
         {
