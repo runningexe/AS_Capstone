@@ -17,6 +17,8 @@ namespace DailyCensusReport
     {
         public static bool PDFView(TextBox currentCensus, TextBox availableBeds, TextBox numOfIsoPatients, TextBox potentialDCs, TextBox notes, TextBox currentCapStatus)
         {
+            //This requires all textboxes to contain data. If they don't, they won't be able to save a PDF.
+            //(((However, data is still inserted into the database. This will be fixed later.)))
             if (currentCensus.Text != "" && availableBeds.Text != "" && numOfIsoPatients.Text != "" && potentialDCs.Text != "" && notes.Text != "" && currentCapStatus.Text != "")
             {
                 //Creates a new SFD object (Opens the Save File Box)
