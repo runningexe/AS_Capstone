@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainForm));
             this.btnMainViewRecord = new System.Windows.Forms.Button();
             this.btnMainAddRecord = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -60,7 +61,9 @@
             this.ClientSize = new System.Drawing.Size(370, 227);
             this.Controls.Add(this.btnMainAddRecord);
             this.Controls.Add(this.btnMainViewRecord);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
