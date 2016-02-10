@@ -29,18 +29,52 @@ namespace DailyCensusReport
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            //Create new SaveFileDialog object which opens up the Save Dialog for the PDF.
-            SaveFileDialog sfd = new SaveFileDialog();
 
-            /*********************************************************
-             *Possibly could put all of this into a loop.
-             *It wouldn't be possible to have the same variable 
-             *names that match the arguments for the AddRecord 
-             *method so putting the unitID number, and the different 
-             *textboxes into an array or separate arrays and looping through 
-             *it/them would be most efficient, and logical. (Its also why I 
-             *changed the naming of the textboxes to be more general.
-             *********************************************************/
+    //ICU
+            int ICUCC1 = Convert.ToInt32(txtCurrentCensusICU.Text);
+            int ICUAB2 = Convert.ToInt32(txtAvailableBedsICU.Text);
+            txtCurrentCapStatusICU.Text = "";
+
+    //T2
+            int T2CC1 = Convert.ToInt32(txtCurrentCensusT2.Text);
+            int T2AB2 = Convert.ToInt32(txtAvailableBedsT2.Text);
+            txtCurrentCapStatusT2.Text = "";
+
+        //ICU
+            if (ICUCC1 <= 5)
+            {
+                txtCurrentCapStatusICU.BackColor = Color.Green;
+                txtCurrentCapStatusICU.Text = "GREEN";
+            }
+
+                else if (ICUCC1 > 6)
+                {
+                    txtCurrentCapStatusICU.BackColor = Color.Red;
+                    txtCurrentCapStatusICU.Text = "RED";
+                }
+
+        //T2
+            if (T2CC1 <= 5)
+            {
+                txtCurrentCapStatusT2.BackColor = Color.Green;
+                txtCurrentCapStatusT2.Text = "GREEN";
+            }
+
+            else if (T2CC1 > 6)
+            {
+                txtCurrentCapStatusT2.BackColor = Color.Red;
+                txtCurrentCapStatusT2.Text = "RED";
+            }
+
+
+//Populates information into the PDF
+            PDFSubmit.PDFView(
+            //ICU
+              txtCurrentCensusICU,txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
+            //T2
+              txtCurrentCensusT2,txtAvailableBedsT2,txtIsoPatientsT2,txtDischargesT2,txtNotesT2,txtCurrentCapStatusT2
+              );
+
             int unitID = 1;
             string currentCensus = Convert.ToString(txtCurrentCensusICU.Text);
             string availBeds = Convert.ToString(txtAvailableBedsICU.Text);
@@ -48,29 +82,9 @@ namespace DailyCensusReport
             string potentialDCs = Convert.ToString(txtDischargesICU.Text);
             string notes = Convert.ToString(txtNotesICU.Text);
             string currentCapStat = Convert.ToString(txtCurrentCapStatusICU.Text);
-            /***********************************************************/
 
-            //AddRecord method that gets the user input and inserts it into the database.
+ //AddRecord method that gets the user input and inserts it into the database.
             SubmitRecord.AddRecord(unitID, currentCensus, availBeds, numOfIsoPatients, potentialDCs, notes, currentCapStat);
-
-            int ICUCC1 = Convert.ToInt32(txtCurrentCensusICU.Text);
-            int ICUAB2 = Convert.ToInt32(txtAvailableBedsICU.Text);
-            txtCurrentCapStatusICU.Text = "";
-
-            if (ICUCC1 <= 5)
-            {
-                txtCurrentCapStatusICU.BackColor = Color.Green;
-                txtCurrentCapStatusICU.Text = "GREEN";
-            }
-
-                else if (ICUCC1 > 7)
-                {
-                    txtCurrentCapStatusICU.BackColor = Color.Red;
-                    txtCurrentCapStatusICU.Text = "RED";
-                }
-
-            PDFSubmit.PDFView(txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU);  
-       
         }
 
         //Redirects to the ViewRecord Form

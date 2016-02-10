@@ -26,7 +26,7 @@ namespace DailyCensusReport
             cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = numOfIsoPatients;
             cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = potentialDCs;
             cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = notes;
-            cmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = currentCapStat;
+            cmd.Parameters.Add("@currentCap", SqlDbType.VarChar,50).Value = currentCapStat;
 
             try
             {
