@@ -19,14 +19,12 @@ namespace DailyCensusReport
     {
         public frmDailyCensusReport()
         {
-            InitializeComponent();
-
-
+            InitializeComponent();           
         }
 
         private void frmDailyCensusReport_Load(object sender, EventArgs e)
         {
-
+        
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -43,15 +41,13 @@ namespace DailyCensusReport
              *it/them would be most efficient, and logical. (Its also why I 
              *changed the naming of the textboxes to be more general.
              *********************************************************/
-
-            int unitID = 0;
+            int unitID = 1;
             string currentCensus = Convert.ToString(txtCurrentCensusICU.Text);
             string availBeds = Convert.ToString(txtAvailableBedsICU.Text);
             string numOfIsoPatients = Convert.ToString(txtIsoPatientsICU.Text);
             string potentialDCs = Convert.ToString(txtDischargesICU.Text);
             string notes = Convert.ToString(txtNotesICU.Text);
             string currentCapStat = Convert.ToString(txtCurrentCapStatusICU.Text);
-
             /***********************************************************/
 
             //AddRecord method that gets the user input and inserts it into the database.
@@ -67,14 +63,14 @@ namespace DailyCensusReport
                 txtCurrentCapStatusICU.Text = "GREEN";
             }
 
-            else if (ICUCC1 > 7)
-            {
-                txtCurrentCapStatusICU.BackColor = Color.Red;
-                txtCurrentCapStatusICU.Text = "RED";
-            }
+                else if (ICUCC1 > 7)
+                {
+                    txtCurrentCapStatusICU.BackColor = Color.Red;
+                    txtCurrentCapStatusICU.Text = "RED";
+                }
 
-            PDFSubmit.PDFView(txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU);
-
+            PDFSubmit.PDFView(txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU);  
+       
         }
 
         //Redirects to the ViewRecord Form
@@ -82,7 +78,7 @@ namespace DailyCensusReport
         {
             this.Show();
             ViewRecordsForm openVR = new ViewRecordsForm();
-            openVR.Show();
+            openVR.Show(); 
         }
 
         //Closes Program
