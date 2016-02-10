@@ -17,51 +17,50 @@ namespace DailyCensusReport
             //Establishing the database connection.
             SqlConnection connect = DBConnect.GetConnection();
 
+            //Creating an array of strings that consist of each stored procedure for each table (INSERT).
             string[] storeProcedures = { "spInsertICU", "spInsertT2", "spInsertPEDI", "spInsertT4", "spInsert6ACU", "spInsertTBC", "spInsertBHU" };
 
             //SQL Command that takes in the command string and the connection.
             for (int i = 0; i < boxes.Count; i++)
             {
-                for (int j = 0; j < boxes[i].Length; j++)
+                SqlCommand cmd = new SqlCommand(storeProcedures[i], connect);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = storeProcedures[i];
+
+                //Adding parameters that equal the value to whatever data is put into the textboxes.
+                cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = boxes[i][0].Text;
+                cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = boxes[i][1].Text;
+                cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = boxes[i][2].Text;
+                cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = boxes[i][2].Text;
+                cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = boxes[i][3].Text;
+                cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = boxes[i][4].Text;
+                cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = boxes[i][5].Text;
+                cmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = boxes[i][6].Text;
+
+                try
                 {
-                    SqlCommand cmd = new SqlCommand(storeProcedures[i], connect);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.CommandText = storeProcedures[i];
-                    cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = boxes[i][j].Text;
-                    cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = boxes[i][j].Text;
-                    cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = boxes[i][j].Text;
-                    cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = boxes[i][j].Text;
-                    cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = boxes[i][j].Text;
-                    cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = boxes[i][j].Text;
-                    cmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = boxes[i][j].Text;
-
-                    try
-                    {
-                        connect.Open();
-                        //executes then check to see if correct.
-                        int count = cmd.ExecuteNonQuery();
-                        if (count > 0)
-                            return true;
-                        else
-                            return false;
-                    }
-
-                    catch (SqlException ex)
-                    {
-                        throw ex;           
-                    }
-                    finally
-                    {
-                        connect.Close();
-                    }
+                    connect.Open();
+                    //executes then check to see if correct.
+                    int count = cmd.ExecuteNonQuery();
+                    if (count > 0)
+                        return true;
+                    else
+                        return false;
                 }
 
+                catch (SqlException ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    connect.Close();
+                }
             }
-
-            //Adding parameters that equal the value to whatever data is put into the textboxes.
-
             return true;
         }
+
+
 
         //private static int GetUserID(DateTime date)
         //{
