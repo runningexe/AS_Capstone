@@ -17,11 +17,26 @@ namespace DailyCensusReport
 {
     public partial class frmDailyCensusReport : Form
     {
+        public TextBox[] boxesICU { get; set; }
+        public TextBox[] boxesT2 { get; set; }
+        public TextBox[] boxesPEDI { get; set; }
+        public TextBox[] boxesT4 { get; set; }
+        public TextBox[] boxes6ACU{ get; set; }
+        public TextBox[] boxesTBC { get; set; }
+        public TextBox[] boxesBHU { get; set; }
+        public List<TextBox[]> boxesAll { get; set; }
         public frmDailyCensusReport()
         {
             InitializeComponent();
 
-
+            boxesICU = new TextBox[] { txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU};
+            boxesT2 = new TextBox[] { txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2 };
+            boxesPEDI = new TextBox[] { txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI };
+            boxesT4 = new TextBox[] { txtCurrentCensusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4, txtNotesT4, txtCurrentCapStatusT4 };
+            boxes6ACU = new TextBox[] { txtCurrentCensus6ACU, txtAvailableBeds6ACU, txtIsoPatients6ACU, txtDischarges6ACU, txtNotes6ACU, txtCurrentCapStatus6ACU };
+            boxesTBC = new TextBox[] { txtCurrentCensusTBC, txtAvailableBedsTBC, txtIsoPatientsTBC, txtDischargesTBC, txtNotesTBC, txtCurrentCapStatusTBC };
+            boxesBHU = new TextBox[] { txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU };
+            boxesAll = new List<TextBox[]> { boxesICU, boxesT2, boxesPEDI, boxesT4, boxes6ACU, boxesTBC, boxesBHU };
         }
 
         private void frmDailyCensusReport_Load(object sender, EventArgs e)
@@ -34,44 +49,8 @@ namespace DailyCensusReport
             //Create new SaveFileDialog object which opens up the Save Dialog for the PDF.
             SaveFileDialog sfd = new SaveFileDialog();
 
-            /*********************************************************
-             *Possibly could put all of this into a loop.
-             *It wouldn't be possible to have the same variable 
-             *names that match the arguments for the AddRecord 
-             *method so putting the unitID number, and the different 
-             *textboxes into an array or separate arrays and looping through 
-             *it/them would be most efficient, and logical. (Its also why I 
-             *changed the naming of the textboxes to be more general.
-             *********************************************************/
-
-            int unitID = 0;
-            string currentCensus = Convert.ToString(txtCurrentCensusICU.Text);
-            string availBeds = Convert.ToString(txtAvailableBedsICU.Text);
-            string numOfIsoPatients = Convert.ToString(txtIsoPatientsICU.Text);
-            string potentialDCs = Convert.ToString(txtDischargesICU.Text);
-            string notes = Convert.ToString(txtNotesICU.Text);
-            string currentCapStat = Convert.ToString(txtCurrentCapStatusICU.Text);
-
-            /***********************************************************/
-
-            //AddRecord method that gets the user input and inserts it into the database.
-            SubmitRecord.AddRecord(unitID, currentCensus, availBeds, numOfIsoPatients, potentialDCs, notes, currentCapStat);
-
-            int ICUCC1 = Convert.ToInt32(txtCurrentCensusICU.Text);
-            int ICUAB2 = Convert.ToInt32(txtAvailableBedsICU.Text);
-            txtCurrentCapStatusICU.Text = "";
-
-            if (ICUCC1 <= 5)
-            {
-                txtCurrentCapStatusICU.BackColor = Color.Green;
-                txtCurrentCapStatusICU.Text = "GREEN";
-            }
-
-            else if (ICUCC1 > 7)
-            {
-                txtCurrentCapStatusICU.BackColor = Color.Red;
-                txtCurrentCapStatusICU.Text = "RED";
-            }
+            List<TextBox[]> boxes = boxesAll;
+            SubmitRecord.AddRecord(boxes);
 
             PDFSubmit.PDFView(txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU);
 
