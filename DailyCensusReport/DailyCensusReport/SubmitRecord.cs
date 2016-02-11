@@ -22,7 +22,7 @@ namespace DailyCensusReport
                 SqlCommand cmd = new SqlCommand("spInsertICU", connect);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "spInsertICU";
-                cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = (int)unitID;
+                cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitID;
                 cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = currentCensus;
                 cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = availBeds;
                 cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = numOfIsoPatients;
@@ -62,7 +62,7 @@ namespace DailyCensusReport
                 SqlCommand cmd = new SqlCommand("spInsertT2", connect);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = "spInsertT2";
-                cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = (int)unitIDT2;
+                cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitIDT2;
                 cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = currentCensusT2;
                 cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = availBedsT2;
                 cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = numOfIsoPatientsT2;

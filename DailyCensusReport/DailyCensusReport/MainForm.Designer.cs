@@ -64,7 +64,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Text = "Daily Census Report";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 

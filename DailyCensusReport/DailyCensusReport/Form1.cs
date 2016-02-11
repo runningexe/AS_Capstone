@@ -66,7 +66,7 @@ namespace DailyCensusReport
             string notes = Convert.ToString(txtNotesICU.Text);
             string currentCapStat = Convert.ToString(txtCurrentCapStatusICU.Text);
 //T2
-            int unitIDT2 = 1;
+            int unitIDT2 = 2;
             string currentCensusT2 = Convert.ToString(txtCurrentCensusT2.Text);
             string availBedsT2 = Convert.ToString(txtAvailableBedsT2.Text);
             string numOfIsoPatientsT2 = Convert.ToString(txtIsoPatientsT2.Text);
