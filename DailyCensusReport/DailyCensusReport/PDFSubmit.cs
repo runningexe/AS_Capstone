@@ -124,7 +124,7 @@ namespace DailyCensusReport
                         cell100.BackgroundColor = BaseColor.GREEN;
                         pdfTable.AddCell(cell100);
                     }
-                    else if (icuCurrentCensus > 6)
+                    else if (icuCurrentCensus >= 6)
                     {
                         //ICU Row Added
                         PdfPCell cell100 = new PdfPCell();
@@ -180,7 +180,7 @@ namespace DailyCensusReport
                         cell200.BackgroundColor = BaseColor.GREEN;
                         pdfTable.AddCell(cell200);
                     }
-                    else if (t2CurrentCensus > 6)
+                    else if (t2CurrentCensus >= 6)
                     {
                         //T2 Row Added
                         PdfPCell cell200 = new PdfPCell();

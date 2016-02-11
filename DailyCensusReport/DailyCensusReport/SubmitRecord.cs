@@ -5,75 +5,91 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace DailyCensusReport
 {
     public class SubmitRecord
     {
-        public static bool AddRecord(int unitID, string currentCensus, string availBeds, string numOfIsoPatients, string potentialDCs, string notes, string currentCapStat)
 
+/****************************************************************************************************************/
+//ICU
+        public static bool InsertICU(int unitID, string currentCensus, string availBeds, string numOfIsoPatients, string potentialDCs, string notes, string currentCapStat)
         {
 
             //this add to database based what is giving.
-            SqlConnection connect = DBConnect.GetConnection();
+                SqlConnection connect = DBConnect.GetConnection();
+                SqlCommand cmd = new SqlCommand("spInsertICU", connect);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "spInsertICU";
+                cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = (int)unitID;
+                cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = currentCensus;
+                cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = availBeds;
+                cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = numOfIsoPatients;
+                cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = potentialDCs;
+                cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = notes;
+                cmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = currentCapStat;
 
-            SqlCommand cmd = new SqlCommand("spInsertICU", connect);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "spInsertICU";
-            cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitID;
-            cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = currentCensus;
-            cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = availBeds;
-            cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = numOfIsoPatients;
-            cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = potentialDCs;
-            cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = notes;
-            cmd.Parameters.Add("@currentCap", SqlDbType.VarChar,50).Value = currentCapStat;
+                try
+                {
+                    connect.Open();
+                    //executes then check to see if correct.
+                    int count = cmd.ExecuteNonQuery();
+                    if (count > 0)
+                        return true;
+                    else
+                        return false;
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
 
-            try
-            {
-                connect.Open();
-                //executes then check to see if correct.
-                int count = cmd.ExecuteNonQuery();
-                if (count > 0)
-                    return true;
-                else
-                    return false;
-            }
-            catch (SqlException ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                connect.Close();
-            }
+                }
+
+                finally
+                {
+                    connect.Close();
+                }
         }
 
-        //private static int GetUserID(DateTime date)
-        //{
-        //    SqlConnection connect = DBConnect.GetConnection();
-        //    SqlCommand cmd = new SqlCommand("spCensus", connect);
+/****************************************************************************************************************/
+//T2
+        public static bool InsertT2(int unitIDT2, string currentCensusT2, string availBedsT2, string numOfIsoPatientsT2, string potentialDCsT2, string notesT2, string currentCapStatT2)
+        {
 
-        //    DataTable dt = new DataTable();
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.Parameters.Add("@date", SqlDbType.DateTime).Value = date;
+            //this add to database based what is giving.
+                SqlConnection connect = DBConnect.GetConnection();
+                SqlCommand cmd = new SqlCommand("spInsertT2", connect);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "spInsertT2";
+                cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = (int)unitIDT2;
+                cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = currentCensusT2;
+                cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = availBedsT2;
+                cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = numOfIsoPatientsT2;
+                cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = potentialDCsT2;
+                cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = notesT2;
+                cmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = currentCapStatT2;
 
-        //    try
-        //    {
-        //        connect.Open();
+                try
+                {
+                    connect.Open();
+                    //executes then check to see if correct.
+                    int count = cmd.ExecuteNonQuery();
+                    if (count > 0)
+                        return true;
+                    else
+                        return false;
+                }
+                catch (SqlException ex)
+                {
+                    throw ex;
 
-        //        SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //        da.Fill(dt);
-        //    }
-        //    catch (Exception exc)
-        //    {
-        //        exc.ToString();
-        //    }
-        //    finally
-        //    {
-        //        connect.Close();
-        //    }
+                }
 
-        //    return unitID;
-        //}
+                finally
+                {
+                    connect.Close();
+                }
+        }
     }
 }

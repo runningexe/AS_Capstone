@@ -28,3 +28,4 @@ C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusRepor
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.dll
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.pdfa.dll
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.xtra.dll
+C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.csprojResolveAssemblyReference.cache
