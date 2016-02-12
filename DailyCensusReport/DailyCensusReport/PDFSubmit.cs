@@ -45,6 +45,34 @@ namespace DailyCensusReport
                     //Open Document.
                     doc.Open();
 
+                    /*
+                     * create document header; shows GMT time when PDF created.
+                     * HeaderFooter class removed in iText 5.0.0, so we instead write 
+                     * content to an **absolute** position on the document
+                     */
+                    iTextSharp.text.Rectangle page = doc.PageSize;
+                    PdfPTable head = new PdfPTable(1);
+                    head.TotalWidth = page.Width;
+                    Phrase phrase = new Phrase("Hospital's Daily Census Report" +"\n"+
+                      DateTime.Now.ToString("MM-dd-yyyy")
+               
+                    );
+
+                    PdfPCell c = new PdfPCell(phrase);
+                    c.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                    c.VerticalAlignment = Element.ALIGN_TOP;
+                    c.HorizontalAlignment = Element.ALIGN_CENTER;
+                    head.AddCell(c);
+                    head.WriteSelectedRows(
+                        // first/last row; -1 writes all rows
+                      0, -1,
+                        // left offset
+                      0,
+                        // ** bottom** yPos of the table
+                      page.Height - doc.TopMargin + head.TotalHeight + 10,
+                      wri.DirectContent
+                    );
+
                     //Instantiating the table and giving it the number of columns it will have.
                     PdfPTable pdfTable = new PdfPTable(7);
 

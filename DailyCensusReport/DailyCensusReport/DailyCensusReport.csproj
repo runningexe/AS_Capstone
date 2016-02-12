@@ -74,15 +74,10 @@
     <Compile Include="PDFSubmit.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SE265_AJF1130DataSet.Designer.cs">
+    <Compile Include="SE265_AJF1130DataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>SE265_AJF1130DataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="SE265_AJF1130DataSet11.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SE265_AJF1130DataSet11.xsd</DependentUpon>
+      <DependentUpon>SE265_AJF1130DataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="SubmitRecord.cs" />
     <Compile Include="ViewRecord.cs" />
@@ -120,27 +115,16 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SE265_AJF1130DataSet.xsc">
-      <DependentUpon>SE265_AJF1130DataSet.xsd</DependentUpon>
+    <None Include="SE265_AJF1130DataSet2.xsc">
+      <DependentUpon>SE265_AJF1130DataSet2.xsd</DependentUpon>
     </None>
-    <None Include="SE265_AJF1130DataSet.xsd">
+    <None Include="SE265_AJF1130DataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SE265_AJF1130DataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>SE265_AJF1130DataSet2.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="SE265_AJF1130DataSet.xss">
-      <DependentUpon>SE265_AJF1130DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="SE265_AJF1130DataSet11.xsc">
-      <DependentUpon>SE265_AJF1130DataSet11.xsd</DependentUpon>
-    </None>
-    <None Include="SE265_AJF1130DataSet11.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SE265_AJF1130DataSet11.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="SE265_AJF1130DataSet11.xss">
-      <DependentUpon>SE265_AJF1130DataSet11.xsd</DependentUpon>
+    <None Include="SE265_AJF1130DataSet2.xss">
+      <DependentUpon>SE265_AJF1130DataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

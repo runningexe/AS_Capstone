@@ -29,3 +29,16 @@ C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.pdfa.dll
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.xtra.dll
 C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.csprojResolveAssemblyReference.cache
+C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.exe.config
+C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.exe
+C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.pdb
+C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.exe
+C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.pdb
+C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.dll
+C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.pdfa.dll
+C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.xtra.dll
+C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.frmDailyCensusReport.resources
+C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.frmMainForm.resources
+C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.Properties.Resources.resources
+C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.ViewRecordsForm.resources
+C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.csproj.GenerateResource.Cache
