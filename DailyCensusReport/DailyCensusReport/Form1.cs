@@ -35,12 +35,12 @@ namespace DailyCensusReport
 
         private void frmDailyCensusReport_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.T2' table. You can move, or remove it, as needed.
+            this.t2TableAdapter.Fill(this.sE265_AJF1130DataSet.T2);
+            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.ICU' table. You can move, or remove it, as needed.
+            this.iCUTableAdapter.Fill(this.sE265_AJF1130DataSet.ICU);
             // TODO: This line of code loads data into the 'sE265_AJF1130DataSet2.ICU' table. You can move, or remove it, as needed.
-            this.iCUTableAdapter.Fill(this.sE265_AJF1130DataSet2.ICU);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet2.T2' table. You can move, or remove it, as needed.
-            this.t2TableAdapter1.Fill(this.sE265_AJF1130DataSet2.T2);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet2.T2' table. You can move, or remove it, as needed.
-            this.t2TableAdapter1.Fill(this.sE265_AJF1130DataSet2.T2);
+           
         
         }
 
@@ -72,13 +72,13 @@ namespace DailyCensusReport
             //string notes = Convert.ToString(txtNotesICU.Text);
             //string currentCapStat = Convert.ToString(txtCurrentCapStatusICU.Text);
 ////T2
-            int unitIDT2 = 2;
-            string currentCensusT2 = Convert.ToString(txtCurrentCensusT2.Text);
-            string availBedsT2 = Convert.ToString(txtAvailableBedsT2.Text);
-            string numOfIsoPatientsT2 = Convert.ToString(txtIsoPatientsT2.Text);
-            string potentialDCsT2 = Convert.ToString(txtDischargesT2.Text);
-            string notesT2 = Convert.ToString(txtNotesT2.Text);
-            string currentCapStatT2 = Convert.ToString(txtCurrentCapStatusT2.Text);
+            //int unitIDT2=0;
+            //string currentCensusT2 = Convert.ToString(txtCurrentCensusT2.Text);
+            //string availBedsT2 = Convert.ToString(txtAvailableBedsT2.Text);
+            //string numOfIsoPatientsT2 = Convert.ToString(txtIsoPatientsT2.Text);
+            //string potentialDCsT2 = Convert.ToString(txtDischargesT2.Text);
+            //string notesT2 = Convert.ToString(txtNotesT2.Text);
+            //string currentCapStatT2 = Convert.ToString(txtCurrentCapStatusT2.Text);
 
            
 
@@ -90,7 +90,7 @@ namespace DailyCensusReport
             //SubmitRecord.InsertICU(unitID, currentCensus, availBeds, numOfIsoPatients, potentialDCs, notes, currentCapStat);
 ///****************************************************************************************************************/
 ////T2
-            SubmitRecord.InsertT2(unitIDT2, currentCensusT2, availBedsT2, numOfIsoPatientsT2, potentialDCsT2, notesT2, currentCapStatT2);
+            //SubmitRecord.InsertT2(unitIDT2, currentCensusT2, availBedsT2, numOfIsoPatientsT2, potentialDCsT2, notesT2, currentCapStatT2);
             
         }
 

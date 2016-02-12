@@ -28,36 +28,49 @@ namespace DailyCensusReport
             int ICUAB2 = Convert.ToInt32(txtAvailableBedsICU.Text);
             txtCurrentCapStatusICU.Text = "";
 
-        //T2
-            int T2CC1 = Convert.ToInt32(txtCurrentCensusT2.Text);
-            int T2AB2 = Convert.ToInt32(txtAvailableBedsT2.Text);
-            txtCurrentCapStatusT2.Text = "";
+        ////T2
+        //    int T2CC1 = Convert.ToInt32(txtCurrentCensusT2.Text);
+        //    int T2AB2 = Convert.ToInt32(txtAvailableBedsT2.Text);
+        //    txtCurrentCapStatusT2.Text = "";
 
+            int totalICUBeds = 9;
+            int totalCensusColor = (ICUCC1 / ICUAB2) * 125;
         //ICU
-            if (ICUCC1 <= 5)
+            if (totalCensusColor <= 50)
             {
                 txtCurrentCapStatusICU.BackColor = Color.Green;
                 txtCurrentCapStatusICU.Text = "GREEN";
             }
 
-                else if (ICUCC1 >= 6)
+            else if (totalCensusColor >= 90)
                 {
-                    txtCurrentCapStatusICU.BackColor = Color.Red;
-                    txtCurrentCapStatusICU.Text = "RED";
+                    txtCurrentCapStatusICU.BackColor = Color.Yellow;
+                    txtCurrentCapStatusICU.Text = "YELLOW";
                 }
-
-        //T2
-            if (T2CC1 <= 5)
+            else if (totalCensusColor >= 120)
             {
-                txtCurrentCapStatusT2.BackColor = Color.Green;
-                txtCurrentCapStatusT2.Text = "GREEN";
+                txtCurrentCapStatusICU.BackColor = Color.Orange;
+                txtCurrentCapStatusICU.Text = "ORANGE";
             }
 
-            else if (T2CC1 >= 6)
+            else if (totalCensusColor >= 121)
             {
-                txtCurrentCapStatusT2.BackColor = Color.Red;
-                txtCurrentCapStatusT2.Text = "RED";
+                txtCurrentCapStatusICU.BackColor = Color.Red;
+                txtCurrentCapStatusICU.Text = "RED";
             }
+
+        ////T2
+        //    if (T2CC1 <= 5)
+        //    {
+        //        txtCurrentCapStatusT2.BackColor = Color.Green;
+        //        txtCurrentCapStatusT2.Text = "GREEN";
+        //    }
+
+        //    else if (T2CC1 >= 6)
+        //    {
+        //        txtCurrentCapStatusT2.BackColor = Color.Red;
+        //        txtCurrentCapStatusT2.Text = "RED";
+        //    }
             return true;
         } 
     }

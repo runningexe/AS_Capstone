@@ -144,7 +144,10 @@ namespace DailyCensusReport
                     int icuCurrentCensus = Convert.ToInt32(txtCurrentCensusICU.Text);
                     int ICUAB2 = Convert.ToInt32(txtAvailableBedsICU.Text);
 
-                    if (icuCurrentCensus <= 5)
+                    int totalICUBeds = 9;
+                    int totalCensusColor = (icuCurrentCensus / ICUAB2) * 125;
+
+                    if (totalCensusColor <= 50)
                     {
                         //ICU Row Added
                         PdfPCell cell100 = new PdfPCell();
@@ -152,7 +155,25 @@ namespace DailyCensusReport
                         cell100.BackgroundColor = BaseColor.GREEN;
                         pdfTable.AddCell(cell100);
                     }
-                    else if (icuCurrentCensus >= 6)
+                    else if (icuCurrentCensus >= 90)
+                    {
+                        //ICU Row Added
+                        PdfPCell cell100 = new PdfPCell();
+                        cell100.AddElement(new Paragraph(txtCurrentCapStatusICU.Text));
+                        cell100.BackgroundColor = BaseColor.YELLOW;
+                        pdfTable.AddCell(cell100);
+                    }
+
+                    else if (icuCurrentCensus >= 120)
+                    {
+                        //ICU Row Added
+                        PdfPCell cell100 = new PdfPCell();
+                        cell100.AddElement(new Paragraph(txtCurrentCapStatusICU.Text));
+                        cell100.BackgroundColor = BaseColor.ORANGE;
+                        pdfTable.AddCell(cell100);
+                    }
+
+                    else if (icuCurrentCensus >= 121)
                     {
                         //ICU Row Added
                         PdfPCell cell100 = new PdfPCell();

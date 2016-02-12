@@ -28,7 +28,6 @@ C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusRepor
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.dll
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.pdfa.dll
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.xtra.dll
-C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.csprojResolveAssemblyReference.cache
 C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\DailyCensusReport.exe.config
 C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.exe
 C:\Users\000915614\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.pdb

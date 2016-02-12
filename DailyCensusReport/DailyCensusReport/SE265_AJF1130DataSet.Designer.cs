@@ -20,9 +20,9 @@ namespace DailyCensusReport {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("SE265_AJF1130DataSet2")]
+    [global::System.Xml.Serialization.XmlRootAttribute("SE265_AJF1130DataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class SE265_AJF1130DataSet2 : global::System.Data.DataSet {
+    public partial class SE265_AJF1130DataSet : global::System.Data.DataSet {
         
         private _6ACUDataTable table6ACU;
         
@@ -56,11 +56,25 @@ namespace DailyCensusReport {
         
         private spTBCDataTable tablespTBC;
         
+        private global::System.Data.DataRelation relationFK_6ACU_Census;
+        
+        private global::System.Data.DataRelation relationFK_BHU_Census;
+        
+        private global::System.Data.DataRelation relationFK_ICU_Census;
+        
+        private global::System.Data.DataRelation relationFK_PEDI_Census;
+        
+        private global::System.Data.DataRelation relationFK_T2_Census;
+        
+        private global::System.Data.DataRelation relationFK_T4_Census;
+        
+        private global::System.Data.DataRelation relationFK_TBC_Census;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public SE265_AJF1130DataSet2() {
+        public SE265_AJF1130DataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -71,7 +85,7 @@ namespace DailyCensusReport {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected SE265_AJF1130DataSet2(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected SE265_AJF1130DataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -352,7 +366,7 @@ namespace DailyCensusReport {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            SE265_AJF1130DataSet2 cln = ((SE265_AJF1130DataSet2)(base.Clone()));
+            SE265_AJF1130DataSet cln = ((SE265_AJF1130DataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -554,14 +568,21 @@ namespace DailyCensusReport {
                     this.tablespTBC.InitVars();
                 }
             }
+            this.relationFK_6ACU_Census = this.Relations["FK_6ACU_Census"];
+            this.relationFK_BHU_Census = this.Relations["FK_BHU_Census"];
+            this.relationFK_ICU_Census = this.Relations["FK_ICU_Census"];
+            this.relationFK_PEDI_Census = this.Relations["FK_PEDI_Census"];
+            this.relationFK_T2_Census = this.Relations["FK_T2_Census"];
+            this.relationFK_T4_Census = this.Relations["FK_T4_Census"];
+            this.relationFK_TBC_Census = this.Relations["FK_TBC_Census"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "SE265_AJF1130DataSet2";
+            this.DataSetName = "SE265_AJF1130DataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/SE265_AJF1130DataSet2.xsd";
+            this.Namespace = "http://tempuri.org/SE265_AJF1130DataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.table6ACU = new _6ACUDataTable();
@@ -596,6 +617,34 @@ namespace DailyCensusReport {
             base.Tables.Add(this.tablespT4);
             this.tablespTBC = new spTBCDataTable();
             base.Tables.Add(this.tablespTBC);
+            this.relationFK_6ACU_Census = new global::System.Data.DataRelation("FK_6ACU_Census", new global::System.Data.DataColumn[] {
+                        this.tableCensus.unitIDColumn}, new global::System.Data.DataColumn[] {
+                        this.table6ACU.unitIDColumn}, false);
+            this.Relations.Add(this.relationFK_6ACU_Census);
+            this.relationFK_BHU_Census = new global::System.Data.DataRelation("FK_BHU_Census", new global::System.Data.DataColumn[] {
+                        this.tableCensus.unitIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableBHU.unitIDColumn}, false);
+            this.Relations.Add(this.relationFK_BHU_Census);
+            this.relationFK_ICU_Census = new global::System.Data.DataRelation("FK_ICU_Census", new global::System.Data.DataColumn[] {
+                        this.tableCensus.unitIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableICU.unitIDColumn}, false);
+            this.Relations.Add(this.relationFK_ICU_Census);
+            this.relationFK_PEDI_Census = new global::System.Data.DataRelation("FK_PEDI_Census", new global::System.Data.DataColumn[] {
+                        this.tableCensus.unitIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePEDI.unitIDColumn}, false);
+            this.Relations.Add(this.relationFK_PEDI_Census);
+            this.relationFK_T2_Census = new global::System.Data.DataRelation("FK_T2_Census", new global::System.Data.DataColumn[] {
+                        this.tableCensus.unitIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableT2.unitIDColumn}, false);
+            this.Relations.Add(this.relationFK_T2_Census);
+            this.relationFK_T4_Census = new global::System.Data.DataRelation("FK_T4_Census", new global::System.Data.DataColumn[] {
+                        this.tableCensus.unitIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableT4.unitIDColumn}, false);
+            this.Relations.Add(this.relationFK_T4_Census);
+            this.relationFK_TBC_Census = new global::System.Data.DataRelation("FK_TBC_Census", new global::System.Data.DataColumn[] {
+                        this.tableCensus.unitIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTBC.unitIDColumn}, false);
+            this.Relations.Add(this.relationFK_TBC_Census);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -705,7 +754,7 @@ namespace DailyCensusReport {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+            SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -954,17 +1003,20 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public _6ACURow Add_6ACURow(int unitID, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
+            public _6ACURow Add_6ACURow(CensusRow parentCensusRowByFK_6ACU_Census, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
                 _6ACURow row_6ACURow = ((_6ACURow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        unitID,
+                        null,
                         currentCensus,
                         availBeds,
                         numberISP,
                         DC,
                         notes,
                         currentCap};
+                if ((parentCensusRowByFK_6ACU_Census != null)) {
+                    columnValuesArray[1] = parentCensusRowByFK_6ACU_Census[0];
+                }
                 row_6ACURow.ItemArray = columnValuesArray;
                 this.Rows.Add(row_6ACURow);
                 return row_6ACURow;
@@ -1112,7 +1164,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1328,17 +1380,20 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public BHURow AddBHURow(int unitID, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
+            public BHURow AddBHURow(CensusRow parentCensusRowByFK_BHU_Census, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
                 BHURow rowBHURow = ((BHURow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        unitID,
+                        null,
                         currentCensus,
                         availBeds,
                         numberISP,
                         DC,
                         notes,
                         currentCap};
+                if ((parentCensusRowByFK_BHU_Census != null)) {
+                    columnValuesArray[1] = parentCensusRowByFK_BHU_Census[0];
+                }
                 rowBHURow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowBHURow);
                 return rowBHURow;
@@ -1484,7 +1539,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1761,7 +1816,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1977,17 +2032,20 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ICURow AddICURow(int unitID, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
+            public ICURow AddICURow(CensusRow parentCensusRowByFK_ICU_Census, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
                 ICURow rowICURow = ((ICURow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        unitID,
+                        null,
                         currentCensus,
                         availBeds,
                         numberISP,
                         DC,
                         notes,
                         currentCap};
+                if ((parentCensusRowByFK_ICU_Census != null)) {
+                    columnValuesArray[1] = parentCensusRowByFK_ICU_Census[0];
+                }
                 rowICURow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowICURow);
                 return rowICURow;
@@ -2133,7 +2191,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2349,17 +2407,20 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PEDIRow AddPEDIRow(int unitID, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
+            public PEDIRow AddPEDIRow(CensusRow parentCensusRowByFK_PEDI_Census, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
                 PEDIRow rowPEDIRow = ((PEDIRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        unitID,
+                        null,
                         currentCensus,
                         availBeds,
                         numberISP,
                         DC,
                         notes,
                         currentCap};
+                if ((parentCensusRowByFK_PEDI_Census != null)) {
+                    columnValuesArray[1] = parentCensusRowByFK_PEDI_Census[0];
+                }
                 rowPEDIRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPEDIRow);
                 return rowPEDIRow;
@@ -2505,7 +2566,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2721,17 +2782,20 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public T2Row AddT2Row(int unitID, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
+            public T2Row AddT2Row(CensusRow parentCensusRowByFK_T2_Census, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
                 T2Row rowT2Row = ((T2Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        unitID,
+                        null,
                         currentCensus,
                         availBeds,
                         numberISP,
                         DC,
                         notes,
                         currentCap};
+                if ((parentCensusRowByFK_T2_Census != null)) {
+                    columnValuesArray[1] = parentCensusRowByFK_T2_Census[0];
+                }
                 rowT2Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowT2Row);
                 return rowT2Row;
@@ -2877,7 +2941,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3093,17 +3157,20 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public T4Row AddT4Row(int unitID, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
+            public T4Row AddT4Row(CensusRow parentCensusRowByFK_T4_Census, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
                 T4Row rowT4Row = ((T4Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        unitID,
+                        null,
                         currentCensus,
                         availBeds,
                         numberISP,
                         DC,
                         notes,
                         currentCap};
+                if ((parentCensusRowByFK_T4_Census != null)) {
+                    columnValuesArray[1] = parentCensusRowByFK_T4_Census[0];
+                }
                 rowT4Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowT4Row);
                 return rowT4Row;
@@ -3249,7 +3316,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3465,17 +3532,20 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TBCRow AddTBCRow(int unitID, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
+            public TBCRow AddTBCRow(CensusRow parentCensusRowByFK_TBC_Census, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap) {
                 TBCRow rowTBCRow = ((TBCRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        unitID,
+                        null,
                         currentCensus,
                         availBeds,
                         numberISP,
                         DC,
                         notes,
                         currentCap};
+                if ((parentCensusRowByFK_TBC_Census != null)) {
+                    columnValuesArray[1] = parentCensusRowByFK_TBC_Census[0];
+                }
                 rowTBCRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTBCRow);
                 return rowTBCRow;
@@ -3621,7 +3691,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3991,7 +4061,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4361,7 +4431,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4636,7 +4706,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5006,7 +5076,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5376,7 +5446,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5746,7 +5816,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6116,7 +6186,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6486,7 +6556,7 @@ namespace DailyCensusReport {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SE265_AJF1130DataSet2 ds = new SE265_AJF1130DataSet2();
+                SE265_AJF1130DataSet ds = new SE265_AJF1130DataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6654,6 +6724,17 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CensusRow CensusRow {
+                get {
+                    return ((CensusRow)(this.GetParentRow(this.Table.ParentRelations["FK_6ACU_Census"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_6ACU_Census"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsnotesNull() {
                 return this.IsNull(this.table6ACU.notesColumn);
             }
@@ -6774,6 +6855,17 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CensusRow CensusRow {
+                get {
+                    return ((CensusRow)(this.GetParentRow(this.Table.ParentRelations["FK_BHU_Census"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_BHU_Census"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsnotesNull() {
                 return this.IsNull(this.tableBHU.notesColumn);
             }
@@ -6818,6 +6910,83 @@ namespace DailyCensusReport {
                 }
                 set {
                     this[this.tableCensus.theDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public _6ACURow[] Get6ACURows() {
+                if ((this.Table.ChildRelations["FK_6ACU_Census"] == null)) {
+                    return new _6ACURow[0];
+                }
+                else {
+                    return ((_6ACURow[])(base.GetChildRows(this.Table.ChildRelations["FK_6ACU_Census"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public BHURow[] GetBHURows() {
+                if ((this.Table.ChildRelations["FK_BHU_Census"] == null)) {
+                    return new BHURow[0];
+                }
+                else {
+                    return ((BHURow[])(base.GetChildRows(this.Table.ChildRelations["FK_BHU_Census"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public ICURow[] GetICURows() {
+                if ((this.Table.ChildRelations["FK_ICU_Census"] == null)) {
+                    return new ICURow[0];
+                }
+                else {
+                    return ((ICURow[])(base.GetChildRows(this.Table.ChildRelations["FK_ICU_Census"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public PEDIRow[] GetPEDIRows() {
+                if ((this.Table.ChildRelations["FK_PEDI_Census"] == null)) {
+                    return new PEDIRow[0];
+                }
+                else {
+                    return ((PEDIRow[])(base.GetChildRows(this.Table.ChildRelations["FK_PEDI_Census"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public T2Row[] GetT2Rows() {
+                if ((this.Table.ChildRelations["FK_T2_Census"] == null)) {
+                    return new T2Row[0];
+                }
+                else {
+                    return ((T2Row[])(base.GetChildRows(this.Table.ChildRelations["FK_T2_Census"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public T4Row[] GetT4Rows() {
+                if ((this.Table.ChildRelations["FK_T4_Census"] == null)) {
+                    return new T4Row[0];
+                }
+                else {
+                    return ((T4Row[])(base.GetChildRows(this.Table.ChildRelations["FK_T4_Census"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public TBCRow[] GetTBCRows() {
+                if ((this.Table.ChildRelations["FK_TBC_Census"] == null)) {
+                    return new TBCRow[0];
+                }
+                else {
+                    return ((TBCRow[])(base.GetChildRows(this.Table.ChildRelations["FK_TBC_Census"])));
                 }
             }
         }
@@ -6926,6 +7095,17 @@ namespace DailyCensusReport {
                 }
                 set {
                     this[this.tableICU.currentCapColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CensusRow CensusRow {
+                get {
+                    return ((CensusRow)(this.GetParentRow(this.Table.ParentRelations["FK_ICU_Census"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ICU_Census"]);
                 }
             }
             
@@ -7051,6 +7231,17 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CensusRow CensusRow {
+                get {
+                    return ((CensusRow)(this.GetParentRow(this.Table.ParentRelations["FK_PEDI_Census"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_PEDI_Census"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsnotesNull() {
                 return this.IsNull(this.tablePEDI.notesColumn);
             }
@@ -7166,6 +7357,17 @@ namespace DailyCensusReport {
                 }
                 set {
                     this[this.tableT2.currentCapColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CensusRow CensusRow {
+                get {
+                    return ((CensusRow)(this.GetParentRow(this.Table.ParentRelations["FK_T2_Census"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_T2_Census"]);
                 }
             }
             
@@ -7291,6 +7493,17 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CensusRow CensusRow {
+                get {
+                    return ((CensusRow)(this.GetParentRow(this.Table.ParentRelations["FK_T4_Census"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_T4_Census"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsnotesNull() {
                 return this.IsNull(this.tableT4.notesColumn);
             }
@@ -7406,6 +7619,17 @@ namespace DailyCensusReport {
                 }
                 set {
                     this[this.tableTBC.currentCapColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CensusRow CensusRow {
+                get {
+                    return ((CensusRow)(this.GetParentRow(this.Table.ParentRelations["FK_TBC_Census"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_TBC_Census"]);
                 }
             }
             
@@ -8844,7 +9068,7 @@ namespace DailyCensusReport {
         }
     }
 }
-namespace DailyCensusReport.SE265_AJF1130DataSet2TableAdapters {
+namespace DailyCensusReport.SE265_AJF1130DataSetTableAdapters {
     
     
     /// <summary>
@@ -9048,7 +9272,7 @@ SELECT acuID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2._6ACUDataTable dataTable) {
+        public virtual int Fill(SE265_AJF1130DataSet._6ACUDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9061,9 +9285,9 @@ SELECT acuID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2._6ACUDataTable GetData() {
+        public virtual SE265_AJF1130DataSet._6ACUDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SE265_AJF1130DataSet2._6ACUDataTable dataTable = new SE265_AJF1130DataSet2._6ACUDataTable();
+            SE265_AJF1130DataSet._6ACUDataTable dataTable = new SE265_AJF1130DataSet._6ACUDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9071,14 +9295,14 @@ SELECT acuID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2._6ACUDataTable dataTable) {
+        public virtual int Update(SE265_AJF1130DataSet._6ACUDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2 dataSet) {
+        public virtual int Update(SE265_AJF1130DataSet dataSet) {
             return this.Adapter.Update(dataSet, "6ACU");
         }
         
@@ -9541,7 +9765,7 @@ SELECT bhuID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.BHUDataTable dataTable) {
+        public virtual int Fill(SE265_AJF1130DataSet.BHUDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9554,9 +9778,9 @@ SELECT bhuID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.BHUDataTable GetData() {
+        public virtual SE265_AJF1130DataSet.BHUDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SE265_AJF1130DataSet2.BHUDataTable dataTable = new SE265_AJF1130DataSet2.BHUDataTable();
+            SE265_AJF1130DataSet.BHUDataTable dataTable = new SE265_AJF1130DataSet.BHUDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9564,14 +9788,14 @@ SELECT bhuID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2.BHUDataTable dataTable) {
+        public virtual int Update(SE265_AJF1130DataSet.BHUDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2 dataSet) {
+        public virtual int Update(SE265_AJF1130DataSet dataSet) {
             return this.Adapter.Update(dataSet, "BHU");
         }
         
@@ -10003,7 +10227,7 @@ SELECT bhuID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.CensusDataTable dataTable) {
+        public virtual int Fill(SE265_AJF1130DataSet.CensusDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10016,9 +10240,9 @@ SELECT bhuID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.CensusDataTable GetData() {
+        public virtual SE265_AJF1130DataSet.CensusDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SE265_AJF1130DataSet2.CensusDataTable dataTable = new SE265_AJF1130DataSet2.CensusDataTable();
+            SE265_AJF1130DataSet.CensusDataTable dataTable = new SE265_AJF1130DataSet.CensusDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10026,14 +10250,14 @@ SELECT bhuID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2.CensusDataTable dataTable) {
+        public virtual int Update(SE265_AJF1130DataSet.CensusDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2 dataSet) {
+        public virtual int Update(SE265_AJF1130DataSet dataSet) {
             return this.Adapter.Update(dataSet, "Census");
         }
         
@@ -10332,7 +10556,7 @@ SELECT icuID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.ICUDataTable dataTable) {
+        public virtual int Fill(SE265_AJF1130DataSet.ICUDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10345,9 +10569,9 @@ SELECT icuID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.ICUDataTable GetData() {
+        public virtual SE265_AJF1130DataSet.ICUDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SE265_AJF1130DataSet2.ICUDataTable dataTable = new SE265_AJF1130DataSet2.ICUDataTable();
+            SE265_AJF1130DataSet.ICUDataTable dataTable = new SE265_AJF1130DataSet.ICUDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10355,14 +10579,14 @@ SELECT icuID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2.ICUDataTable dataTable) {
+        public virtual int Update(SE265_AJF1130DataSet.ICUDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2 dataSet) {
+        public virtual int Update(SE265_AJF1130DataSet dataSet) {
             return this.Adapter.Update(dataSet, "ICU");
         }
         
@@ -10825,7 +11049,7 @@ SELECT pediID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.PEDIDataTable dataTable) {
+        public virtual int Fill(SE265_AJF1130DataSet.PEDIDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10838,9 +11062,9 @@ SELECT pediID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCa
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.PEDIDataTable GetData() {
+        public virtual SE265_AJF1130DataSet.PEDIDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SE265_AJF1130DataSet2.PEDIDataTable dataTable = new SE265_AJF1130DataSet2.PEDIDataTable();
+            SE265_AJF1130DataSet.PEDIDataTable dataTable = new SE265_AJF1130DataSet.PEDIDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10848,14 +11072,14 @@ SELECT pediID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCa
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2.PEDIDataTable dataTable) {
+        public virtual int Update(SE265_AJF1130DataSet.PEDIDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2 dataSet) {
+        public virtual int Update(SE265_AJF1130DataSet dataSet) {
             return this.Adapter.Update(dataSet, "PEDI");
         }
         
@@ -11318,7 +11542,7 @@ SELECT t2ID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.T2DataTable dataTable) {
+        public virtual int Fill(SE265_AJF1130DataSet.T2DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11331,9 +11555,9 @@ SELECT t2ID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.T2DataTable GetData() {
+        public virtual SE265_AJF1130DataSet.T2DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SE265_AJF1130DataSet2.T2DataTable dataTable = new SE265_AJF1130DataSet2.T2DataTable();
+            SE265_AJF1130DataSet.T2DataTable dataTable = new SE265_AJF1130DataSet.T2DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11341,14 +11565,14 @@ SELECT t2ID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2.T2DataTable dataTable) {
+        public virtual int Update(SE265_AJF1130DataSet.T2DataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2 dataSet) {
+        public virtual int Update(SE265_AJF1130DataSet dataSet) {
             return this.Adapter.Update(dataSet, "T2");
         }
         
@@ -11811,7 +12035,7 @@ SELECT t4ID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.T4DataTable dataTable) {
+        public virtual int Fill(SE265_AJF1130DataSet.T4DataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11824,9 +12048,9 @@ SELECT t4ID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.T4DataTable GetData() {
+        public virtual SE265_AJF1130DataSet.T4DataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SE265_AJF1130DataSet2.T4DataTable dataTable = new SE265_AJF1130DataSet2.T4DataTable();
+            SE265_AJF1130DataSet.T4DataTable dataTable = new SE265_AJF1130DataSet.T4DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11834,14 +12058,14 @@ SELECT t4ID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2.T4DataTable dataTable) {
+        public virtual int Update(SE265_AJF1130DataSet.T4DataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2 dataSet) {
+        public virtual int Update(SE265_AJF1130DataSet dataSet) {
             return this.Adapter.Update(dataSet, "T4");
         }
         
@@ -12304,7 +12528,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.TBCDataTable dataTable) {
+        public virtual int Fill(SE265_AJF1130DataSet.TBCDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -12317,9 +12541,9 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.TBCDataTable GetData() {
+        public virtual SE265_AJF1130DataSet.TBCDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SE265_AJF1130DataSet2.TBCDataTable dataTable = new SE265_AJF1130DataSet2.TBCDataTable();
+            SE265_AJF1130DataSet.TBCDataTable dataTable = new SE265_AJF1130DataSet.TBCDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -12327,14 +12551,14 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2.TBCDataTable dataTable) {
+        public virtual int Update(SE265_AJF1130DataSet.TBCDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2 dataSet) {
+        public virtual int Update(SE265_AJF1130DataSet dataSet) {
             return this.Adapter.Update(dataSet, "TBC");
         }
         
@@ -12751,7 +12975,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.sp6ACUDataTable dataTable, global::System.Nullable<int> unitID) {
+        public virtual int Fill(SE265_AJF1130DataSet.sp6ACUDataTable dataTable, global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -12770,7 +12994,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.sp6ACUDataTable GetData(global::System.Nullable<int> unitID) {
+        public virtual SE265_AJF1130DataSet.sp6ACUDataTable GetData(global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -12778,7 +13002,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            SE265_AJF1130DataSet2.sp6ACUDataTable dataTable = new SE265_AJF1130DataSet2.sp6ACUDataTable();
+            SE265_AJF1130DataSet.sp6ACUDataTable dataTable = new SE265_AJF1130DataSet.sp6ACUDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -12939,7 +13163,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.spBHUDataTable dataTable, global::System.Nullable<int> unitID) {
+        public virtual int Fill(SE265_AJF1130DataSet.spBHUDataTable dataTable, global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -12958,7 +13182,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.spBHUDataTable GetData(global::System.Nullable<int> unitID) {
+        public virtual SE265_AJF1130DataSet.spBHUDataTable GetData(global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -12966,7 +13190,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            SE265_AJF1130DataSet2.spBHUDataTable dataTable = new SE265_AJF1130DataSet2.spBHUDataTable();
+            SE265_AJF1130DataSet.spBHUDataTable dataTable = new SE265_AJF1130DataSet.spBHUDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13121,7 +13345,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.spCensusDataTable dataTable, string date) {
+        public virtual int Fill(SE265_AJF1130DataSet.spCensusDataTable dataTable, string date) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((date == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -13140,7 +13364,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.spCensusDataTable GetData(string date) {
+        public virtual SE265_AJF1130DataSet.spCensusDataTable GetData(string date) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((date == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -13148,7 +13372,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(date));
             }
-            SE265_AJF1130DataSet2.spCensusDataTable dataTable = new SE265_AJF1130DataSet2.spCensusDataTable();
+            SE265_AJF1130DataSet.spCensusDataTable dataTable = new SE265_AJF1130DataSet.spCensusDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13309,7 +13533,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.spICUDataTable dataTable, global::System.Nullable<int> unitID) {
+        public virtual int Fill(SE265_AJF1130DataSet.spICUDataTable dataTable, global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -13328,7 +13552,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.spICUDataTable GetData(global::System.Nullable<int> unitID) {
+        public virtual SE265_AJF1130DataSet.spICUDataTable GetData(global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -13336,7 +13560,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            SE265_AJF1130DataSet2.spICUDataTable dataTable = new SE265_AJF1130DataSet2.spICUDataTable();
+            SE265_AJF1130DataSet.spICUDataTable dataTable = new SE265_AJF1130DataSet.spICUDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13497,7 +13721,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.spPEDIDataTable dataTable, global::System.Nullable<int> unitID) {
+        public virtual int Fill(SE265_AJF1130DataSet.spPEDIDataTable dataTable, global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -13516,7 +13740,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.spPEDIDataTable GetData(global::System.Nullable<int> unitID) {
+        public virtual SE265_AJF1130DataSet.spPEDIDataTable GetData(global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -13524,7 +13748,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            SE265_AJF1130DataSet2.spPEDIDataTable dataTable = new SE265_AJF1130DataSet2.spPEDIDataTable();
+            SE265_AJF1130DataSet.spPEDIDataTable dataTable = new SE265_AJF1130DataSet.spPEDIDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13685,7 +13909,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.spT2DataTable dataTable, global::System.Nullable<int> unitID) {
+        public virtual int Fill(SE265_AJF1130DataSet.spT2DataTable dataTable, global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -13704,7 +13928,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.spT2DataTable GetData(global::System.Nullable<int> unitID) {
+        public virtual SE265_AJF1130DataSet.spT2DataTable GetData(global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -13712,7 +13936,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            SE265_AJF1130DataSet2.spT2DataTable dataTable = new SE265_AJF1130DataSet2.spT2DataTable();
+            SE265_AJF1130DataSet.spT2DataTable dataTable = new SE265_AJF1130DataSet.spT2DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13873,7 +14097,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.spT4DataTable dataTable, global::System.Nullable<int> unitID) {
+        public virtual int Fill(SE265_AJF1130DataSet.spT4DataTable dataTable, global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -13892,7 +14116,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.spT4DataTable GetData(global::System.Nullable<int> unitID) {
+        public virtual SE265_AJF1130DataSet.spT4DataTable GetData(global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -13900,7 +14124,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            SE265_AJF1130DataSet2.spT4DataTable dataTable = new SE265_AJF1130DataSet2.spT4DataTable();
+            SE265_AJF1130DataSet.spT4DataTable dataTable = new SE265_AJF1130DataSet.spT4DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -14061,7 +14285,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.spTBCDataTable dataTable, global::System.Nullable<int> unitID) {
+        public virtual int Fill(SE265_AJF1130DataSet.spTBCDataTable dataTable, global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -14080,7 +14304,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.spTBCDataTable GetData(global::System.Nullable<int> unitID) {
+        public virtual SE265_AJF1130DataSet.spTBCDataTable GetData(global::System.Nullable<int> unitID) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((unitID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(unitID.Value));
@@ -14088,7 +14312,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            SE265_AJF1130DataSet2.spTBCDataTable dataTable = new SE265_AJF1130DataSet2.spTBCDataTable();
+            SE265_AJF1130DataSet.spTBCDataTable dataTable = new SE265_AJF1130DataSet.spTBCDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -15517,8 +15741,17 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(SE265_AJF1130DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(SE265_AJF1130DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._censusTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Census.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._censusTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this.@__6ACUTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet._6ACU.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -15534,15 +15767,6 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._bHUTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._censusTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Census.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._censusTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -15599,8 +15823,16 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(SE265_AJF1130DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(SE265_AJF1130DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._censusTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Census.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._censusTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this.@__6ACUTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet._6ACU.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -15614,14 +15846,6 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._bHUTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._censusTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Census.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._censusTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -15673,7 +15897,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(SE265_AJF1130DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(SE265_AJF1130DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._tBCTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TBC.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -15715,14 +15939,6 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._censusTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Census.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._censusTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._bHUTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.BHU.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -15736,6 +15952,14 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this.@__6ACUTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._censusTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Census.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._censusTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -15771,7 +15995,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(SE265_AJF1130DataSet2 dataSet) {
+        public virtual int UpdateAll(SE265_AJF1130DataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

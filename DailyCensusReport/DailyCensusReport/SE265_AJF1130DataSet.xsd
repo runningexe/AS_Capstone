@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="SE265_AJF1130DataSet2" targetNamespace="http://tempuri.org/SE265_AJF1130DataSet2.xsd" xmlns:mstns="http://tempuri.org/SE265_AJF1130DataSet2.xsd" xmlns="http://tempuri.org/SE265_AJF1130DataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="SE265_AJF1130DataSet" targetNamespace="http://tempuri.org/SE265_AJF1130DataSet.xsd" xmlns:mstns="http://tempuri.org/SE265_AJF1130DataSet.xsd" xmlns="http://tempuri.org/SE265_AJF1130DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -1070,7 +1070,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="SE265_AJF1130DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SE265_AJF1130DataSet2" msprop:Generator_UserDSName="SE265_AJF1130DataSet2">
+  <xs:element name="SE265_AJF1130DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SE265_AJF1130DataSet" msprop:Generator_UserDSName="SE265_AJF1130DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="_x0036_ACU" msprop:Generator_TableClassName="_6ACUDataTable" msprop:Generator_TableVarName="table6ACU" msprop:Generator_TablePropName="_6ACU" msprop:Generator_RowDeletingName="_6ACURowDeleting" msprop:Generator_RowChangingName="_6ACURowChanging" msprop:Generator_RowEvHandlerName="_6ACURowChangeEventHandler" msprop:Generator_RowDeletedName="_6ACURowDeleted" msprop:Generator_UserTableName="6ACU" msprop:Generator_RowChangedName="_6ACURowChanged" msprop:Generator_RowEvArgName="_6ACURowChangeEvent" msprop:Generator_RowClassName="_6ACURow">
@@ -1856,4 +1856,15 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
       <xs:field xpath="mstns:tbcID" />
     </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_6ACU_Census" msdata:parent="Census" msdata:child="_x0036_ACU" msdata:parentkey="unitID" msdata:childkey="unitID" msprop:Generator_UserChildTable="6ACU" msprop:Generator_ChildPropName="Get6ACURows" msprop:Generator_UserRelationName="FK_6ACU_Census" msprop:Generator_RelationVarName="relationFK_6ACU_Census" msprop:Generator_UserParentTable="Census" msprop:Generator_ParentPropName="CensusRow" />
+      <msdata:Relationship name="FK_BHU_Census" msdata:parent="Census" msdata:child="BHU" msdata:parentkey="unitID" msdata:childkey="unitID" msprop:Generator_UserChildTable="BHU" msprop:Generator_ChildPropName="GetBHURows" msprop:Generator_UserRelationName="FK_BHU_Census" msprop:Generator_RelationVarName="relationFK_BHU_Census" msprop:Generator_UserParentTable="Census" msprop:Generator_ParentPropName="CensusRow" />
+      <msdata:Relationship name="FK_ICU_Census" msdata:parent="Census" msdata:child="ICU" msdata:parentkey="unitID" msdata:childkey="unitID" msprop:Generator_UserChildTable="ICU" msprop:Generator_ChildPropName="GetICURows" msprop:Generator_UserRelationName="FK_ICU_Census" msprop:Generator_ParentPropName="CensusRow" msprop:Generator_RelationVarName="relationFK_ICU_Census" msprop:Generator_UserParentTable="Census" />
+      <msdata:Relationship name="FK_PEDI_Census" msdata:parent="Census" msdata:child="PEDI" msdata:parentkey="unitID" msdata:childkey="unitID" msprop:Generator_UserChildTable="PEDI" msprop:Generator_ChildPropName="GetPEDIRows" msprop:Generator_UserRelationName="FK_PEDI_Census" msprop:Generator_ParentPropName="CensusRow" msprop:Generator_RelationVarName="relationFK_PEDI_Census" msprop:Generator_UserParentTable="Census" />
+      <msdata:Relationship name="FK_T2_Census" msdata:parent="Census" msdata:child="T2" msdata:parentkey="unitID" msdata:childkey="unitID" msprop:Generator_UserChildTable="T2" msprop:Generator_ChildPropName="GetT2Rows" msprop:Generator_UserRelationName="FK_T2_Census" msprop:Generator_ParentPropName="CensusRow" msprop:Generator_RelationVarName="relationFK_T2_Census" msprop:Generator_UserParentTable="Census" />
+      <msdata:Relationship name="FK_T4_Census" msdata:parent="Census" msdata:child="T4" msdata:parentkey="unitID" msdata:childkey="unitID" msprop:Generator_UserChildTable="T4" msprop:Generator_ChildPropName="GetT4Rows" msprop:Generator_UserRelationName="FK_T4_Census" msprop:Generator_ParentPropName="CensusRow" msprop:Generator_RelationVarName="relationFK_T4_Census" msprop:Generator_UserParentTable="Census" />
+      <msdata:Relationship name="FK_TBC_Census" msdata:parent="Census" msdata:child="TBC" msdata:parentkey="unitID" msdata:childkey="unitID" msprop:Generator_UserChildTable="TBC" msprop:Generator_ChildPropName="GetTBCRows" msprop:Generator_UserRelationName="FK_TBC_Census" msprop:Generator_ParentPropName="CensusRow" msprop:Generator_RelationVarName="relationFK_TBC_Census" msprop:Generator_UserParentTable="Census" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>
