@@ -83,14 +83,15 @@ namespace DailyCensusReport
             }
             catch (SqlException ex)
             {
-                throw ex;
-
+                //throw ex;
+                MessageBox.Show(ex.Message);
             }
 
             finally
             {
                 connect.Close();
             }
+            return true;
         }
     }
 }
