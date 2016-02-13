@@ -46,7 +46,7 @@ namespace DailyCensusReport
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-           //reBindText();
+           reBindText();
 
             CalculationColorChanger.CalcColor(
 //ICU
@@ -57,20 +57,20 @@ namespace DailyCensusReport
 
 
 //Populates information into the PDF
-//            PDFSubmit.PDFView(
-////ICU
-//              txtCurrentCensusICU,txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
-////T2
-//              txtCurrentCensusT2,txtAvailableBedsT2,txtIsoPatientsT2,txtDischargesT2,txtNotesT2,txtCurrentCapStatusT2
-//              );
+            PDFSubmit.PDFView(
+    //ICU
+                          txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
+                          ////T2
+              txtCurrentCensusT2,txtAvailableBedsT2,txtIsoPatientsT2,txtDischargesT2,txtNotesT2,txtCurrentCapStatusT2
+              );
 //ICU
-            //int unitID = 1;
-            //string currentCensus = Convert.ToString(txtCurrentCensusICU.Text);
-            //string availBeds = Convert.ToString(txtAvailableBedsICU.Text);
-            //string numOfIsoPatients = Convert.ToString(txtIsoPatientsICU.Text);
-            //string potentialDCs = Convert.ToString(txtDischargesICU.Text);
-            //string notes = Convert.ToString(txtNotesICU.Text);
-            //string currentCapStat = Convert.ToString(txtCurrentCapStatusICU.Text);
+            int unitID = 0;
+            string currentCensus = Convert.ToString(txtCurrentCensusICU.Text);
+            string availBeds = Convert.ToString(txtAvailableBedsICU.Text);
+            string numOfIsoPatients = Convert.ToString(txtIsoPatientsICU.Text);
+            string potentialDCs = Convert.ToString(txtDischargesICU.Text);
+            string notes = Convert.ToString(txtNotesICU.Text);
+            string currentCapStat = Convert.ToString(txtCurrentCapStatusICU.Text);
 ////T2
             //int unitIDT2=0;
             //string currentCensusT2 = Convert.ToString(txtCurrentCensusT2.Text);
@@ -87,7 +87,7 @@ namespace DailyCensusReport
  //AddRecord method that gets the user input and inserts it into the database.
 /****************************************************************************************************************/
 //ICU
-            //SubmitRecord.InsertICU(unitID, currentCensus, availBeds, numOfIsoPatients, potentialDCs, notes, currentCapStat);
+            SubmitRecord.InsertICU(unitID, currentCensus, availBeds, numOfIsoPatients, potentialDCs, notes, currentCapStat);
 ///****************************************************************************************************************/
 ////T2
             //SubmitRecord.InsertT2(unitIDT2, currentCensusT2, availBedsT2, numOfIsoPatientsT2, potentialDCsT2, notesT2, currentCapStatT2);
@@ -111,7 +111,7 @@ namespace DailyCensusReport
         private void reBindText()
         {
 
-        //    boxesICU = new TextBox[] { txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU };
+            //boxesICU = new TextBox[] { txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU };
             
         //    boxesT2 = new TextBox[] { txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2 };
             
@@ -134,13 +134,15 @@ namespace DailyCensusReport
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+
+
             txtCurrentCensusICU.Text = "";
             txtAvailableBedsICU.Text = "";
             txtIsoPatientsICU.Text = "";
             txtDischargesICU.Text = "";
             txtNotesICU.Text = "";
             txtCurrentCapStatusICU.Text = "";
-            
+            txtCurrentCapStatusICU.BackColor = Color.White;
         }
     }
 }

@@ -11,11 +11,9 @@ namespace DailyCensusReport
 {
     public class SubmitRecord
     {
-
-        /****************************************************************************************************************/
         //ICU
 
-        public static bool InsertICU(int icuID,string currentCensus, string availBeds, string numOfIsoPatients, string potentialDCs, string notes, string currentCapStat)
+        public static bool InsertICU(int unitID, string currentCensus, string availBeds, string numOfIsoPatients, string potentialDCs, string notes, string currentCapStat)
         {
 
             //this add to database based what is giving.
@@ -23,8 +21,8 @@ namespace DailyCensusReport
             SqlCommand cmd = new SqlCommand("spInsertICU", connect);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "spInsertICU";
-            
-            cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = icuID;
+
+            cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitID;
             cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = currentCensus;
             cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = availBeds;
             cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = numOfIsoPatients;
