@@ -34,26 +34,26 @@ namespace DailyCensusReport
         //    txtCurrentCapStatusT2.Text = "";
 
             int totalICUBeds = 9;
-            int totalCensusColor = (ICUCC1 / ICUAB2) * 125;
+            decimal totalCensusColor = (totalICUBeds / ICUAB2) * 125m;
         //ICU
-            if (totalCensusColor <= 50)
+            if (totalCensusColor <= .50m)
             {
                 txtCurrentCapStatusICU.BackColor = Color.Green;
                 txtCurrentCapStatusICU.Text = "GREEN";
             }
 
-            else if (totalCensusColor >= 90)
+            else if (totalCensusColor >= .90m)
                 {
                     txtCurrentCapStatusICU.BackColor = Color.Yellow;
                     txtCurrentCapStatusICU.Text = "YELLOW";
                 }
-            else if (totalCensusColor >= 120)
+            else if (totalCensusColor >= .120m)
             {
                 txtCurrentCapStatusICU.BackColor = Color.Orange;
                 txtCurrentCapStatusICU.Text = "ORANGE";
             }
 
-            else if (totalCensusColor >= 121)
+            else if (totalCensusColor >= .121m)
             {
                 txtCurrentCapStatusICU.BackColor = Color.Red;
                 txtCurrentCapStatusICU.Text = "RED";
