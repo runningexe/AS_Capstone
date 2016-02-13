@@ -145,7 +145,8 @@ namespace DailyCensusReport
                     int ICUAB2 = Convert.ToInt32(txtAvailableBedsICU.Text);
 
                     int totalICUBeds = 9;
-                    decimal totalCensusColor = (totalICUBeds / ICUAB2) * 125m;
+                    totalICUBeds = Convert.ToInt32(txtCurrentCensusICU.Text);
+                    decimal totalCensusColor = (totalICUBeds / ICUAB2) * 100;
 
                     if (totalCensusColor <= .50m)
                     {
@@ -155,7 +156,7 @@ namespace DailyCensusReport
                         cell100.BackgroundColor = BaseColor.GREEN;
                         pdfTable.AddCell(cell100);
                     }
-                    else if (icuCurrentCensus >= .90m)
+                    else if (totalCensusColor >= .60m)
                     {
                         //ICU Row Added
                         PdfPCell cell100 = new PdfPCell();
@@ -164,7 +165,7 @@ namespace DailyCensusReport
                         pdfTable.AddCell(cell100);
                     }
 
-                    else if (totalCensusColor >= .120m)
+                    else if (totalCensusColor >= .70m)
                     {
                         //ICU Row Added
                         PdfPCell cell100 = new PdfPCell();
@@ -173,7 +174,7 @@ namespace DailyCensusReport
                         pdfTable.AddCell(cell100);
                     }
 
-                    else if (totalCensusColor >= .121m)
+                    else if (totalCensusColor >= .90m)
                     {
                         //ICU Row Added
                         PdfPCell cell100 = new PdfPCell();
@@ -189,54 +190,54 @@ namespace DailyCensusReport
                     #region T2 Row
 
 /*********************T2 Data*********************/
-                    PdfPCell cell34 = new PdfPCell();
-                    cell34.AddElement(new Paragraph("T2 M/S"));
-                    cell34.BackgroundColor = BaseColor.LIGHT_GRAY;
+                    //PdfPCell cell34 = new PdfPCell();
+                    //cell34.AddElement(new Paragraph("T2 M/S"));
+                    //cell34.BackgroundColor = BaseColor.LIGHT_GRAY;
 
-                    PdfPCell cell35 = new PdfPCell();
-                    cell35.AddElement(new Paragraph(txtCurrentCensusT2.Text));
+                    //PdfPCell cell35 = new PdfPCell();
+                    //cell35.AddElement(new Paragraph(txtCurrentCensusT2.Text));
                     
-                    PdfPCell cell36 = new PdfPCell();
-                    cell36.AddElement(new Paragraph(txtAvailableBedsT2.Text));
+                    //PdfPCell cell36 = new PdfPCell();
+                    //cell36.AddElement(new Paragraph(txtAvailableBedsT2.Text));
 
-                    PdfPCell cell37 = new PdfPCell();
-                    cell37.AddElement(new Paragraph(txtIsoPatientsT2.Text));
+                    //PdfPCell cell37 = new PdfPCell();
+                    //cell37.AddElement(new Paragraph(txtIsoPatientsT2.Text));
 
-                    PdfPCell cell38 = new PdfPCell();
-                    cell38.AddElement(new Paragraph(txtDischargesT2.Text));
+                    //PdfPCell cell38 = new PdfPCell();
+                    //cell38.AddElement(new Paragraph(txtDischargesT2.Text));
 
-                    PdfPCell cell39 = new PdfPCell();
-                    cell39.AddElement(new Paragraph(txtNotesT2.Text));
+                    //PdfPCell cell39 = new PdfPCell();
+                    //cell39.AddElement(new Paragraph(txtNotesT2.Text));
 
-                    pdfTable.AddCell(cell34);
-                    pdfTable.AddCell(cell35);
-                    pdfTable.AddCell(cell36);
-                    pdfTable.AddCell(cell37);
-                    pdfTable.AddCell(cell38);
-                    pdfTable.AddCell(cell39);
-                    /*************************************************/
+                    //pdfTable.AddCell(cell34);
+                    //pdfTable.AddCell(cell35);
+                    //pdfTable.AddCell(cell36);
+                    //pdfTable.AddCell(cell37);
+                    //pdfTable.AddCell(cell38);
+                    //pdfTable.AddCell(cell39);
+                    ///*************************************************/
 
-                    /****Dynamically changing PDF/Textbox colors.****/
+                    ///****Dynamically changing PDF/Textbox colors.****/
 
-                    int t2CurrentCensus = Convert.ToInt32(txtCurrentCensusT2.Text);
-                    int T2AB2 = Convert.ToInt32(txtAvailableBedsT2.Text);
+                    //int t2CurrentCensus = Convert.ToInt32(txtCurrentCensusT2.Text);
+                    //int T2AB2 = Convert.ToInt32(txtAvailableBedsT2.Text);
 
-                    if (t2CurrentCensus <= 5)
-                    {
-                        //T2 Row Added
-                        PdfPCell cell200 = new PdfPCell();
-                        cell200.AddElement(new Paragraph(txtCurrentCapStatusT2.Text));
-                        cell200.BackgroundColor = BaseColor.GREEN;
-                        pdfTable.AddCell(cell200);
-                    }
-                    else if (t2CurrentCensus >= 6)
-                    {
-                        //T2 Row Added
-                        PdfPCell cell200 = new PdfPCell();
-                        cell200.AddElement(new Paragraph(txtCurrentCapStatusT2.Text));
-                        cell200.BackgroundColor = BaseColor.RED;
-                        pdfTable.AddCell(cell200);
-                    }
+                    //if (t2CurrentCensus <= 5)
+                    //{
+                    //    //T2 Row Added
+                    //    PdfPCell cell200 = new PdfPCell();
+                    //    cell200.AddElement(new Paragraph(txtCurrentCapStatusT2.Text));
+                    //    cell200.BackgroundColor = BaseColor.GREEN;
+                    //    pdfTable.AddCell(cell200);
+                    //}
+                    //else if (t2CurrentCensus >= 6)
+                    //{
+                    //    //T2 Row Added
+                    //    PdfPCell cell200 = new PdfPCell();
+                    //    cell200.AddElement(new Paragraph(txtCurrentCapStatusT2.Text));
+                    //    cell200.BackgroundColor = BaseColor.RED;
+                    //    pdfTable.AddCell(cell200);
+                    //}
                     /*************************************************/
                     #endregion
 

@@ -28,13 +28,10 @@ namespace DailyCensusReport
             int ICUAB2 = Convert.ToInt32(txtAvailableBedsICU.Text);
             txtCurrentCapStatusICU.Text = "";
 
-        ////T2
-        //    int T2CC1 = Convert.ToInt32(txtCurrentCensusT2.Text);
-        //    int T2AB2 = Convert.ToInt32(txtAvailableBedsT2.Text);
-        //    txtCurrentCapStatusT2.Text = "";
 
             int totalICUBeds = 9;
-            decimal totalCensusColor = (totalICUBeds / ICUAB2) * 125m;
+            totalICUBeds = Convert.ToInt32(txtCurrentCensusICU.Text);
+            decimal totalCensusColor = (totalICUBeds / ICUAB2) * 100;
         //ICU
             if (totalCensusColor <= .50m)
             {
@@ -42,24 +39,29 @@ namespace DailyCensusReport
                 txtCurrentCapStatusICU.Text = "GREEN";
             }
 
-            else if (totalCensusColor >= .90m)
+            else if (totalCensusColor >= .60m && totalCensusColor <= .70m)
                 {
                     txtCurrentCapStatusICU.BackColor = Color.Yellow;
                     txtCurrentCapStatusICU.Text = "YELLOW";
                 }
-            else if (totalCensusColor >= .120m)
-            {
+            else if (totalCensusColor >= .71m && totalCensusColor <= .80m)
+                {
                 txtCurrentCapStatusICU.BackColor = Color.Orange;
                 txtCurrentCapStatusICU.Text = "ORANGE";
-            }
+                 }
 
-            else if (totalCensusColor >= .121m)
-            {
+            else if (totalCensusColor > .90m)
+                {
                 txtCurrentCapStatusICU.BackColor = Color.Red;
                 txtCurrentCapStatusICU.Text = "RED";
-            }
+                 }
 
+           
         ////T2
+        //    int T2CC1 = Convert.ToInt32(txtCurrentCensusT2.Text);
+        //    int T2AB2 = Convert.ToInt32(txtAvailableBedsT2.Text);
+        //    txtCurrentCapStatusT2.Text = "";
+    //T2
         //    if (T2CC1 <= 5)
         //    {
         //        txtCurrentCapStatusT2.BackColor = Color.Green;

@@ -57,12 +57,12 @@ namespace DailyCensusReport
 
 
 //Populates information into the PDF
-            PDFSubmit.PDFView(
-//ICU
-              txtCurrentCensusICU,txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
-//T2
-              txtCurrentCensusT2,txtAvailableBedsT2,txtIsoPatientsT2,txtDischargesT2,txtNotesT2,txtCurrentCapStatusT2
-              );
+//            PDFSubmit.PDFView(
+////ICU
+//              txtCurrentCensusICU,txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
+////T2
+//              txtCurrentCensusT2,txtAvailableBedsT2,txtIsoPatientsT2,txtDischargesT2,txtNotesT2,txtCurrentCapStatusT2
+//              );
 //ICU
             //int unitID = 1;
             //string currentCensus = Convert.ToString(txtCurrentCensusICU.Text);
@@ -130,6 +130,17 @@ namespace DailyCensusReport
         //    boxesAllCurrentCensus = new TextBox[] { txtCurrentCensusICU, txtCurrentCensusT2 };
 
         //    boxesAllAvailBeds = new TextBox[] { txtAvailableBedsICU, txtAvailableBedsT2 };
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtCurrentCensusICU.Text = "";
+            txtAvailableBedsICU.Text = "";
+            txtIsoPatientsICU.Text = "";
+            txtDischargesICU.Text = "";
+            txtNotesICU.Text = "";
+            txtCurrentCapStatusICU.Text = "";
+            
         }
     }
 }
