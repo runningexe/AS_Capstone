@@ -143,7 +143,7 @@ namespace DailyCensusReport
 
                     int totalICUBeds = 9;
                     totalICUBeds = Convert.ToInt32(txtCurrentCensusICU.Text);
-                    txtCurrentCapStatusICU.Text = "";
+                    //txtCurrentCapStatusICU.Text = "";
 
                     if (totalICUBeds <= 2)
                     {

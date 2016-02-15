@@ -52,17 +52,28 @@ namespace DailyCensusReport
 
            
      //T2
-            int T2CC1 = Convert.ToInt32(txtCurrentCensusT2.Text);
-            int T2AB2 = Convert.ToInt32(txtAvailableBedsT2.Text);
+            int totalT2Beds = 28;
+            totalT2Beds = Convert.ToInt32(txtCurrentCensusT2.Text);
             txtCurrentCapStatusT2.Text = "";
     //T2
-            if (T2CC1 <= 5)
+            if (totalT2Beds <= 14)
             {
                 txtCurrentCapStatusT2.BackColor = Color.Green;
                 txtCurrentCapStatusT2.Text = "GREEN";
             }
 
-            else if (T2CC1 >= 6)
+            else if (totalT2Beds <= 17)
+            {
+                txtCurrentCapStatusT2.BackColor = Color.Yellow;
+                txtCurrentCapStatusT2.Text = "YELLOW";
+            }
+            else if (totalT2Beds <= 20)
+            {
+                txtCurrentCapStatusT2.BackColor = Color.Orange;
+                txtCurrentCapStatusT2.Text = "ORANGE";
+            }
+
+            else if (totalT2Beds >= 20 && totalT2Beds <= 28)
             {
                 txtCurrentCapStatusT2.BackColor = Color.Red;
                 txtCurrentCapStatusT2.Text = "RED";
