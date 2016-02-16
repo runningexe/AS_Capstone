@@ -13,46 +13,46 @@ namespace DailyCensusReport
     {
         //ICU
 
-        //public static bool InsertICU(int unitID, string currentCensus, string availBeds, string numOfIsoPatients, string potentialDCs, string notes, string currentCapStat)
-        //{
+        public static bool InsertICU(int unitID, string currentCensus, string availBeds, string numOfIsoPatients, string potentialDCs, string notes, string currentCapStat)
+        {
 
-        //    //this add to database based what is giving.
-        //    SqlConnection connect = DBConnect.GetConnection();
-        //    SqlCommand cmd = new SqlCommand("spInsertICU", connect);
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    cmd.CommandText = "spInsertICU";
-            
-        //    cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitID;
-        //    cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = currentCensus;
-        //    cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = availBeds;
-        //    cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = numOfIsoPatients;
-        //    cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = potentialDCs;
-        //    cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = notes;
-        //    cmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = currentCapStat;
+            //this add to database based what is giving.
+            SqlConnection connect = DBConnect.GetConnection();
+            SqlCommand cmd = new SqlCommand("spInsertICU", connect);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "spInsertICU";
 
-        //    try
-        //    {
-        //        connect.Open();
-        //        //executes then check to see if correct.
-        //        int count = cmd.ExecuteNonQuery();
-        //        if (count > 0)
-        //            return true;
-        //        else
-        //            return false;
-        //    }
-        //    catch (SqlException ex)
-        //    {
-        //        //throw ex;
-        //        MessageBox.Show(ex.Message);
+            cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitID;
+            cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = currentCensus;
+            cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = availBeds;
+            cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = numOfIsoPatients;
+            cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = potentialDCs;
+            cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = notes;
+            cmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = currentCapStat;
 
-        //    }
+            try
+            {
+                connect.Open();
+                //executes then check to see if correct.
+                int count = cmd.ExecuteNonQuery();
+                if (count > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (SqlException ex)
+            {
+                //throw ex;
+                MessageBox.Show(ex.Message);
 
-        //    finally
-        //    {
-        //        connect.Close();
-        //    }
-        //    return true;
-        //}
+            }
+
+            finally
+            {
+                connect.Close();
+            }
+            return true;
+        }
 
 /************************************************************************************************************/
        //T2

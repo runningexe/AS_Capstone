@@ -97,7 +97,7 @@ namespace DailyCensusReport
  //AddRecord method that gets the user input and inserts it into the database.
 /****************************************************************************************************************/
 //ICU
-            //SubmitRecord.InsertICU(unitID, currentCensus, availBeds, numOfIsoPatients, potentialDCs, notes, currentCapStat);
+            SubmitRecord.InsertICU(unitID, currentCensus, availBeds, numOfIsoPatients, potentialDCs, notes, currentCapStat);
 ///****************************************************************************************************************/
 ////T2
             //SubmitRecord.InsertT2(unitIDT2, currentCensusT2, availBedsT2, numOfIsoPatientsT2, potentialDCsT2, notesT2, currentCapStatT2);
