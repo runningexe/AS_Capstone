@@ -16,17 +16,17 @@ namespace DailyCensusReport
     class CalculationColorChanger
     {
         public static bool CalcColor(
-/**ICU**/
+            /**ICU**/
             TextBox txtCurrentCensusICU, TextBox txtAvailableBedsICU, TextBox txtIsoPatientsICU, TextBox txtDischargesICU, TextBox txtNotesICU, TextBox txtCurrentCapStatusICU,
-/**T2**/
+            /**T2**/
             TextBox txtCurrentCensusT2, TextBox txtAvailableBedsT2, TextBox txtIsoPatientsT2, TextBox txtDischargesT2, TextBox txtNotesT2, TextBox txtCurrentCapStatusT2)
         {
 
-        //ICU
+            //ICU
             int totalICUBeds = 9;
             totalICUBeds = Convert.ToInt32(txtCurrentCensusICU.Text);
             txtCurrentCapStatusICU.Text = "";
-        
+
             if (totalICUBeds <= 2)
             {
                 txtCurrentCapStatusICU.BackColor = Color.Green;
@@ -34,28 +34,28 @@ namespace DailyCensusReport
             }
 
             else if (totalICUBeds <= 4)
-                {
-                    txtCurrentCapStatusICU.BackColor = Color.Yellow;
-                    txtCurrentCapStatusICU.Text = "YELLOW";
-                }
+            {
+                txtCurrentCapStatusICU.BackColor = Color.Yellow;
+                txtCurrentCapStatusICU.Text = "YELLOW";
+            }
             else if (totalICUBeds <= 5)
-                {
+            {
                 txtCurrentCapStatusICU.BackColor = Color.Orange;
                 txtCurrentCapStatusICU.Text = "ORANGE";
-                 }
+            }
 
-            else if (totalICUBeds >= 6 && totalICUBeds <=9)
-                {
+            else if (totalICUBeds >= 6 && totalICUBeds <= 9)
+            {
                 txtCurrentCapStatusICU.BackColor = Color.Red;
                 txtCurrentCapStatusICU.Text = "RED";
-                 }
+            }
 
-           
-     //T2
+
+            //T2
             int totalT2Beds = 28;
             totalT2Beds = Convert.ToInt32(txtCurrentCensusT2.Text);
             txtCurrentCapStatusT2.Text = "";
-    //T2
+            //T2
             if (totalT2Beds <= 14)
             {
                 txtCurrentCapStatusT2.BackColor = Color.Green;
@@ -79,6 +79,6 @@ namespace DailyCensusReport
                 txtCurrentCapStatusT2.Text = "RED";
             }
             return true;
-        } 
+        }
     }
 }

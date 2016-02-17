@@ -73,8 +73,11 @@ namespace DailyCensusReport
 //T2
               txtCurrentCensusT2,txtAvailableBedsT2,txtIsoPatientsT2,txtDischargesT2,txtNotesT2,txtCurrentCapStatusT2
               );
+
+
+            //Will have to give a unitID for each table
 //ICU
-            int unitID = 0;
+            int unitID = 1;
             string currentCensus = Convert.ToString(txtCurrentCensusICU.Text);
             string availBeds = Convert.ToString(txtAvailableBedsICU.Text);
             string numOfIsoPatients = Convert.ToString(txtIsoPatientsICU.Text);
@@ -82,13 +85,13 @@ namespace DailyCensusReport
             string notes = Convert.ToString(txtNotesICU.Text);
             string currentCapStat = Convert.ToString(txtCurrentCapStatusICU.Text);
 ////T2
-            //int unitIDT2=0;
-            //string currentCensusT2 = Convert.ToString(txtCurrentCensusT2.Text);
-            //string availBedsT2 = Convert.ToString(txtAvailableBedsT2.Text);
-            //string numOfIsoPatientsT2 = Convert.ToString(txtIsoPatientsT2.Text);
-            //string potentialDCsT2 = Convert.ToString(txtDischargesT2.Text);
-            //string notesT2 = Convert.ToString(txtNotesT2.Text);
-            //string currentCapStatT2 = Convert.ToString(txtCurrentCapStatusT2.Text);
+            int unitIDT2 = 2;
+            string currentCensusT2 = Convert.ToString(txtCurrentCensusT2.Text);
+            string availBedsT2 = Convert.ToString(txtAvailableBedsT2.Text);
+            string numOfIsoPatientsT2 = Convert.ToString(txtIsoPatientsT2.Text);
+            string potentialDCsT2 = Convert.ToString(txtDischargesT2.Text);
+            string notesT2 = Convert.ToString(txtNotesT2.Text);
+            string currentCapStatT2 = Convert.ToString(txtCurrentCapStatusT2.Text);
 
            
 
@@ -100,7 +103,7 @@ namespace DailyCensusReport
             SubmitRecord.InsertICU(unitID, currentCensus, availBeds, numOfIsoPatients, potentialDCs, notes, currentCapStat);
 ///****************************************************************************************************************/
 ////T2
-            //SubmitRecord.InsertT2(unitIDT2, currentCensusT2, availBedsT2, numOfIsoPatientsT2, potentialDCsT2, notesT2, currentCapStatT2);
+            SubmitRecord.InsertT2(unitIDT2, currentCensusT2, availBedsT2, numOfIsoPatientsT2, potentialDCsT2, notesT2, currentCapStatT2);
             
         }
 
