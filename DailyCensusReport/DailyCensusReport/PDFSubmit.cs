@@ -136,7 +136,7 @@ namespace DailyCensusReport
 
                 int totalICUBeds = 9;
                 totalICUBeds = Convert.ToInt32(txtCurrentCensusICU.Text);
-                //txtCurrentCapStatusICU.Text = "";
+                
 
                 if (totalICUBeds <= 2)
                 {
@@ -209,10 +209,11 @@ namespace DailyCensusReport
 
                 /****Dynamically changing PDF/Textbox colors.****/
 
-                int t2CurrentCensus = Convert.ToInt32(txtCurrentCensusT2.Text);
-                int T2AB2 = Convert.ToInt32(txtAvailableBedsT2.Text);
+                int totalT2Beds = 28;
+                totalT2Beds = Convert.ToInt32(txtCurrentCensusT2.Text);
+                
 
-                if (t2CurrentCensus <= 5)
+                if (totalT2Beds <= 14)
                 {
                     //T2 Row Added
                     PdfPCell cell200 = new PdfPCell();
@@ -220,7 +221,24 @@ namespace DailyCensusReport
                     cell200.BackgroundColor = BaseColor.GREEN;
                     pdfTable.AddCell(cell200);
                 }
-                else if (t2CurrentCensus >= 6)
+                else if (totalT2Beds <= 17)
+                {
+                    //T2 Row Added
+                    PdfPCell cell200 = new PdfPCell();
+                    cell200.AddElement(new Paragraph(txtCurrentCapStatusT2.Text));
+                    cell200.BackgroundColor = BaseColor.YELLOW;
+                    pdfTable.AddCell(cell200);
+                }
+                else if (totalT2Beds <= 20)
+                {
+                    //T2 Row Added
+                    PdfPCell cell200 = new PdfPCell();
+                    cell200.AddElement(new Paragraph(txtCurrentCapStatusT2.Text));
+                    cell200.BackgroundColor = BaseColor.ORANGE;
+                    pdfTable.AddCell(cell200);
+                }
+
+                else if (totalT2Beds >= 20 && totalT2Beds <= 28)
                 {
                     //T2 Row Added
                     PdfPCell cell200 = new PdfPCell();
