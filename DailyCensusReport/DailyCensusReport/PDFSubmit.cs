@@ -19,7 +19,9 @@ namespace DailyCensusReport
             /**ICU**/
             TextBox txtCurrentCensusICU, TextBox txtAvailableBedsICU, TextBox txtIsoPatientsICU, TextBox txtDischargesICU, TextBox txtNotesICU, TextBox txtCurrentCapStatusICU,
             /**T2**/
-            TextBox txtCurrentCensusT2, TextBox txtAvailableBedsT2, TextBox txtIsoPatientsT2, TextBox txtDischargesT2, TextBox txtNotesT2, TextBox txtCurrentCapStatusT2)
+            TextBox txtCurrentCensusT2, TextBox txtAvailableBedsT2, TextBox txtIsoPatientsT2, TextBox txtDischargesT2, TextBox txtNotesT2, TextBox txtCurrentCapStatusT2,
+            /**PEDI**/
+            TextBox txtCurrentCensusPEDI, TextBox txtAvailableBedsPEDI, TextBox txtIsoPatientsPEDI, TextBox txtDischargesPEDI, TextBox txtNotesPEDI, TextBox txtCurrentCapStatusPEDI)
 
         {
             //Creates a new SFD object (Opens the Save File Box)
@@ -251,54 +253,73 @@ namespace DailyCensusReport
 
                 #region PEDI Row
                 ///*********************PEDI Data*********************/
-                //PdfPCell cell40 = new PdfPCell();
-                //cell40.AddElement(new Paragraph("PEDI(T2)"));
-                //cell40.BackgroundColor = BaseColor.LIGHT_GRAY;
+                PdfPCell cell40 = new PdfPCell();
+                cell40.AddElement(new Paragraph("PEDI(T2)"));
+                cell40.BackgroundColor = BaseColor.LIGHT_GRAY;
 
-                //PdfPCell cell41 = new PdfPCell();
-                //cell41.AddElement(new Paragraph(currentCensus.Text));
+                PdfPCell cell41 = new PdfPCell();
+                cell41.AddElement(new Paragraph(txtCurrentCensusPEDI.Text));
 
-                //PdfPCell cell42 = new PdfPCell();
-                //cell42.AddElement(new Paragraph(availableBeds.Text));
+                PdfPCell cell42 = new PdfPCell();
+                cell42.AddElement(new Paragraph(txtAvailableBedsPEDI.Text));
 
-                //PdfPCell cell43 = new PdfPCell();
-                //cell43.AddElement(new Paragraph(numOfIsoPatients.Text));
+                PdfPCell cell43 = new PdfPCell();
+                cell43.AddElement(new Paragraph(txtIsoPatientsPEDI.Text));
 
-                //PdfPCell cell44 = new PdfPCell();
-                //cell44.AddElement(new Paragraph(potentialDCs.Text));
+                PdfPCell cell44 = new PdfPCell();
+                cell44.AddElement(new Paragraph(txtDischargesPEDI.Text));
 
-                //PdfPCell cell45 = new PdfPCell();
-                //cell45.AddElement(new Paragraph(notes.Text));
+                PdfPCell cell45 = new PdfPCell();
+                cell45.AddElement(new Paragraph(txtNotesPEDI.Text));
 
-                //pdfTable.AddCell(cell40);
-                //pdfTable.AddCell(cell41);
-                //pdfTable.AddCell(cell42);
-                //pdfTable.AddCell(cell43);
-                //pdfTable.AddCell(cell44);
-                //pdfTable.AddCell(cell45);
-                ///*************************************************/
+                pdfTable.AddCell(cell40);
+                pdfTable.AddCell(cell41);
+                pdfTable.AddCell(cell42);
+                pdfTable.AddCell(cell43);
+                pdfTable.AddCell(cell44);
+                pdfTable.AddCell(cell45);
+               /*************************************************/
 
-                ///****Dynamically changing PDF/Textbox colors.****/
+              /****Dynamically changing PDF/Textbox colors.****/
+                int totalPEDIBeds = 28;
+                totalPEDIBeds = Convert.ToInt32(txtCurrentCensusPEDI.Text);
 
-                //int pediCurrentCensus = Convert.ToInt32(currentCensus.Text);
 
-                //if (pediCurrentCensus <= 5)
-                //{
-                //    //ICU Row Added
-                //    PdfPCell colorChangeCell = new PdfPCell();
-                //    colorChangeCell.AddElement(new Paragraph(currentCapStatus.Text));
-                //    colorChangeCell.BackgroundColor = BaseColor.GREEN;
-                //    pdfTable.AddCell(colorChangeCell);
-                //}
-                //else if (pediCurrentCensus > 7)
-                //{
-                //    //ICU Row Added
-                //    PdfPCell colorChangeCell = new PdfPCell();
-                //    colorChangeCell.AddElement(new Paragraph(currentCapStatus.Text));
-                //    colorChangeCell.BackgroundColor = BaseColor.RED;
-                //    pdfTable.AddCell(colorChangeCell);
-                //}
-                ///*************************************************/
+                if (totalPEDIBeds <= 14)
+                {
+                    //T2 Row Added
+                    PdfPCell cell300 = new PdfPCell();
+                    cell300.AddElement(new Paragraph(txtCurrentCapStatusPEDI.Text));
+                    cell300.BackgroundColor = BaseColor.GREEN;
+                    pdfTable.AddCell(cell300);
+                }
+                else if (totalPEDIBeds <= 17)
+                {
+                    //PEDI Row Added
+                    PdfPCell cell300 = new PdfPCell();
+                    cell300.AddElement(new Paragraph(txtCurrentCapStatusPEDI.Text));
+                    cell300.BackgroundColor = BaseColor.YELLOW;
+                    pdfTable.AddCell(cell300);
+                }
+                else if (totalPEDIBeds <= 20)
+                {
+                    //PEDI Row Added
+                    PdfPCell cell300 = new PdfPCell();
+                    cell300.AddElement(new Paragraph(txtCurrentCapStatusPEDI.Text));
+                    cell300.BackgroundColor = BaseColor.ORANGE;
+                    pdfTable.AddCell(cell300);
+                }
+
+                else if (totalPEDIBeds >= 20 && totalPEDIBeds <= 28)
+                {
+                    //PEDI Row Added
+                    PdfPCell cell300 = new PdfPCell();
+                    cell300.AddElement(new Paragraph(txtCurrentCapStatusPEDI.Text));
+                    cell300.BackgroundColor = BaseColor.RED;
+                    pdfTable.AddCell(cell300);
+                }
+
+                /*************************************************/
                 #endregion
 
                 #region T4 Row

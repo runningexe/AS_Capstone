@@ -19,7 +19,7 @@ namespace DailyCensusReport
     {
         public TextBox[] boxesICU { get; set; }
         public TextBox[] boxesT2 { get; set; }
-        //public TextBox[] boxesPEDI { get; set; }
+        public TextBox[] boxesPEDI { get; set; }
         //public TextBox[] boxesT4 { get; set; }
         //public TextBox[] boxes6ACU { get; set; }
         //public TextBox[] boxesTBC { get; set; }
@@ -55,37 +55,69 @@ namespace DailyCensusReport
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             //An array that holds generic variables that will be used for each unit/table.
-            string[] allVar = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
 
-            CalculationColorChanger.CalcColor(txtCurrentCensusICU, txtCurrentCapStatusICU, txtCurrentCensusT2, txtCurrentCapStatusT2);
+            //ICU
+            string[] varICU = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+            //T2
+            string[] varT2 = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+
+            //PEDI
+            string[] varPEDI = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+
+            CalculationColorChanger.CalcColor(
+            //ICU
+              txtCurrentCensusICU, txtCurrentCapStatusICU, 
+
+            //T2
+              txtCurrentCensusT2, txtCurrentCapStatusT2,
+
+            //PEDI
+              txtCurrentCensusPEDI, txtCurrentCapStatusPEDI);
 
             //Populates information into the PDF based on the user's input.
             PDFSubmit.PDFView(
+              //ICU
               txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
-              txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2
+
+              //T2
+              txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2,
+
+              //PEDI
+              txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI
               );
 
             /***Will have to give a unitID for each table***/
-            //ICU
-            int unitID = 1;
-            boxesICU = new TextBox[] { txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU };
-            for (int i = 0; i < boxesICU.Length; i++)
-            {
-                allVar[i] = Convert.ToString(boxesICU[i].Text);
-            }
+                
+                //ICU
+                int unitID = 1;
+                boxesICU = new TextBox[] { txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU };
+                for (int i = 0; i < boxesICU.Length; i++)
+                {
+                    varICU[i] = Convert.ToString(boxesICU[i].Text);
+                }
 
                 //T2
                 int unitIDT2 = 2;
                 boxesT2 = new TextBox[] { txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2 };
-                for (int i = 0; i < boxesICU.Length; i++)
+                for (int i = 0; i < boxesT2.Length; i++)
                 {
-                    allVar[i] = Convert.ToString(boxesICU[i].Text);
+                    varT2[i] = Convert.ToString(boxesT2[i].Text);
+                }
+
+                //PEDI
+                int unitIDPEDI = 3;
+                boxesPEDI = new TextBox[] { txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI };
+                for (int i = 0; i < boxesPEDI.Length; i++)
+                {
+                    varPEDI[i] = Convert.ToString(boxesPEDI[i].Text);
                 }
 
             //ICU
-            SubmitRecord.InsertICU(unitID, allVar);
+            SubmitRecord.InsertICU(unitID, varICU);
             //T2
-            SubmitRecord.InsertT2(unitIDT2, allVar);
+            SubmitRecord.InsertT2(unitIDT2, varT2);
+            //PEDI
+            SubmitRecord.InsertPEDI(unitIDPEDI, varPEDI);
         }
 
         //Redirects to the ViewRecord Form

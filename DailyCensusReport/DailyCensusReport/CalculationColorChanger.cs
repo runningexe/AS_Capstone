@@ -17,10 +17,11 @@ namespace DailyCensusReport
     {
         public static bool CalcColor(
             TextBox txtCurrentCensusICU, TextBox txtCurrentCapStatusICU,
-            TextBox txtCurrentCensusT2, TextBox txtCurrentCapStatusT2)
+            TextBox txtCurrentCensusT2, TextBox txtCurrentCapStatusT2,
+            TextBox txtCurrentCensusPEDI,TextBox txtCurrentCapStatusPEDI)
            
         {
-            //Determine the ICU Current Capacity Status
+//Determine the ICU Current Capacity Status
             int totalICUBeds = 9;
             totalICUBeds = Convert.ToInt32(txtCurrentCensusICU.Text);
             txtCurrentCapStatusICU.Text = "";
@@ -46,7 +47,7 @@ namespace DailyCensusReport
                             txtCurrentCapStatusICU.Text = "RED";
                         }
 
-            //Determine the T2 Current Capacity Status
+//Determine the T2 Current Capacity Status
             int totalT2Beds = 28;
             totalT2Beds = Convert.ToInt32(txtCurrentCensusT2.Text);
             txtCurrentCapStatusT2.Text = "";
@@ -72,6 +73,33 @@ namespace DailyCensusReport
                             txtCurrentCapStatusT2.BackColor = Color.Red;
                             txtCurrentCapStatusT2.Text = "RED";
                         }
+
+//Determine the PEDI Current Capacity Status
+            int totalPEDIBeds = 28;
+            totalPEDIBeds = Convert.ToInt32(txtCurrentCensusPEDI.Text);
+            txtCurrentCapStatusPEDI.Text = "";
+
+                if (totalPEDIBeds <= 14)
+                {
+                    txtCurrentCapStatusPEDI.BackColor = Color.Green;
+                    txtCurrentCapStatusPEDI.Text = "GREEN";
+                }
+                    else if (totalPEDIBeds <= 17)
+                    {
+                        txtCurrentCapStatusPEDI.BackColor = Color.Yellow;
+                        txtCurrentCapStatusPEDI.Text = "YELLOW";
+                    }
+                        else if (totalPEDIBeds <= 20)
+                        {
+                            txtCurrentCapStatusPEDI.BackColor = Color.Orange;
+                            txtCurrentCapStatusPEDI.Text = "ORANGE";
+                        }
+
+                            else if (totalPEDIBeds >= 20 && totalPEDIBeds <= 28)
+                            {
+                                txtCurrentCapStatusPEDI.BackColor = Color.Red;
+                                txtCurrentCapStatusPEDI.Text = "RED";
+                            }
             return true;
         }
     }
