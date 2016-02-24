@@ -20,7 +20,7 @@ namespace DailyCensusReport
         public TextBox[] boxesICU { get; set; }
         public TextBox[] boxesT2 { get; set; }
         public TextBox[] boxesPEDI { get; set; }
-        //public TextBox[] boxesT4 { get; set; }
+        public TextBox[] boxesT4 { get; set; }
         //public TextBox[] boxes6ACU { get; set; }
         //public TextBox[] boxesTBC { get; set; }
         //public TextBox[] boxesBHU { get; set; }
@@ -35,21 +35,7 @@ namespace DailyCensusReport
 
         private void frmDailyCensusReport_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.BHU' table. You can move, or remove it, as needed.
-            this.bHUTableAdapter.Fill(this.sE265_AJF1130DataSet.BHU);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.TBC' table. You can move, or remove it, as needed.
-            this.tBCTableAdapter.Fill(this.sE265_AJF1130DataSet.TBC);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet._6ACU' table. You can move, or remove it, as needed.
-            this._6ACUTableAdapter.Fill(this.sE265_AJF1130DataSet._6ACU);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.T4' table. You can move, or remove it, as needed.
-            this.t4TableAdapter.Fill(this.sE265_AJF1130DataSet.T4);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.PEDI' table. You can move, or remove it, as needed.
-            this.pEDITableAdapter.Fill(this.sE265_AJF1130DataSet.PEDI);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.T2' table. You can move, or remove it, as needed.
-            this.t2TableAdapter.Fill(this.sE265_AJF1130DataSet.T2);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.ICU' table. You can move, or remove it, as needed.
-            this.iCUTableAdapter.Fill(this.sE265_AJF1130DataSet.ICU);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet2.ICU' table. You can move, or remove it, as needed.
+            
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -64,6 +50,9 @@ namespace DailyCensusReport
             //PEDI
             string[] varPEDI = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
 
+            //T4
+            string[] varT4 = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+
             CalculationColorChanger.CalcColor(
             //ICU
               txtCurrentCensusICU, txtCurrentCapStatusICU, 
@@ -72,7 +61,10 @@ namespace DailyCensusReport
               txtCurrentCensusT2, txtCurrentCapStatusT2,
 
             //PEDI
-              txtCurrentCensusPEDI, txtCurrentCapStatusPEDI);
+              txtCurrentCensusPEDI, txtCurrentCapStatusPEDI,
+              
+             //T4
+             txtCurrentCensusT4, txtCurrentCapStatusT4);
 
             //Populates information into the PDF based on the user's input.
             PDFSubmit.PDFView(
@@ -83,7 +75,10 @@ namespace DailyCensusReport
               txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2,
 
               //PEDI
-              txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI
+              txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI,
+
+              //T4
+              txtCurrentCensusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4, txtNotesT4, txtCurrentCapStatusT4
               );
 
             /***Will have to give a unitID for each table***/
@@ -112,12 +107,22 @@ namespace DailyCensusReport
                     varPEDI[i] = Convert.ToString(boxesPEDI[i].Text);
                 }
 
+                //T4
+                int unitIDT4 = 4;
+                boxesPEDI = new TextBox[] { txtCurrentCensusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4, txtNotesT4, txtCurrentCapStatusT4 };
+                for (int i = 0; i < boxesPEDI.Length; i++)
+                {
+                    varT4[i] = Convert.ToString(boxesPEDI[i].Text);
+                }
+
             //ICU
             SubmitRecord.InsertICU(unitID, varICU);
             //T2
             SubmitRecord.InsertT2(unitIDT2, varT2);
             //PEDI
             SubmitRecord.InsertPEDI(unitIDPEDI, varPEDI);
+            //T4
+            SubmitRecord.InsertT4(unitIDT4, varT4);
         }
 
         //Redirects to the ViewRecord Form

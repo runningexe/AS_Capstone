@@ -18,7 +18,8 @@ namespace DailyCensusReport
         public static bool CalcColor(
             TextBox txtCurrentCensusICU, TextBox txtCurrentCapStatusICU,
             TextBox txtCurrentCensusT2, TextBox txtCurrentCapStatusT2,
-            TextBox txtCurrentCensusPEDI,TextBox txtCurrentCapStatusPEDI)
+            TextBox txtCurrentCensusPEDI,TextBox txtCurrentCapStatusPEDI,
+            TextBox txtCurrentCensusT4, TextBox txtCurrentCapStatusT4)
            
         {
 //Determine the ICU Current Capacity Status
@@ -100,6 +101,33 @@ namespace DailyCensusReport
                                 txtCurrentCapStatusPEDI.BackColor = Color.Red;
                                 txtCurrentCapStatusPEDI.Text = "RED";
                             }
+
+//Determine the T4 Current Capacity Status
+                int totalT4Beds = 29;
+                totalT4Beds = Convert.ToInt32(txtCurrentCensusT4.Text);
+                txtCurrentCapStatusT4.Text = "";
+
+                    if (totalT4Beds <= 14)
+                    {
+                        txtCurrentCapStatusT4.BackColor = Color.Green;
+                        txtCurrentCapStatusT4.Text = "GREEN";
+                    }
+                        else if (totalT4Beds <= 17)
+                        {
+                            txtCurrentCapStatusT4.BackColor = Color.Yellow;
+                            txtCurrentCapStatusT4.Text = "YELLOW";
+                        }
+                            else if (totalT4Beds <= 20)
+                            {
+                                txtCurrentCapStatusT4.BackColor = Color.Orange;
+                                txtCurrentCapStatusT4.Text = "ORANGE";
+                            }
+
+                                else if (totalT4Beds >= 20 && totalT4Beds <= 29)
+                                {
+                                    txtCurrentCapStatusT4.BackColor = Color.Red;
+                                    txtCurrentCapStatusT4.Text = "RED";
+                                }
             return true;
         }
     }

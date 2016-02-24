@@ -11,7 +11,7 @@ namespace DailyCensusReport
 {
     public class SubmitRecord
     {
-        //ICU Insert Method
+//ICU Insert Method
         public static void InsertICU(int unitID, string[] varICU)
         {
             //Creating the database connection.
@@ -55,7 +55,7 @@ namespace DailyCensusReport
          method
          */
 
-        //T2 Insert Method
+//T2 Insert Method
         public static void InsertT2(int unitIDT2, string[] varT2)
         {
 
@@ -106,6 +106,41 @@ namespace DailyCensusReport
             cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = varPEDI[3];
             cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = varPEDI[4];
             cmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = varPEDI[5];
+
+            try
+            {
+                connect.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                //throw ex;
+                MessageBox.Show(ex.Message);
+            }
+
+            finally
+            {
+                connect.Close();
+            }
+        }
+
+//T4 Insert Method
+        public static void InsertT4(int unitIDT4, string[] varT4)
+        {
+
+            SqlConnection connect = DBConnect.GetConnection();
+            SqlCommand cmd = new SqlCommand("spInsertT4", connect);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "spInsertT4";
+
+            cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitIDT4;
+            cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = varT4[0];
+            cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = varT4[1];
+            cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = varT4[2];
+            cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = varT4[3];
+            cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = varT4[4];
+            cmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = varT4[5];
 
             try
             {
