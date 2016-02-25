@@ -159,5 +159,110 @@ namespace DailyCensusReport
                 connect.Close();
             }
         }
+
+//6ACU Insert Method
+        public static void Insert6ACU(int unitID6ACU, string[] var6ACU)
+        {
+
+            SqlConnection connect = DBConnect.GetConnection();
+            SqlCommand cmd = new SqlCommand("spInsert6ACU", connect);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "spInsert6ACU";
+
+            cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitID6ACU;
+            cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = var6ACU[0];
+            cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = var6ACU[1];
+            cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = var6ACU[2];
+            cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = var6ACU[3];
+            cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = var6ACU[4];
+            cmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = var6ACU[5];
+
+            try
+            {
+                connect.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                //throw ex;
+                MessageBox.Show(ex.Message);
+            }
+
+            finally
+            {
+                connect.Close();
+            }
+        }
+
+//TBC Insert Method
+        public static void InsertTBC(int unitIDTBC, string[] varTBC)
+        {
+
+            SqlConnection connect = DBConnect.GetConnection();
+            SqlCommand cmd = new SqlCommand("spInsertTBC", connect);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "spInsertTBC";
+
+            cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitIDTBC;
+            cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = varTBC[0];
+            cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = varTBC[1];
+            cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = varTBC[2];
+            cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = varTBC[3];
+            cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = varTBC[4];
+            cmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = varTBC[5];
+
+            try
+            {
+                connect.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                //throw ex;
+                MessageBox.Show(ex.Message);
+            }
+
+            finally
+            {
+                connect.Close();
+            }
+        }
+
+//BHU Insert Method
+        public static void InsertBHU(int unitIDBHU, string[] varBHU)
+        {
+
+            SqlConnection connect = DBConnect.GetConnection();
+            SqlCommand cmd = new SqlCommand("spInsertBBHU", connect);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "spInsertBHU";
+
+            cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitIDBHU;
+            cmd.Parameters.Add("@currentCensus", SqlDbType.VarChar, 50).Value = varBHU[0];
+            cmd.Parameters.Add("@availBeds", SqlDbType.VarChar, 50).Value = varBHU[1];
+            cmd.Parameters.Add("@numberISP", SqlDbType.VarChar, 50).Value = varBHU[2];
+            cmd.Parameters.Add("@DC", SqlDbType.VarChar, 50).Value = varBHU[3];
+            cmd.Parameters.Add("@notes", SqlDbType.VarChar, 50).Value = varBHU[4];
+            cmd.Parameters.Add("@currentCap", SqlDbType.VarChar, 50).Value = varBHU[5];
+
+            try
+            {
+                connect.Open();
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (SqlException ex)
+            {
+                //throw ex;
+                MessageBox.Show(ex.Message);
+            }
+
+            finally
+            {
+                connect.Close();
+            }
+        }
     }
 }

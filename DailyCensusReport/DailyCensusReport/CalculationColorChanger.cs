@@ -15,17 +15,25 @@ namespace DailyCensusReport
 {
     class CalculationColorChanger
     {
+        public TextBox[] colorICUboxes { get; set; }
+
         public static bool CalcColor(
+             
             TextBox txtCurrentCensusICU, TextBox txtCurrentCapStatusICU,
             TextBox txtCurrentCensusT2, TextBox txtCurrentCapStatusT2,
             TextBox txtCurrentCensusPEDI,TextBox txtCurrentCapStatusPEDI,
-            TextBox txtCurrentCensusT4, TextBox txtCurrentCapStatusT4)
+            TextBox txtCurrentCensusT4, TextBox txtCurrentCapStatusT4,
+            TextBox txtCurrentCensus6ACU, TextBox txtCurrentCapStatus6ACU,
+            TextBox txtCurrentCensusTBC, TextBox txtCurrentCapStatusTBC,
+            TextBox txtCurrentCensusBHU, TextBox txtCurrentCapStatusBHU)
            
         {
+
+/*****ICU****/
 //Determine the ICU Current Capacity Status
             int totalICUBeds = 9;
             totalICUBeds = Convert.ToInt32(txtCurrentCensusICU.Text);
-            txtCurrentCapStatusICU.Text = "";
+            //txtCurrentCapStatusICU.Text = "";
 
             if (totalICUBeds <= 2)
             {
@@ -47,11 +55,11 @@ namespace DailyCensusReport
                             txtCurrentCapStatusICU.BackColor = Color.Red;
                             txtCurrentCapStatusICU.Text = "RED";
                         }
-
+/*****T2****/
 //Determine the T2 Current Capacity Status
             int totalT2Beds = 28;
             totalT2Beds = Convert.ToInt32(txtCurrentCensusT2.Text);
-            txtCurrentCapStatusT2.Text = "";
+            //txtCurrentCapStatusT2.Text = "";
 
             if (totalT2Beds <= 14)
             {
@@ -74,11 +82,11 @@ namespace DailyCensusReport
                             txtCurrentCapStatusT2.BackColor = Color.Red;
                             txtCurrentCapStatusT2.Text = "RED";
                         }
-
+/*****PEDI****/
 //Determine the PEDI Current Capacity Status
             int totalPEDIBeds = 28;
             totalPEDIBeds = Convert.ToInt32(txtCurrentCensusPEDI.Text);
-            txtCurrentCapStatusPEDI.Text = "";
+            //txtCurrentCapStatusPEDI.Text = "";
 
                 if (totalPEDIBeds <= 14)
                 {
@@ -101,11 +109,11 @@ namespace DailyCensusReport
                                 txtCurrentCapStatusPEDI.BackColor = Color.Red;
                                 txtCurrentCapStatusPEDI.Text = "RED";
                             }
-
+/*****T4****/
 //Determine the T4 Current Capacity Status
                 int totalT4Beds = 29;
                 totalT4Beds = Convert.ToInt32(txtCurrentCensusT4.Text);
-                txtCurrentCapStatusT4.Text = "";
+                //txtCurrentCapStatusT4.Text = "";
 
                     if (totalT4Beds <= 14)
                     {
@@ -128,7 +136,86 @@ namespace DailyCensusReport
                                     txtCurrentCapStatusT4.BackColor = Color.Red;
                                     txtCurrentCapStatusT4.Text = "RED";
                                 }
-            return true;
+
+/*****6ACU****/
+//Determine the 6ACU Current Capacity Status
+                int total6ACUBeds = 10;
+                total6ACUBeds = Convert.ToInt32(txtCurrentCensus6ACU.Text);
+                    
+                    if (total6ACUBeds <= 3)
+                    {
+                        txtCurrentCapStatus6ACU.BackColor = Color.Green;
+                        txtCurrentCapStatus6ACU.Text = "GREEN";
+                    }
+                        else if (total6ACUBeds <= 5)
+                        {
+                            txtCurrentCapStatus6ACU.BackColor = Color.Yellow;
+                            txtCurrentCapStatus6ACU.Text = "YELLOW";
+                        }
+                            else if (total6ACUBeds <= 6)
+                            {
+                                txtCurrentCapStatus6ACU.BackColor = Color.Orange;
+                                txtCurrentCapStatus6ACU.Text = "ORANGE";
+                            }
+                                else if (total6ACUBeds >= 7 && total6ACUBeds <= 10)
+                                {
+                                    txtCurrentCapStatus6ACU.BackColor = Color.Red;
+                                    txtCurrentCapStatus6ACU.Text = "RED";
+                                }
+
+/*****TBC****/
+//Determine the TBC Current Capacity Status
+                int totalTBCBeds = 10;
+                totalTBCBeds = Convert.ToInt32(txtCurrentCensusTBC.Text);
+
+                    if (totalTBCBeds <= 3)
+                    {
+                        txtCurrentCapStatusTBC.BackColor = Color.Green;
+                        txtCurrentCapStatusTBC.Text = "GREEN";
+                    }
+                        else if (totalTBCBeds <= 5)
+                        {
+                            txtCurrentCapStatusTBC.BackColor = Color.Yellow;
+                            txtCurrentCapStatusTBC.Text = "YELLOW";
+                        }
+                            else if (totalTBCBeds <= 6)
+                            {
+                                txtCurrentCapStatusTBC.BackColor = Color.Orange;
+                                txtCurrentCapStatusTBC.Text = "ORANGE";
+                            }
+                                else if (totalTBCBeds >= 7 && totalTBCBeds <= 10)
+                                {
+                                    txtCurrentCapStatusTBC.BackColor = Color.Red;
+                                    txtCurrentCapStatusTBC.Text = "RED";
+                                }
+
+
+/*****BHU****/
+//Determine the BHU Current Capacity Status
+                int totalBHUBeds = 15;
+                totalBHUBeds = Convert.ToInt32(txtCurrentCensusBHU.Text);
+
+                    if (totalBHUBeds <= 8)
+                    {
+                        txtCurrentCapStatusBHU.BackColor = Color.Green;
+                        txtCurrentCapStatusBHU.Text = "GREEN";
+                    }
+                        else if (totalBHUBeds <= 10)
+                        {
+                            txtCurrentCapStatusBHU.BackColor = Color.Yellow;
+                            txtCurrentCapStatusBHU.Text = "YELLOW";
+                        }
+                            else if (totalBHUBeds <= 11)
+                            {
+                                txtCurrentCapStatusBHU.BackColor = Color.Orange;
+                                txtCurrentCapStatusBHU.Text = "ORANGE";
+                            }
+                                else if (totalBHUBeds >= 12 && totalBHUBeds <= 15)
+                                {
+                                    txtCurrentCapStatusBHU.BackColor = Color.Red;
+                                    txtCurrentCapStatusBHU.Text = "RED";
+                                }
+                         return true;
         }
     }
 }

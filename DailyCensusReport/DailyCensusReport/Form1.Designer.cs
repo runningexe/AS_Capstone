@@ -122,9 +122,9 @@
             this.txtCurrentCensus6ACU = new System.Windows.Forms.TextBox();
             this.txtAvailableBeds6ACU = new System.Windows.Forms.TextBox();
             this.txtIsoPatients6ACU = new System.Windows.Forms.TextBox();
-            this.txtDischargesACU = new System.Windows.Forms.TextBox();
-            this.txtNotesACU = new System.Windows.Forms.TextBox();
-            this.txtCurrentCapStatusACU = new System.Windows.Forms.TextBox();
+            this.txtDischarges6ACU = new System.Windows.Forms.TextBox();
+            this.txtNotes6ACU = new System.Windows.Forms.TextBox();
+            this.txtCurrentCapStatus6ACU = new System.Windows.Forms.TextBox();
             this.txtAvailableBedsTBC = new System.Windows.Forms.TextBox();
             this.txtIsoPatientsTBC = new System.Windows.Forms.TextBox();
             this.txtDischargesTBC = new System.Windows.Forms.TextBox();
@@ -641,9 +641,9 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 203F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 141F));
-            this.tableLayoutPanel3.Controls.Add(this.txtCurrentCapStatusACU, 6, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtNotesACU, 5, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txtDischargesACU, 4, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txtCurrentCapStatus6ACU, 6, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txtNotes6ACU, 5, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txtDischarges6ACU, 4, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtIsoPatients6ACU, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtAvailableBeds6ACU, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtCurrentCensus6ACU, 1, 0);
@@ -1044,26 +1044,26 @@
             this.txtIsoPatients6ACU.Size = new System.Drawing.Size(62, 20);
             this.txtIsoPatients6ACU.TabIndex = 33;
             // 
-            // txtDischargesACU
+            // txtDischarges6ACU
             // 
-            this.txtDischargesACU.Location = new System.Drawing.Point(262, 4);
-            this.txtDischargesACU.Name = "txtDischargesACU";
-            this.txtDischargesACU.Size = new System.Drawing.Size(63, 20);
-            this.txtDischargesACU.TabIndex = 34;
+            this.txtDischarges6ACU.Location = new System.Drawing.Point(262, 4);
+            this.txtDischarges6ACU.Name = "txtDischarges6ACU";
+            this.txtDischarges6ACU.Size = new System.Drawing.Size(63, 20);
+            this.txtDischarges6ACU.TabIndex = 34;
             // 
-            // txtNotesACU
+            // txtNotes6ACU
             // 
-            this.txtNotesACU.Location = new System.Drawing.Point(336, 4);
-            this.txtNotesACU.Name = "txtNotesACU";
-            this.txtNotesACU.Size = new System.Drawing.Size(197, 20);
-            this.txtNotesACU.TabIndex = 35;
+            this.txtNotes6ACU.Location = new System.Drawing.Point(336, 4);
+            this.txtNotes6ACU.Name = "txtNotes6ACU";
+            this.txtNotes6ACU.Size = new System.Drawing.Size(197, 20);
+            this.txtNotes6ACU.TabIndex = 35;
             // 
-            // txtCurrentCapStatusACU
+            // txtCurrentCapStatus6ACU
             // 
-            this.txtCurrentCapStatusACU.Location = new System.Drawing.Point(540, 4);
-            this.txtCurrentCapStatusACU.Name = "txtCurrentCapStatusACU";
-            this.txtCurrentCapStatusACU.Size = new System.Drawing.Size(136, 20);
-            this.txtCurrentCapStatusACU.TabIndex = 36;
+            this.txtCurrentCapStatus6ACU.Location = new System.Drawing.Point(540, 4);
+            this.txtCurrentCapStatus6ACU.Name = "txtCurrentCapStatus6ACU";
+            this.txtCurrentCapStatus6ACU.Size = new System.Drawing.Size(136, 20);
+            this.txtCurrentCapStatus6ACU.TabIndex = 36;
             // 
             // txtAvailableBedsTBC
             // 
@@ -1307,9 +1307,9 @@
         private System.Windows.Forms.TextBox txtCurrentCensus6ACU;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox txtCurrentCensusTBC;
-        private System.Windows.Forms.TextBox txtCurrentCapStatusACU;
-        private System.Windows.Forms.TextBox txtNotesACU;
-        private System.Windows.Forms.TextBox txtDischargesACU;
+        private System.Windows.Forms.TextBox txtCurrentCapStatus6ACU;
+        private System.Windows.Forms.TextBox txtNotes6ACU;
+        private System.Windows.Forms.TextBox txtDischarges6ACU;
         private System.Windows.Forms.TextBox txtIsoPatients6ACU;
         private System.Windows.Forms.TextBox txtAvailableBeds6ACU;
         private System.Windows.Forms.TextBox txtCurrentCapStatusBHU;

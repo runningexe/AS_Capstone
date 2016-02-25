@@ -21,12 +21,10 @@ namespace DailyCensusReport
         public TextBox[] boxesT2 { get; set; }
         public TextBox[] boxesPEDI { get; set; }
         public TextBox[] boxesT4 { get; set; }
-        //public TextBox[] boxes6ACU { get; set; }
-        //public TextBox[] boxesTBC { get; set; }
-        //public TextBox[] boxesBHU { get; set; }
-        //public List<TextBox[]> boxesAll { get; set; }
-        //public TextBox[] boxesAllCurrentCensus { get; set; }
-        //public TextBox[] boxesAllAvailBeds { get; set; }
+        public TextBox[] boxes6ACU { get; set; }
+        public TextBox[] boxesTBC { get; set; }
+        public TextBox[] boxesBHU { get; set; }
+        
 
         public frmDailyCensusReport()
         {
@@ -53,6 +51,17 @@ namespace DailyCensusReport
             //T4
             string[] varT4 = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
 
+            //6ACU
+            string[] var6ACU = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+
+            //TBC
+            string[] varTBC = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+
+            //BHU
+            string[] varBHU = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+
+/********************************************************************/
+//Calculation Class
             CalculationColorChanger.CalcColor(
             //ICU
               txtCurrentCensusICU, txtCurrentCapStatusICU, 
@@ -64,9 +73,20 @@ namespace DailyCensusReport
               txtCurrentCensusPEDI, txtCurrentCapStatusPEDI,
               
              //T4
-             txtCurrentCensusT4, txtCurrentCapStatusT4);
+             txtCurrentCensusT4, txtCurrentCapStatusT4,
+             
+             //6ACU
+             txtCurrentCensus6ACU, txtCurrentCapStatus6ACU,
+            
+             //TBC
+             txtCurrentCensusTBC, txtCurrentCapStatusTBC,
+            
+             //BHU
+             txtCurrentCensusBHU, txtCurrentCapStatusBHU);
 
-            //Populates information into the PDF based on the user's input.
+/********************************************************************/
+//PDF Class
+//Populates information into the PDF based on the user's input.
             PDFSubmit.PDFView(
               //ICU
               txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
@@ -78,10 +98,20 @@ namespace DailyCensusReport
               txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI,
 
               //T4
-              txtCurrentCensusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4, txtNotesT4, txtCurrentCapStatusT4
+              txtCurrentCensusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4, txtNotesT4, txtCurrentCapStatusT4,
+
+              //6ACU
+              txtCurrentCensus6ACU, txtAvailableBeds6ACU, txtIsoPatients6ACU, txtDischarges6ACU, txtNotes6ACU, txtCurrentCapStatus6ACU,
+
+               //TBC
+              txtCurrentCensusTBC, txtAvailableBedsTBC, txtIsoPatientsTBC, txtDischargesTBC, txtNotesTBC, txtCurrentCapStatusTBC,
+
+               //BHU
+              txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU
               );
 
-            /***Will have to give a unitID for each table***/
+/********************************************************************/
+/***Gives a unitID for each table***/
                 
                 //ICU
                 int unitID = 1;
@@ -115,6 +145,32 @@ namespace DailyCensusReport
                     varT4[i] = Convert.ToString(boxesPEDI[i].Text);
                 }
 
+                //6ACU
+                int unitID6ACU = 5;
+                boxes6ACU = new TextBox[] { txtCurrentCensus6ACU, txtAvailableBeds6ACU, txtIsoPatients6ACU, txtDischarges6ACU, txtNotes6ACU, txtCurrentCapStatus6ACU };
+                for (int i = 0; i < boxes6ACU.Length; i++)
+                {
+                    var6ACU[i] = Convert.ToString(boxes6ACU[i].Text);
+                }
+
+                //TBC
+                int unitIDTBC = 6;
+                boxesTBC = new TextBox[] { txtCurrentCensusTBC, txtAvailableBedsTBC, txtIsoPatientsTBC, txtDischargesTBC, txtNotesTBC, txtCurrentCapStatusTBC };
+                for (int i = 0; i < boxesTBC.Length; i++)
+                {
+                    varTBC[i] = Convert.ToString(boxesTBC[i].Text);
+                }
+
+                //BHU
+                int unitIDBHU = 7;
+                boxesBHU = new TextBox[] { txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU };
+                for (int i = 0; i < boxesBHU.Length; i++)
+                {
+                    varBHU[i] = Convert.ToString(boxesBHU[i].Text);
+                }
+
+/********************************************************************/
+/**SubmitRecord Class**/
             //ICU
             SubmitRecord.InsertICU(unitID, varICU);
             //T2
@@ -123,6 +179,12 @@ namespace DailyCensusReport
             SubmitRecord.InsertPEDI(unitIDPEDI, varPEDI);
             //T4
             SubmitRecord.InsertT4(unitIDT4, varT4);
+            //6ACU
+            SubmitRecord.Insert6ACU(unitID6ACU, var6ACU);
+            //TBC
+            SubmitRecord.InsertTBC(unitIDTBC, varTBC);
+            //BHU
+            SubmitRecord.InsertBHU(unitIDBHU, varBHU);
         }
 
         //Redirects to the ViewRecord Form
