@@ -47,9 +47,6 @@ public class ViewRecord
                "Data Source=sql.neit.edu;Initial Catalog=SE265_AJF1130;User ID=001246352  ;Password= 02272014";
         SqlConnection connect = new SqlConnection(connectionString);
 
-            //ConfigurationManager.ConnectionStrings
-            //["Data Source=sql.neit.edu;Initial Catalog=SE265_AJF1130;User ID=001246352;Password= 02272014"].ConnectionString);
-
         SqlCommand cmd = new SqlCommand("spCensus", connect);
         
         DataTable dt = new DataTable();
@@ -58,27 +55,19 @@ public class ViewRecord
         cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitID;
         try
         {
-            //opens connection to database, most failures happen here
-            //check connection string for proper settings
             connect.Open();
-            //data adapter object is trasport link between data source and 
-            //data destination
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //fill method, for multiple tables use dataset
             da.Fill(dt);
         }
         catch (Exception exc)
         {
-            //just put here to make debugging easier, can look at error directly
             exc.ToString();
         }
         finally
         {
-            //must always close connections
             connect.Close();
         }
 
-        // Return the datatable
         return dt;
     }
 
