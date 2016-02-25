@@ -89,24 +89,31 @@ namespace DailyCensusReport
                 /*********************Header Row*********************/
                 PdfPCell cell21 = new PdfPCell();
                 cell21.AddElement(new Paragraph("Unit"));
+                
 
                 PdfPCell cell22 = new PdfPCell();
                 cell22.AddElement(new Paragraph("Current Census"));
+                
 
                 PdfPCell cell23 = new PdfPCell();
                 cell23.AddElement(new Paragraph("Avail Beds"));
+                
 
                 PdfPCell cell24 = new PdfPCell();
                 cell24.AddElement(new Paragraph("# of Isolation Pts."));
+                
 
                 PdfPCell cell25 = new PdfPCell();
                 cell25.AddElement(new Paragraph("Potential D/C's"));
+                
 
                 PdfPCell cell26 = new PdfPCell();
                 cell26.AddElement(new Paragraph("Notes"));
+                
 
                 PdfPCell cell27 = new PdfPCell();
                 cell27.AddElement(new Paragraph("Current Capcity Status"));
+                
 
                 pdfTable.AddCell(cell21);
                 pdfTable.AddCell(cell22);
@@ -123,21 +130,27 @@ namespace DailyCensusReport
                 PdfPCell cell28 = new PdfPCell();
                 cell28.AddElement(new Paragraph("ICU"));
                 cell28.BackgroundColor = BaseColor.LIGHT_GRAY;
+                
 
                 PdfPCell cell29 = new PdfPCell();
                 cell29.AddElement(new Paragraph(txtCurrentCensusICU.Text));
+                
 
                 PdfPCell cell30 = new PdfPCell();
                 cell30.AddElement(new Paragraph(txtAvailableBedsICU.Text));
+                
 
                 PdfPCell cell31 = new PdfPCell();
                 cell31.AddElement(new Paragraph(txtIsoPatientsICU.Text));
+                
 
                 PdfPCell cell32 = new PdfPCell();
                 cell32.AddElement(new Paragraph(txtDischargesICU.Text));
+                
 
                 PdfPCell cell33 = new PdfPCell();
                 cell33.AddElement(new Paragraph(txtNotesICU.Text));
+                
 
                 pdfTable.AddCell(cell28);
                 pdfTable.AddCell(cell29);
