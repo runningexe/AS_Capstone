@@ -15,7 +15,8 @@ namespace DailyCensusReport
 {
     class CalculationColorChanger
     {
-        public TextBox[] colorICUboxes { get; set; }
+
+        //public TextBox[] colorICUboxes { get; set; }
 
         public static bool CalcColor(
              
@@ -26,10 +27,10 @@ namespace DailyCensusReport
             TextBox txtCurrentCensus6ACU, TextBox txtCurrentCapStatus6ACU,
             TextBox txtCurrentCensusTBC, TextBox txtCurrentCapStatusTBC,
             TextBox txtCurrentCensusBHU, TextBox txtCurrentCapStatusBHU)
-           
         {
 
-/*****ICU****/
+            #region ICU Calculation
+            /*****ICU****/
 //Determine the ICU Current Capacity Status
             int totalICUBeds = 9;
             totalICUBeds = Convert.ToInt32(txtCurrentCensusICU.Text);
@@ -55,7 +56,10 @@ namespace DailyCensusReport
                             txtCurrentCapStatusICU.BackColor = Color.Red;
                             txtCurrentCapStatusICU.Text = "RED";
                         }
-/*****T2****/
+            #endregion
+
+            #region T2 Calculation
+            /*****T2****/
 //Determine the T2 Current Capacity Status
             int totalT2Beds = 28;
             totalT2Beds = Convert.ToInt32(txtCurrentCensusT2.Text);
@@ -82,7 +86,10 @@ namespace DailyCensusReport
                             txtCurrentCapStatusT2.BackColor = Color.Red;
                             txtCurrentCapStatusT2.Text = "RED";
                         }
-/*****PEDI****/
+            #endregion
+
+            #region PEDI Calculation
+            /*****PEDI****/
 //Determine the PEDI Current Capacity Status
             int totalPEDIBeds = 28;
             totalPEDIBeds = Convert.ToInt32(txtCurrentCensusPEDI.Text);
@@ -109,7 +116,10 @@ namespace DailyCensusReport
                                 txtCurrentCapStatusPEDI.BackColor = Color.Red;
                                 txtCurrentCapStatusPEDI.Text = "RED";
                             }
-/*****T4****/
+            #endregion
+
+            #region T4 Calculation
+                /*****T4****/
 //Determine the T4 Current Capacity Status
                 int totalT4Beds = 29;
                 totalT4Beds = Convert.ToInt32(txtCurrentCensusT4.Text);
@@ -136,8 +146,11 @@ namespace DailyCensusReport
                                     txtCurrentCapStatusT4.BackColor = Color.Red;
                                     txtCurrentCapStatusT4.Text = "RED";
                                 }
+                #endregion
 
-/*****6ACU****/
+            #region 6ACU Calculation
+
+                    /*****6ACU****/
 //Determine the 6ACU Current Capacity Status
                 int total6ACUBeds = 10;
                 total6ACUBeds = Convert.ToInt32(txtCurrentCensus6ACU.Text);
@@ -163,7 +176,11 @@ namespace DailyCensusReport
                                     txtCurrentCapStatus6ACU.Text = "RED";
                                 }
 
-/*****TBC****/
+                    #endregion
+
+            #region TBC Calculation
+
+                    /*****TBC****/
 //Determine the TBC Current Capacity Status
                 int totalTBCBeds = 10;
                 totalTBCBeds = Convert.ToInt32(txtCurrentCensusTBC.Text);
@@ -188,9 +205,11 @@ namespace DailyCensusReport
                                     txtCurrentCapStatusTBC.BackColor = Color.Red;
                                     txtCurrentCapStatusTBC.Text = "RED";
                                 }
+                    #endregion
 
+            #region BHU Calculation
 
-/*****BHU****/
+                    /*****BHU****/
 //Determine the BHU Current Capacity Status
                 int totalBHUBeds = 15;
                 totalBHUBeds = Convert.ToInt32(txtCurrentCensusBHU.Text);
@@ -215,7 +234,9 @@ namespace DailyCensusReport
                                     txtCurrentCapStatusBHU.BackColor = Color.Red;
                                     txtCurrentCapStatusBHU.Text = "RED";
                                 }
-                         return true;
+                    #endregion
+
+            return true;
         }
     }
 }

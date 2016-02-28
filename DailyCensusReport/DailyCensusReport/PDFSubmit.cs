@@ -15,6 +15,7 @@ namespace DailyCensusReport
 {
     public class PDFSubmit
     {
+        #region PDF View
         public static bool PDFView(
             /**ICU**/
             TextBox txtCurrentCensusICU, TextBox txtAvailableBedsICU, TextBox txtIsoPatientsICU, TextBox txtDischargesICU, TextBox txtNotesICU, TextBox txtCurrentCapStatusICU,
@@ -36,7 +37,9 @@ namespace DailyCensusReport
 
             /**BHU**/
             TextBox txtCurrentCensusBHU, TextBox txtAvailableBedsBHU, TextBox txtIsoPatientsBHU, TextBox txtDischargesBHU, TextBox txtNotesBHU, TextBox txtCurrentCapStatusBHU)
+        #endregion
 
+        #region Save Dialog Box
         {
             //Creates a new SFD object (Opens the Save File Box)
             SaveFileDialog sfd = new SaveFileDialog();
@@ -81,7 +84,9 @@ namespace DailyCensusReport
                   page.Height - doc.TopMargin + head.TotalHeight + 10,
                   wri.DirectContent
                 );
+        #endregion
 
+        #region Creates PDF Table
                 //Instantiating the table and giving it the number of columns it will have.
                 PdfPTable pdfTable = new PdfPTable(7);
 
@@ -692,6 +697,7 @@ namespace DailyCensusReport
                 //Close document
                 doc.Close();
             }
+                #endregion
             return true;
         }
     }    

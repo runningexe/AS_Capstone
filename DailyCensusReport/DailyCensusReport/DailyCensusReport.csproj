@@ -43,9 +43,12 @@
     <Reference Include="itextsharp.xtra">
       <HintPath>.\itextsharp.xtra.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -78,6 +81,15 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SE265_AJF1130DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SE265_AJF1130DataSet11.cs">
+      <DependentUpon>SE265_AJF1130DataSet11.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SE265_AJF1130DataSet11.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SE265_AJF1130DataSet11.xsd</DependentUpon>
     </Compile>
     <Compile Include="SubmitRecord.cs" />
     <Compile Include="ViewRecord.cs" />
@@ -125,6 +137,17 @@
     </None>
     <None Include="SE265_AJF1130DataSet.xss">
       <DependentUpon>SE265_AJF1130DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SE265_AJF1130DataSet11.xsc">
+      <DependentUpon>SE265_AJF1130DataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="SE265_AJF1130DataSet11.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SE265_AJF1130DataSet11.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SE265_AJF1130DataSet11.xss">
+      <DependentUpon>SE265_AJF1130DataSet11.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

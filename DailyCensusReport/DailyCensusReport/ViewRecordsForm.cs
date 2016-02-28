@@ -18,75 +18,53 @@ namespace DailyCensusReport
 
         private void ViewRecordsForm_Load(object sender, EventArgs e)
         {
-            iCUDataGridView.Show();
-            t2DataGridView.Hide();
-            pEDIDataGridView.Hide();
-            t4DataGridView.Hide();
-            _6ACUDataGridView.Hide();
-            tBCDataGridView.Hide();
-            bHUDataGridView.Hide();
-
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.BHU' table. You can move, or remove it, as needed.
-            this.bHUTableAdapter.Fill(this.sE265_AJF1130DataSet.BHU);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.TBC' table. You can move, or remove it, as needed.
-            this.tBCTableAdapter.Fill(this.sE265_AJF1130DataSet.TBC);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet._6ACU' table. You can move, or remove it, as needed.
-            this._6ACUTableAdapter.Fill(this.sE265_AJF1130DataSet._6ACU);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.T4' table. You can move, or remove it, as needed.
-            this.t4TableAdapter.Fill(this.sE265_AJF1130DataSet.T4);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.PEDI' table. You can move, or remove it, as needed.
-            this.pEDITableAdapter.Fill(this.sE265_AJF1130DataSet.PEDI);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.T2' table. You can move, or remove it, as needed.
-            this.t2TableAdapter.Fill(this.sE265_AJF1130DataSet.T2);
-            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.ICU' table. You can move, or remove it, as needed.
-            this.iCUTableAdapter.Fill(this.sE265_AJF1130DataSet.ICU);
+            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet1.HospitalCensus' table. You can move, or remove it, as needed.
+            this.hospitalCensusTableAdapter.Fill(this.sE265_AJF1130DataSet1.HospitalCensus);
+            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet1.HospitalCensus' table. You can move, or remove it, as needed.
         }
 
-        private void btnICU_Click(object sender, EventArgs e)
-        {
-            iCUDataGridView.Show();
-            t2DataGridView.Hide();
-            pEDIDataGridView.Hide();
-            t4DataGridView.Hide();
-            _6ACUDataGridView.Hide();
-            tBCDataGridView.Hide();
-            bHUDataGridView.Hide();
-        }
-
-        private void btnT2_Click(object sender, EventArgs e)
-        {
-            iCUDataGridView.Hide();
-            t2DataGridView.Show();
-            pEDIDataGridView.Hide();
-            t4DataGridView.Hide();
-            _6ACUDataGridView.Hide();
-            tBCDataGridView.Hide();
-            bHUDataGridView.Hide();
-        }
-
-        private void btnPEDI_Click(object sender, EventArgs e)
+        private void hospitalCensusDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void btnT4_Click(object sender, EventArgs e)
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void hospitalCensusBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.hospitalCensusBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.sE265_AJF1130DataSet1);
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btn6ACU_Click(object sender, EventArgs e)
+        private void fillToolStripButton_Click(object sender, EventArgs e)
         {
+            try
+            {
+                this.spGetHospitalCensusTableAdapter.Fill(this.sE265_AJF1130DataSet1.spGetHospitalCensus, new System.Nullable<int>(((int)(System.Convert.ChangeType(unitIDToolStripTextBox.Text, typeof(int))))), currentCensusToolStripTextBox.Text, availBedsToolStripTextBox.Text, numberISPToolStripTextBox.Text, dCToolStripTextBox.Text, notesToolStripTextBox.Text, currentCapToolStripTextBox.Text, updateDateToolStripTextBox.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
 
-        private void btnTBC_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBHU_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
