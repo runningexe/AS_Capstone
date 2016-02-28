@@ -18,6 +18,8 @@ namespace DailyCensusReport
 
         private void ViewRecordsForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet2.vw_GetRecords' table. You can move, or remove it, as needed.
+            this.vw_GetRecordsTableAdapter.Fill(this.sE265_AJF1130DataSet2.vw_GetRecords);
             // TODO: This line of code loads data into the 'sE265_AJF1130DataSet1.HospitalCensus' table. You can move, or remove it, as needed.
             this.hospitalCensusTableAdapter.Fill(this.sE265_AJF1130DataSet1.HospitalCensus);
             // TODO: This line of code loads data into the 'sE265_AJF1130DataSet1.HospitalCensus' table. You can move, or remove it, as needed.
@@ -28,10 +30,11 @@ namespace DailyCensusReport
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        private void fillToolStripButton_Click(object sender, EventArgs e)
         {
             try
             {
+                this.spGetRecordsTableAdapter.Fill(this.sE265_AJF1130DataSet.spGetRecords);
             }
             catch (System.Exception ex)
             {
@@ -40,24 +43,63 @@ namespace DailyCensusReport
 
         }
 
-        private void hospitalCensusBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.hospitalCensusBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.sE265_AJF1130DataSet1);
-
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fillToolStripButton_Click(object sender, EventArgs e)
+        private void searchRecordsToolStripButton_Click(object sender, EventArgs e)
         {
             try
             {
-                this.spGetHospitalCensusTableAdapter.Fill(this.sE265_AJF1130DataSet1.spGetHospitalCensus, new System.Nullable<int>(((int)(System.Convert.ChangeType(unitIDToolStripTextBox.Text, typeof(int))))), currentCensusToolStripTextBox.Text, availBedsToolStripTextBox.Text, numberISPToolStripTextBox.Text, dCToolStripTextBox.Text, notesToolStripTextBox.Text, currentCapToolStripTextBox.Text, updateDateToolStripTextBox.Text);
+                this.hospitalCensusTableAdapter.SearchRecords(this.sE265_AJF1130DataSet1.HospitalCensus);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.spGetRecordsTableAdapter.FillBy(this.sE265_AJF1130DataSet.spGetRecords);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillToolStripButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.spGetRecordsTableAdapter.Fill(this.sE265_AJF1130DataSet.spGetRecords);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillByToolStripButton_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                this.spGetRecordsTableAdapter.FillBy(this.sE265_AJF1130DataSet.spGetRecords);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        private void fillToolStripButton_Click_2(object sender, EventArgs e)
+        {
+            try
+            {
+                this.spGetRecordsTableAdapter.Fill(this.sE265_AJF1130DataSet.spGetRecords);
             }
             catch (System.Exception ex)
             {

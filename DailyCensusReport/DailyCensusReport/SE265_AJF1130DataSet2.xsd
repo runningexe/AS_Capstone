@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="SE265_AJF1130DataSet1" targetNamespace="http://tempuri.org/SE265_AJF1130DataSet11.xsd" xmlns:mstns="http://tempuri.org/SE265_AJF1130DataSet11.xsd" xmlns="http://tempuri.org/SE265_AJF1130DataSet11.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="SE265_AJF1130DataSet2" targetNamespace="http://tempuri.org/SE265_AJF1130DataSet2.xsd" xmlns:mstns="http://tempuri.org/SE265_AJF1130DataSet2.xsd" xmlns="http://tempuri.org/SE265_AJF1130DataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -295,26 +295,7 @@ SELECT id, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap, u
               <Mapping SourceColumn="currentCap" DataSetColumn="currentCap" />
               <Mapping SourceColumn="updateDate" DataSetColumn="updateDate" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="SE265_AJF1130ConnectionString (Settings)" DbObjectName="SE265_AJF1130.dbo.HospitalCensus" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        id, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap, updateDate
-FROM            HospitalCensus</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="SE265_AJF1130ConnectionString (Settings)" DbObjectName="SE265_AJF1130.dbo.HospitalCensus" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="SearchRecords" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="SearchRecords" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="SearchRecords">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT        id, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap, updateDate
-FROM            HospitalCensus</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </Sources>
+            <Sources />
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="HospitalDepartmentsTableAdapter" GeneratorDataComponentClassName="HospitalDepartmentsTableAdapter" Name="HospitalDepartments" UserDataComponentName="HospitalDepartmentsTableAdapter">
             <MainSource>
@@ -758,6 +739,29 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_GetRecordsTableAdapter" GeneratorDataComponentClassName="vw_GetRecordsTableAdapter" Name="vw_GetRecords" UserDataComponentName="vw_GetRecordsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SE265_AJF1130ConnectionString (Settings)" DbObjectName="SE265_AJF1130.dbo.vw_GetRecords" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT unitName, currentCensus, availBeds, numberISP, DC, notes, currentCap, updateDate FROM dbo.vw_GetRecords</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="unitName" DataSetColumn="unitName" />
+              <Mapping SourceColumn="currentCensus" DataSetColumn="currentCensus" />
+              <Mapping SourceColumn="availBeds" DataSetColumn="availBeds" />
+              <Mapping SourceColumn="numberISP" DataSetColumn="numberISP" />
+              <Mapping SourceColumn="DC" DataSetColumn="DC" />
+              <Mapping SourceColumn="notes" DataSetColumn="notes" />
+              <Mapping SourceColumn="currentCap" DataSetColumn="currentCap" />
+              <Mapping SourceColumn="updateDate" DataSetColumn="updateDate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sp6ACUTableAdapter" GeneratorDataComponentClassName="sp6ACUTableAdapter" Name="sp6ACU" UserDataComponentName="sp6ACUTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="SE265_AJF1130ConnectionString (Settings)" DbObjectName="SE265_AJF1130.dbo.sp6ACU" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -853,6 +857,31 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="unitID" DataSetColumn="unitID" />
+              <Mapping SourceColumn="currentCensus" DataSetColumn="currentCensus" />
+              <Mapping SourceColumn="availBeds" DataSetColumn="availBeds" />
+              <Mapping SourceColumn="numberISP" DataSetColumn="numberISP" />
+              <Mapping SourceColumn="DC" DataSetColumn="DC" />
+              <Mapping SourceColumn="notes" DataSetColumn="notes" />
+              <Mapping SourceColumn="currentCap" DataSetColumn="currentCap" />
+              <Mapping SourceColumn="updateDate" DataSetColumn="updateDate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="spGetRecordsTableAdapter" GeneratorDataComponentClassName="spGetRecordsTableAdapter" Name="spGetRecords" UserDataComponentName="spGetRecordsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="SE265_AJF1130ConnectionString (Settings)" DbObjectName="SE265_AJF1130.dbo.spGetRecords" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.spGetRecords</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="unitName" DataSetColumn="unitName" />
               <Mapping SourceColumn="currentCensus" DataSetColumn="currentCensus" />
               <Mapping SourceColumn="availBeds" DataSetColumn="availBeds" />
               <Mapping SourceColumn="numberISP" DataSetColumn="numberISP" />
@@ -1271,7 +1300,7 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="SE265_AJF1130DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SE265_AJF1130DataSet1" msprop:Generator_UserDSName="SE265_AJF1130DataSet1">
+  <xs:element name="SE265_AJF1130DataSet2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SE265_AJF1130DataSet2" msprop:Generator_UserDSName="SE265_AJF1130DataSet2">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="_x0036_ACU" msprop:Generator_TableClassName="_6ACUDataTable" msprop:Generator_TableVarName="table6ACU" msprop:Generator_TablePropName="_6ACU" msprop:Generator_RowDeletingName="_6ACURowDeleting" msprop:Generator_RowChangingName="_6ACURowChanging" msprop:Generator_RowEvHandlerName="_6ACURowChangeEventHandler" msprop:Generator_RowDeletedName="_6ACURowDeleted" msprop:Generator_UserTableName="6ACU" msprop:Generator_RowChangedName="_6ACURowChanged" msprop:Generator_RowEvArgName="_6ACURowChangeEvent" msprop:Generator_RowClassName="_6ACURow">
@@ -1697,6 +1726,62 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="vw_GetRecords" msprop:Generator_TableClassName="vw_GetRecordsDataTable" msprop:Generator_TableVarName="tablevw_GetRecords" msprop:Generator_TablePropName="vw_GetRecords" msprop:Generator_RowDeletingName="vw_GetRecordsRowDeleting" msprop:Generator_RowChangingName="vw_GetRecordsRowChanging" msprop:Generator_RowEvHandlerName="vw_GetRecordsRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_GetRecordsRowDeleted" msprop:Generator_UserTableName="vw_GetRecords" msprop:Generator_RowChangedName="vw_GetRecordsRowChanged" msprop:Generator_RowEvArgName="vw_GetRecordsRowChangeEvent" msprop:Generator_RowClassName="vw_GetRecordsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="unitName" msprop:Generator_ColumnVarNameInTable="columnunitName" msprop:Generator_ColumnPropNameInRow="unitName" msprop:Generator_ColumnPropNameInTable="unitNameColumn" msprop:Generator_UserColumnName="unitName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="currentCensus" msprop:Generator_ColumnVarNameInTable="columncurrentCensus" msprop:Generator_ColumnPropNameInRow="currentCensus" msprop:Generator_ColumnPropNameInTable="currentCensusColumn" msprop:Generator_UserColumnName="currentCensus">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="availBeds" msprop:Generator_ColumnVarNameInTable="columnavailBeds" msprop:Generator_ColumnPropNameInRow="availBeds" msprop:Generator_ColumnPropNameInTable="availBedsColumn" msprop:Generator_UserColumnName="availBeds">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="numberISP" msprop:Generator_ColumnVarNameInTable="columnnumberISP" msprop:Generator_ColumnPropNameInRow="numberISP" msprop:Generator_ColumnPropNameInTable="numberISPColumn" msprop:Generator_UserColumnName="numberISP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DC" msprop:Generator_ColumnVarNameInTable="columnDC" msprop:Generator_ColumnPropNameInRow="DC" msprop:Generator_ColumnPropNameInTable="DCColumn" msprop:Generator_UserColumnName="DC">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="notes" msprop:Generator_ColumnVarNameInTable="columnnotes" msprop:Generator_ColumnPropNameInRow="notes" msprop:Generator_ColumnPropNameInTable="notesColumn" msprop:Generator_UserColumnName="notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="currentCap" msprop:Generator_ColumnVarNameInTable="columncurrentCap" msprop:Generator_ColumnPropNameInRow="currentCap" msprop:Generator_ColumnPropNameInTable="currentCapColumn" msprop:Generator_UserColumnName="currentCap">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="updateDate" msprop:Generator_ColumnVarNameInTable="columnupdateDate" msprop:Generator_ColumnPropNameInRow="updateDate" msprop:Generator_ColumnPropNameInTable="updateDateColumn" msprop:Generator_UserColumnName="updateDate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
         <xs:element name="sp6ACU" msprop:Generator_TableClassName="sp6ACUDataTable" msprop:Generator_TableVarName="tablesp6ACU" msprop:Generator_TablePropName="sp6ACU" msprop:Generator_RowDeletingName="sp6ACURowDeleting" msprop:Generator_RowChangingName="sp6ACURowChanging" msprop:Generator_RowEvHandlerName="sp6ACURowChangeEventHandler" msprop:Generator_RowDeletedName="sp6ACURowDeleted" msprop:Generator_UserTableName="sp6ACU" msprop:Generator_RowChangedName="sp6ACURowChanged" msprop:Generator_RowEvArgName="sp6ACURowChangeEvent" msprop:Generator_RowClassName="sp6ACURow">
           <xs:complexType>
             <xs:sequence>
@@ -1809,6 +1894,62 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
           <xs:complexType>
             <xs:sequence>
               <xs:element name="unitID" msprop:Generator_ColumnVarNameInTable="columnunitID" msprop:Generator_ColumnPropNameInRow="unitID" msprop:Generator_ColumnPropNameInTable="unitIDColumn" msprop:Generator_UserColumnName="unitID" type="xs:int" />
+              <xs:element name="currentCensus" msprop:Generator_ColumnVarNameInTable="columncurrentCensus" msprop:Generator_ColumnPropNameInRow="currentCensus" msprop:Generator_ColumnPropNameInTable="currentCensusColumn" msprop:Generator_UserColumnName="currentCensus">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="availBeds" msprop:Generator_ColumnVarNameInTable="columnavailBeds" msprop:Generator_ColumnPropNameInRow="availBeds" msprop:Generator_ColumnPropNameInTable="availBedsColumn" msprop:Generator_UserColumnName="availBeds">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="numberISP" msprop:Generator_ColumnVarNameInTable="columnnumberISP" msprop:Generator_ColumnPropNameInRow="numberISP" msprop:Generator_ColumnPropNameInTable="numberISPColumn" msprop:Generator_UserColumnName="numberISP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DC" msprop:Generator_ColumnVarNameInTable="columnDC" msprop:Generator_ColumnPropNameInRow="DC" msprop:Generator_ColumnPropNameInTable="DCColumn" msprop:Generator_UserColumnName="DC">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="notes" msprop:Generator_ColumnVarNameInTable="columnnotes" msprop:Generator_ColumnPropNameInRow="notes" msprop:Generator_ColumnPropNameInTable="notesColumn" msprop:Generator_UserColumnName="notes" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="currentCap" msprop:Generator_ColumnVarNameInTable="columncurrentCap" msprop:Generator_ColumnPropNameInRow="currentCap" msprop:Generator_ColumnPropNameInTable="currentCapColumn" msprop:Generator_UserColumnName="currentCap">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="updateDate" msprop:Generator_ColumnVarNameInTable="columnupdateDate" msprop:Generator_ColumnPropNameInRow="updateDate" msprop:Generator_ColumnPropNameInTable="updateDateColumn" msprop:Generator_UserColumnName="updateDate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="spGetRecords" msprop:Generator_TableClassName="spGetRecordsDataTable" msprop:Generator_TableVarName="tablespGetRecords" msprop:Generator_TablePropName="spGetRecords" msprop:Generator_RowDeletingName="spGetRecordsRowDeleting" msprop:Generator_RowChangingName="spGetRecordsRowChanging" msprop:Generator_RowEvHandlerName="spGetRecordsRowChangeEventHandler" msprop:Generator_RowDeletedName="spGetRecordsRowDeleted" msprop:Generator_UserTableName="spGetRecords" msprop:Generator_RowChangedName="spGetRecordsRowChanged" msprop:Generator_RowEvArgName="spGetRecordsRowChangeEvent" msprop:Generator_RowClassName="spGetRecordsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="unitName" msprop:Generator_ColumnVarNameInTable="columnunitName" msprop:Generator_ColumnPropNameInRow="unitName" msprop:Generator_ColumnPropNameInTable="unitNameColumn" msprop:Generator_UserColumnName="unitName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="currentCensus" msprop:Generator_ColumnVarNameInTable="columncurrentCensus" msprop:Generator_ColumnPropNameInRow="currentCensus" msprop:Generator_ColumnPropNameInTable="currentCensusColumn" msprop:Generator_UserColumnName="currentCensus">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewRecordsForm));
             this.hospitalCensusBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.hospitalCensusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sE265_AJF1130DataSet1 = new DailyCensusReport.SE265_AJF1130DataSet1();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -43,7 +45,19 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.hospitalCensusBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.hospitalCensusDataGridView = new System.Windows.Forms.DataGridView();
+            this.hospitalCensusTableAdapter = new DailyCensusReport.SE265_AJF1130DataSet1TableAdapters.HospitalCensusTableAdapter();
+            this.tableAdapterManager = new DailyCensusReport.SE265_AJF1130DataSet1TableAdapters.TableAdapterManager();
+            this.spGetHospitalCensusTableAdapter = new DailyCensusReport.SE265_AJF1130DataSet1TableAdapters.spGetHospitalCensusTableAdapter();
+            this.sE265_AJF1130DataSet = new DailyCensusReport.SE265_AJF1130DataSet();
+            this.spGetRecordsTableAdapter = new DailyCensusReport.SE265_AJF1130DataSetTableAdapters.spGetRecordsTableAdapter();
+            this.tableAdapterManager1 = new DailyCensusReport.SE265_AJF1130DataSetTableAdapters.TableAdapterManager();
+            this.spGetRecordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spGetRecordsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sE265_AJF1130DataSet2 = new DailyCensusReport.SE265_AJF1130DataSet2();
+            this.vw_GetRecordsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vw_GetRecordsTableAdapter = new DailyCensusReport.SE265_AJF1130DataSet2TableAdapters.vw_GetRecordsTableAdapter();
+            this.tableAdapterManager2 = new DailyCensusReport.SE265_AJF1130DataSet2TableAdapters.TableAdapterManager();
+            this.vw_GetRecordsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,24 +66,16 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hospitalCensusBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sE265_AJF1130DataSet1 = new DailyCensusReport.SE265_AJF1130DataSet1();
-            this.hospitalCensusTableAdapter = new DailyCensusReport.SE265_AJF1130DataSet1TableAdapters.HospitalCensusTableAdapter();
-            this.tableAdapterManager = new DailyCensusReport.SE265_AJF1130DataSet1TableAdapters.TableAdapterManager();
-            this.spGetHospitalCensusTableAdapter = new DailyCensusReport.SE265_AJF1130DataSet1TableAdapters.spGetHospitalCensusTableAdapter();
-            this.sE265_AJF1130DataSet = new DailyCensusReport.SE265_AJF1130DataSet();
-            this.spGetRecordsTableAdapter = new DailyCensusReport.SE265_AJF1130DataSetTableAdapters.spGetRecordsTableAdapter();
-            this.tableAdapterManager1 = new DailyCensusReport.SE265_AJF1130DataSetTableAdapters.TableAdapterManager();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalCensusBindingNavigator)).BeginInit();
             this.hospitalCensusBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalCensusDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalCensusBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spGetRecordsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spGetRecordsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_GetRecordsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_GetRecordsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // hospitalCensusBindingNavigator
@@ -110,6 +116,16 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // hospitalCensusBindingSource
+            // 
+            this.hospitalCensusBindingSource.DataMember = "HospitalCensus";
+            this.hospitalCensusBindingSource.DataSource = this.sE265_AJF1130DataSet1;
+            // 
+            // sE265_AJF1130DataSet1
+            // 
+            this.sE265_AJF1130DataSet1.DataSetName = "SE265_AJF1130DataSet1";
+            this.sE265_AJF1130DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -194,92 +210,6 @@
             this.hospitalCensusBindingNavigatorSaveItem.Name = "hospitalCensusBindingNavigatorSaveItem";
             this.hospitalCensusBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.hospitalCensusBindingNavigatorSaveItem.Text = "Save Data";
-            this.hospitalCensusBindingNavigatorSaveItem.Click += new System.EventHandler(this.hospitalCensusBindingNavigatorSaveItem_Click);
-            // 
-            // hospitalCensusDataGridView
-            // 
-            this.hospitalCensusDataGridView.AutoGenerateColumns = false;
-            this.hospitalCensusDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.hospitalCensusDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
-            this.hospitalCensusDataGridView.DataSource = this.hospitalCensusBindingSource;
-            this.hospitalCensusDataGridView.Location = new System.Drawing.Point(12, 28);
-            this.hospitalCensusDataGridView.Name = "hospitalCensusDataGridView";
-            this.hospitalCensusDataGridView.Size = new System.Drawing.Size(819, 377);
-            this.hospitalCensusDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn1.HeaderText = "id";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "unitID";
-            this.dataGridViewTextBoxColumn2.HeaderText = "unitID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "currentCensus";
-            this.dataGridViewTextBoxColumn3.HeaderText = "currentCensus";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "availBeds";
-            this.dataGridViewTextBoxColumn4.HeaderText = "availBeds";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "numberISP";
-            this.dataGridViewTextBoxColumn5.HeaderText = "numberISP";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "DC";
-            this.dataGridViewTextBoxColumn6.HeaderText = "DC";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "notes";
-            this.dataGridViewTextBoxColumn7.HeaderText = "notes";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "currentCap";
-            this.dataGridViewTextBoxColumn8.HeaderText = "currentCap";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "updateDate";
-            this.dataGridViewTextBoxColumn9.HeaderText = "updateDate";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // hospitalCensusBindingSource
-            // 
-            this.hospitalCensusBindingSource.DataMember = "HospitalCensus";
-            this.hospitalCensusBindingSource.DataSource = this.sE265_AJF1130DataSet1;
-            // 
-            // sE265_AJF1130DataSet1
-            // 
-            this.sE265_AJF1130DataSet1.DataSetName = "SE265_AJF1130DataSet1";
-            this.sE265_AJF1130DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // hospitalCensusTableAdapter
             // 
@@ -327,40 +257,121 @@
             this.tableAdapterManager1.T2TableAdapter = null;
             this.tableAdapterManager1.T4TableAdapter = null;
             this.tableAdapterManager1.TBCTableAdapter = null;
+            this.tableAdapterManager1.UpdateOrder = DailyCensusReport.SE265_AJF1130DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // toolStrip1
+            // spGetRecordsBindingSource
             // 
-            this.toolStrip1.Location = new System.Drawing.Point(0, 25);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(874, 25);
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "fillToolStrip";
+            this.spGetRecordsBindingSource.DataMember = "spGetRecords";
+            this.spGetRecordsBindingSource.DataSource = this.sE265_AJF1130DataSet;
             // 
-            // toolStrip2
+            // spGetRecordsBindingSource1
             // 
-            this.toolStrip2.Location = new System.Drawing.Point(0, 50);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(874, 25);
-            this.toolStrip2.TabIndex = 3;
-            this.toolStrip2.Text = "fillToolStrip";
+            this.spGetRecordsBindingSource1.DataMember = "spGetRecords";
+            this.spGetRecordsBindingSource1.DataSource = this.sE265_AJF1130DataSet;
             // 
-            // toolStrip3
+            // sE265_AJF1130DataSet2
             // 
-            this.toolStrip3.Location = new System.Drawing.Point(0, 75);
-            this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(874, 25);
-            this.toolStrip3.TabIndex = 4;
-            this.toolStrip3.Text = "fillToolStrip";
+            this.sE265_AJF1130DataSet2.DataSetName = "SE265_AJF1130DataSet2";
+            this.sE265_AJF1130DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // vw_GetRecordsBindingSource
+            // 
+            this.vw_GetRecordsBindingSource.DataMember = "vw_GetRecords";
+            this.vw_GetRecordsBindingSource.DataSource = this.sE265_AJF1130DataSet2;
+            // 
+            // vw_GetRecordsTableAdapter
+            // 
+            this.vw_GetRecordsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager2
+            // 
+            this.tableAdapterManager2._6ACUTableAdapter = null;
+            this.tableAdapterManager2.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager2.BHUTableAdapter = null;
+            this.tableAdapterManager2.CensusTableAdapter = null;
+            this.tableAdapterManager2.Connection = null;
+            this.tableAdapterManager2.HospitalCensusTableAdapter = null;
+            this.tableAdapterManager2.HospitalDepartmentsTableAdapter = null;
+            this.tableAdapterManager2.ICUTableAdapter = null;
+            this.tableAdapterManager2.PEDITableAdapter = null;
+            this.tableAdapterManager2.T2TableAdapter = null;
+            this.tableAdapterManager2.T4TableAdapter = null;
+            this.tableAdapterManager2.TBCTableAdapter = null;
+            this.tableAdapterManager2.UpdateOrder = DailyCensusReport.SE265_AJF1130DataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // vw_GetRecordsDataGridView
+            // 
+            this.vw_GetRecordsDataGridView.AutoGenerateColumns = false;
+            this.vw_GetRecordsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vw_GetRecordsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.vw_GetRecordsDataGridView.DataSource = this.vw_GetRecordsBindingSource;
+            this.vw_GetRecordsDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.vw_GetRecordsDataGridView.Name = "vw_GetRecordsDataGridView";
+            this.vw_GetRecordsDataGridView.Size = new System.Drawing.Size(862, 325);
+            this.vw_GetRecordsDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "unitName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "unitName";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "currentCensus";
+            this.dataGridViewTextBoxColumn2.HeaderText = "currentCensus";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "availBeds";
+            this.dataGridViewTextBoxColumn3.HeaderText = "availBeds";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "numberISP";
+            this.dataGridViewTextBoxColumn4.HeaderText = "numberISP";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "DC";
+            this.dataGridViewTextBoxColumn5.HeaderText = "DC";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "notes";
+            this.dataGridViewTextBoxColumn6.HeaderText = "notes";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "currentCap";
+            this.dataGridViewTextBoxColumn7.HeaderText = "currentCap";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "updateDate";
+            this.dataGridViewTextBoxColumn8.HeaderText = "updateDate";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // ViewRecordsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 444);
-            this.Controls.Add(this.toolStrip3);
-            this.Controls.Add(this.toolStrip2);
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.hospitalCensusDataGridView);
+            this.Controls.Add(this.vw_GetRecordsDataGridView);
             this.Controls.Add(this.hospitalCensusBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewRecordsForm";
@@ -370,10 +381,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.hospitalCensusBindingNavigator)).EndInit();
             this.hospitalCensusBindingNavigator.ResumeLayout(false);
             this.hospitalCensusBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalCensusDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalCensusBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spGetRecordsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spGetRecordsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_GetRecordsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vw_GetRecordsDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,7 +413,17 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton hospitalCensusBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView hospitalCensusDataGridView;
+        private SE265_AJF1130DataSet1TableAdapters.spGetHospitalCensusTableAdapter spGetHospitalCensusTableAdapter;
+        private SE265_AJF1130DataSet sE265_AJF1130DataSet;
+        private SE265_AJF1130DataSetTableAdapters.spGetRecordsTableAdapter spGetRecordsTableAdapter;
+        private SE265_AJF1130DataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.BindingSource spGetRecordsBindingSource;
+        private System.Windows.Forms.BindingSource spGetRecordsBindingSource1;
+        private SE265_AJF1130DataSet2 sE265_AJF1130DataSet2;
+        private System.Windows.Forms.BindingSource vw_GetRecordsBindingSource;
+        private SE265_AJF1130DataSet2TableAdapters.vw_GetRecordsTableAdapter vw_GetRecordsTableAdapter;
+        private SE265_AJF1130DataSet2TableAdapters.TableAdapterManager tableAdapterManager2;
+        private System.Windows.Forms.DataGridView vw_GetRecordsDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
@@ -407,14 +432,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private SE265_AJF1130DataSet1TableAdapters.spGetHospitalCensusTableAdapter spGetHospitalCensusTableAdapter;
-        private SE265_AJF1130DataSet sE265_AJF1130DataSet;
-        private SE265_AJF1130DataSetTableAdapters.spGetRecordsTableAdapter spGetRecordsTableAdapter;
-        private SE265_AJF1130DataSetTableAdapters.TableAdapterManager tableAdapterManager1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStrip toolStrip3;
 
     }
 }
