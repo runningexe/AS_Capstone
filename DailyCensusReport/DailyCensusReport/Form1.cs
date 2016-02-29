@@ -198,7 +198,6 @@ namespace DailyCensusReport
                   );
                 #endregion
             }
-
         }
 
         private void btnViewRecord_Click(object sender, EventArgs e)
