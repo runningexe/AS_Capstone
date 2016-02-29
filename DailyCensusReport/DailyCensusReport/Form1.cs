@@ -1,6 +1,6 @@
 ﻿/* Hospital Daily Census Report *
  * Created By: Anthony Fiori III & Anthony Rondini *
- * Latest Update: 2/25/2016 *
+ * Latest Update: 2/28/2016 *
  */
 
 using System;
@@ -22,6 +22,7 @@ namespace DailyCensusReport
 {
     public partial class frmDailyCensusReport : Form
     {
+
         #region Unit TextBox Array
         public TextBox[] boxesICU { get; set; }
         public TextBox[,] allTextChangeUnits { get; set; }
@@ -43,161 +44,161 @@ namespace DailyCensusReport
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
-        {         
+        {
 
-                #region Unit Array
-                //Arrays for each unit to hold each variable
-                string[] varICU = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
-                string[] varT2 = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
-                string[] varPEDI = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
-                string[] varT4 = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
-                string[] var6ACU = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
-                string[] varTBC = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
-                string[] varBHU = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+            #region Unit Array
+            //Arrays for each unit to hold each variable
+            string[] varICU = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+            string[] varT2 = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+            string[] varPEDI = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+            string[] varT4 = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+            string[] var6ACU = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+            string[] varTBC = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+            string[] varBHU = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
+            #endregion
+
+            #region Validate Fields
+            //Check to make sure all required fields are filled out
+            if (txtIsoPatientsICU.Text == "" || txtDischargesICU.Text == "" ||
+                txtIsoPatientsT2.Text == "" || txtDischargesT2.Text == "" ||
+                txtIsoPatientsPEDI.Text == "" || txtDischargesPEDI.Text == "" ||
+                txtIsoPatientsT4.Text == "" || txtDischargesT4.Text == "" ||
+                txtIsoPatients6ACU.Text == "" || txtDischarges6ACU.Text == "" ||
+                txtIsoPatientsTBC.Text == "" || txtDischargesTBC.Text == "" ||
+                txtIsoPatientsBHU.Text == "" || txtDischargesBHU.Text == ""
+                )
+            {
+                MessageBox.Show("Please Provide All Required Information", "Error");
+            }
+            #endregion
+
+            else
+            {
+                #region CalcColor Method Call
+                /***Calling the CalcColor method from the CalculationColorChanger class***/
+                CalculationColorChanger.CalcColor(
+                  //ICU
+                  txtCurrentCensusICU, txtCurrentCapStatusICU,
+
+                  //T2
+                  txtCurrentCensusT2, txtCurrentCapStatusT2,
+
+                  //PEDI
+                  txtCurrentCensusPEDI, txtCurrentCapStatusPEDI,
+
+                  //T4
+                  txtCurrentCensusT4, txtCurrentCapStatusT4,
+
+                  //6ACU
+                  txtCurrentCensus6ACU, txtCurrentCapStatus6ACU,
+
+                  //TBC
+                  txtCurrentCensusTBC, txtCurrentCapStatusTBC,
+
+                  //BHU
+                  txtCurrentCensusBHU, txtCurrentCapStatusBHU);
                 #endregion
 
-                #region Validate Fields
-                //Check to make sure all required fields are filled out
-                if (txtIsoPatientsICU.Text =="" || txtDischargesICU.Text ==""||
-                    txtIsoPatientsT2.Text =="" || txtDischargesT2.Text ==""||
-                    txtIsoPatientsPEDI.Text =="" || txtDischargesPEDI.Text ==""||
-                    txtIsoPatientsT4.Text =="" || txtDischargesT4.Text ==""||
-                    txtIsoPatients6ACU.Text =="" || txtDischarges6ACU.Text ==""||
-                    txtIsoPatientsTBC.Text =="" || txtDischargesTBC.Text ==""||
-                    txtIsoPatientsBHU.Text =="" || txtDischargesBHU.Text ==""
-                    )
+                #region For Loops for TextBoxes
+                /***********************************************************************************************************************************************************************/
+                /***Gives a unitID for each table***/
+                //ICU
+                int unitID = 1;
+                boxesICU = new TextBox[] { txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU };
+                for (int i = 0; i < boxesICU.Length; i++)
                 {
-                    MessageBox.Show("Please Provide All Required Information", "Error");
+                    varICU[i] = Convert.ToString(boxesICU[i].Text);
                 }
+
+                //T2
+                int unitIDT2 = 2;
+                boxesT2 = new TextBox[] { txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2 };
+                for (int i = 0; i < boxesT2.Length; i++)
+                {
+                    varT2[i] = Convert.ToString(boxesT2[i].Text);
+                }
+
+                //PEDI
+                int unitIDPEDI = 3;
+                boxesPEDI = new TextBox[] { txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI };
+                for (int i = 0; i < boxesPEDI.Length; i++)
+                {
+                    varPEDI[i] = Convert.ToString(boxesPEDI[i].Text);
+                }
+
+                //T4
+                int unitIDT4 = 4;
+                boxesPEDI = new TextBox[] { txtCurrentCensusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4, txtNotesT4, txtCurrentCapStatusT4 };
+                for (int i = 0; i < boxesPEDI.Length; i++)
+                {
+                    varT4[i] = Convert.ToString(boxesPEDI[i].Text);
+                }
+
+                //6ACU
+                int unitID6ACU = 5;
+                boxes6ACU = new TextBox[] { txtCurrentCensus6ACU, txtAvailableBeds6ACU, txtIsoPatients6ACU, txtDischarges6ACU, txtNotes6ACU, txtCurrentCapStatus6ACU };
+                for (int i = 0; i < boxes6ACU.Length; i++)
+                {
+                    var6ACU[i] = Convert.ToString(boxes6ACU[i].Text);
+                }
+
+                //TBC
+                int unitIDTBC = 6;
+                boxesTBC = new TextBox[] { txtCurrentCensusTBC, txtAvailableBedsTBC, txtIsoPatientsTBC, txtDischargesTBC, txtNotesTBC, txtCurrentCapStatusTBC };
+                for (int i = 0; i < boxesTBC.Length; i++)
+                {
+                    varTBC[i] = Convert.ToString(boxesTBC[i].Text);
+                }
+
+                //BHU
+                int unitIDBHU = 7;
+                boxesBHU = new TextBox[] { txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU };
+                for (int i = 0; i < boxesBHU.Length; i++)
+                {
+                    varBHU[i] = Convert.ToString(boxesBHU[i].Text);
+                }
+                /***********************************************************************************************************************************************************************/
                 #endregion
 
-                else
-                {
-                    #region CalcColor Method Call
-                    /***Calling the CalcColor method from the CalculationColorChanger class***/
-                    CalculationColorChanger.CalcColor(
-                        //ICU
-                      txtCurrentCensusICU, txtCurrentCapStatusICU,
+                #region SubmitRecord Method Call
+                /***Calling the Insert methods from the SubmitRecord class***/
+                SubmitRecord.InsertICU(unitID, varICU);
+                SubmitRecord.InsertT2(unitIDT2, varT2);
+                SubmitRecord.InsertPEDI(unitIDPEDI, varPEDI);
+                SubmitRecord.InsertT4(unitIDT4, varT4);
+                SubmitRecord.Insert6ACU(unitID6ACU, var6ACU);
+                SubmitRecord.InsertTBC(unitIDTBC, varTBC);
+                SubmitRecord.InsertBHU(unitIDBHU, varBHU);
 
-                      //T2
-                      txtCurrentCensusT2, txtCurrentCapStatusT2,
+                #endregion
 
-                      //PEDI
-                      txtCurrentCensusPEDI, txtCurrentCapStatusPEDI,
+                #region PDF Method Call
+                /***Calling the PDFView method from the PDFSubmit class.***/
+                PDFSubmit.PDFView(
+                  //ICU
+                  txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
 
-                      //T4
-                      txtCurrentCensusT4, txtCurrentCapStatusT4,
+                  //T2
+                  txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2,
 
-                      //6ACU
-                      txtCurrentCensus6ACU, txtCurrentCapStatus6ACU,
+                  //PEDI
+                  txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI,
 
-                      //TBC
-                      txtCurrentCensusTBC, txtCurrentCapStatusTBC,
+                  //T4
+                  txtCurrentCensusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4, txtNotesT4, txtCurrentCapStatusT4,
 
-                      //BHU
-                      txtCurrentCensusBHU, txtCurrentCapStatusBHU);
-                    #endregion
+                  //6ACU
+                  txtCurrentCensus6ACU, txtAvailableBeds6ACU, txtIsoPatients6ACU, txtDischarges6ACU, txtNotes6ACU, txtCurrentCapStatus6ACU,
 
-                    #region For Loops for TextBoxes
-                    /***********************************************************************************************************************************************************************/
-                    /***Gives a unitID for each table***/
-                    //ICU
-                    int unitID = 1;
-                    boxesICU = new TextBox[] { txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU };
-                    for (int i = 0; i < boxesICU.Length; i++)
-                    {
-                        varICU[i] = Convert.ToString(boxesICU[i].Text);
-                    }
+                  //TBC
+                  txtCurrentCensusTBC, txtAvailableBedsTBC, txtIsoPatientsTBC, txtDischargesTBC, txtNotesTBC, txtCurrentCapStatusTBC,
 
-                    //T2
-                    int unitIDT2 = 2;
-                    boxesT2 = new TextBox[] { txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2 };
-                    for (int i = 0; i < boxesT2.Length; i++)
-                    {
-                        varT2[i] = Convert.ToString(boxesT2[i].Text);
-                    }
+                  //BHU
+                  txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU
+                  );
+                #endregion
+            }
 
-                    //PEDI
-                    int unitIDPEDI = 3;
-                    boxesPEDI = new TextBox[] { txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI };
-                    for (int i = 0; i < boxesPEDI.Length; i++)
-                    {
-                        varPEDI[i] = Convert.ToString(boxesPEDI[i].Text);
-                    }
-
-                    //T4
-                    int unitIDT4 = 4;
-                    boxesPEDI = new TextBox[] { txtCurrentCensusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4, txtNotesT4, txtCurrentCapStatusT4 };
-                    for (int i = 0; i < boxesPEDI.Length; i++)
-                    {
-                        varT4[i] = Convert.ToString(boxesPEDI[i].Text);
-                    }
-
-                    //6ACU
-                    int unitID6ACU = 5;
-                    boxes6ACU = new TextBox[] { txtCurrentCensus6ACU, txtAvailableBeds6ACU, txtIsoPatients6ACU, txtDischarges6ACU, txtNotes6ACU, txtCurrentCapStatus6ACU };
-                    for (int i = 0; i < boxes6ACU.Length; i++)
-                    {
-                        var6ACU[i] = Convert.ToString(boxes6ACU[i].Text);
-                    }
-
-                    //TBC
-                    int unitIDTBC = 6;
-                    boxesTBC = new TextBox[] { txtCurrentCensusTBC, txtAvailableBedsTBC, txtIsoPatientsTBC, txtDischargesTBC, txtNotesTBC, txtCurrentCapStatusTBC };
-                    for (int i = 0; i < boxesTBC.Length; i++)
-                    {
-                        varTBC[i] = Convert.ToString(boxesTBC[i].Text);
-                    }
-
-                    //BHU
-                    int unitIDBHU = 7;
-                    boxesBHU = new TextBox[] { txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU };
-                    for (int i = 0; i < boxesBHU.Length; i++)
-                    {
-                        varBHU[i] = Convert.ToString(boxesBHU[i].Text);
-                    }
-                    /***********************************************************************************************************************************************************************/
-                    #endregion
-
-                    #region SubmitRecord Method Call
-                    /***Calling the Insert methods from the SubmitRecord class***/
-                    SubmitRecord.InsertICU(unitID, varICU);
-                    SubmitRecord.InsertT2(unitIDT2, varT2);
-                    SubmitRecord.InsertPEDI(unitIDPEDI, varPEDI);
-                    SubmitRecord.InsertT4(unitIDT4, varT4);
-                    SubmitRecord.Insert6ACU(unitID6ACU, var6ACU);
-                    SubmitRecord.InsertTBC(unitIDTBC, varTBC);
-                    SubmitRecord.InsertBHU(unitIDBHU, varBHU);
-
-                    #endregion
-
-                    #region PDF Method Call
-                    /***Calling the PDFView method from the PDFSubmit class.***/
-                    PDFSubmit.PDFView(
-                        //ICU
-                      txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
-
-                      //T2
-                      txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2,
-
-                      //PEDI
-                      txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI,
-
-                      //T4
-                      txtCurrentCensusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4, txtNotesT4, txtCurrentCapStatusT4,
-
-                      //6ACU
-                      txtCurrentCensus6ACU, txtAvailableBeds6ACU, txtIsoPatients6ACU, txtDischarges6ACU, txtNotes6ACU, txtCurrentCapStatus6ACU,
-
-                      //TBC
-                      txtCurrentCensusTBC, txtAvailableBedsTBC, txtIsoPatientsTBC, txtDischargesTBC, txtNotesTBC, txtCurrentCapStatusTBC,
-
-                      //BHU
-                      txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU
-                      );
-                    #endregion
-                }
-           
         }
 
         private void btnViewRecord_Click(object sender, EventArgs e)
@@ -207,13 +208,14 @@ namespace DailyCensusReport
             openVR.Show();
         }
 
-//Closes Program
-        private void btnExit_Click(object sender, EventArgs e)
+        private void btnHelp_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Show();
+            HelpForm openHelp = new HelpForm();
+            openHelp.Show();
         }
 
-//ICU Text Change
+        //ICU Text Change
         private void txtCurrentCensusICU_TextChanged(object sender, EventArgs e)
         {
             // Checks to see if it is over 15 patients, if it's over it will clear textbox fields
@@ -240,7 +242,7 @@ namespace DailyCensusReport
             }
         }
 
-//T2 Text Change
+        //T2 Text Change
         private void txtCurrentCensusT2_TextChanged(object sender, EventArgs e)
         {
             // Checks to see if it is over 28 patients, if it's over it will clear textbox fields
@@ -267,7 +269,7 @@ namespace DailyCensusReport
             }
         }
 
-//PEDI Text Change
+        //PEDI Text Change
         private void txtCurrentCensusPEDI_TextChanged(object sender, EventArgs e)
         {
             // Checks to see if it is over 28 patients, if it's over it will clear textbox fields
@@ -294,7 +296,7 @@ namespace DailyCensusReport
             }
         }
 
-//T4 Text Change
+        //T4 Text Change
         private void txtCurrentCensusT4_TextChanged(object sender, EventArgs e)
         {
             // Checks to see if it is over 29 patients, if it's over it will clear textbox fields
@@ -321,7 +323,7 @@ namespace DailyCensusReport
             }
         }
 
-//6ACU Text Change
+        //6ACU Text Change
         private void txtCurrentCensus6ACU_TextChanged(object sender, EventArgs e)
         {
             // Checks to see if it is over 10 patients, if it's over it will clear textbox fields
@@ -348,7 +350,7 @@ namespace DailyCensusReport
             }
         }
 
-//TBC Text Change
+        //TBC Text Change
         private void txtCurrentCensusTBC_TextChanged(object sender, EventArgs e)
         {
             // Checks to see if it is over 10 patients, if it's over it will clear textbox fields
@@ -375,7 +377,7 @@ namespace DailyCensusReport
             }
         }
 
-//BHU Text Change
+        //BHU Text Change
         private void txtCurrentCensusBHU_TextChanged(object sender, EventArgs e)
         {
             // Checks to see if it is over 15 patients, if it's over it will clear textbox fields
@@ -403,6 +405,13 @@ namespace DailyCensusReport
                 }
             }
         }
+
+        //Closes Program
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
 

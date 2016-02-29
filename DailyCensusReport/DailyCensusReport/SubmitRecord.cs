@@ -11,7 +11,7 @@ namespace DailyCensusReport
 {
     public class SubmitRecord
     {
-//ICU Insert Method
+        //ICU Insert Method
         public static void InsertICU(int unitID, string[] varICU)
         {
             //Connects to ICU Stored procedure to insert
@@ -36,7 +36,7 @@ namespace DailyCensusReport
             {
                 connect.Open();
                 //Executes then check to see if correct.
-                cmd.ExecuteNonQuery();                
+                cmd.ExecuteNonQuery();
             }
             catch (SqlException ex)
             {
@@ -49,17 +49,17 @@ namespace DailyCensusReport
                 connect.Close();
             }
         }
-        
+
         /*
          Everything in the methods below are 
          practically the same as the ICU Insert 
          method
          */
 
-//T2 Insert Method
+        //T2 Insert Method
         public static void InsertT2(int unitIDT2, string[] varT2)
         {
-//Connects to T2 Stored procedure to insert
+            //Connects to T2 Stored procedure to insert
             SqlConnection connect = DBConnect.GetConnection();
             SqlCommand cmd = new SqlCommand("spInsertT2", connect);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -91,7 +91,7 @@ namespace DailyCensusReport
             }
         }
 
-//PEDI Insert Method
+        //PEDI Insert Method
         public static void InsertPEDI(int unitIDPEDI, string[] varPEDI)
         {
             //Connects to PEDI Stored procedure to insert
@@ -126,7 +126,7 @@ namespace DailyCensusReport
             }
         }
 
-//T4 Insert Method
+        //T4 Insert Method
         public static void InsertT4(int unitIDT4, string[] varT4)
         {
             //Connects to T4 Stored procedure to insert
@@ -161,7 +161,7 @@ namespace DailyCensusReport
             }
         }
 
-//6ACU Insert Method
+        //6ACU Insert Method
         public static void Insert6ACU(int unitID6ACU, string[] var6ACU)
         {
             //Connects to 6ACU Stored procedure to insert
@@ -196,7 +196,7 @@ namespace DailyCensusReport
             }
         }
 
-//TBC Insert Method
+        //TBC Insert Method
         public static void InsertTBC(int unitIDTBC, string[] varTBC)
         {
             //Connects to TBC Stored procedure to insert
@@ -231,7 +231,7 @@ namespace DailyCensusReport
             }
         }
 
-//BHU Insert Method
+        //BHU Insert Method
         public static void InsertBHU(int unitIDBHU, string[] varBHU)
         {
             //Connects to BHU Stored procedure to insert
