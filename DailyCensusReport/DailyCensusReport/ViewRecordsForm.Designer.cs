@@ -31,11 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewRecordsForm));
             this.hospitalCensusBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.hospitalCensusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sE265_AJF1130DataSet1 = new DailyCensusReport.SE265_AJF1130DataSet1();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -44,7 +42,6 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.hospitalCensusBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.hospitalCensusTableAdapter = new DailyCensusReport.SE265_AJF1130DataSet1TableAdapters.HospitalCensusTableAdapter();
             this.tableAdapterManager = new DailyCensusReport.SE265_AJF1130DataSet1TableAdapters.TableAdapterManager();
             this.spGetHospitalCensusTableAdapter = new DailyCensusReport.SE265_AJF1130DataSet1TableAdapters.spGetHospitalCensusTableAdapter();
@@ -66,6 +63,15 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboUnitNameSearch = new System.Windows.Forms.ComboBox();
+            this.hospitalDepartmentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.sE265AJF1130DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hospitalDepartmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hospitalDepartmentsTableAdapter = new DailyCensusReport.SE265_AJF1130DataSetTableAdapters.HospitalDepartmentsTableAdapter();
+            this.txttest = new System.Windows.Forms.TextBox();
+            this.txttest3 = new System.Windows.Forms.TextBox();
+            this.txttest2 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalCensusBindingNavigator)).BeginInit();
             this.hospitalCensusBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalCensusBindingSource)).BeginInit();
@@ -76,14 +82,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_GetRecordsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_GetRecordsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalDepartmentsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sE265AJF1130DataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalDepartmentsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // hospitalCensusBindingNavigator
             // 
-            this.hospitalCensusBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.hospitalCensusBindingNavigator.AddNewItem = null;
             this.hospitalCensusBindingNavigator.BindingSource = this.hospitalCensusBindingSource;
             this.hospitalCensusBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.hospitalCensusBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.hospitalCensusBindingNavigator.DeleteItem = null;
             this.hospitalCensusBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -93,10 +102,7 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.hospitalCensusBindingNavigatorSaveItem});
+            this.bindingNavigatorSeparator2});
             this.hospitalCensusBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.hospitalCensusBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.hospitalCensusBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -107,15 +113,6 @@
             this.hospitalCensusBindingNavigator.Size = new System.Drawing.Size(874, 25);
             this.hospitalCensusBindingNavigator.TabIndex = 0;
             this.hospitalCensusBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // hospitalCensusBindingSource
             // 
@@ -133,15 +130,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -202,14 +190,6 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // hospitalCensusBindingNavigatorSaveItem
-            // 
-            this.hospitalCensusBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.hospitalCensusBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("hospitalCensusBindingNavigatorSaveItem.Image")));
-            this.hospitalCensusBindingNavigatorSaveItem.Name = "hospitalCensusBindingNavigatorSaveItem";
-            this.hospitalCensusBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.hospitalCensusBindingNavigatorSaveItem.Text = "Save Data";
             // 
             // hospitalCensusTableAdapter
             // 
@@ -313,10 +293,11 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.vw_GetRecordsDataGridView.DataSource = this.vw_GetRecordsBindingSource;
-            this.vw_GetRecordsDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.vw_GetRecordsDataGridView.Location = new System.Drawing.Point(0, 152);
             this.vw_GetRecordsDataGridView.Name = "vw_GetRecordsDataGridView";
-            this.vw_GetRecordsDataGridView.Size = new System.Drawing.Size(862, 325);
+            this.vw_GetRecordsDataGridView.Size = new System.Drawing.Size(874, 291);
             this.vw_GetRecordsDataGridView.TabIndex = 1;
+            this.vw_GetRecordsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.hospitalCensusDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -366,13 +347,83 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "updateDate";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Oswald", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(40, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Search by Unit Name";
+            // 
+            // cboUnitNameSearch
+            // 
+            this.cboUnitNameSearch.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.hospitalDepartmentsBindingSource1, "unitID", true));
+            this.cboUnitNameSearch.DataSource = this.hospitalDepartmentsBindingSource1;
+            this.cboUnitNameSearch.DisplayMember = "unitName";
+            this.cboUnitNameSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboUnitNameSearch.FormattingEnabled = true;
+            this.cboUnitNameSearch.Location = new System.Drawing.Point(44, 94);
+            this.cboUnitNameSearch.Name = "cboUnitNameSearch";
+            this.cboUnitNameSearch.Size = new System.Drawing.Size(134, 21);
+            this.cboUnitNameSearch.TabIndex = 3;
+            this.cboUnitNameSearch.ValueMember = "unitName";
+            this.cboUnitNameSearch.SelectedIndexChanged += new System.EventHandler(this.cboUnitNameSearch_SelectedIndexChanged);
+            // 
+            // hospitalDepartmentsBindingSource1
+            // 
+            this.hospitalDepartmentsBindingSource1.DataMember = "HospitalDepartments";
+            this.hospitalDepartmentsBindingSource1.DataSource = this.sE265AJF1130DataSetBindingSource;
+            // 
+            // sE265AJF1130DataSetBindingSource
+            // 
+            this.sE265AJF1130DataSetBindingSource.DataSource = this.sE265_AJF1130DataSet;
+            this.sE265AJF1130DataSetBindingSource.Position = 0;
+            // 
+            // hospitalDepartmentsBindingSource
+            // 
+            this.hospitalDepartmentsBindingSource.DataMember = "HospitalDepartments";
+            this.hospitalDepartmentsBindingSource.DataSource = this.sE265AJF1130DataSetBindingSource;
+            // 
+            // hospitalDepartmentsTableAdapter
+            // 
+            this.hospitalDepartmentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // txttest
+            // 
+            this.txttest.Location = new System.Drawing.Point(233, 94);
+            this.txttest.Name = "txttest";
+            this.txttest.Size = new System.Drawing.Size(100, 20);
+            this.txttest.TabIndex = 4;
+            // 
+            // txttest3
+            // 
+            this.txttest3.Location = new System.Drawing.Point(475, 95);
+            this.txttest3.Name = "txttest3";
+            this.txttest3.Size = new System.Drawing.Size(100, 20);
+            this.txttest3.TabIndex = 5;
+            // 
+            // txttest2
+            // 
+            this.txttest2.Location = new System.Drawing.Point(354, 95);
+            this.txttest2.Name = "txttest2";
+            this.txttest2.Size = new System.Drawing.Size(100, 20);
+            this.txttest2.TabIndex = 6;
+            // 
             // ViewRecordsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 444);
+            this.Controls.Add(this.txttest2);
+            this.Controls.Add(this.txttest3);
+            this.Controls.Add(this.txttest);
+            this.Controls.Add(this.cboUnitNameSearch);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.vw_GetRecordsDataGridView);
             this.Controls.Add(this.hospitalCensusBindingNavigator);
+            this.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hospitalCensusBindingSource, "unitID", true));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewRecordsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -389,6 +440,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_GetRecordsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vw_GetRecordsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalDepartmentsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sE265AJF1130DataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalDepartmentsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -401,9 +455,7 @@
         private SE265_AJF1130DataSet1TableAdapters.HospitalCensusTableAdapter hospitalCensusTableAdapter;
         private SE265_AJF1130DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator hospitalCensusBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -412,7 +464,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton hospitalCensusBindingNavigatorSaveItem;
         private SE265_AJF1130DataSet1TableAdapters.spGetHospitalCensusTableAdapter spGetHospitalCensusTableAdapter;
         private SE265_AJF1130DataSet sE265_AJF1130DataSet;
         private SE265_AJF1130DataSetTableAdapters.spGetRecordsTableAdapter spGetRecordsTableAdapter;
@@ -432,6 +483,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboUnitNameSearch;
+        private System.Windows.Forms.BindingSource sE265AJF1130DataSetBindingSource;
+        private System.Windows.Forms.BindingSource hospitalDepartmentsBindingSource;
+        private SE265_AJF1130DataSetTableAdapters.HospitalDepartmentsTableAdapter hospitalDepartmentsTableAdapter;
+        private System.Windows.Forms.BindingSource hospitalDepartmentsBindingSource1;
+        private System.Windows.Forms.TextBox txttest;
+        private System.Windows.Forms.TextBox txttest3;
+        private System.Windows.Forms.TextBox txttest2;
     }
 }

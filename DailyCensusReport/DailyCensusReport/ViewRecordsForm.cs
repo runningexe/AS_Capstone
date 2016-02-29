@@ -11,6 +11,8 @@ namespace DailyCensusReport
 {
     public partial class ViewRecordsForm : Form
     {
+        frmDailyCensusReport fofo = new frmDailyCensusReport();
+
         public ViewRecordsForm()
         {
             InitializeComponent();
@@ -18,6 +20,8 @@ namespace DailyCensusReport
 
         private void ViewRecordsForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'sE265_AJF1130DataSet.HospitalDepartments' table. You can move, or remove it, as needed.
+            this.hospitalDepartmentsTableAdapter.Fill(this.sE265_AJF1130DataSet.HospitalDepartments);
             // TODO: This line of code loads data into the 'sE265_AJF1130DataSet2.vw_GetRecords' table. You can move, or remove it, as needed.
             this.vw_GetRecordsTableAdapter.Fill(this.sE265_AJF1130DataSet2.vw_GetRecords);
             // TODO: This line of code loads data into the 'sE265_AJF1130DataSet1.HospitalCensus' table. You can move, or remove it, as needed.
@@ -27,7 +31,19 @@ namespace DailyCensusReport
 
         private void hospitalCensusDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //if (e.RowIndex >= 0)
+            //{
 
+            //    gets a collection that contains all the rows
+            //    DataGridViewRow row = this.vw_GetRecordsDataGridView.Rows[e.RowIndex];
+            //    populate the textbox from specific value of the coordinates of column and row.
+            //    for (int i = 0; i < 7; i++)
+            //    {
+            //        fofo.boxesICU[i].Text = row.Cells[0].Value.ToString();
+            //    }
+
+
+            //}
         }
 
         private void fillToolStripButton_Click(object sender, EventArgs e)
@@ -108,5 +124,20 @@ namespace DailyCensusReport
 
         }
 
+        private void cboUnitNameSearch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection connect = DBConnect.GetConnection();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText = "SELECT * FROM HospitalDepartments JOIN HospitalCensus ON HospitalDepartments.unitID = HospitalCensus.unitID WHERE unitName LIKE '" + cboUnitNameSearch.SelectedValue + "'";
+            cmd.Connection = connect;
+
+            DataSet dataSet = new DataSet();
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+            dataAdapter.Fill(dataSet);
+
+            vw_GetRecordsDataGridView.DataSource = dataSet.Tables[0];
+
+
+        }
     }
 }

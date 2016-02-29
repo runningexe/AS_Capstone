@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-/// <summary>
-/// Summary description for SiteProduct
-/// </summary>
 public class ViewRecord
 {
 
     #region constructors
-    //default constructor
     public ViewRecord() { }
 
-    //Creates a DataTable for Product
+    //Creates a DataTable for Viewing Records
     public ViewRecord(DateTime date)
     {
         DataTable dt = new DataTable();
@@ -51,7 +47,7 @@ public class ViewRecord
         
         DataTable dt = new DataTable();
         cmd.CommandType = CommandType.StoredProcedure;
-        // Add Parameters to Stored Procedure
+        //Add Parameters to Stored Procedure
         cmd.Parameters.Add("@unitID", SqlDbType.Int).Value = unitID;
         try
         {
