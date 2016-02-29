@@ -30,18 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewRecordsForm));
-            this.hospitalCensusBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.hospitalCensusBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sE265_AJF1130DataSet1 = new DailyCensusReport.SE265_AJF1130DataSet1();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.hospitalCensusTableAdapter = new DailyCensusReport.SE265_AJF1130DataSet1TableAdapters.HospitalCensusTableAdapter();
             this.tableAdapterManager = new DailyCensusReport.SE265_AJF1130DataSet1TableAdapters.TableAdapterManager();
             this.spGetHospitalCensusTableAdapter = new DailyCensusReport.SE265_AJF1130DataSet1TableAdapters.spGetHospitalCensusTableAdapter();
@@ -63,7 +53,7 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSearchByUnitName = new System.Windows.Forms.Label();
             this.cboUnitNameSearch = new System.Windows.Forms.ComboBox();
             this.hospitalDepartmentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.sE265AJF1130DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -72,8 +62,8 @@
             this.txttest = new System.Windows.Forms.TextBox();
             this.txttest3 = new System.Windows.Forms.TextBox();
             this.txttest2 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalCensusBindingNavigator)).BeginInit();
-            this.hospitalCensusBindingNavigator.SuspendLayout();
+            this.lblSearchByDate = new System.Windows.Forms.Label();
+            this.dtpSearchDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalCensusBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet)).BeginInit();
@@ -87,33 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.hospitalDepartmentsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // hospitalCensusBindingNavigator
-            // 
-            this.hospitalCensusBindingNavigator.AddNewItem = null;
-            this.hospitalCensusBindingNavigator.BindingSource = this.hospitalCensusBindingSource;
-            this.hospitalCensusBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.hospitalCensusBindingNavigator.DeleteItem = null;
-            this.hospitalCensusBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2});
-            this.hospitalCensusBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.hospitalCensusBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.hospitalCensusBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.hospitalCensusBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.hospitalCensusBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.hospitalCensusBindingNavigator.Name = "hospitalCensusBindingNavigator";
-            this.hospitalCensusBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.hospitalCensusBindingNavigator.Size = new System.Drawing.Size(874, 25);
-            this.hospitalCensusBindingNavigator.TabIndex = 0;
-            this.hospitalCensusBindingNavigator.Text = "bindingNavigator1";
-            // 
             // hospitalCensusBindingSource
             // 
             this.hospitalCensusBindingSource.DataMember = "HospitalCensus";
@@ -123,73 +86,6 @@
             // 
             this.sE265_AJF1130DataSet1.DataSetName = "SE265_AJF1130DataSet1";
             this.sE265_AJF1130DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // hospitalCensusTableAdapter
             // 
@@ -293,9 +189,9 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.vw_GetRecordsDataGridView.DataSource = this.vw_GetRecordsBindingSource;
-            this.vw_GetRecordsDataGridView.Location = new System.Drawing.Point(0, 152);
+            this.vw_GetRecordsDataGridView.Location = new System.Drawing.Point(0, 174);
             this.vw_GetRecordsDataGridView.Name = "vw_GetRecordsDataGridView";
-            this.vw_GetRecordsDataGridView.Size = new System.Drawing.Size(874, 291);
+            this.vw_GetRecordsDataGridView.Size = new System.Drawing.Size(874, 269);
             this.vw_GetRecordsDataGridView.TabIndex = 1;
             this.vw_GetRecordsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.hospitalCensusDataGridView_CellContentClick);
             // 
@@ -347,15 +243,15 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "updateDate";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // label1
+            // lblSearchByUnitName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Oswald", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(40, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Search by Unit Name";
+            this.lblSearchByUnitName.AutoSize = true;
+            this.lblSearchByUnitName.Font = new System.Drawing.Font("Oswald Regular", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchByUnitName.Location = new System.Drawing.Point(251, 85);
+            this.lblSearchByUnitName.Name = "lblSearchByUnitName";
+            this.lblSearchByUnitName.Size = new System.Drawing.Size(157, 21);
+            this.lblSearchByUnitName.TabIndex = 2;
+            this.lblSearchByUnitName.Text = "Search by Unit Name:";
             // 
             // cboUnitNameSearch
             // 
@@ -364,9 +260,9 @@
             this.cboUnitNameSearch.DisplayMember = "unitName";
             this.cboUnitNameSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUnitNameSearch.FormattingEnabled = true;
-            this.cboUnitNameSearch.Location = new System.Drawing.Point(44, 94);
+            this.cboUnitNameSearch.Location = new System.Drawing.Point(255, 109);
             this.cboUnitNameSearch.Name = "cboUnitNameSearch";
-            this.cboUnitNameSearch.Size = new System.Drawing.Size(134, 21);
+            this.cboUnitNameSearch.Size = new System.Drawing.Size(146, 21);
             this.cboUnitNameSearch.TabIndex = 3;
             this.cboUnitNameSearch.ValueMember = "unitName";
             this.cboUnitNameSearch.SelectedIndexChanged += new System.EventHandler(this.cboUnitNameSearch_SelectedIndexChanged);
@@ -392,46 +288,63 @@
             // 
             // txttest
             // 
-            this.txttest.Location = new System.Drawing.Point(233, 94);
+            this.txttest.Location = new System.Drawing.Point(246, 33);
             this.txttest.Name = "txttest";
             this.txttest.Size = new System.Drawing.Size(100, 20);
             this.txttest.TabIndex = 4;
             // 
             // txttest3
             // 
-            this.txttest3.Location = new System.Drawing.Point(475, 95);
+            this.txttest3.Location = new System.Drawing.Point(488, 34);
             this.txttest3.Name = "txttest3";
             this.txttest3.Size = new System.Drawing.Size(100, 20);
             this.txttest3.TabIndex = 5;
             // 
             // txttest2
             // 
-            this.txttest2.Location = new System.Drawing.Point(354, 95);
+            this.txttest2.Location = new System.Drawing.Point(367, 34);
             this.txttest2.Name = "txttest2";
             this.txttest2.Size = new System.Drawing.Size(100, 20);
             this.txttest2.TabIndex = 6;
+            // 
+            // lblSearchByDate
+            // 
+            this.lblSearchByDate.AutoSize = true;
+            this.lblSearchByDate.Font = new System.Drawing.Font("Oswald Regular", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchByDate.Location = new System.Drawing.Point(495, 85);
+            this.lblSearchByDate.Name = "lblSearchByDate";
+            this.lblSearchByDate.Size = new System.Drawing.Size(117, 21);
+            this.lblSearchByDate.TabIndex = 7;
+            this.lblSearchByDate.Text = "Search by Date:";
+            // 
+            // dtpSearchDate
+            // 
+            this.dtpSearchDate.Location = new System.Drawing.Point(459, 109);
+            this.dtpSearchDate.Name = "dtpSearchDate";
+            this.dtpSearchDate.Size = new System.Drawing.Size(183, 20);
+            this.dtpSearchDate.TabIndex = 8;
+            this.dtpSearchDate.Value = new System.DateTime(2016, 2, 18, 0, 0, 0, 0);
+            this.dtpSearchDate.ValueChanged += new System.EventHandler(this.dtpSearchDate_ValueChanged);
             // 
             // ViewRecordsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 444);
+            this.Controls.Add(this.dtpSearchDate);
+            this.Controls.Add(this.lblSearchByDate);
             this.Controls.Add(this.txttest2);
             this.Controls.Add(this.txttest3);
             this.Controls.Add(this.txttest);
             this.Controls.Add(this.cboUnitNameSearch);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblSearchByUnitName);
             this.Controls.Add(this.vw_GetRecordsDataGridView);
-            this.Controls.Add(this.hospitalCensusBindingNavigator);
             this.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.hospitalCensusBindingSource, "unitID", true));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewRecordsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewRecordsForm";
             this.Load += new System.EventHandler(this.ViewRecordsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalCensusBindingNavigator)).EndInit();
-            this.hospitalCensusBindingNavigator.ResumeLayout(false);
-            this.hospitalCensusBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalCensusBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet)).EndInit();
@@ -454,16 +367,6 @@
         private System.Windows.Forms.BindingSource hospitalCensusBindingSource;
         private SE265_AJF1130DataSet1TableAdapters.HospitalCensusTableAdapter hospitalCensusTableAdapter;
         private SE265_AJF1130DataSet1TableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator hospitalCensusBindingNavigator;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private SE265_AJF1130DataSet1TableAdapters.spGetHospitalCensusTableAdapter spGetHospitalCensusTableAdapter;
         private SE265_AJF1130DataSet sE265_AJF1130DataSet;
         private SE265_AJF1130DataSetTableAdapters.spGetRecordsTableAdapter spGetRecordsTableAdapter;
@@ -483,7 +386,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSearchByUnitName;
         private System.Windows.Forms.ComboBox cboUnitNameSearch;
         private System.Windows.Forms.BindingSource sE265AJF1130DataSetBindingSource;
         private System.Windows.Forms.BindingSource hospitalDepartmentsBindingSource;
@@ -492,5 +395,7 @@
         private System.Windows.Forms.TextBox txttest;
         private System.Windows.Forms.TextBox txttest3;
         private System.Windows.Forms.TextBox txttest2;
+        private System.Windows.Forms.Label lblSearchByDate;
+        private System.Windows.Forms.DateTimePicker dtpSearchDate;
     }
 }

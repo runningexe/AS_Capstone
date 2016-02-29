@@ -136,8 +136,23 @@ namespace DailyCensusReport
             dataAdapter.Fill(dataSet);
 
             vw_GetRecordsDataGridView.DataSource = dataSet.Tables[0];
+        }
 
+        private void LoadGridData(DateTime updateDate)
+        {
+            SqlConnection connect = DBConnect.GetConnection();
+            String query = "SELECT * FROM HospitalCensus WHERE updateDate LIKE '" + dtpSearchDate.Value + "'";
+            SqlCommand command = new SqlCommand(query, connect);
+            command.Parameters.AddWithValue("@updateDate", dtpSearchDate.Value);
+            SqlDataAdapter da = new SqlDataAdapter(command);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            vw_GetRecordsBindingSource.DataSource = ds.Tables[0];
+        }
 
+        private void dtpSearchDate_ValueChanged(object sender, EventArgs e)
+        {
+            LoadGridData(dtpSearchDate.Value);
         }
     }
 }
