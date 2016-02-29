@@ -89,6 +89,7 @@ namespace DailyCensusReport
         #region Creates PDF Table
                 //Instantiating the table and giving it the number of columns it will have.
                 PdfPTable pdfTable = new PdfPTable(7);
+                iTextSharp.text.Font arial = FontFactory.GetFont("Arial",8);
 
                 #region Header Row
                 /*********************Header Row*********************/
@@ -138,23 +139,23 @@ namespace DailyCensusReport
                 
 
                 PdfPCell cell29 = new PdfPCell();
-                cell29.AddElement(new Paragraph(txtCurrentCensusICU.Text));
+                cell29.AddElement(new Paragraph(txtCurrentCensusICU.Text, arial));
                 
 
                 PdfPCell cell30 = new PdfPCell();
-                cell30.AddElement(new Paragraph(txtAvailableBedsICU.Text));
+                cell30.AddElement(new Paragraph(txtAvailableBedsICU.Text, arial));
                 
 
                 PdfPCell cell31 = new PdfPCell();
-                cell31.AddElement(new Paragraph(txtIsoPatientsICU.Text));
+                cell31.AddElement(new Paragraph(txtIsoPatientsICU.Text, arial));
                 
 
                 PdfPCell cell32 = new PdfPCell();
-                cell32.AddElement(new Paragraph(txtDischargesICU.Text));
+                cell32.AddElement(new Paragraph(txtDischargesICU.Text, arial));
                 
 
                 PdfPCell cell33 = new PdfPCell();
-                cell33.AddElement(new Paragraph(txtNotesICU.Text));
+                cell33.AddElement(new Paragraph(txtNotesICU.Text, arial));
                 
 
                 pdfTable.AddCell(cell28);
@@ -605,7 +606,7 @@ namespace DailyCensusReport
                     cell700.BackgroundColor = BaseColor.GREEN;
                     pdfTable.AddCell(cell700);
                 }
-                else if (totalBHUBeds <= 5)
+                else if (totalBHUBeds <= 10)
                 {
                     //BHU Row Added
                     PdfPCell cell700 = new PdfPCell();
