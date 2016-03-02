@@ -19,14 +19,29 @@ namespace DailyCensusReport
         //public TextBox[] colorICUboxes { get; set; }
 
         public static bool CalcColor(
+            //ICU
+            TextBox txtCurrentCensusICU, TextBox txtCurrentCapStatusICU, TextBox txtAvailableBedsICU, TextBox txtIsoPatientsICU, TextBox txtDischargesICU,
 
-            TextBox txtCurrentCensusICU, TextBox txtCurrentCapStatusICU,
-            TextBox txtCurrentCensusT2, TextBox txtCurrentCapStatusT2,
-            TextBox txtCurrentCensusPEDI, TextBox txtCurrentCapStatusPEDI,
-            TextBox txtCurrentCensusT4, TextBox txtCurrentCapStatusT4,
-            TextBox txtCurrentCensus6ACU, TextBox txtCurrentCapStatus6ACU,
-            TextBox txtCurrentCensusTBC, TextBox txtCurrentCapStatusTBC,
-            TextBox txtCurrentCensusBHU, TextBox txtCurrentCapStatusBHU)
+            //T2
+            TextBox txtCurrentCensusT2, TextBox txtCurrentCapStatusT2, TextBox txtAvailableBedsT2, TextBox txtIsoPatientsT2, TextBox txtDischargesT2,
+
+            //PEDI
+            TextBox txtCurrentCensusPEDI, TextBox txtCurrentCapStatusPEDI, TextBox txtAvailableBedsPEDI, TextBox txtIsoPatientsPEDI, TextBox txtDischargesPEDI,
+
+            //T4
+            TextBox txtCurrentCensusT4, TextBox txtCurrentCapStatusT4, TextBox txtAvailableBedsT4, TextBox txtIsoPatientsT4, TextBox txtDischargesT4,
+
+            //6ACU
+            TextBox txtCurrentCensus6ACU, TextBox txtCurrentCapStatus6ACU, TextBox txtAvailableBeds6ACU, TextBox txtIsoPatients6ACU, TextBox txtDischarges6ACU,
+
+            //TBC
+            TextBox txtCurrentCensusTBC, TextBox txtCurrentCapStatusTBC, TextBox txtAvailableBedsTBC, TextBox txtIsoPatientsTBC, TextBox txtDischargesTBC,
+
+            //BHU
+            TextBox txtCurrentCensusBHU, TextBox txtCurrentCapStatusBHU, TextBox txtAvailableBedsBHU, TextBox txtIsoPatientsBHU, TextBox txtDischargesBHU,
+
+            //Total
+            Label lblCCTotal, Label lblABTotal, Label lblISOTotal, Label lblTotalDC, Label lblCCSTotal)
         {
 
             #region ICU Calculation
@@ -234,6 +249,54 @@ namespace DailyCensusReport
                 txtCurrentCapStatusBHU.BackColor = Color.Red;
                 txtCurrentCapStatusBHU.Text = "RED";
             }
+            #endregion
+
+            #region Total Columns Calculation
+
+            //Sum of Current Census Column
+            int sumICUCensus = Convert.ToInt32(txtCurrentCensusICU.Text);
+            int sumT2Census = Convert.ToInt32(txtCurrentCensusT2.Text);
+            int sumPEDICensus = Convert.ToInt32(txtCurrentCensusPEDI.Text);
+            int sumT4Census = Convert.ToInt32(txtCurrentCensusT4.Text);
+            int sum6ACUCensus = Convert.ToInt32(txtCurrentCensus6ACU.Text);
+            int sumTBCCensus = Convert.ToInt32(txtCurrentCensusTBC.Text);
+            int sumBHUCensus = Convert.ToInt32(txtCurrentCensusBHU.Text);
+
+            lblCCTotal.Text = Convert.ToInt32(sumICUCensus + sumT2Census + sumPEDICensus + sumT4Census + sum6ACUCensus + sumTBCCensus + sumBHUCensus).ToString();
+
+            //Sum of AvailBeds Column
+            int sumICUBeds = Convert.ToInt32(txtAvailableBedsICU.Text);
+            int sumT2Beds = Convert.ToInt32(txtAvailableBedsT2.Text);
+            int sumPEDIBeds = Convert.ToInt32(txtAvailableBedsPEDI.Text);
+            int sumT4Beds = Convert.ToInt32(txtAvailableBedsT4.Text);
+            int sum6ACUBeds = Convert.ToInt32(txtAvailableBeds6ACU.Text);
+            int sumTBCBeds = Convert.ToInt32(txtAvailableBedsTBC.Text);
+            int sumBHUBeds = Convert.ToInt32(txtAvailableBedsBHU.Text);
+
+            lblABTotal.Text = Convert.ToInt32(sumICUBeds + sumT2Beds + sumPEDIBeds + sumT4Beds + sum6ACUBeds + sumTBCBeds + sumBHUBeds).ToString();
+
+            //Sum of IsoPatients Column
+            int sumICUIsoPatients = Convert.ToInt32(txtIsoPatientsICU.Text);
+            int sumT2IsoPatients = Convert.ToInt32(txtIsoPatientsT2.Text);
+            int sumPEDIIsoPatients = Convert.ToInt32(txtIsoPatientsPEDI.Text);
+            int sumT4IsoPatients = Convert.ToInt32(txtIsoPatientsT4.Text);
+            int sum6ACUIsoPatients = Convert.ToInt32(txtIsoPatients6ACU.Text);
+            int sumTBCIsoPatients = Convert.ToInt32(txtIsoPatientsTBC.Text);
+            int sumBHUIsoPatients = Convert.ToInt32(txtIsoPatientsBHU.Text);
+
+            lblISOTotal.Text = Convert.ToInt32(sumICUIsoPatients + sumT2IsoPatients + sumPEDIIsoPatients + sumT4IsoPatients + sum6ACUIsoPatients + sumTBCIsoPatients + sumBHUIsoPatients).ToString();
+
+            //Sum of Potenital DC's Column
+            int sumICUDC = Convert.ToInt32(txtDischargesICU.Text);
+            int sumT2DC = Convert.ToInt32(txtDischargesT2.Text);
+            int sumPEDIDC = Convert.ToInt32(txtDischargesPEDI.Text);
+            int sumT4DC = Convert.ToInt32(txtDischargesT4.Text);
+            int sum6ACUDC = Convert.ToInt32(txtDischarges6ACU.Text);
+            int sumTBCDC = Convert.ToInt32(txtDischargesTBC.Text);
+            int sumBHUDC = Convert.ToInt32(txtDischargesBHU.Text);
+
+            lblTotalDC.Text = Convert.ToInt32(sumICUDC + sumT2DC + sumPEDIDC + sumT4DC + sum6ACUDC + sumTBCDC + sumBHUDC).ToString();
+
             #endregion
 
             return true;

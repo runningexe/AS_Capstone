@@ -40,7 +40,7 @@ namespace DailyCensusReport
 
         private void frmDailyCensusReport_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -78,25 +78,29 @@ namespace DailyCensusReport
                 /***Calling the CalcColor method from the CalculationColorChanger class***/
                 CalculationColorChanger.CalcColor(
                   //ICU
-                  txtCurrentCensusICU, txtCurrentCapStatusICU,
+                  txtCurrentCensusICU, txtCurrentCapStatusICU, txtAvailableBedsICU, txtIsoPatientsICU,txtDischargesICU,
 
                   //T2
-                  txtCurrentCensusT2, txtCurrentCapStatusT2,
+                  txtCurrentCensusT2, txtCurrentCapStatusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2,
 
                   //PEDI
-                  txtCurrentCensusPEDI, txtCurrentCapStatusPEDI,
+                  txtCurrentCensusPEDI, txtCurrentCapStatusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI,
 
                   //T4
-                  txtCurrentCensusT4, txtCurrentCapStatusT4,
+                  txtCurrentCensusT4, txtCurrentCapStatusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4,
 
                   //6ACU
-                  txtCurrentCensus6ACU, txtCurrentCapStatus6ACU,
+                  txtCurrentCensus6ACU, txtCurrentCapStatus6ACU, txtAvailableBeds6ACU, txtIsoPatients6ACU, txtDischarges6ACU,
 
                   //TBC
-                  txtCurrentCensusTBC, txtCurrentCapStatusTBC,
+                  txtCurrentCensusTBC, txtCurrentCapStatusTBC, txtAvailableBedsTBC, txtIsoPatientsTBC, txtDischargesTBC,
 
                   //BHU
-                  txtCurrentCensusBHU, txtCurrentCapStatusBHU);
+                  txtCurrentCensusBHU, txtCurrentCapStatusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU,
+
+                  ////Total
+                  lblCCTotal, lblABTotal, lblISOTotal, lblTotalDC, lblCCSTotal
+                  );
                 #endregion
 
                 #region For Loops for TextBoxes
@@ -194,7 +198,10 @@ namespace DailyCensusReport
                   txtCurrentCensusTBC, txtAvailableBedsTBC, txtIsoPatientsTBC, txtDischargesTBC, txtNotesTBC, txtCurrentCapStatusTBC,
 
                   //BHU
-                  txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU
+                  txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU,
+
+                  //Total
+                  lblCCTotal, lblABTotal, lblISOTotal, lblTotalDC, lbltotalNotes, lblCCSTotal
                   );
                 #endregion
             }
