@@ -57,7 +57,7 @@ namespace DailyCensusReport
             string[] varBHU = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
             #endregion
 
-            #region Validate Fields
+            #region Checks Required Fields
             //Check to make sure all required fields are filled out
             if (txtIsoPatientsICU.Text == "" || txtDischargesICU.Text == "" ||
                 txtIsoPatientsT2.Text == "" || txtDischargesT2.Text == "" ||
@@ -224,6 +224,13 @@ namespace DailyCensusReport
         //ICU Text Change
         private void txtCurrentCensusICU_TextChanged(object sender, EventArgs e)
         {
+            int numCheck;
+            if (!int.TryParse(txtCurrentCensusICU.Text, out numCheck))
+            {
+                MessageBox.Show("Must Be An Integer", "Error");
+                txtCurrentCensusICU.Text = "";
+
+            }
             // Checks to see if it is over 15 patients, if it's over it will clear textbox fields
             int icuCensus = 0;
             Int32.TryParse(txtCurrentCensusICU.Text, out icuCensus);
@@ -246,6 +253,7 @@ namespace DailyCensusReport
 
                 txtAvailableBedsICU.Text = "";
             }
+
         }
 
         //T2 Text Change
