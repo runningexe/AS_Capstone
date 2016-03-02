@@ -164,6 +164,40 @@ namespace DailyCensusReport
                 /***********************************************************************************************************************************************************************/
                 #endregion
 
+//Confirmation for user if they want to save or cancel
+                DialogResult result = MessageBox.Show("Are You Sure You Want To Save?","Confirmation Message", MessageBoxButtons.YesNo);
+                if(result == DialogResult.Yes)
+                {  
+   
+                #region PDF Method Call
+                                /***Calling the PDFView method from the PDFSubmit class.***/
+                                PDFSubmit.PDFView(
+                                  //ICU
+                                  txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
+
+                                  //T2
+                                  txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2,
+
+                                  //PEDI
+                                  txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI,
+
+                                  //T4
+                                  txtCurrentCensusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4, txtNotesT4, txtCurrentCapStatusT4,
+
+                                  //6ACU
+                                  txtCurrentCensus6ACU, txtAvailableBeds6ACU, txtIsoPatients6ACU, txtDischarges6ACU, txtNotes6ACU, txtCurrentCapStatus6ACU,
+
+                                  //TBC
+                                  txtCurrentCensusTBC, txtAvailableBedsTBC, txtIsoPatientsTBC, txtDischargesTBC, txtNotesTBC, txtCurrentCapStatusTBC,
+
+                                  //BHU
+                                  txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU,
+
+                                  //Total
+                                  lblCCTotal, lblABTotal, lblISOTotal, lblTotalDC, lbltotalNotes, txtCCSTotal
+                                  );
+                                #endregion
+
                 #region SubmitRecord Method Call
                 /***Calling the Insert methods from the SubmitRecord class***/
                 SubmitRecord.InsertICU(unitID, varICU);
@@ -176,34 +210,12 @@ namespace DailyCensusReport
 
                 #endregion
 
-                #region PDF Method Call
-                /***Calling the PDFView method from the PDFSubmit class.***/
-                PDFSubmit.PDFView(
-                  //ICU
-                  txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
-
-                  //T2
-                  txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2,
-
-                  //PEDI
-                  txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI,
-
-                  //T4
-                  txtCurrentCensusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4, txtNotesT4, txtCurrentCapStatusT4,
-
-                  //6ACU
-                  txtCurrentCensus6ACU, txtAvailableBeds6ACU, txtIsoPatients6ACU, txtDischarges6ACU, txtNotes6ACU, txtCurrentCapStatus6ACU,
-
-                  //TBC
-                  txtCurrentCensusTBC, txtAvailableBedsTBC, txtIsoPatientsTBC, txtDischargesTBC, txtNotesTBC, txtCurrentCapStatusTBC,
-
-                  //BHU
-                  txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU,
-
-                  //Total
-                  lblCCTotal, lblABTotal, lblISOTotal, lblTotalDC, lbltotalNotes, txtCCSTotal
-                  );
-                #endregion
+                }
+                else if(result == DialogResult.No)
+                {
+                    DialogResult = DialogResult.None;
+                }
+                
             }
         }
 

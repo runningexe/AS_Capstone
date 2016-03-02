@@ -53,13 +53,18 @@ namespace DailyCensusReport
             sfd.Title = "Save As PDF";
             sfd.Filter = "PDF|.PDF";
 
+            
             if (sfd.ShowDialog() == DialogResult.OK)
             {
+
                 Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
                 doc.SetMargins(doc.LeftMargin, doc.RightMargin, doc.TopMargin + 50, doc.BottomMargin);
                 PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
+                
+                
+                
+        
                 //Displays notification when PDF is created
-
                 MessageBox.Show("PDF Has Been Saved!", "Saved");
                 //Open Document.
                 doc.Open();
@@ -839,6 +844,32 @@ namespace DailyCensusReport
             }
                 #endregion
             return true;
+        }
+        protected virtual bool IsFileLocked(FileInfo file)
+        {
+            
+            FileStream doc = null;
+
+            try
+            {
+                doc = file.Open(FileMode.Open, FileAccess.Read, FileShare.None);
+            }
+            catch (IOException)
+            {
+                //the file is unavailable because it is:
+                //still being written to
+                //or being processed by another thread
+                //or does not exist (has already been processed)
+                return true;
+            }
+            finally
+            {
+                if (doc != null)
+                    doc.Close();
+            }
+
+            //file is not locked
+            return false;
         }
     }    
 }
