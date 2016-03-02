@@ -28,6 +28,8 @@ namespace DailyCensusReport
                          + "will change dynamically to the proper amount of remaining/available beds.";
             pnlPage1.SendToBack();
             pnlPage2.BringToFront();
+            btnHelpExit.Show();
+            btnNext.Hide();
         }
 
         private void HelpForm_Load(object sender, EventArgs e)
@@ -36,12 +38,20 @@ namespace DailyCensusReport
             lblHelpHeader.Text = "Getting Started...";
             lblPg1.Text = "If you are having trouble figuring out how the program works, please refer to the next few pages."
                                 + "\n\n\n\n\n\n Click 'Next' to read further.";
+            btnHelpExit.Hide();
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             
             pnlPage2.SendToBack();
+            btnNext.Show();
+            btnHelpExit.Hide();
+        }
+
+        private void btnHelpExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

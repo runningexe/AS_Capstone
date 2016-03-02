@@ -33,10 +33,11 @@
             this.lblHelpHeader = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.pnlPage1 = new System.Windows.Forms.Panel();
-            this.pnlPage2 = new System.Windows.Forms.Panel();
             this.lblPg1 = new System.Windows.Forms.Label();
-            this.lblPg2 = new System.Windows.Forms.Label();
+            this.pnlPage2 = new System.Windows.Forms.Panel();
             this.lblSubmittingInfoHelp = new System.Windows.Forms.Label();
+            this.lblPg2 = new System.Windows.Forms.Label();
+            this.btnHelpExit = new System.Windows.Forms.Button();
             this.pnlPage1.SuspendLayout();
             this.pnlPage2.SuspendLayout();
             this.SuspendLayout();
@@ -44,7 +45,7 @@
             // btnNext
             // 
             this.btnNext.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNext.Location = new System.Drawing.Point(412, 408);
+            this.btnNext.Location = new System.Drawing.Point(370, 393);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(120, 30);
             this.btnNext.TabIndex = 1;
@@ -65,7 +66,7 @@
             // btnBack
             // 
             this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBack.Location = new System.Drawing.Point(286, 408);
+            this.btnBack.Location = new System.Drawing.Point(244, 393);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(120, 30);
             this.btnBack.TabIndex = 2;
@@ -75,21 +76,15 @@
             // 
             // pnlPage1
             // 
+            this.pnlPage1.Controls.Add(this.btnNext);
             this.pnlPage1.Controls.Add(this.lblPg1);
+            this.pnlPage1.Controls.Add(this.btnBack);
             this.pnlPage1.Controls.Add(this.lblHelpHeader);
+            this.pnlPage1.Controls.Add(this.btnHelpExit);
             this.pnlPage1.Location = new System.Drawing.Point(23, 12);
             this.pnlPage1.Name = "pnlPage1";
-            this.pnlPage1.Size = new System.Drawing.Size(493, 378);
+            this.pnlPage1.Size = new System.Drawing.Size(493, 426);
             this.pnlPage1.TabIndex = 3;
-            // 
-            // pnlPage2
-            // 
-            this.pnlPage2.Controls.Add(this.lblSubmittingInfoHelp);
-            this.pnlPage2.Controls.Add(this.lblPg2);
-            this.pnlPage2.Location = new System.Drawing.Point(23, 12);
-            this.pnlPage2.Name = "pnlPage2";
-            this.pnlPage2.Size = new System.Drawing.Size(493, 378);
-            this.pnlPage2.TabIndex = 4;
             // 
             // lblPg1
             // 
@@ -99,13 +94,14 @@
             this.lblPg1.Size = new System.Drawing.Size(0, 13);
             this.lblPg1.TabIndex = 1;
             // 
-            // lblPg2
+            // pnlPage2
             // 
-            this.lblPg2.AutoSize = true;
-            this.lblPg2.Location = new System.Drawing.Point(22, 71);
-            this.lblPg2.Name = "lblPg2";
-            this.lblPg2.Size = new System.Drawing.Size(0, 13);
-            this.lblPg2.TabIndex = 2;
+            this.pnlPage2.Controls.Add(this.lblSubmittingInfoHelp);
+            this.pnlPage2.Controls.Add(this.lblPg2);
+            this.pnlPage2.Location = new System.Drawing.Point(23, 12);
+            this.pnlPage2.Name = "pnlPage2";
+            this.pnlPage2.Size = new System.Drawing.Size(493, 378);
+            this.pnlPage2.TabIndex = 4;
             // 
             // lblSubmittingInfoHelp
             // 
@@ -117,14 +113,31 @@
             this.lblSubmittingInfoHelp.TabIndex = 2;
             this.lblSubmittingInfoHelp.Text = "Submitting Information";
             // 
+            // lblPg2
+            // 
+            this.lblPg2.AutoSize = true;
+            this.lblPg2.Location = new System.Drawing.Point(22, 71);
+            this.lblPg2.Name = "lblPg2";
+            this.lblPg2.Size = new System.Drawing.Size(0, 13);
+            this.lblPg2.TabIndex = 2;
+            // 
+            // btnHelpExit
+            // 
+            this.btnHelpExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHelpExit.Location = new System.Drawing.Point(370, 393);
+            this.btnHelpExit.Name = "btnHelpExit";
+            this.btnHelpExit.Size = new System.Drawing.Size(120, 30);
+            this.btnHelpExit.TabIndex = 3;
+            this.btnHelpExit.Text = "Exit";
+            this.btnHelpExit.UseVisualStyleBackColor = true;
+            this.btnHelpExit.Click += new System.EventHandler(this.btnHelpExit_Click);
+            // 
             // HelpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(539, 447);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.pnlPage1);
-            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.pnlPage2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -150,5 +163,6 @@
         private System.Windows.Forms.Label lblPg1;
         private System.Windows.Forms.Label lblPg2;
         private System.Windows.Forms.Label lblSubmittingInfoHelp;
+        private System.Windows.Forms.Button btnHelpExit;
     }
 }
