@@ -40,7 +40,7 @@ namespace DailyCensusReport
 
         private void frmDailyCensusReport_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace DailyCensusReport
                 /***Calling the CalcColor method from the CalculationColorChanger class***/
                 CalculationColorChanger.CalcColor(
                   //ICU
-                  txtCurrentCensusICU, txtCurrentCapStatusICU, txtAvailableBedsICU, txtIsoPatientsICU,txtDischargesICU,
+                  txtCurrentCensusICU, txtCurrentCapStatusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU,
 
                   //T2
                   txtCurrentCensusT2, txtCurrentCapStatusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2,
@@ -224,36 +224,44 @@ namespace DailyCensusReport
         //ICU Text Change
         private void txtCurrentCensusICU_TextChanged(object sender, EventArgs e)
         {
-            int numCheck;
-            if (!int.TryParse(txtCurrentCensusICU.Text, out numCheck))
-            {
-                MessageBox.Show("Must Be An Integer", "Error");
-                txtCurrentCensusICU.Text = "";
 
-            }
             // Checks to see if it is over 15 patients, if it's over it will clear textbox fields
             int icuCensus = 0;
             Int32.TryParse(txtCurrentCensusICU.Text, out icuCensus);
-            if (!string.IsNullOrWhiteSpace(txtCurrentCensusICU.Text))
+            try
             {
-                if (Convert.ToInt32(txtCurrentCensusICU.Text) > 9)
+                if (!string.IsNullOrWhiteSpace(txtCurrentCensusICU.Text))
                 {
-                    MessageBox.Show("ICU Current Census cannot exceed 9 patients", "Error");
+                    int numCheck;
+                    if (!int.TryParse(txtCurrentCensusICU.Text, out numCheck))
+                    {
+                        MessageBox.Show("Must Be An Integer", "Error");
+                        txtCurrentCensusICU.Text = "";
+                    }
+                    else {
+                        if (Convert.ToInt32(txtCurrentCensusICU.Text) > 9)
+                        {
+                            MessageBox.Show("ICU Current Census cannot exceed 9 patients", "Error");
+                            txtAvailableBedsICU.Text = "";
+                            txtCurrentCensusICU.Text = "";
+                        }
+
+                        if (icuCensus <= 9)
+                        {
+                            txtAvailableBedsICU.Text = Convert.ToInt32(9 - icuCensus).ToString();
+                        }
+                    }
+                }
+                if (string.IsNullOrWhiteSpace(txtCurrentCensusICU.Text))
+                {
                     txtAvailableBedsICU.Text = "";
-                    txtCurrentCensusICU.Text = "";
-                }
-
-                if (icuCensus <= 9)
-                {
-                    txtAvailableBedsICU.Text = Convert.ToInt32(9 - icuCensus).ToString();
                 }
             }
-            if (string.IsNullOrWhiteSpace(txtCurrentCensusICU.Text))
+
+            catch (Exception ex)
             {
-
-                txtAvailableBedsICU.Text = "";
+                MessageBox.Show(ex.Message, "ERROR");
             }
-
         }
 
         //T2 Text Change
