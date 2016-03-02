@@ -221,21 +221,22 @@ namespace DailyCensusReport
             openHelp.Show();
         }
 
-        //ICU Text Change
+//ICU Current Census Text Change
         private void txtCurrentCensusICU_TextChanged(object sender, EventArgs e)
         {
-
-            // Checks to see if it is over 15 patients, if it's over it will clear textbox fields
+            #region Checks Current Census ICU Field
+            // Checks to see if it is over 9 patients, if it's over it will clear textbox fields
             int icuCensus = 0;
             Int32.TryParse(txtCurrentCensusICU.Text, out icuCensus);
+           
             try
             {
                 if (!string.IsNullOrWhiteSpace(txtCurrentCensusICU.Text))
                 {
-                    int numCheck;
-                    if (!int.TryParse(txtCurrentCensusICU.Text, out numCheck))
+                    int icuNumCheck;
+                    if (!int.TryParse(txtCurrentCensusICU.Text, out icuNumCheck))
                     {
-                        MessageBox.Show("Must Be An Integer", "Error");
+                        MessageBox.Show("Please Enter A Number", "Error");
                         txtCurrentCensusICU.Text = "";
                     }
                     else {
@@ -262,173 +263,690 @@ namespace DailyCensusReport
             {
                 MessageBox.Show(ex.Message, "ERROR");
             }
+            #endregion
+
         }
 
-        //T2 Text Change
+//ICU ISO Patient Text Change
+        private void txtIsoPatientsICU_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks ISO Patient ICU Field
+            
+            int icuIsoCensus = 0;
+            Int32.TryParse(txtIsoPatientsICU.Text, out icuIsoCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtIsoPatientsICU.Text))
+                {
+                    int icuIsoNumCheck;
+                    if (!int.TryParse(txtIsoPatientsICU.Text, out icuIsoNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtIsoPatientsICU.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
+        }
+
+//ICU DC Text Change
+        private void txtDischargesICU_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks DC ICU Field
+
+            int icuDCCensus = 0;
+            Int32.TryParse(txtDischargesICU.Text, out icuDCCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtDischargesICU.Text))
+                {
+                    int icuDCNumCheck;
+                    if (!int.TryParse(txtDischargesICU.Text, out icuDCNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtDischargesICU.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
+        }
+/*************************************************************************************/
+
+
+//T2 Current Census Text Change
         private void txtCurrentCensusT2_TextChanged(object sender, EventArgs e)
         {
-            // Checks to see if it is over 28 patients, if it's over it will clear textbox fields
-            int t2Census = 0;
-            Int32.TryParse(txtCurrentCensusT2.Text, out t2Census);
-            if (!string.IsNullOrWhiteSpace(txtCurrentCensusT2.Text))
+            #region Checks T2 Current Census Field
+            try
             {
-                if (Convert.ToInt32(txtCurrentCensusT2.Text) > 28)
+                // Checks to see if it is over 28 patients, if it's over it will clear textbox fields
+                int t2Census = 0;
+                Int32.TryParse(txtCurrentCensusT2.Text, out t2Census);
+                if (!string.IsNullOrWhiteSpace(txtCurrentCensusT2.Text))
                 {
-                    MessageBox.Show("T2 Current Census cannot exceed 28 patients", "Error");
+                    int t2NumCheck;
+                    if (!int.TryParse(txtCurrentCensusT2.Text, out t2NumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtCurrentCensusT2.Text = "";
+                    }
+                    else
+                    {
+                        if (Convert.ToInt32(txtCurrentCensusT2.Text) > 28)
+                        {
+                            MessageBox.Show("T2 Current Census cannot exceed 28 patients", "Error");
+                            txtAvailableBedsT2.Text = "";
+                            txtCurrentCensusT2.Text = "";
+                        }
+
+                        if (t2Census <= 28)
+                        {
+                            txtAvailableBedsT2.Text = Convert.ToInt32(28 - t2Census).ToString();
+                        }
+                    }
+                }
+                if (string.IsNullOrWhiteSpace(txtCurrentCensusT2.Text))
+                {
+
                     txtAvailableBedsT2.Text = "";
-                    txtCurrentCensusT2.Text = "";
-                }
-
-                if (t2Census <= 28)
-                {
-                    txtAvailableBedsT2.Text = Convert.ToInt32(28 - t2Census).ToString();
                 }
             }
-            if (string.IsNullOrWhiteSpace(txtCurrentCensusT2.Text))
+            catch (Exception ex)
             {
-
-                txtAvailableBedsT2.Text = "";
+                MessageBox.Show(ex.Message, "ERROR");
             }
+            #endregion
         }
 
-        //PEDI Text Change
+//T2 ISO Patient Text Change
+        private void txtIsoPatientsT2_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks ISO Patient T2 Field
+
+            int t2IsoCensus = 0;
+            Int32.TryParse(txtIsoPatientsT2.Text, out t2IsoCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtIsoPatientsT2.Text))
+                {
+                    int t2IsoNumCheck;
+                    if (!int.TryParse(txtIsoPatientsT2.Text, out t2IsoNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtIsoPatientsT2.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
+        }
+
+// T2 DC Text Change
+        private void txtDischargesT2_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks DC T2 Field
+
+            int t2IsoCensus = 0;
+            Int32.TryParse(txtDischargesT2.Text, out t2IsoCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtDischargesT2.Text))
+                {
+                    int t2DcNumCheck;
+                    if (!int.TryParse(txtDischargesT2.Text, out t2DcNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtDischargesT2.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
+        }
+
+/*******************************************************************************************/
+
+
+
+//PEDI Current Census Text Change
         private void txtCurrentCensusPEDI_TextChanged(object sender, EventArgs e)
         {
-            // Checks to see if it is over 28 patients, if it's over it will clear textbox fields
-            int pediCensus = 0;
-            Int32.TryParse(txtCurrentCensusPEDI.Text, out pediCensus);
-            if (!string.IsNullOrWhiteSpace(txtCurrentCensusPEDI.Text))
+            #region Checks PEDI Current Census Field
+            try
             {
-                if (Convert.ToInt32(txtCurrentCensusPEDI.Text) > 28)
+                // Checks to see if it is over 28 patients, if it's over it will clear textbox fields
+                int pediCensus = 0;
+                Int32.TryParse(txtCurrentCensusPEDI.Text, out pediCensus);
+                if (!string.IsNullOrWhiteSpace(txtCurrentCensusPEDI.Text))
                 {
-                    MessageBox.Show("PEDI Current Census cannot exceed 28 patients", "Error");
+                    int pediNumCheck;
+                    if (!int.TryParse(txtCurrentCensusPEDI.Text, out pediNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtCurrentCensusPEDI.Text = "";
+                    }
+                    else
+                    {
+                        if (Convert.ToInt32(txtCurrentCensusPEDI.Text) > 28)
+                        {
+                            MessageBox.Show("PEDI Current Census cannot exceed 28 patients", "Error");
+                            txtAvailableBedsPEDI.Text = "";
+                            txtCurrentCensusPEDI.Text = "";
+                        }
+
+                        if (pediCensus <= 28)
+                        {
+                            txtAvailableBedsPEDI.Text = Convert.ToInt32(28 - pediCensus).ToString();
+                        }
+                    }
+                }
+                if (string.IsNullOrWhiteSpace(txtCurrentCensusPEDI.Text))
+                {
+
                     txtAvailableBedsPEDI.Text = "";
-                    txtCurrentCensusPEDI.Text = "";
-                }
-
-                if (pediCensus <= 28)
-                {
-                    txtAvailableBedsPEDI.Text = Convert.ToInt32(28 - pediCensus).ToString();
                 }
             }
-            if (string.IsNullOrWhiteSpace(txtCurrentCensusPEDI.Text))
+            catch (Exception ex)
             {
-
-                txtAvailableBedsPEDI.Text = "";
+                MessageBox.Show(ex.Message, "ERROR");
             }
+            #endregion
         }
 
-        //T4 Text Change
+//PEDI ISO Patient Text Change
+        private void txtIsoPatientsPEDI_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks ISO Patient PEDI Field
+
+            int pediIsoCensus = 0;
+            Int32.TryParse(txtIsoPatientsPEDI.Text, out pediIsoCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtIsoPatientsPEDI.Text))
+                {
+                    int pediDcNumCheck;
+                    if (!int.TryParse(txtIsoPatientsPEDI.Text, out pediDcNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtIsoPatientsPEDI.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
+        }
+
+//PEDI DC Text Change
+        private void txtDischargesPEDI_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks DC PEDI Field
+
+            int pediDcCensus = 0;
+            Int32.TryParse(txtDischargesPEDI.Text, out pediDcCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtDischargesPEDI.Text))
+                {
+                    int pediDcNumCheck;
+                    if (!int.TryParse(txtDischargesPEDI.Text, out pediDcNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtDischargesPEDI.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
+        }
+
+/*****************************************************************************************/
+
+
+//T4 Current Census Text Change
         private void txtCurrentCensusT4_TextChanged(object sender, EventArgs e)
         {
-            // Checks to see if it is over 29 patients, if it's over it will clear textbox fields
-            int t4Census = 0;
-            Int32.TryParse(txtCurrentCensusT4.Text, out t4Census);
-            if (!string.IsNullOrWhiteSpace(txtCurrentCensusT4.Text))
+            #region Checks T4 Current Census Field
+            try
             {
-                if (Convert.ToInt32(txtCurrentCensusT4.Text) > 29)
+                // Checks to see if it is over 29 patients, if it's over it will clear textbox fields
+                int t4Census = 0;
+                Int32.TryParse(txtCurrentCensusT4.Text, out t4Census);
+                if (!string.IsNullOrWhiteSpace(txtCurrentCensusT4.Text))
                 {
-                    MessageBox.Show("T4 Current Census cannot exceed 29 patients", "Error");
+                    int t4NumCheck;
+                    if (!int.TryParse(txtCurrentCensusT4.Text, out t4NumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtCurrentCensusT4.Text = "";
+                    }
+                    else
+                    {
+                        if (Convert.ToInt32(txtCurrentCensusT4.Text) > 29)
+                        {
+                            MessageBox.Show("T4 Current Census cannot exceed 29 patients", "Error");
+                            txtAvailableBedsT4.Text = "";
+                            txtCurrentCensusT4.Text = "";
+                        }
+
+                        if (t4Census <= 29)
+                        {
+                            txtAvailableBedsT4.Text = Convert.ToInt32(29 - t4Census).ToString();
+                        }
+                    }
+                }
+                if (string.IsNullOrWhiteSpace(txtCurrentCensusT4.Text))
+                {
+
                     txtAvailableBedsT4.Text = "";
-                    txtCurrentCensusT4.Text = "";
-                }
-
-                if (t4Census <= 29)
-                {
-                    txtAvailableBedsT4.Text = Convert.ToInt32(29 - t4Census).ToString();
                 }
             }
-            if (string.IsNullOrWhiteSpace(txtCurrentCensusT4.Text))
+
+            catch (Exception ex)
             {
-
-                txtAvailableBedsT4.Text = "";
+                MessageBox.Show(ex.Message, "ERROR");
             }
+            #endregion
         }
 
-        //6ACU Text Change
+// T4 ISO Patient Text Change
+        private void txtIsoPatientsT4_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks ISO Patient T4 Field
+
+            int t4IsoCensus = 0;
+            Int32.TryParse(txtIsoPatientsT4.Text, out t4IsoCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtIsoPatientsT4.Text))
+                {
+                    int t4IsoNumCheck;
+                    if (!int.TryParse(txtIsoPatientsT4.Text, out t4IsoNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtIsoPatientsT4.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
+        }
+
+// T4 DC Text Change
+        private void txtDischargesT4_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks DC T4 Field
+
+            int t4DcCensus = 0;
+            Int32.TryParse(txtDischargesT4.Text, out t4DcCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtDischargesT4.Text))
+                {
+                    int t4DcNumCheck;
+                    if (!int.TryParse(txtDischargesT4.Text, out t4DcNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtDischargesT4.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
+        }
+/****************************************************************************************/
+        
+
+//6ACU Current Census Text Change
         private void txtCurrentCensus6ACU_TextChanged(object sender, EventArgs e)
         {
-            // Checks to see if it is over 10 patients, if it's over it will clear textbox fields
-            int acuCensus = 0;
-            Int32.TryParse(txtCurrentCensus6ACU.Text, out acuCensus);
-            if (!string.IsNullOrWhiteSpace(txtCurrentCensus6ACU.Text))
+            #region Checks 6ACU Current Census Field
+            try
             {
-                if (Convert.ToInt32(txtCurrentCensus6ACU.Text) > 10)
+                // Checks to see if it is over 10 patients, if it's over it will clear textbox fields
+                int acuCensus = 0;
+                Int32.TryParse(txtCurrentCensus6ACU.Text, out acuCensus);
+                if (!string.IsNullOrWhiteSpace(txtCurrentCensus6ACU.Text))
                 {
-                    MessageBox.Show("6ACU Current Census cannot exceed 10 patients", "Error");
+                    int acuNumCheck;
+                    if (!int.TryParse(txtCurrentCensus6ACU.Text, out acuNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtCurrentCensus6ACU.Text = "";
+                    }
+                    else
+                    {
+                        if (Convert.ToInt32(txtCurrentCensus6ACU.Text) > 10)
+                        {
+                            MessageBox.Show("6ACU Current Census cannot exceed 10 patients", "Error");
+                            txtAvailableBeds6ACU.Text = "";
+                            txtCurrentCensus6ACU.Text = "";
+                        }
+
+                        if (acuCensus <= 10)
+                        {
+                            txtAvailableBeds6ACU.Text = Convert.ToInt32(10 - acuCensus).ToString();
+                        }
+                    }
+                }
+                if (string.IsNullOrWhiteSpace(txtCurrentCensus6ACU.Text))
+                {
+
                     txtAvailableBeds6ACU.Text = "";
-                    txtCurrentCensus6ACU.Text = "";
-                }
-
-                if (acuCensus <= 10)
-                {
-                    txtAvailableBeds6ACU.Text = Convert.ToInt32(10 - acuCensus).ToString();
                 }
             }
-            if (string.IsNullOrWhiteSpace(txtCurrentCensus6ACU.Text))
+            catch(Exception ex)
             {
-
-                txtAvailableBeds6ACU.Text = "";
+                MessageBox.Show(ex.Message, "ERROR");
             }
+            #endregion
         }
 
-        //TBC Text Change
+        private void txtIsoPatients6ACU_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks ISO Patient 6ACU Field
+
+            int acuIsoCensus = 0;
+            Int32.TryParse(txtIsoPatients6ACU.Text, out acuIsoCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtIsoPatients6ACU.Text))
+                {
+                    int acuIsoNumCheck;
+                    if (!int.TryParse(txtIsoPatients6ACU.Text, out acuIsoNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtIsoPatients6ACU.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
+        }
+
+        private void txtDischarges6ACU_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks DC 6ACU Field
+
+            int acuDcCensus = 0;
+            Int32.TryParse(txtDischarges6ACU.Text, out acuDcCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtDischarges6ACU.Text))
+                {
+                    int acuDcNumCheck;
+                    if (!int.TryParse(txtDischarges6ACU.Text, out acuDcNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtDischarges6ACU.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
+        }
+/*****************************************************************************************/
+
+
+//TBC Current Census Text Change
         private void txtCurrentCensusTBC_TextChanged(object sender, EventArgs e)
         {
-            // Checks to see if it is over 10 patients, if it's over it will clear textbox fields
-            int tbcCensus = 0;
-            Int32.TryParse(txtCurrentCensusTBC.Text, out tbcCensus);
-            if (!string.IsNullOrWhiteSpace(txtCurrentCensusTBC.Text))
+            #region Checks TBC Current Census Field
+            try
             {
-                if (Convert.ToInt32(txtCurrentCensusTBC.Text) > 10)
+                // Checks to see if it is over 10 patients, if it's over it will clear textbox fields
+                int tbcCensus = 0;
+                Int32.TryParse(txtCurrentCensusTBC.Text, out tbcCensus);
+                if (!string.IsNullOrWhiteSpace(txtCurrentCensusTBC.Text))
                 {
-                    MessageBox.Show("TBC Current Census cannot exceed 10 patients", "Error");
+                    int tbcNumCheck;
+                    if (!int.TryParse(txtCurrentCensusTBC.Text, out tbcNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtCurrentCensusTBC.Text = "";
+                    }
+                    else
+                    {
+                        if (Convert.ToInt32(txtCurrentCensusTBC.Text) > 10)
+                        {
+                            MessageBox.Show("TBC Current Census cannot exceed 10 patients", "Error");
+                            txtAvailableBedsTBC.Text = "";
+                            txtCurrentCensusTBC.Text = "";
+                        }
+
+                        if (tbcCensus <= 10)
+                        {
+                            txtAvailableBedsTBC.Text = Convert.ToInt32(10 - tbcCensus).ToString();
+                        }
+                    }
+                }
+                if (string.IsNullOrWhiteSpace(txtCurrentCensusTBC.Text))
+                {
+
                     txtAvailableBedsTBC.Text = "";
-                    txtCurrentCensusTBC.Text = "";
-                }
-
-                if (tbcCensus <= 10)
-                {
-                    txtAvailableBedsTBC.Text = Convert.ToInt32(10 - tbcCensus).ToString();
                 }
             }
-            if (string.IsNullOrWhiteSpace(txtCurrentCensusTBC.Text))
+            catch (Exception ex)
             {
-
-                txtAvailableBedsTBC.Text = "";
+                MessageBox.Show(ex.Message, "ERROR");
             }
+            #endregion
+        }
+//TBC Iso Patient Text Change
+        private void txtIsoPatientsTBC_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks ISO Patient TBC Field
+
+            int tbcIsoCensus = 0;
+            Int32.TryParse(txtIsoPatientsTBC.Text, out tbcIsoCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtIsoPatientsTBC.Text))
+                {
+                    int tbcIsoNumCheck;
+                    if (!int.TryParse(txtIsoPatientsTBC.Text, out tbcIsoNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtIsoPatientsTBC.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
         }
 
-        //BHU Text Change
+//TBC Dc Text Change
+        private void txtDischargesTBC_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks DC TBC Field
+
+            int tbcDcCensus = 0;
+            Int32.TryParse(txtDischargesTBC.Text, out tbcDcCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtDischargesTBC.Text))
+                {
+                    int tbcDcNumCheck;
+                    if (!int.TryParse(txtDischargesTBC.Text, out tbcDcNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtDischargesTBC.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
+        }
+/*********************************************************************************************/
+
+
+//BHU Current Census Text Change
         private void txtCurrentCensusBHU_TextChanged(object sender, EventArgs e)
         {
-            // Checks to see if it is over 15 patients, if it's over it will clear textbox fields
-            int bhuCensus = 0;
-            Int32.TryParse(txtCurrentCensusBHU.Text, out bhuCensus);
-            if (!string.IsNullOrWhiteSpace(txtCurrentCensusBHU.Text))
+            #region Checks BHU Current Census Field
+            try
             {
-                if (Convert.ToInt32(txtCurrentCensusBHU.Text) > 15)
+                // Checks to see if it is over 15 patients, if it's over it will clear textbox fields
+                int bhuCensus = 0;
+                Int32.TryParse(txtCurrentCensusBHU.Text, out bhuCensus);
+                if (!string.IsNullOrWhiteSpace(txtCurrentCensusBHU.Text))
                 {
-                    MessageBox.Show("BHU Current Census cannot exceed 15 patients", "Error");
-                    txtAvailableBedsBHU.Text = "";
-                    txtCurrentCensusBHU.Text = "";
-                }
+                    int bhuNumCheck;
+                    if (!int.TryParse(txtCurrentCensusBHU.Text, out bhuNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtCurrentCensusBHU.Text = "";
+                    }
+                    else
+                    {
+                        if (Convert.ToInt32(txtCurrentCensusBHU.Text) > 15)
+                        {
+                            MessageBox.Show("BHU Current Census cannot exceed 15 patients", "Error");
+                            txtAvailableBedsBHU.Text = "";
+                            txtCurrentCensusBHU.Text = "";
+                        }
 
-                if (bhuCensus <= 15)
+                        if (bhuCensus <= 15)
+                        {
+                            txtAvailableBedsBHU.Text = Convert.ToInt32(15 - bhuCensus).ToString();
+                        }
+                    }
+                }
+                if (string.IsNullOrWhiteSpace(txtCurrentCensusBHU.Text))
                 {
-                    txtAvailableBedsBHU.Text = Convert.ToInt32(15 - bhuCensus).ToString();
+                    if (bhuCensus <= 15)
+                    {
+                        txtAvailableBedsBHU.Text = "";
+                    }
                 }
             }
-            if (string.IsNullOrWhiteSpace(txtCurrentCensusBHU.Text))
+            catch(Exception ex)
             {
-                if (bhuCensus <= 15)
-                {
-                    txtAvailableBedsBHU.Text = "";
-                }
+                MessageBox.Show(ex.Message, "ERROR");
             }
+            #endregion
         }
 
-        //Closes Program
+//BHU ISO Patients Text Change
+        private void txtIsoPatientsBHU_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks ISO Patient BHU Field
+
+            int bhuIsoCensus = 0;
+            Int32.TryParse(txtIsoPatientsBHU.Text, out bhuIsoCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtIsoPatientsBHU.Text))
+                {
+                    int bhuIsoNumCheck;
+                    if (!int.TryParse(txtIsoPatientsBHU.Text, out bhuIsoNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtIsoPatientsBHU.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
+        }
+
+//BHU DC Text Change
+        private void txtDischargesBHU_TextChanged(object sender, EventArgs e)
+        {
+            #region Checks DC BHU Field
+
+            int bhuDcCensus = 0;
+            Int32.TryParse(txtDischargesBHU.Text, out bhuDcCensus);
+
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(txtDischargesBHU.Text))
+                {
+                    int bhuDcNumCheck;
+                    if (!int.TryParse(txtDischargesBHU.Text, out bhuDcNumCheck))
+                    {
+                        MessageBox.Show("Please Enter A Number", "Error");
+                        txtDischargesBHU.Text = "";
+                    }
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR");
+            }
+            #endregion
+        }
+
+/***************************************************************************************/
+
+//Closes Program
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
