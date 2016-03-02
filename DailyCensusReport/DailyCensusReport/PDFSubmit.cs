@@ -56,8 +56,10 @@ namespace DailyCensusReport
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 Document doc = new Document(iTextSharp.text.PageSize.LETTER, 10, 10, 42, 35);
+                doc.SetMargins(doc.LeftMargin, doc.RightMargin, doc.TopMargin + 50, doc.BottomMargin);
                 PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
                 //Displays notification when PDF is created
+
                 MessageBox.Show("PDF Has Been Saved!", "Saved");
                 //Open Document.
                 doc.Open();
@@ -71,7 +73,7 @@ namespace DailyCensusReport
                 PdfPTable head = new PdfPTable(1);
                 head.TotalWidth = page.Width;
                 Phrase phrase = new Phrase("Hospital's Daily Census Report" + "\n" +
-                  DateTime.Now.ToString("MM-dd-yyyy") + "\n" + "Hospital Capacity Status Alert:" + "  " + txtCCSTotal.Text + "\n" + "Total Census = " + " "+ lblCCTotal.Text
+                  DateTime.Now.ToString("MM-dd-yyyy") + "\n\n" + "Hospital Capacity Status Alert:" + "  " + txtCCSTotal.Text + "\n\n" + "Total Census = " + " "+ lblCCTotal.Text + "\n\n"
                 );
 
                 PdfPCell censusHeader = new PdfPCell(phrase);
@@ -84,8 +86,9 @@ namespace DailyCensusReport
                   0, -1,
                     // left offset
                   0,
+                  
                     // ** bottom** yPos of the table
-                  page.Height - doc.TopMargin + head.TotalHeight + 2,
+                  doc.PageSize.Height - doc.TopMargin + head.TotalHeight + 2,
                   wri.DirectContent
                 );
         #endregion
@@ -99,6 +102,7 @@ namespace DailyCensusReport
                 /*********************Header Row*********************/
                 PdfPCell cell21 = new PdfPCell();
                 cell21.AddElement(new Paragraph("Unit"));
+               
                 
 
                 PdfPCell cell22 = new PdfPCell();
@@ -658,31 +662,84 @@ namespace DailyCensusReport
                 PdfPCell cell70 = new PdfPCell();
                 cell70.AddElement(new Paragraph("Total:"));
                 cell70.BackgroundColor = BaseColor.LIGHT_GRAY;
-
+                cell70.UseVariableBorders = true;
+                cell70.BorderColorLeft = BaseColor.BLACK;
+                cell70.BorderColorBottom = BaseColor.BLACK;
+                cell70.BorderColorTop = BaseColor.BLACK;
+                cell70.BorderColorRight = BaseColor.BLACK;
+                cell70.BorderWidthLeft = 1f;
+                cell70.BorderWidthRight = 1f;
+                cell70.BorderWidthTop = 1f;
+                cell70.BorderWidthBottom = 1f;
 
                 PdfPCell cell71 = new PdfPCell();
                 cell71.AddElement(new Paragraph(lblCCTotal.Text));
                 cell71.BackgroundColor = BaseColor.LIGHT_GRAY;
+                cell71.UseVariableBorders = true;
+                cell71.BorderColorLeft = BaseColor.BLACK;
+                cell71.BorderColorBottom = BaseColor.BLACK;
+                cell71.BorderColorTop = BaseColor.BLACK;
+                cell71.BorderColorRight = BaseColor.BLACK;
+                cell71.BorderWidthLeft = 1f;
+                cell71.BorderWidthRight = 1f;
+                cell71.BorderWidthTop = 1f;
+                cell71.BorderWidthBottom = 1f;
 
 
                 PdfPCell cell72 = new PdfPCell();
                 cell72.AddElement(new Paragraph(lblABTotal.Text));
                 cell72.BackgroundColor = BaseColor.LIGHT_GRAY;
+                cell72.UseVariableBorders = true;
+                cell72.BorderColorLeft = BaseColor.BLACK;
+                cell72.BorderColorBottom = BaseColor.BLACK;
+                cell72.BorderColorTop = BaseColor.BLACK;
+                cell72.BorderColorRight = BaseColor.BLACK;
+                cell72.BorderWidthLeft = 1f;
+                cell72.BorderWidthRight = 1f;
+                cell72.BorderWidthTop = 1f;
+                cell72.BorderWidthBottom = 1f;
 
 
                 PdfPCell cell73 = new PdfPCell();
                 cell73.AddElement(new Paragraph(lblISOTotal.Text));
                 cell73.BackgroundColor = BaseColor.LIGHT_GRAY;
+                cell73.UseVariableBorders = true;
+                cell73.BorderColorLeft = BaseColor.BLACK;
+                cell73.BorderColorBottom = BaseColor.BLACK;
+                cell73.BorderColorTop = BaseColor.BLACK;
+                cell73.BorderColorRight = BaseColor.BLACK;
+                cell73.BorderWidthLeft = 1f;
+                cell73.BorderWidthRight = 1f;
+                cell73.BorderWidthTop = 1f;
+                cell73.BorderWidthBottom = 1f;
 
 
                 PdfPCell cell74 = new PdfPCell();
                 cell74.AddElement(new Paragraph(lblTotalDC.Text));
                 cell74.BackgroundColor = BaseColor.LIGHT_GRAY;
+                cell74.UseVariableBorders = true;
+                cell74.BorderColorLeft = BaseColor.BLACK;
+                cell74.BorderColorBottom = BaseColor.BLACK;
+                cell74.BorderColorTop = BaseColor.BLACK;
+                cell74.BorderColorRight = BaseColor.BLACK;
+                cell74.BorderWidthLeft = 1f;
+                cell74.BorderWidthRight = 1f;
+                cell74.BorderWidthTop = 1f;
+                cell74.BorderWidthBottom = 1f;
 
 
                 PdfPCell cell75 = new PdfPCell();
                 cell75.AddElement(new Paragraph(lbltotalNotes.Text));
                 cell75.BackgroundColor = BaseColor.LIGHT_GRAY;
+                cell75.UseVariableBorders = true;
+                cell75.BorderColorLeft = BaseColor.BLACK;
+                cell75.BorderColorBottom = BaseColor.BLACK;
+                cell75.BorderColorTop = BaseColor.BLACK;
+                cell75.BorderColorRight = BaseColor.BLACK;
+                cell75.BorderWidthLeft = 1f;
+                cell75.BorderWidthRight = 1f;
+                cell75.BorderWidthTop = 1f;
+                cell75.BorderWidthBottom = 1f;
 
                 pdfTable.AddCell(cell70);
                 pdfTable.AddCell(cell71);
@@ -694,42 +751,80 @@ namespace DailyCensusReport
                 #region Total Calculation Color Changer
                 /****Dynamically changing PDF/Textbox colors.****/
 
+
                 int totalHospitalCensus = 129;
                 totalHospitalCensus = Convert.ToInt32(lblCCTotal.Text);
 
 
                 if (totalHospitalCensus <= 70)
                 {
-                    //BHU Row Added
+                    //Total Row Added
                     PdfPCell cell600 = new PdfPCell();
                     cell600.AddElement(new Paragraph(txtCCSTotal.Text));
                     cell600.BackgroundColor = BaseColor.GREEN;
+                    cell600.UseVariableBorders = true;
+                    cell600.BorderColorLeft = BaseColor.BLACK;
+                    cell600.BorderColorBottom = BaseColor.BLACK;
+                    cell600.BorderColorTop = BaseColor.BLACK;
+                    cell600.BorderColorRight = BaseColor.BLACK;
+                    cell600.BorderWidthLeft = 1f;
+                    cell600.BorderWidthRight = 1f;
+                    cell600.BorderWidthTop = 1f;
+                    cell600.BorderWidthBottom = 1f;
                     pdfTable.AddCell(cell600);
                 }
                 else if (totalHospitalCensus <= 80)
                 {
-                    //BHU Row Added
+                    //Total Row Added
                     PdfPCell cell600 = new PdfPCell();
                     cell600.AddElement(new Paragraph(txtCCSTotal.Text));
                     cell600.BackgroundColor = BaseColor.YELLOW;
+                    cell600.UseVariableBorders = true;
+                    cell600.BorderColorLeft = BaseColor.BLACK;
+                    cell600.BorderColorBottom = BaseColor.BLACK;
+                    cell600.BorderColorTop = BaseColor.BLACK;
+                    cell600.BorderColorRight = BaseColor.BLACK;
+                    cell600.BorderWidthLeft = 1f;
+                    cell600.BorderWidthRight = 1f;
+                    cell600.BorderWidthTop = 1f;
+                    cell600.BorderWidthBottom = 1f;
                     pdfTable.AddCell(cell600);
                 }
 
                 else if (totalHospitalCensus <= 90)
                 {
-                    //BHU Row Added
+                    //Total Row Added
                     PdfPCell cell600 = new PdfPCell();
                     cell600.AddElement(new Paragraph(txtCCSTotal.Text));
                     cell600.BackgroundColor = BaseColor.ORANGE;
+                    cell600.UseVariableBorders = true;
+                    cell600.BorderColorLeft = BaseColor.BLACK;
+                    cell600.BorderColorBottom = BaseColor.BLACK;
+                    cell600.BorderColorTop = BaseColor.BLACK;
+                    cell600.BorderColorRight = BaseColor.BLACK;
+                    cell600.BorderWidthLeft = 1f;
+                    cell600.BorderWidthRight = 1f;
+                    cell600.BorderWidthTop = 1f;
+                    cell600.BorderWidthBottom = 1f;
                     pdfTable.AddCell(cell600);
                 }
 
                 else if (totalHospitalCensus >= 100 && totalHospitalCensus <= 129)
                 {
-                    //BHU Row Added
+                    
+                    //Total Row Added
                     PdfPCell cell600 = new PdfPCell();
                     cell600.AddElement(new Paragraph(txtCCSTotal.Text));
                     cell600.BackgroundColor = BaseColor.RED;
+                    cell600.UseVariableBorders = true;
+                    cell600.BorderColorLeft = BaseColor.BLACK;
+                    cell600.BorderColorBottom = BaseColor.BLACK;
+                    cell600.BorderColorTop = BaseColor.BLACK;
+                    cell600.BorderColorRight = BaseColor.BLACK;
+                    cell600.BorderWidthLeft = 1f;
+                    cell600.BorderWidthRight = 1f;
+                    cell600.BorderWidthTop = 1f;
+                    cell600.BorderWidthBottom = 1f;
                     pdfTable.AddCell(cell600);
                 }
                 #endregion
