@@ -71,21 +71,21 @@ namespace DailyCensusReport
                 PdfPTable head = new PdfPTable(1);
                 head.TotalWidth = page.Width;
                 Phrase phrase = new Phrase("Hospital's Daily Census Report" + "\n" +
-                  DateTime.Now.ToString("MM-dd-yyyy")
+                  DateTime.Now.ToString("MM-dd-yyyy") + "\n" + "Hospital Capacity Status Alert:" + "  " + txtCCSTotal.Text + "\n" + "Total Census = " + " "+ lblCCTotal.Text
                 );
 
-                PdfPCell c = new PdfPCell(phrase);
-                c.Border = iTextSharp.text.Rectangle.NO_BORDER;
-                c.VerticalAlignment = Element.ALIGN_TOP;
-                c.HorizontalAlignment = Element.ALIGN_CENTER;
-                head.AddCell(c);
+                PdfPCell censusHeader = new PdfPCell(phrase);
+                censusHeader.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                censusHeader.VerticalAlignment = Element.ALIGN_TOP;
+                censusHeader.HorizontalAlignment = Element.ALIGN_CENTER;
+                head.AddCell(censusHeader);
                 head.WriteSelectedRows(
-                  // first/last row; -1 writes all rows
+                    // first/last row; -1 writes all rows
                   0, -1,
-                  // left offset
+                    // left offset
                   0,
-                  // ** bottom** yPos of the table
-                  page.Height - doc.TopMargin + head.TotalHeight + 10,
+                    // ** bottom** yPos of the table
+                  page.Height - doc.TopMargin + head.TotalHeight + 2,
                   wri.DirectContent
                 );
         #endregion
@@ -655,58 +655,83 @@ namespace DailyCensusReport
                 #region Total Row
               /*********************TOTAL Data*********************/
 
-                //PdfPCell cell70 = new PdfPCell();
-                //cell70.AddElement(new Paragraph("Total"));
-                //cell70.BackgroundColor = BaseColor.LIGHT_GRAY;
+                PdfPCell cell70 = new PdfPCell();
+                cell70.AddElement(new Paragraph("Total:"));
+                cell70.BackgroundColor = BaseColor.LIGHT_GRAY;
 
 
-                //PdfPCell cell71 = new PdfPCell();
-                //cell71.AddElement(new Paragraph(lblCCTotal.Text, arial));
+                PdfPCell cell71 = new PdfPCell();
+                cell71.AddElement(new Paragraph(lblCCTotal.Text));
+                cell71.BackgroundColor = BaseColor.LIGHT_GRAY;
 
 
-                //PdfPCell cell72 = new PdfPCell();
-                //cell72.AddElement(new Paragraph(lblABTotal.Text, arial));
+                PdfPCell cell72 = new PdfPCell();
+                cell72.AddElement(new Paragraph(lblABTotal.Text));
+                cell72.BackgroundColor = BaseColor.LIGHT_GRAY;
 
 
-                //PdfPCell cell73 = new PdfPCell();
-                //cell73.AddElement(new Paragraph(lblISOTotal.Text, arial));
+                PdfPCell cell73 = new PdfPCell();
+                cell73.AddElement(new Paragraph(lblISOTotal.Text));
+                cell73.BackgroundColor = BaseColor.LIGHT_GRAY;
 
 
-                //PdfPCell cell74 = new PdfPCell();
-                //cell74.AddElement(new Paragraph(lblTotalDC.Text, arial));
+                PdfPCell cell74 = new PdfPCell();
+                cell74.AddElement(new Paragraph(lblTotalDC.Text));
+                cell74.BackgroundColor = BaseColor.LIGHT_GRAY;
 
 
-                //PdfPCell cell75 = new PdfPCell();
-                //cell75.AddElement(new Paragraph(lbltotalNotes.Text, arial));
+                PdfPCell cell75 = new PdfPCell();
+                cell75.AddElement(new Paragraph(lbltotalNotes.Text));
+                cell75.BackgroundColor = BaseColor.LIGHT_GRAY;
 
-                //pdfTable.AddCell(cell70);
-                //pdfTable.AddCell(cell71);
-                //pdfTable.AddCell(cell72);
-                //pdfTable.AddCell(cell73);
-                //pdfTable.AddCell(cell74);
-                //pdfTable.AddCell(cell75);
+                pdfTable.AddCell(cell70);
+                pdfTable.AddCell(cell71);
+                pdfTable.AddCell(cell72);
+                pdfTable.AddCell(cell73);
+                pdfTable.AddCell(cell74);
+                pdfTable.AddCell(cell75);
                /*************************************************/
                 #region Total Calculation Color Changer
                 /****Dynamically changing PDF/Textbox colors.****/
 
-                //int totalCurrentCensus = Convert.ToInt32(txtCCSTotal.Text);
+                int totalHospitalCensus = 129;
+                totalHospitalCensus = Convert.ToInt32(lblCCTotal.Text);
 
-                //if (totalCurrentCensus <= 5)
-                //{
-                //    //ICU Row Added
-                //    PdfPCell colorChangeCell = new PdfPCell();
-                //    colorChangeCell.AddElement(new Paragraph(txtCCSTotal.Text));
-                //    colorChangeCell.BackgroundColor = BaseColor.GREEN;
-                //    pdfTable.AddCell(colorChangeCell);
-                //}
-                //else if (totalCurrentCensus > 7)
-                //{
-                //    //ICU Row Added
-                //    PdfPCell colorChangeCell = new PdfPCell();
-                //    colorChangeCell.AddElement(new Paragraph(txtCCSTotal.Text));
-                //    colorChangeCell.BackgroundColor = BaseColor.RED;
-                //    pdfTable.AddCell(colorChangeCell);
-                //}
+
+                if (totalHospitalCensus <= 70)
+                {
+                    //BHU Row Added
+                    PdfPCell cell600 = new PdfPCell();
+                    cell600.AddElement(new Paragraph(txtCCSTotal.Text));
+                    cell600.BackgroundColor = BaseColor.GREEN;
+                    pdfTable.AddCell(cell600);
+                }
+                else if (totalHospitalCensus <= 80)
+                {
+                    //BHU Row Added
+                    PdfPCell cell600 = new PdfPCell();
+                    cell600.AddElement(new Paragraph(txtCCSTotal.Text));
+                    cell600.BackgroundColor = BaseColor.YELLOW;
+                    pdfTable.AddCell(cell600);
+                }
+
+                else if (totalHospitalCensus <= 90)
+                {
+                    //BHU Row Added
+                    PdfPCell cell600 = new PdfPCell();
+                    cell600.AddElement(new Paragraph(txtCCSTotal.Text));
+                    cell600.BackgroundColor = BaseColor.ORANGE;
+                    pdfTable.AddCell(cell600);
+                }
+
+                else if (totalHospitalCensus >= 100 && totalHospitalCensus <= 129)
+                {
+                    //BHU Row Added
+                    PdfPCell cell600 = new PdfPCell();
+                    cell600.AddElement(new Paragraph(txtCCSTotal.Text));
+                    cell600.BackgroundColor = BaseColor.RED;
+                    pdfTable.AddCell(cell600);
+                }
                 #endregion
                /*************************************************/
                 #endregion

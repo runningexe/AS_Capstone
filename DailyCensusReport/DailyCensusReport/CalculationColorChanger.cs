@@ -297,7 +297,7 @@ namespace DailyCensusReport
 
             lblTotalDC.Text = Convert.ToInt32(sumICUDC + sumT2DC + sumPEDIDC + sumT4DC + sum6ACUDC + sumTBCDC + sumBHUDC).ToString();
 
-            #region Total Hospital Censnsu Status
+            #region Total Hospital Census Status
             /*****Total Hospital Census Status****/
 
             //Determine the BHU Current Capacity Status
