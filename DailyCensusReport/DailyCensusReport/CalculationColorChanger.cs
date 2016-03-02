@@ -41,7 +41,7 @@ namespace DailyCensusReport
             TextBox txtCurrentCensusBHU, TextBox txtCurrentCapStatusBHU, TextBox txtAvailableBedsBHU, TextBox txtIsoPatientsBHU, TextBox txtDischargesBHU,
 
             //Total
-            Label lblCCTotal, Label lblABTotal, Label lblISOTotal, Label lblTotalDC, Label lblCCSTotal)
+            Label lblCCTotal, Label lblABTotal, Label lblISOTotal, Label lblTotalDC, TextBox txtCCSTotal)
         {
 
             #region ICU Calculation
@@ -297,6 +297,35 @@ namespace DailyCensusReport
 
             lblTotalDC.Text = Convert.ToInt32(sumICUDC + sumT2DC + sumPEDIDC + sumT4DC + sum6ACUDC + sumTBCDC + sumBHUDC).ToString();
 
+            #region Total Hospital Censnsu Status
+            /*****Total Hospital Census Status****/
+
+            //Determine the BHU Current Capacity Status
+            int totalHospitalCensus = 129;
+            totalHospitalCensus = Convert.ToInt32(lblCCTotal.Text);
+
+            if (totalHospitalCensus <= 70)
+            {
+                txtCCSTotal.BackColor = Color.Green;
+                txtCCSTotal.Text = "GREEN";
+            }
+            else if (totalHospitalCensus <= 80)
+            {
+                txtCCSTotal.BackColor = Color.Yellow;
+                txtCCSTotal.Text = "YELLOW";
+            }
+            else if (totalHospitalCensus <= 90)
+            {
+                txtCCSTotal.BackColor = Color.Orange;
+                txtCCSTotal.Text = "ORANGE";
+            }
+            else if (totalHospitalCensus >= 100 && totalHospitalCensus <= 129)
+            {
+                txtCCSTotal.BackColor = Color.Red;
+                txtCCSTotal.Text = "RED";
+            }
+            #endregion
+            /********************************************************************/
             #endregion
 
             return true;

@@ -99,7 +99,7 @@ namespace DailyCensusReport
                   txtCurrentCensusBHU, txtCurrentCapStatusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU,
 
                   ////Total
-                  lblCCTotal, lblABTotal, lblISOTotal, lblTotalDC, lblCCSTotal
+                  lblCCTotal, lblABTotal, lblISOTotal, lblTotalDC, txtCCSTotal
                   );
                 #endregion
 
@@ -201,7 +201,7 @@ namespace DailyCensusReport
                   txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU,
 
                   //Total
-                  lblCCTotal, lblABTotal, lblISOTotal, lblTotalDC, lbltotalNotes, lblCCSTotal
+                  lblCCTotal, lblABTotal, lblISOTotal, lblTotalDC, lbltotalNotes, txtCCSTotal
                   );
                 #endregion
             }
