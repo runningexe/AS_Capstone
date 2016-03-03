@@ -39,8 +39,7 @@ namespace DailyCensusReport
             TextBox txtCurrentCensusBHU, TextBox txtAvailableBedsBHU, TextBox txtIsoPatientsBHU, TextBox txtDischargesBHU, TextBox txtNotesBHU, TextBox txtCurrentCapStatusBHU,
 
             /**Total**/
-            Label lblCCTotal, Label lblABTotal, Label lblISOTotal, Label lblTotalDC, Label lbltotalNotes, TextBox txtCCSTotal
-            )
+            Label lblCCTotal, Label lblABTotal, Label lblISOTotal, Label lblTotalDC, Label lbltotalNotes, TextBox txtCCSTotal)
         #endregion
 
         #region Save Dialog Box
@@ -95,40 +94,44 @@ namespace DailyCensusReport
                       wri.DirectContent
                     );
         #endregion
-                    #region Creates PDF Table
+
+        #region Creates PDF Table
                     //Instantiating the table and giving it the number of columns it will have.
                     PdfPTable pdfTable = new PdfPTable(7);
-                    iTextSharp.text.Font arial = FontFactory.GetFont("Arial", 8);
-
+                    iTextSharp.text.Font arialHeader = FontFactory.GetFont("Arial", 10);
+                    iTextSharp.text.Font arialColumns = FontFactory.GetFont("Arial", 8);
+                    
+                    
                     #region Header Row
                     /*********************Header Row*********************/
                     PdfPCell cell21 = new PdfPCell();
-                    cell21.AddElement(new Paragraph("Unit"));
-
-
+                    cell21.AddElement(new Paragraph("Unit", arialHeader));
+                    
 
                     PdfPCell cell22 = new PdfPCell();
-                    cell22.AddElement(new Paragraph("Current Census"));
-
+                    cell22.AddElement(new Paragraph("Current Census", arialHeader));
+                    
 
                     PdfPCell cell23 = new PdfPCell();
-                    cell23.AddElement(new Paragraph("Avail Beds"));
-
+                    cell23.AddElement(new Paragraph("Avail Beds", arialHeader));
+                    
 
                     PdfPCell cell24 = new PdfPCell();
-                    cell24.AddElement(new Paragraph("# of Isolation Pts."));
-
+                    cell24.AddElement(new Paragraph("# of Isolation Pts.", arialHeader));
+                    
 
                     PdfPCell cell25 = new PdfPCell();
-                    cell25.AddElement(new Paragraph("Potential D/C's"));
-
+                    cell25.AddElement(new Paragraph("Potential D/C's", arialHeader));
+                    
 
                     PdfPCell cell26 = new PdfPCell();
-                    cell26.AddElement(new Paragraph("Notes"));
+                    cell26.AddElement(new Paragraph("Notes", arialHeader));
+                    
 
 
                     PdfPCell cell27 = new PdfPCell();
-                    cell27.AddElement(new Paragraph("Current Capcity Status"));
+                    cell27.AddElement(new Paragraph("Current Capcity Status", arialHeader));
+                    
 
 
                     pdfTable.AddCell(cell21);
@@ -146,26 +149,27 @@ namespace DailyCensusReport
                     PdfPCell cell28 = new PdfPCell();
                     cell28.AddElement(new Paragraph("ICU"));
                     cell28.BackgroundColor = BaseColor.LIGHT_GRAY;
+                    
 
 
                     PdfPCell cell29 = new PdfPCell();
-                    cell29.AddElement(new Paragraph(txtCurrentCensusICU.Text, arial));
+                    cell29.AddElement(new Paragraph(txtCurrentCensusICU.Text, arialColumns));
 
 
                     PdfPCell cell30 = new PdfPCell();
-                    cell30.AddElement(new Paragraph(txtAvailableBedsICU.Text, arial));
+                    cell30.AddElement(new Paragraph(txtAvailableBedsICU.Text, arialColumns));
 
 
                     PdfPCell cell31 = new PdfPCell();
-                    cell31.AddElement(new Paragraph(txtIsoPatientsICU.Text, arial));
+                    cell31.AddElement(new Paragraph(txtIsoPatientsICU.Text, arialColumns));
 
 
                     PdfPCell cell32 = new PdfPCell();
-                    cell32.AddElement(new Paragraph(txtDischargesICU.Text, arial));
+                    cell32.AddElement(new Paragraph(txtDischargesICU.Text, arialColumns));
 
 
                     PdfPCell cell33 = new PdfPCell();
-                    cell33.AddElement(new Paragraph(txtNotesICU.Text, arial));
+                    cell33.AddElement(new Paragraph(txtNotesICU.Text, arialColumns));
 
 
                     pdfTable.AddCell(cell28);
@@ -229,19 +233,19 @@ namespace DailyCensusReport
                     cell34.BackgroundColor = BaseColor.LIGHT_GRAY;
 
                     PdfPCell cell35 = new PdfPCell();
-                    cell35.AddElement(new Paragraph(txtCurrentCensusT2.Text, arial));
+                    cell35.AddElement(new Paragraph(txtCurrentCensusT2.Text, arialColumns));
 
                     PdfPCell cell36 = new PdfPCell();
-                    cell36.AddElement(new Paragraph(txtAvailableBedsT2.Text, arial));
+                    cell36.AddElement(new Paragraph(txtAvailableBedsT2.Text, arialColumns));
 
                     PdfPCell cell37 = new PdfPCell();
-                    cell37.AddElement(new Paragraph(txtIsoPatientsT2.Text, arial));
+                    cell37.AddElement(new Paragraph(txtIsoPatientsT2.Text, arialColumns));
 
                     PdfPCell cell38 = new PdfPCell();
-                    cell38.AddElement(new Paragraph(txtDischargesT2.Text, arial));
+                    cell38.AddElement(new Paragraph(txtDischargesT2.Text, arialColumns));
 
                     PdfPCell cell39 = new PdfPCell();
-                    cell39.AddElement(new Paragraph(txtNotesT2.Text, arial));
+                    cell39.AddElement(new Paragraph(txtNotesT2.Text, arialColumns));
 
                     pdfTable.AddCell(cell34);
                     pdfTable.AddCell(cell35);
@@ -301,19 +305,19 @@ namespace DailyCensusReport
                     cell40.BackgroundColor = BaseColor.LIGHT_GRAY;
 
                     PdfPCell cell41 = new PdfPCell();
-                    cell41.AddElement(new Paragraph(txtCurrentCensusPEDI.Text, arial));
+                    cell41.AddElement(new Paragraph(txtCurrentCensusPEDI.Text, arialColumns));
 
                     PdfPCell cell42 = new PdfPCell();
-                    cell42.AddElement(new Paragraph(txtAvailableBedsPEDI.Text, arial));
+                    cell42.AddElement(new Paragraph(txtAvailableBedsPEDI.Text, arialColumns));
 
                     PdfPCell cell43 = new PdfPCell();
-                    cell43.AddElement(new Paragraph(txtIsoPatientsPEDI.Text, arial));
+                    cell43.AddElement(new Paragraph(txtIsoPatientsPEDI.Text, arialColumns));
 
                     PdfPCell cell44 = new PdfPCell();
-                    cell44.AddElement(new Paragraph(txtDischargesPEDI.Text, arial));
+                    cell44.AddElement(new Paragraph(txtDischargesPEDI.Text, arialColumns));
 
                     PdfPCell cell45 = new PdfPCell();
-                    cell45.AddElement(new Paragraph(txtNotesPEDI.Text, arial));
+                    cell45.AddElement(new Paragraph(txtNotesPEDI.Text, arialColumns));
 
                     pdfTable.AddCell(cell40);
                     pdfTable.AddCell(cell41);
@@ -372,19 +376,19 @@ namespace DailyCensusReport
                     cell46.BackgroundColor = BaseColor.LIGHT_GRAY;
 
                     PdfPCell cell47 = new PdfPCell();
-                    cell47.AddElement(new Paragraph(txtCurrentCensusT4.Text, arial));
+                    cell47.AddElement(new Paragraph(txtCurrentCensusT4.Text, arialColumns));
 
                     PdfPCell cell48 = new PdfPCell();
-                    cell48.AddElement(new Paragraph(txtAvailableBedsT4.Text, arial));
+                    cell48.AddElement(new Paragraph(txtAvailableBedsT4.Text, arialColumns));
 
                     PdfPCell cell49 = new PdfPCell();
-                    cell49.AddElement(new Paragraph(txtIsoPatientsT4.Text, arial));
+                    cell49.AddElement(new Paragraph(txtIsoPatientsT4.Text, arialColumns));
 
                     PdfPCell cell50 = new PdfPCell();
-                    cell50.AddElement(new Paragraph(txtDischargesT4.Text, arial));
+                    cell50.AddElement(new Paragraph(txtDischargesT4.Text, arialColumns));
 
                     PdfPCell cell51 = new PdfPCell();
-                    cell51.AddElement(new Paragraph(txtNotesT4.Text, arial));
+                    cell51.AddElement(new Paragraph(txtNotesT4.Text, arialColumns));
 
                     pdfTable.AddCell(cell46);
                     pdfTable.AddCell(cell47);
@@ -445,19 +449,19 @@ namespace DailyCensusReport
                     cell52.BackgroundColor = BaseColor.LIGHT_GRAY;
 
                     PdfPCell cell53 = new PdfPCell();
-                    cell53.AddElement(new Paragraph(txtCurrentCensus6ACU.Text, arial));
+                    cell53.AddElement(new Paragraph(txtCurrentCensus6ACU.Text, arialColumns));
 
                     PdfPCell cell54 = new PdfPCell();
-                    cell54.AddElement(new Paragraph(txtAvailableBeds6ACU.Text, arial));
+                    cell54.AddElement(new Paragraph(txtAvailableBeds6ACU.Text, arialColumns));
 
                     PdfPCell cell55 = new PdfPCell();
-                    cell55.AddElement(new Paragraph(txtIsoPatients6ACU.Text, arial));
+                    cell55.AddElement(new Paragraph(txtIsoPatients6ACU.Text, arialColumns));
 
                     PdfPCell cell56 = new PdfPCell();
-                    cell56.AddElement(new Paragraph(txtDischarges6ACU.Text, arial));
+                    cell56.AddElement(new Paragraph(txtDischarges6ACU.Text, arialColumns));
 
                     PdfPCell cell57 = new PdfPCell();
-                    cell57.AddElement(new Paragraph(txtNotes6ACU.Text, arial));
+                    cell57.AddElement(new Paragraph(txtNotes6ACU.Text, arialColumns));
 
                     pdfTable.AddCell(cell52);
                     pdfTable.AddCell(cell53);
@@ -518,19 +522,19 @@ namespace DailyCensusReport
                     cell58.BackgroundColor = BaseColor.LIGHT_GRAY;
 
                     PdfPCell cell59 = new PdfPCell();
-                    cell59.AddElement(new Paragraph(txtCurrentCensusTBC.Text, arial));
+                    cell59.AddElement(new Paragraph(txtCurrentCensusTBC.Text, arialColumns));
 
                     PdfPCell cell60 = new PdfPCell();
-                    cell60.AddElement(new Paragraph(txtAvailableBedsTBC.Text, arial));
+                    cell60.AddElement(new Paragraph(txtAvailableBedsTBC.Text, arialColumns));
 
                     PdfPCell cell61 = new PdfPCell();
-                    cell61.AddElement(new Paragraph(txtIsoPatientsTBC.Text, arial));
+                    cell61.AddElement(new Paragraph(txtIsoPatientsTBC.Text, arialColumns));
 
                     PdfPCell cell62 = new PdfPCell();
-                    cell62.AddElement(new Paragraph(txtDischargesTBC.Text, arial));
+                    cell62.AddElement(new Paragraph(txtDischargesTBC.Text, arialColumns));
 
                     PdfPCell cell63 = new PdfPCell();
-                    cell63.AddElement(new Paragraph(txtNotesTBC.Text, arial));
+                    cell63.AddElement(new Paragraph(txtNotesTBC.Text, arialColumns));
 
                     pdfTable.AddCell(cell58);
                     pdfTable.AddCell(cell59);
@@ -591,19 +595,19 @@ namespace DailyCensusReport
                     cell64.BackgroundColor = BaseColor.LIGHT_GRAY;
 
                     PdfPCell cell65 = new PdfPCell();
-                    cell65.AddElement(new Paragraph(txtCurrentCensusBHU.Text, arial));
+                    cell65.AddElement(new Paragraph(txtCurrentCensusBHU.Text, arialColumns));
 
                     PdfPCell cell66 = new PdfPCell();
-                    cell66.AddElement(new Paragraph(txtAvailableBedsBHU.Text, arial));
+                    cell66.AddElement(new Paragraph(txtAvailableBedsBHU.Text, arialColumns));
 
                     PdfPCell cell67 = new PdfPCell();
-                    cell67.AddElement(new Paragraph(txtIsoPatientsBHU.Text, arial));
+                    cell67.AddElement(new Paragraph(txtIsoPatientsBHU.Text, arialColumns));
 
                     PdfPCell cell68 = new PdfPCell();
-                    cell68.AddElement(new Paragraph(txtDischargesBHU.Text, arial));
+                    cell68.AddElement(new Paragraph(txtDischargesBHU.Text, arialColumns));
 
                     PdfPCell cell69 = new PdfPCell();
-                    cell69.AddElement(new Paragraph(txtNotesBHU.Text, arial));
+                    cell69.AddElement(new Paragraph(txtNotesBHU.Text, arialColumns));
 
                     pdfTable.AddCell(cell64);
                     pdfTable.AddCell(cell65);
@@ -664,84 +668,36 @@ namespace DailyCensusReport
                     PdfPCell cell70 = new PdfPCell();
                     cell70.AddElement(new Paragraph("Total:"));
                     cell70.BackgroundColor = BaseColor.LIGHT_GRAY;
-                    cell70.UseVariableBorders = true;
-                    cell70.BorderColorLeft = BaseColor.BLACK;
-                    cell70.BorderColorBottom = BaseColor.BLACK;
-                    cell70.BorderColorTop = BaseColor.BLACK;
-                    cell70.BorderColorRight = BaseColor.BLACK;
-                    cell70.BorderWidthLeft = 1f;
-                    cell70.BorderWidthRight = 1f;
-                    cell70.BorderWidthTop = 1f;
-                    cell70.BorderWidthBottom = 1f;
+                    
 
                     PdfPCell cell71 = new PdfPCell();
                     cell71.AddElement(new Paragraph(lblCCTotal.Text));
                     cell71.BackgroundColor = BaseColor.LIGHT_GRAY;
-                    cell71.UseVariableBorders = true;
-                    cell71.BorderColorLeft = BaseColor.BLACK;
-                    cell71.BorderColorBottom = BaseColor.BLACK;
-                    cell71.BorderColorTop = BaseColor.BLACK;
-                    cell71.BorderColorRight = BaseColor.BLACK;
-                    cell71.BorderWidthLeft = 1f;
-                    cell71.BorderWidthRight = 1f;
-                    cell71.BorderWidthTop = 1f;
-                    cell71.BorderWidthBottom = 1f;
+                    
 
 
                     PdfPCell cell72 = new PdfPCell();
                     cell72.AddElement(new Paragraph(lblABTotal.Text));
                     cell72.BackgroundColor = BaseColor.LIGHT_GRAY;
-                    cell72.UseVariableBorders = true;
-                    cell72.BorderColorLeft = BaseColor.BLACK;
-                    cell72.BorderColorBottom = BaseColor.BLACK;
-                    cell72.BorderColorTop = BaseColor.BLACK;
-                    cell72.BorderColorRight = BaseColor.BLACK;
-                    cell72.BorderWidthLeft = 1f;
-                    cell72.BorderWidthRight = 1f;
-                    cell72.BorderWidthTop = 1f;
-                    cell72.BorderWidthBottom = 1f;
+                    
 
 
                     PdfPCell cell73 = new PdfPCell();
                     cell73.AddElement(new Paragraph(lblISOTotal.Text));
                     cell73.BackgroundColor = BaseColor.LIGHT_GRAY;
-                    cell73.UseVariableBorders = true;
-                    cell73.BorderColorLeft = BaseColor.BLACK;
-                    cell73.BorderColorBottom = BaseColor.BLACK;
-                    cell73.BorderColorTop = BaseColor.BLACK;
-                    cell73.BorderColorRight = BaseColor.BLACK;
-                    cell73.BorderWidthLeft = 1f;
-                    cell73.BorderWidthRight = 1f;
-                    cell73.BorderWidthTop = 1f;
-                    cell73.BorderWidthBottom = 1f;
+                    
 
 
                     PdfPCell cell74 = new PdfPCell();
                     cell74.AddElement(new Paragraph(lblTotalDC.Text));
                     cell74.BackgroundColor = BaseColor.LIGHT_GRAY;
-                    cell74.UseVariableBorders = true;
-                    cell74.BorderColorLeft = BaseColor.BLACK;
-                    cell74.BorderColorBottom = BaseColor.BLACK;
-                    cell74.BorderColorTop = BaseColor.BLACK;
-                    cell74.BorderColorRight = BaseColor.BLACK;
-                    cell74.BorderWidthLeft = 1f;
-                    cell74.BorderWidthRight = 1f;
-                    cell74.BorderWidthTop = 1f;
-                    cell74.BorderWidthBottom = 1f;
+                   
 
 
                     PdfPCell cell75 = new PdfPCell();
                     cell75.AddElement(new Paragraph(lbltotalNotes.Text));
                     cell75.BackgroundColor = BaseColor.LIGHT_GRAY;
-                    cell75.UseVariableBorders = true;
-                    cell75.BorderColorLeft = BaseColor.BLACK;
-                    cell75.BorderColorBottom = BaseColor.BLACK;
-                    cell75.BorderColorTop = BaseColor.BLACK;
-                    cell75.BorderColorRight = BaseColor.BLACK;
-                    cell75.BorderWidthLeft = 1f;
-                    cell75.BorderWidthRight = 1f;
-                    cell75.BorderWidthTop = 1f;
-                    cell75.BorderWidthBottom = 1f;
+                   
 
                     pdfTable.AddCell(cell70);
                     pdfTable.AddCell(cell71);
@@ -764,15 +720,6 @@ namespace DailyCensusReport
                         PdfPCell cell600 = new PdfPCell();
                         cell600.AddElement(new Paragraph(txtCCSTotal.Text));
                         cell600.BackgroundColor = BaseColor.GREEN;
-                        cell600.UseVariableBorders = true;
-                        cell600.BorderColorLeft = BaseColor.BLACK;
-                        cell600.BorderColorBottom = BaseColor.BLACK;
-                        cell600.BorderColorTop = BaseColor.BLACK;
-                        cell600.BorderColorRight = BaseColor.BLACK;
-                        cell600.BorderWidthLeft = 1f;
-                        cell600.BorderWidthRight = 1f;
-                        cell600.BorderWidthTop = 1f;
-                        cell600.BorderWidthBottom = 1f;
                         pdfTable.AddCell(cell600);
                     }
                     else if (totalHospitalCensus <= 80)
@@ -781,15 +728,6 @@ namespace DailyCensusReport
                         PdfPCell cell600 = new PdfPCell();
                         cell600.AddElement(new Paragraph(txtCCSTotal.Text));
                         cell600.BackgroundColor = BaseColor.YELLOW;
-                        cell600.UseVariableBorders = true;
-                        cell600.BorderColorLeft = BaseColor.BLACK;
-                        cell600.BorderColorBottom = BaseColor.BLACK;
-                        cell600.BorderColorTop = BaseColor.BLACK;
-                        cell600.BorderColorRight = BaseColor.BLACK;
-                        cell600.BorderWidthLeft = 1f;
-                        cell600.BorderWidthRight = 1f;
-                        cell600.BorderWidthTop = 1f;
-                        cell600.BorderWidthBottom = 1f;
                         pdfTable.AddCell(cell600);
                     }
 
@@ -799,15 +737,6 @@ namespace DailyCensusReport
                         PdfPCell cell600 = new PdfPCell();
                         cell600.AddElement(new Paragraph(txtCCSTotal.Text));
                         cell600.BackgroundColor = BaseColor.ORANGE;
-                        cell600.UseVariableBorders = true;
-                        cell600.BorderColorLeft = BaseColor.BLACK;
-                        cell600.BorderColorBottom = BaseColor.BLACK;
-                        cell600.BorderColorTop = BaseColor.BLACK;
-                        cell600.BorderColorRight = BaseColor.BLACK;
-                        cell600.BorderWidthLeft = 1f;
-                        cell600.BorderWidthRight = 1f;
-                        cell600.BorderWidthTop = 1f;
-                        cell600.BorderWidthBottom = 1f;
                         pdfTable.AddCell(cell600);
                     }
 
@@ -818,15 +747,6 @@ namespace DailyCensusReport
                         PdfPCell cell600 = new PdfPCell();
                         cell600.AddElement(new Paragraph(txtCCSTotal.Text));
                         cell600.BackgroundColor = BaseColor.RED;
-                        cell600.UseVariableBorders = true;
-                        cell600.BorderColorLeft = BaseColor.BLACK;
-                        cell600.BorderColorBottom = BaseColor.BLACK;
-                        cell600.BorderColorTop = BaseColor.BLACK;
-                        cell600.BorderColorRight = BaseColor.BLACK;
-                        cell600.BorderWidthLeft = 1f;
-                        cell600.BorderWidthRight = 1f;
-                        cell600.BorderWidthTop = 1f;
-                        cell600.BorderWidthBottom = 1f;
                         pdfTable.AddCell(cell600);
                     }
                     #endregion
@@ -838,10 +758,7 @@ namespace DailyCensusReport
 
                     //Close document
                     doc.Close();
-
-                    #endregion
-                }
-
+                }  
 //If PDF File Is Currently Open, This Will Push Out The Error
 
                 catch (System.IO.IOException)
@@ -851,6 +768,6 @@ namespace DailyCensusReport
             }
             return false;
         }
-        
+        #endregion
     }
 }

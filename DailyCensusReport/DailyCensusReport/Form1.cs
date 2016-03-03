@@ -43,6 +43,7 @@ namespace DailyCensusReport
 
         }
 
+//Submits Information
         private void btnSubmit_Click(object sender, EventArgs e)
         {
 
@@ -219,6 +220,7 @@ namespace DailyCensusReport
             }
         }
 
+//Brings You To The View Record Form
         private void btnViewRecord_Click(object sender, EventArgs e)
         {
             this.Show();
@@ -226,6 +228,7 @@ namespace DailyCensusReport
             openVR.Show();
         }
 
+//Brings You To The Help Form
         private void btnHelp_Click(object sender, EventArgs e)
         {
             this.Show();

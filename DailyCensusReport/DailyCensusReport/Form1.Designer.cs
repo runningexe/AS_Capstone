@@ -121,12 +121,12 @@
             this.tlpHeaders.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpHeaders.ColumnCount = 7;
             this.tlpHeaders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlpHeaders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tlpHeaders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tlpHeaders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.tlpHeaders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tlpHeaders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
             this.tlpHeaders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
-            this.tlpHeaders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
+            this.tlpHeaders.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
             this.tlpHeaders.Controls.Add(this.lblCurrentStatus, 6, 0);
             this.tlpHeaders.Controls.Add(this.lblNotes, 5, 0);
             this.tlpHeaders.Controls.Add(this.lblPotentialDCs, 4, 0);
@@ -147,7 +147,7 @@
             this.lblCurrentStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCurrentStatus.AutoSize = true;
             this.lblCurrentStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentStatus.Location = new System.Drawing.Point(560, 2);
+            this.lblCurrentStatus.Location = new System.Drawing.Point(559, 2);
             this.lblCurrentStatus.Name = "lblCurrentStatus";
             this.lblCurrentStatus.Size = new System.Drawing.Size(101, 26);
             this.lblCurrentStatus.TabIndex = 6;
@@ -159,7 +159,7 @@
             this.lblNotes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblNotes.AutoSize = true;
             this.lblNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNotes.Location = new System.Drawing.Point(404, 9);
+            this.lblNotes.Location = new System.Drawing.Point(403, 9);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(40, 13);
             this.lblNotes.TabIndex = 5;
@@ -170,7 +170,7 @@
             this.lblPotentialDCs.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPotentialDCs.AutoSize = true;
             this.lblPotentialDCs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPotentialDCs.Location = new System.Drawing.Point(243, 2);
+            this.lblPotentialDCs.Location = new System.Drawing.Point(242, 2);
             this.lblPotentialDCs.Name = "lblPotentialDCs";
             this.lblPotentialDCs.Size = new System.Drawing.Size(57, 26);
             this.lblPotentialDCs.TabIndex = 4;
@@ -182,7 +182,7 @@
             this.lblIsolationPts.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblIsolationPts.AutoSize = true;
             this.lblIsolationPts.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIsolationPts.Location = new System.Drawing.Point(177, 1);
+            this.lblIsolationPts.Location = new System.Drawing.Point(176, 1);
             this.lblIsolationPts.Name = "lblIsolationPts";
             this.lblIsolationPts.Size = new System.Drawing.Size(55, 29);
             this.lblIsolationPts.TabIndex = 3;
@@ -194,7 +194,7 @@
             this.lblAvailBeds.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblAvailBeds.AutoSize = true;
             this.lblAvailBeds.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAvailBeds.Location = new System.Drawing.Point(118, 2);
+            this.lblAvailBeds.Location = new System.Drawing.Point(117, 2);
             this.lblAvailBeds.Name = "lblAvailBeds";
             this.lblAvailBeds.Size = new System.Drawing.Size(40, 26);
             this.lblAvailBeds.TabIndex = 2;
@@ -206,9 +206,9 @@
             this.lblCurrentCensus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCurrentCensus.AutoSize = true;
             this.lblCurrentCensus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentCensus.Location = new System.Drawing.Point(48, 2);
+            this.lblCurrentCensus.Location = new System.Drawing.Point(51, 1);
             this.lblCurrentCensus.Name = "lblCurrentCensus";
-            this.lblCurrentCensus.Size = new System.Drawing.Size(53, 26);
+            this.lblCurrentCensus.Size = new System.Drawing.Size(48, 29);
             this.lblCurrentCensus.TabIndex = 1;
             this.lblCurrentCensus.Text = "Current Census*";
             this.lblCurrentCensus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -218,7 +218,7 @@
             this.lblUnit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblUnit.AutoSize = true;
             this.lblUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnit.Location = new System.Drawing.Point(4, 9);
+            this.lblUnit.Location = new System.Drawing.Point(5, 9);
             this.lblUnit.Name = "lblUnit";
             this.lblUnit.Size = new System.Drawing.Size(37, 13);
             this.lblUnit.TabIndex = 0;
@@ -229,13 +229,13 @@
             this.tlpICU.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.tlpICU.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlpICU.ColumnCount = 7;
-            this.tlpICU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.34783F));
-            this.tlpICU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.65217F));
+            this.tlpICU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46F));
+            this.tlpICU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54F));
             this.tlpICU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tlpICU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
-            this.tlpICU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tlpICU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
-            this.tlpICU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
+            this.tlpICU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tlpICU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tlpICU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
+            this.tlpICU.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
             this.tlpICU.Controls.Add(this.txtCurrentCapStatusICU, 6, 0);
             this.tlpICU.Controls.Add(this.txtNotesICU, 5, 0);
             this.tlpICU.Controls.Add(this.txtDischargesICU, 4, 0);
@@ -259,7 +259,7 @@
             this.txtCurrentCapStatusICU.Location = new System.Drawing.Point(545, 4);
             this.txtCurrentCapStatusICU.Name = "txtCurrentCapStatusICU";
             this.txtCurrentCapStatusICU.ReadOnly = true;
-            this.txtCurrentCapStatusICU.Size = new System.Drawing.Size(129, 20);
+            this.txtCurrentCapStatusICU.Size = new System.Drawing.Size(131, 20);
             this.txtCurrentCapStatusICU.TabIndex = 14;
             this.txtCurrentCapStatusICU.TabStop = false;
             // 
@@ -267,26 +267,26 @@
             // 
             this.txtNotesICU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNotesICU.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotesICU.Location = new System.Drawing.Point(308, 4);
+            this.txtNotesICU.Location = new System.Drawing.Point(309, 4);
             this.txtNotesICU.Name = "txtNotesICU";
-            this.txtNotesICU.Size = new System.Drawing.Size(228, 20);
+            this.txtNotesICU.Size = new System.Drawing.Size(229, 20);
             this.txtNotesICU.TabIndex = 4;
             // 
             // txtDischargesICU
             // 
             this.txtDischargesICU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDischargesICU.Location = new System.Drawing.Point(238, 4);
+            this.txtDischargesICU.Location = new System.Drawing.Point(240, 4);
             this.txtDischargesICU.Name = "txtDischargesICU";
-            this.txtDischargesICU.Size = new System.Drawing.Size(63, 20);
+            this.txtDischargesICU.Size = new System.Drawing.Size(62, 20);
             this.txtDischargesICU.TabIndex = 3;
             this.txtDischargesICU.TextChanged += new System.EventHandler(this.txtDischargesICU_TextChanged);
             // 
             // txtIsoPatientsICU
             // 
             this.txtIsoPatientsICU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIsoPatientsICU.Location = new System.Drawing.Point(173, 4);
+            this.txtIsoPatientsICU.Location = new System.Drawing.Point(174, 4);
             this.txtIsoPatientsICU.Name = "txtIsoPatientsICU";
-            this.txtIsoPatientsICU.Size = new System.Drawing.Size(58, 20);
+            this.txtIsoPatientsICU.Size = new System.Drawing.Size(59, 20);
             this.txtIsoPatientsICU.TabIndex = 2;
             this.txtIsoPatientsICU.TextChanged += new System.EventHandler(this.txtIsoPatientsICU_TextChanged);
             // 
@@ -295,7 +295,7 @@
             this.txtAvailableBedsICU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAvailableBedsICU.BackColor = System.Drawing.Color.Silver;
             this.txtAvailableBedsICU.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtAvailableBedsICU.Location = new System.Drawing.Point(106, 4);
+            this.txtAvailableBedsICU.Location = new System.Drawing.Point(107, 4);
             this.txtAvailableBedsICU.Name = "txtAvailableBedsICU";
             this.txtAvailableBedsICU.ReadOnly = true;
             this.txtAvailableBedsICU.Size = new System.Drawing.Size(60, 20);
@@ -306,7 +306,7 @@
             this.lblICU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblICU.AutoSize = true;
             this.lblICU.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblICU.Location = new System.Drawing.Point(9, 8);
+            this.lblICU.Location = new System.Drawing.Point(10, 8);
             this.lblICU.Name = "lblICU";
             this.lblICU.Size = new System.Drawing.Size(28, 13);
             this.lblICU.TabIndex = 8;
@@ -316,9 +316,9 @@
             // txtCurrentCensusICU
             // 
             this.txtCurrentCensusICU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCurrentCensusICU.Location = new System.Drawing.Point(49, 4);
+            this.txtCurrentCensusICU.Location = new System.Drawing.Point(51, 4);
             this.txtCurrentCensusICU.Name = "txtCurrentCensusICU";
-            this.txtCurrentCensusICU.Size = new System.Drawing.Size(50, 20);
+            this.txtCurrentCensusICU.Size = new System.Drawing.Size(49, 20);
             this.txtCurrentCensusICU.TabIndex = 0;
             this.txtCurrentCensusICU.TextChanged += new System.EventHandler(this.txtCurrentCensusICU_TextChanged);
             // 
@@ -372,12 +372,12 @@
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 7;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
             this.tableLayoutPanel1.Controls.Add(this.txtCurrentCapStatusT2, 6, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtNotesT2, 5, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtDischargesT2, 4, 1);
@@ -398,17 +398,17 @@
             // 
             this.txtCurrentCapStatusT2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCapStatusT2.BackColor = System.Drawing.Color.Silver;
-            this.txtCurrentCapStatusT2.Location = new System.Drawing.Point(546, 4);
+            this.txtCurrentCapStatusT2.Location = new System.Drawing.Point(544, 4);
             this.txtCurrentCapStatusT2.Name = "txtCurrentCapStatusT2";
             this.txtCurrentCapStatusT2.ReadOnly = true;
-            this.txtCurrentCapStatusT2.Size = new System.Drawing.Size(129, 20);
+            this.txtCurrentCapStatusT2.Size = new System.Drawing.Size(132, 20);
             this.txtCurrentCapStatusT2.TabIndex = 14;
             this.txtCurrentCapStatusT2.TabStop = false;
             // 
             // txtNotesT2
             // 
             this.txtNotesT2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotesT2.Location = new System.Drawing.Point(310, 4);
+            this.txtNotesT2.Location = new System.Drawing.Point(309, 4);
             this.txtNotesT2.Name = "txtNotesT2";
             this.txtNotesT2.Size = new System.Drawing.Size(228, 20);
             this.txtNotesT2.TabIndex = 4;
@@ -416,7 +416,7 @@
             // txtDischargesT2
             // 
             this.txtDischargesT2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDischargesT2.Location = new System.Drawing.Point(241, 4);
+            this.txtDischargesT2.Location = new System.Drawing.Point(240, 4);
             this.txtDischargesT2.Name = "txtDischargesT2";
             this.txtDischargesT2.Size = new System.Drawing.Size(62, 20);
             this.txtDischargesT2.TabIndex = 3;
@@ -425,7 +425,7 @@
             // txtIsoPatientsT2
             // 
             this.txtIsoPatientsT2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIsoPatientsT2.Location = new System.Drawing.Point(175, 4);
+            this.txtIsoPatientsT2.Location = new System.Drawing.Point(174, 4);
             this.txtIsoPatientsT2.Name = "txtIsoPatientsT2";
             this.txtIsoPatientsT2.Size = new System.Drawing.Size(59, 20);
             this.txtIsoPatientsT2.TabIndex = 2;
@@ -436,7 +436,7 @@
             this.txtAvailableBedsT2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAvailableBedsT2.BackColor = System.Drawing.Color.Silver;
             this.txtAvailableBedsT2.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtAvailableBedsT2.Location = new System.Drawing.Point(108, 4);
+            this.txtAvailableBedsT2.Location = new System.Drawing.Point(107, 4);
             this.txtAvailableBedsT2.Name = "txtAvailableBedsT2";
             this.txtAvailableBedsT2.ReadOnly = true;
             this.txtAvailableBedsT2.Size = new System.Drawing.Size(60, 20);
@@ -445,9 +445,9 @@
             // txtCurrentCensusT2
             // 
             this.txtCurrentCensusT2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCurrentCensusT2.Location = new System.Drawing.Point(49, 4);
+            this.txtCurrentCensusT2.Location = new System.Drawing.Point(50, 4);
             this.txtCurrentCensusT2.Name = "txtCurrentCensusT2";
-            this.txtCurrentCensusT2.Size = new System.Drawing.Size(52, 20);
+            this.txtCurrentCensusT2.Size = new System.Drawing.Size(50, 20);
             this.txtCurrentCensusT2.TabIndex = 0;
             this.txtCurrentCensusT2.TextChanged += new System.EventHandler(this.txtCurrentCensusT2_TextChanged);
             // 
@@ -456,7 +456,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 1);
+            this.label1.Location = new System.Drawing.Point(8, 1);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 26);
             this.label1.TabIndex = 29;
@@ -468,13 +468,13 @@
             this.tableLayoutPanel2.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.tableLayoutPanel2.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel2.ColumnCount = 7;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.54546F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.45454F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
             this.tableLayoutPanel2.Controls.Add(this.txtCurrentCapStatusPEDI, 6, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtNotesPEDI, 5, 0);
             this.tableLayoutPanel2.Controls.Add(this.txtDischargesPEDI, 4, 0);
@@ -495,19 +495,19 @@
             // 
             this.txtCurrentCapStatusPEDI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCapStatusPEDI.BackColor = System.Drawing.Color.Silver;
-            this.txtCurrentCapStatusPEDI.Location = new System.Drawing.Point(545, 4);
+            this.txtCurrentCapStatusPEDI.Location = new System.Drawing.Point(544, 4);
             this.txtCurrentCapStatusPEDI.Name = "txtCurrentCapStatusPEDI";
             this.txtCurrentCapStatusPEDI.ReadOnly = true;
-            this.txtCurrentCapStatusPEDI.Size = new System.Drawing.Size(129, 20);
+            this.txtCurrentCapStatusPEDI.Size = new System.Drawing.Size(132, 20);
             this.txtCurrentCapStatusPEDI.TabIndex = 35;
             this.txtCurrentCapStatusPEDI.TabStop = false;
             // 
             // txtNotesPEDI
             // 
             this.txtNotesPEDI.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotesPEDI.Location = new System.Drawing.Point(307, 4);
+            this.txtNotesPEDI.Location = new System.Drawing.Point(309, 4);
             this.txtNotesPEDI.Name = "txtNotesPEDI";
-            this.txtNotesPEDI.Size = new System.Drawing.Size(229, 20);
+            this.txtNotesPEDI.Size = new System.Drawing.Size(228, 20);
             this.txtNotesPEDI.TabIndex = 34;
             // 
             // txtDischargesPEDI
@@ -515,16 +515,16 @@
             this.txtDischargesPEDI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDischargesPEDI.Location = new System.Drawing.Point(240, 4);
             this.txtDischargesPEDI.Name = "txtDischargesPEDI";
-            this.txtDischargesPEDI.Size = new System.Drawing.Size(60, 20);
+            this.txtDischargesPEDI.Size = new System.Drawing.Size(62, 20);
             this.txtDischargesPEDI.TabIndex = 33;
             this.txtDischargesPEDI.TextChanged += new System.EventHandler(this.txtDischargesPEDI_TextChanged);
             // 
             // txtIsoPatientsPEDI
             // 
             this.txtIsoPatientsPEDI.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIsoPatientsPEDI.Location = new System.Drawing.Point(171, 4);
+            this.txtIsoPatientsPEDI.Location = new System.Drawing.Point(174, 4);
             this.txtIsoPatientsPEDI.Name = "txtIsoPatientsPEDI";
-            this.txtIsoPatientsPEDI.Size = new System.Drawing.Size(62, 20);
+            this.txtIsoPatientsPEDI.Size = new System.Drawing.Size(59, 20);
             this.txtIsoPatientsPEDI.TabIndex = 32;
             this.txtIsoPatientsPEDI.TextChanged += new System.EventHandler(this.txtIsoPatientsPEDI_TextChanged);
             // 
@@ -533,18 +533,18 @@
             this.txtAvailableBedsPEDI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAvailableBedsPEDI.BackColor = System.Drawing.Color.Silver;
             this.txtAvailableBedsPEDI.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtAvailableBedsPEDI.Location = new System.Drawing.Point(106, 4);
+            this.txtAvailableBedsPEDI.Location = new System.Drawing.Point(107, 4);
             this.txtAvailableBedsPEDI.Name = "txtAvailableBedsPEDI";
             this.txtAvailableBedsPEDI.ReadOnly = true;
-            this.txtAvailableBedsPEDI.Size = new System.Drawing.Size(58, 20);
+            this.txtAvailableBedsPEDI.Size = new System.Drawing.Size(60, 20);
             this.txtAvailableBedsPEDI.TabIndex = 31;
             // 
             // txtCurrentCensusPEDI
             // 
             this.txtCurrentCensusPEDI.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCurrentCensusPEDI.Location = new System.Drawing.Point(49, 4);
+            this.txtCurrentCensusPEDI.Location = new System.Drawing.Point(51, 4);
             this.txtCurrentCensusPEDI.Name = "txtCurrentCensusPEDI";
-            this.txtCurrentCensusPEDI.Size = new System.Drawing.Size(50, 20);
+            this.txtCurrentCensusPEDI.Size = new System.Drawing.Size(49, 20);
             this.txtCurrentCensusPEDI.TabIndex = 11;
             this.txtCurrentCensusPEDI.TextChanged += new System.EventHandler(this.txtCurrentCensusPEDI_TextChanged);
             // 
@@ -553,7 +553,7 @@
             this.lblPEDI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblPEDI.AutoSize = true;
             this.lblPEDI.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPEDI.Location = new System.Drawing.Point(5, 1);
+            this.lblPEDI.Location = new System.Drawing.Point(6, 1);
             this.lblPEDI.Name = "lblPEDI";
             this.lblPEDI.Size = new System.Drawing.Size(36, 26);
             this.lblPEDI.TabIndex = 30;
@@ -565,13 +565,13 @@
             this.tableLayoutPanel3.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel3.ColumnCount = 7;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 44.66019F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 55.33981F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 136F));
             this.tableLayoutPanel3.Controls.Add(this.txtCurrentCapStatus6ACU, 6, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtNotes6ACU, 5, 0);
             this.tableLayoutPanel3.Controls.Add(this.txtDischarges6ACU, 4, 0);
@@ -595,16 +595,16 @@
             this.txtCurrentCapStatus6ACU.Location = new System.Drawing.Point(545, 4);
             this.txtCurrentCapStatus6ACU.Name = "txtCurrentCapStatus6ACU";
             this.txtCurrentCapStatus6ACU.ReadOnly = true;
-            this.txtCurrentCapStatus6ACU.Size = new System.Drawing.Size(129, 20);
+            this.txtCurrentCapStatus6ACU.Size = new System.Drawing.Size(131, 20);
             this.txtCurrentCapStatus6ACU.TabIndex = 36;
             this.txtCurrentCapStatus6ACU.TabStop = false;
             // 
             // txtNotes6ACU
             // 
             this.txtNotes6ACU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotes6ACU.Location = new System.Drawing.Point(308, 4);
+            this.txtNotes6ACU.Location = new System.Drawing.Point(309, 4);
             this.txtNotes6ACU.Name = "txtNotes6ACU";
-            this.txtNotes6ACU.Size = new System.Drawing.Size(228, 20);
+            this.txtNotes6ACU.Size = new System.Drawing.Size(229, 20);
             this.txtNotes6ACU.TabIndex = 35;
             // 
             // txtDischarges6ACU
@@ -612,16 +612,16 @@
             this.txtDischarges6ACU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDischarges6ACU.Location = new System.Drawing.Point(240, 4);
             this.txtDischarges6ACU.Name = "txtDischarges6ACU";
-            this.txtDischarges6ACU.Size = new System.Drawing.Size(61, 20);
+            this.txtDischarges6ACU.Size = new System.Drawing.Size(62, 20);
             this.txtDischarges6ACU.TabIndex = 34;
             this.txtDischarges6ACU.TextChanged += new System.EventHandler(this.txtDischarges6ACU_TextChanged);
             // 
             // txtIsoPatients6ACU
             // 
             this.txtIsoPatients6ACU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIsoPatients6ACU.Location = new System.Drawing.Point(173, 4);
+            this.txtIsoPatients6ACU.Location = new System.Drawing.Point(174, 4);
             this.txtIsoPatients6ACU.Name = "txtIsoPatients6ACU";
-            this.txtIsoPatients6ACU.Size = new System.Drawing.Size(60, 20);
+            this.txtIsoPatients6ACU.Size = new System.Drawing.Size(59, 20);
             this.txtIsoPatients6ACU.TabIndex = 33;
             this.txtIsoPatients6ACU.TextChanged += new System.EventHandler(this.txtIsoPatients6ACU_TextChanged);
             // 
@@ -630,7 +630,7 @@
             this.txtAvailableBeds6ACU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAvailableBeds6ACU.BackColor = System.Drawing.Color.Silver;
             this.txtAvailableBeds6ACU.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtAvailableBeds6ACU.Location = new System.Drawing.Point(106, 4);
+            this.txtAvailableBeds6ACU.Location = new System.Drawing.Point(107, 4);
             this.txtAvailableBeds6ACU.Name = "txtAvailableBeds6ACU";
             this.txtAvailableBeds6ACU.ReadOnly = true;
             this.txtAvailableBeds6ACU.Size = new System.Drawing.Size(60, 20);
@@ -639,7 +639,7 @@
             // txtCurrentCensus6ACU
             // 
             this.txtCurrentCensus6ACU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCurrentCensus6ACU.Location = new System.Drawing.Point(50, 4);
+            this.txtCurrentCensus6ACU.Location = new System.Drawing.Point(51, 4);
             this.txtCurrentCensus6ACU.Name = "txtCurrentCensus6ACU";
             this.txtCurrentCensus6ACU.Size = new System.Drawing.Size(49, 20);
             this.txtCurrentCensus6ACU.TabIndex = 13;
@@ -662,12 +662,12 @@
             this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel4.ColumnCount = 7;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
             this.tableLayoutPanel4.Controls.Add(this.txtCurrentCapStatusT4, 6, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtNotesT4, 5, 0);
             this.tableLayoutPanel4.Controls.Add(this.txtDischargesT4, 4, 0);
@@ -687,17 +687,17 @@
             // 
             this.txtCurrentCapStatusT4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCapStatusT4.BackColor = System.Drawing.Color.Silver;
-            this.txtCurrentCapStatusT4.Location = new System.Drawing.Point(546, 5);
+            this.txtCurrentCapStatusT4.Location = new System.Drawing.Point(544, 5);
             this.txtCurrentCapStatusT4.Name = "txtCurrentCapStatusT4";
             this.txtCurrentCapStatusT4.ReadOnly = true;
-            this.txtCurrentCapStatusT4.Size = new System.Drawing.Size(129, 20);
+            this.txtCurrentCapStatusT4.Size = new System.Drawing.Size(132, 20);
             this.txtCurrentCapStatusT4.TabIndex = 36;
             this.txtCurrentCapStatusT4.TabStop = false;
             // 
             // txtNotesT4
             // 
             this.txtNotesT4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotesT4.Location = new System.Drawing.Point(310, 5);
+            this.txtNotesT4.Location = new System.Drawing.Point(309, 5);
             this.txtNotesT4.Name = "txtNotesT4";
             this.txtNotesT4.Size = new System.Drawing.Size(228, 20);
             this.txtNotesT4.TabIndex = 35;
@@ -705,18 +705,18 @@
             // txtDischargesT4
             // 
             this.txtDischargesT4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDischargesT4.Location = new System.Drawing.Point(242, 5);
+            this.txtDischargesT4.Location = new System.Drawing.Point(240, 5);
             this.txtDischargesT4.Name = "txtDischargesT4";
-            this.txtDischargesT4.Size = new System.Drawing.Size(61, 20);
+            this.txtDischargesT4.Size = new System.Drawing.Size(62, 20);
             this.txtDischargesT4.TabIndex = 34;
             this.txtDischargesT4.TextChanged += new System.EventHandler(this.txtDischargesT4_TextChanged);
             // 
             // txtIsoPatientsT4
             // 
             this.txtIsoPatientsT4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIsoPatientsT4.Location = new System.Drawing.Point(175, 5);
+            this.txtIsoPatientsT4.Location = new System.Drawing.Point(174, 5);
             this.txtIsoPatientsT4.Name = "txtIsoPatientsT4";
-            this.txtIsoPatientsT4.Size = new System.Drawing.Size(60, 20);
+            this.txtIsoPatientsT4.Size = new System.Drawing.Size(59, 20);
             this.txtIsoPatientsT4.TabIndex = 33;
             this.txtIsoPatientsT4.TextChanged += new System.EventHandler(this.txtIsoPatientsT4_TextChanged);
             // 
@@ -725,7 +725,7 @@
             this.txtAvailableBedsT4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAvailableBedsT4.BackColor = System.Drawing.Color.Silver;
             this.txtAvailableBedsT4.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtAvailableBedsT4.Location = new System.Drawing.Point(108, 5);
+            this.txtAvailableBedsT4.Location = new System.Drawing.Point(107, 5);
             this.txtAvailableBedsT4.Name = "txtAvailableBedsT4";
             this.txtAvailableBedsT4.ReadOnly = true;
             this.txtAvailableBedsT4.Size = new System.Drawing.Size(60, 20);
@@ -736,7 +736,7 @@
             this.lblT4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblT4.AutoSize = true;
             this.lblT4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblT4.Location = new System.Drawing.Point(7, 2);
+            this.lblT4.Location = new System.Drawing.Point(8, 2);
             this.lblT4.Name = "lblT4";
             this.lblT4.Size = new System.Drawing.Size(31, 26);
             this.lblT4.TabIndex = 30;
@@ -746,9 +746,9 @@
             // txtCurrentCensusT4
             // 
             this.txtCurrentCensusT4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCurrentCensusT4.Location = new System.Drawing.Point(48, 5);
+            this.txtCurrentCensusT4.Location = new System.Drawing.Point(50, 5);
             this.txtCurrentCensusT4.Name = "txtCurrentCensusT4";
-            this.txtCurrentCensusT4.Size = new System.Drawing.Size(53, 20);
+            this.txtCurrentCensusT4.Size = new System.Drawing.Size(50, 20);
             this.txtCurrentCensusT4.TabIndex = 31;
             this.txtCurrentCensusT4.TextChanged += new System.EventHandler(this.txtCurrentCensusT4_TextChanged);
             // 
@@ -757,12 +757,12 @@
             this.tableLayoutPanel8.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel8.ColumnCount = 7;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 58F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 232F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
             this.tableLayoutPanel8.Controls.Add(this.txtCurrentCapStatusTBC, 6, 0);
             this.tableLayoutPanel8.Controls.Add(this.txtNotesTBC, 5, 0);
             this.tableLayoutPanel8.Controls.Add(this.txtDischargesTBC, 4, 0);
@@ -785,33 +785,33 @@
             this.txtCurrentCapStatusTBC.Location = new System.Drawing.Point(545, 5);
             this.txtCurrentCapStatusTBC.Name = "txtCurrentCapStatusTBC";
             this.txtCurrentCapStatusTBC.ReadOnly = true;
-            this.txtCurrentCapStatusTBC.Size = new System.Drawing.Size(130, 20);
+            this.txtCurrentCapStatusTBC.Size = new System.Drawing.Size(131, 20);
             this.txtCurrentCapStatusTBC.TabIndex = 36;
             this.txtCurrentCapStatusTBC.TabStop = false;
             // 
             // txtNotesTBC
             // 
             this.txtNotesTBC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotesTBC.Location = new System.Drawing.Point(311, 5);
+            this.txtNotesTBC.Location = new System.Drawing.Point(310, 5);
             this.txtNotesTBC.Name = "txtNotesTBC";
-            this.txtNotesTBC.Size = new System.Drawing.Size(226, 20);
+            this.txtNotesTBC.Size = new System.Drawing.Size(228, 20);
             this.txtNotesTBC.TabIndex = 35;
             // 
             // txtDischargesTBC
             // 
             this.txtDischargesTBC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDischargesTBC.Location = new System.Drawing.Point(243, 5);
+            this.txtDischargesTBC.Location = new System.Drawing.Point(239, 5);
             this.txtDischargesTBC.Name = "txtDischargesTBC";
-            this.txtDischargesTBC.Size = new System.Drawing.Size(61, 20);
+            this.txtDischargesTBC.Size = new System.Drawing.Size(64, 20);
             this.txtDischargesTBC.TabIndex = 34;
             this.txtDischargesTBC.TextChanged += new System.EventHandler(this.txtDischargesTBC_TextChanged);
             // 
             // txtIsoPatientsTBC
             // 
             this.txtIsoPatientsTBC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIsoPatientsTBC.Location = new System.Drawing.Point(175, 5);
+            this.txtIsoPatientsTBC.Location = new System.Drawing.Point(174, 5);
             this.txtIsoPatientsTBC.Name = "txtIsoPatientsTBC";
-            this.txtIsoPatientsTBC.Size = new System.Drawing.Size(61, 20);
+            this.txtIsoPatientsTBC.Size = new System.Drawing.Size(58, 20);
             this.txtIsoPatientsTBC.TabIndex = 33;
             this.txtIsoPatientsTBC.TextChanged += new System.EventHandler(this.txtIsoPatientsTBC_TextChanged);
             // 
@@ -820,7 +820,7 @@
             this.txtAvailableBedsTBC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAvailableBedsTBC.BackColor = System.Drawing.Color.Silver;
             this.txtAvailableBedsTBC.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtAvailableBedsTBC.Location = new System.Drawing.Point(108, 5);
+            this.txtAvailableBedsTBC.Location = new System.Drawing.Point(107, 5);
             this.txtAvailableBedsTBC.Name = "txtAvailableBedsTBC";
             this.txtAvailableBedsTBC.ReadOnly = true;
             this.txtAvailableBedsTBC.Size = new System.Drawing.Size(60, 20);
@@ -831,7 +831,7 @@
             this.txtCurrentCensusTBC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCensusTBC.Location = new System.Drawing.Point(48, 5);
             this.txtCurrentCensusTBC.Name = "txtCurrentCensusTBC";
-            this.txtCurrentCensusTBC.Size = new System.Drawing.Size(53, 20);
+            this.txtCurrentCensusTBC.Size = new System.Drawing.Size(52, 20);
             this.txtCurrentCensusTBC.TabIndex = 12;
             this.txtCurrentCensusTBC.TextChanged += new System.EventHandler(this.txtCurrentCensusTBC_TextChanged);
             // 
@@ -869,12 +869,12 @@
             this.tableLayoutPanel5.ColumnCount = 9;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 57F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 75F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 69F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 234F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
             this.tableLayoutPanel5.Controls.Add(this.lbltotalNotes, 7, 0);
             this.tableLayoutPanel5.Controls.Add(this.lblTotal, 2, 0);
@@ -896,7 +896,7 @@
             this.lbltotalNotes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbltotalNotes.AutoSize = true;
             this.lbltotalNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbltotalNotes.Location = new System.Drawing.Point(424, 7);
+            this.lbltotalNotes.Location = new System.Drawing.Point(423, 7);
             this.lbltotalNotes.Name = "lbltotalNotes";
             this.lbltotalNotes.Size = new System.Drawing.Size(0, 13);
             this.lbltotalNotes.TabIndex = 16;
@@ -907,7 +907,7 @@
             this.lblTotal.AutoSize = true;
             this.lblTotal.Dock = System.Windows.Forms.DockStyle.Right;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(2, 1);
+            this.lblTotal.Location = new System.Drawing.Point(-1, 1);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(40, 26);
             this.lblTotal.TabIndex = 12;
@@ -919,7 +919,7 @@
             this.lblTotalDC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblTotalDC.AutoSize = true;
             this.lblTotalDC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalDC.Location = new System.Drawing.Point(273, 7);
+            this.lblTotalDC.Location = new System.Drawing.Point(270, 7);
             this.lblTotalDC.Name = "lblTotalDC";
             this.lblTotalDC.Size = new System.Drawing.Size(0, 13);
             this.lblTotalDC.TabIndex = 15;
@@ -931,7 +931,7 @@
             this.txtCCSTotal.Location = new System.Drawing.Point(545, 4);
             this.txtCCSTotal.Name = "txtCCSTotal";
             this.txtCCSTotal.ReadOnly = true;
-            this.txtCCSTotal.Size = new System.Drawing.Size(129, 20);
+            this.txtCCSTotal.Size = new System.Drawing.Size(131, 20);
             this.txtCCSTotal.TabIndex = 13;
             // 
             // lblISOTotal
@@ -939,7 +939,7 @@
             this.lblISOTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblISOTotal.AutoSize = true;
             this.lblISOTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblISOTotal.Location = new System.Drawing.Point(205, 7);
+            this.lblISOTotal.Location = new System.Drawing.Point(202, 7);
             this.lblISOTotal.Name = "lblISOTotal";
             this.lblISOTotal.Size = new System.Drawing.Size(0, 13);
             this.lblISOTotal.TabIndex = 14;
@@ -950,7 +950,7 @@
             this.lblCCTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblCCTotal.AutoSize = true;
             this.lblCCTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCCTotal.Location = new System.Drawing.Point(74, 7);
+            this.lblCCTotal.Location = new System.Drawing.Point(72, 7);
             this.lblCCTotal.Name = "lblCCTotal";
             this.lblCCTotal.Size = new System.Drawing.Size(0, 13);
             this.lblCCTotal.TabIndex = 12;
@@ -961,7 +961,7 @@
             this.lblABTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblABTotal.AutoSize = true;
             this.lblABTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblABTotal.Location = new System.Drawing.Point(137, 7);
+            this.lblABTotal.Location = new System.Drawing.Point(136, 7);
             this.lblABTotal.Name = "lblABTotal";
             this.lblABTotal.Size = new System.Drawing.Size(0, 13);
             this.lblABTotal.TabIndex = 13;
@@ -972,7 +972,7 @@
             this.txtCurrentCensusBHU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCensusBHU.Location = new System.Drawing.Point(48, 4);
             this.txtCurrentCensusBHU.Name = "txtCurrentCensusBHU";
-            this.txtCurrentCensusBHU.Size = new System.Drawing.Size(51, 20);
+            this.txtCurrentCensusBHU.Size = new System.Drawing.Size(52, 20);
             this.txtCurrentCensusBHU.TabIndex = 35;
             this.txtCurrentCensusBHU.TextChanged += new System.EventHandler(this.txtCurrentCensusBHU_TextChanged);
             // 
@@ -981,46 +981,46 @@
             this.txtAvailableBedsBHU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtAvailableBedsBHU.BackColor = System.Drawing.Color.Silver;
             this.txtAvailableBedsBHU.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtAvailableBedsBHU.Location = new System.Drawing.Point(106, 4);
+            this.txtAvailableBedsBHU.Location = new System.Drawing.Point(107, 4);
             this.txtAvailableBedsBHU.Name = "txtAvailableBedsBHU";
             this.txtAvailableBedsBHU.ReadOnly = true;
-            this.txtAvailableBedsBHU.Size = new System.Drawing.Size(59, 20);
+            this.txtAvailableBedsBHU.Size = new System.Drawing.Size(60, 20);
             this.txtAvailableBedsBHU.TabIndex = 36;
             // 
             // txtIsoPatientsBHU
             // 
             this.txtIsoPatientsBHU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtIsoPatientsBHU.Location = new System.Drawing.Point(172, 4);
+            this.txtIsoPatientsBHU.Location = new System.Drawing.Point(174, 4);
             this.txtIsoPatientsBHU.Name = "txtIsoPatientsBHU";
-            this.txtIsoPatientsBHU.Size = new System.Drawing.Size(62, 20);
+            this.txtIsoPatientsBHU.Size = new System.Drawing.Size(58, 20);
             this.txtIsoPatientsBHU.TabIndex = 37;
             this.txtIsoPatientsBHU.TextChanged += new System.EventHandler(this.txtIsoPatientsBHU_TextChanged);
             // 
             // txtDischargesBHU
             // 
             this.txtDischargesBHU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDischargesBHU.Location = new System.Drawing.Point(241, 4);
+            this.txtDischargesBHU.Location = new System.Drawing.Point(239, 4);
             this.txtDischargesBHU.Name = "txtDischargesBHU";
-            this.txtDischargesBHU.Size = new System.Drawing.Size(61, 20);
+            this.txtDischargesBHU.Size = new System.Drawing.Size(64, 20);
             this.txtDischargesBHU.TabIndex = 38;
             this.txtDischargesBHU.TextChanged += new System.EventHandler(this.txtDischargesBHU_TextChanged);
             // 
             // txtNotesBHU
             // 
             this.txtNotesBHU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotesBHU.Location = new System.Drawing.Point(309, 4);
+            this.txtNotesBHU.Location = new System.Drawing.Point(310, 4);
             this.txtNotesBHU.Name = "txtNotesBHU";
-            this.txtNotesBHU.Size = new System.Drawing.Size(227, 20);
+            this.txtNotesBHU.Size = new System.Drawing.Size(229, 20);
             this.txtNotesBHU.TabIndex = 39;
             // 
             // txtCurrentCapStatusBHU
             // 
             this.txtCurrentCapStatusBHU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCapStatusBHU.BackColor = System.Drawing.Color.Silver;
-            this.txtCurrentCapStatusBHU.Location = new System.Drawing.Point(545, 4);
+            this.txtCurrentCapStatusBHU.Location = new System.Drawing.Point(546, 4);
             this.txtCurrentCapStatusBHU.Name = "txtCurrentCapStatusBHU";
             this.txtCurrentCapStatusBHU.ReadOnly = true;
-            this.txtCurrentCapStatusBHU.Size = new System.Drawing.Size(129, 20);
+            this.txtCurrentCapStatusBHU.Size = new System.Drawing.Size(130, 20);
             this.txtCurrentCapStatusBHU.TabIndex = 40;
             this.txtCurrentCapStatusBHU.TabStop = false;
             // 
@@ -1029,13 +1029,13 @@
             this.tableLayoutPanel7.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.tableLayoutPanel7.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel7.ColumnCount = 7;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 68F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 233F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 138F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 43F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 64F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 235F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 135F));
             this.tableLayoutPanel7.Controls.Add(this.txtCurrentCapStatusBHU, 6, 0);
             this.tableLayoutPanel7.Controls.Add(this.txtNotesBHU, 5, 0);
             this.tableLayoutPanel7.Controls.Add(this.txtDischargesBHU, 4, 0);
