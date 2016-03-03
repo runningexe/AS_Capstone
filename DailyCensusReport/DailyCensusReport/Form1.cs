@@ -40,10 +40,11 @@ namespace DailyCensusReport
 
         private void frmDailyCensusReport_Load(object sender, EventArgs e)
         {
-
+            lblHospDate.Text = DateTime.Today.ToLongDateString();
+            lblGreeting.Text = "Hospital Daily Census Report";
         }
 
-//Submits Information
+        //Submits Information
         private void btnSubmit_Click(object sender, EventArgs e)
         {
 
@@ -165,62 +166,62 @@ namespace DailyCensusReport
                 /***********************************************************************************************************************************************************************/
                 #endregion
 
-//Confirmation for user if they want to save or cancel
-                DialogResult result = MessageBox.Show("Are You Sure You Want To Save?","Confirmation Message", MessageBoxButtons.YesNo);
-                if(result == DialogResult.Yes)
-                {  
-   
-                #region PDF Method Call
-                                /***Calling the PDFView method from the PDFSubmit class.***/
-                                PDFSubmit.PDFView(
-                                  //ICU
-                                  txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
+                //Confirmation for user if they want to save or cancel
+                DialogResult result = MessageBox.Show("Are You Sure You Want To Save?", "Confirmation Message", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
 
-                                  //T2
-                                  txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2,
+                    #region PDF Method Call
+                    /***Calling the PDFView method from the PDFSubmit class.***/
+                    PDFSubmit.PDFView(
+                      //ICU
+                      txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
 
-                                  //PEDI
-                                  txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI,
+                      //T2
+                      txtCurrentCensusT2, txtAvailableBedsT2, txtIsoPatientsT2, txtDischargesT2, txtNotesT2, txtCurrentCapStatusT2,
 
-                                  //T4
-                                  txtCurrentCensusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4, txtNotesT4, txtCurrentCapStatusT4,
+                      //PEDI
+                      txtCurrentCensusPEDI, txtAvailableBedsPEDI, txtIsoPatientsPEDI, txtDischargesPEDI, txtNotesPEDI, txtCurrentCapStatusPEDI,
 
-                                  //6ACU
-                                  txtCurrentCensus6ACU, txtAvailableBeds6ACU, txtIsoPatients6ACU, txtDischarges6ACU, txtNotes6ACU, txtCurrentCapStatus6ACU,
+                      //T4
+                      txtCurrentCensusT4, txtAvailableBedsT4, txtIsoPatientsT4, txtDischargesT4, txtNotesT4, txtCurrentCapStatusT4,
 
-                                  //TBC
-                                  txtCurrentCensusTBC, txtAvailableBedsTBC, txtIsoPatientsTBC, txtDischargesTBC, txtNotesTBC, txtCurrentCapStatusTBC,
+                      //6ACU
+                      txtCurrentCensus6ACU, txtAvailableBeds6ACU, txtIsoPatients6ACU, txtDischarges6ACU, txtNotes6ACU, txtCurrentCapStatus6ACU,
 
-                                  //BHU
-                                  txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU,
+                      //TBC
+                      txtCurrentCensusTBC, txtAvailableBedsTBC, txtIsoPatientsTBC, txtDischargesTBC, txtNotesTBC, txtCurrentCapStatusTBC,
 
-                                  //Total
-                                  lblCCTotal, lblABTotal, lblISOTotal, lblTotalDC, lbltotalNotes, txtCCSTotal
-                                  );
-                                #endregion
+                      //BHU
+                      txtCurrentCensusBHU, txtAvailableBedsBHU, txtIsoPatientsBHU, txtDischargesBHU, txtNotesBHU, txtCurrentCapStatusBHU,
 
-                #region SubmitRecord Method Call
-                /***Calling the Insert methods from the SubmitRecord class***/
-                SubmitRecord.InsertICU(unitID, varICU);
-                SubmitRecord.InsertT2(unitIDT2, varT2);
-                SubmitRecord.InsertPEDI(unitIDPEDI, varPEDI);
-                SubmitRecord.InsertT4(unitIDT4, varT4);
-                SubmitRecord.Insert6ACU(unitID6ACU, var6ACU);
-                SubmitRecord.InsertTBC(unitIDTBC, varTBC);
-                SubmitRecord.InsertBHU(unitIDBHU, varBHU);
+                      //Total
+                      lblCCTotal, lblABTotal, lblISOTotal, lblTotalDC, lbltotalNotes, txtCCSTotal
+                      );
+                    #endregion
 
-                #endregion
+                    #region SubmitRecord Method Call
+                    /***Calling the Insert methods from the SubmitRecord class***/
+                    SubmitRecord.InsertICU(unitID, varICU);
+                    SubmitRecord.InsertT2(unitIDT2, varT2);
+                    SubmitRecord.InsertPEDI(unitIDPEDI, varPEDI);
+                    SubmitRecord.InsertT4(unitIDT4, varT4);
+                    SubmitRecord.Insert6ACU(unitID6ACU, var6ACU);
+                    SubmitRecord.InsertTBC(unitIDTBC, varTBC);
+                    SubmitRecord.InsertBHU(unitIDBHU, varBHU);
+
+                    #endregion
 
                 }
-                else if(result == DialogResult.No)
+                else if (result == DialogResult.No)
                 {
                     DialogResult = DialogResult.None;
                 }
-                
+
             }
         }
 
-//Brings You To The View Record Form
+        //Brings You To The View Record Form
         private void btnViewRecord_Click(object sender, EventArgs e)
         {
             this.Show();
@@ -228,7 +229,7 @@ namespace DailyCensusReport
             openVR.Show();
         }
 
-//Brings You To The Help Form
+        //Brings You To The Help Form
         private void btnHelp_Click(object sender, EventArgs e)
         {
             this.Show();
@@ -236,14 +237,14 @@ namespace DailyCensusReport
             openHelp.Show();
         }
 
-//ICU Current Census Text Change
+        //ICU Current Census Text Change
         private void txtCurrentCensusICU_TextChanged(object sender, EventArgs e)
         {
             #region Checks Current Census ICU Field
             // Checks to see if it is over 9 patients, if it's over it will clear textbox fields
             int icuCensus = 0;
             Int32.TryParse(txtCurrentCensusICU.Text, out icuCensus);
-           
+
             try
             {
                 if (!string.IsNullOrWhiteSpace(txtCurrentCensusICU.Text))
@@ -282,11 +283,11 @@ namespace DailyCensusReport
 
         }
 
-//ICU ISO Patient Text Change
+        //ICU ISO Patient Text Change
         private void txtIsoPatientsICU_TextChanged(object sender, EventArgs e)
         {
             #region Checks ISO Patient ICU Field
-            
+
             int icuIsoCensus = 0;
             Int32.TryParse(txtIsoPatientsICU.Text, out icuIsoCensus);
 
@@ -310,7 +311,7 @@ namespace DailyCensusReport
             #endregion
         }
 
-//ICU DC Text Change
+        //ICU DC Text Change
         private void txtDischargesICU_TextChanged(object sender, EventArgs e)
         {
             #region Checks DC ICU Field
@@ -337,10 +338,10 @@ namespace DailyCensusReport
             }
             #endregion
         }
-/*************************************************************************************/
+        /*************************************************************************************/
 
 
-//T2 Current Census Text Change
+        //T2 Current Census Text Change
         private void txtCurrentCensusT2_TextChanged(object sender, EventArgs e)
         {
             #region Checks T2 Current Census Field
@@ -385,7 +386,7 @@ namespace DailyCensusReport
             #endregion
         }
 
-//T2 ISO Patient Text Change
+        //T2 ISO Patient Text Change
         private void txtIsoPatientsT2_TextChanged(object sender, EventArgs e)
         {
             #region Checks ISO Patient T2 Field
@@ -413,7 +414,7 @@ namespace DailyCensusReport
             #endregion
         }
 
-// T2 DC Text Change
+        // T2 DC Text Change
         private void txtDischargesT2_TextChanged(object sender, EventArgs e)
         {
             #region Checks DC T2 Field
@@ -441,11 +442,11 @@ namespace DailyCensusReport
             #endregion
         }
 
-/*******************************************************************************************/
+        /*******************************************************************************************/
 
 
 
-//PEDI Current Census Text Change
+        //PEDI Current Census Text Change
         private void txtCurrentCensusPEDI_TextChanged(object sender, EventArgs e)
         {
             #region Checks PEDI Current Census Field
@@ -490,7 +491,7 @@ namespace DailyCensusReport
             #endregion
         }
 
-//PEDI ISO Patient Text Change
+        //PEDI ISO Patient Text Change
         private void txtIsoPatientsPEDI_TextChanged(object sender, EventArgs e)
         {
             #region Checks ISO Patient PEDI Field
@@ -518,7 +519,7 @@ namespace DailyCensusReport
             #endregion
         }
 
-//PEDI DC Text Change
+        //PEDI DC Text Change
         private void txtDischargesPEDI_TextChanged(object sender, EventArgs e)
         {
             #region Checks DC PEDI Field
@@ -546,10 +547,10 @@ namespace DailyCensusReport
             #endregion
         }
 
-/*****************************************************************************************/
+        /*****************************************************************************************/
 
 
-//T4 Current Census Text Change
+        //T4 Current Census Text Change
         private void txtCurrentCensusT4_TextChanged(object sender, EventArgs e)
         {
             #region Checks T4 Current Census Field
@@ -595,7 +596,7 @@ namespace DailyCensusReport
             #endregion
         }
 
-// T4 ISO Patient Text Change
+        // T4 ISO Patient Text Change
         private void txtIsoPatientsT4_TextChanged(object sender, EventArgs e)
         {
             #region Checks ISO Patient T4 Field
@@ -623,7 +624,7 @@ namespace DailyCensusReport
             #endregion
         }
 
-// T4 DC Text Change
+        // T4 DC Text Change
         private void txtDischargesT4_TextChanged(object sender, EventArgs e)
         {
             #region Checks DC T4 Field
@@ -650,10 +651,10 @@ namespace DailyCensusReport
             }
             #endregion
         }
-/****************************************************************************************/
-        
+        /****************************************************************************************/
 
-//6ACU Current Census Text Change
+
+        //6ACU Current Census Text Change
         private void txtCurrentCensus6ACU_TextChanged(object sender, EventArgs e)
         {
             #region Checks 6ACU Current Census Field
@@ -691,7 +692,7 @@ namespace DailyCensusReport
                     txtAvailableBeds6ACU.Text = "";
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "ERROR");
             }
@@ -751,10 +752,10 @@ namespace DailyCensusReport
             }
             #endregion
         }
-/*****************************************************************************************/
+        /*****************************************************************************************/
 
 
-//TBC Current Census Text Change
+        //TBC Current Census Text Change
         private void txtCurrentCensusTBC_TextChanged(object sender, EventArgs e)
         {
             #region Checks TBC Current Census Field
@@ -798,7 +799,7 @@ namespace DailyCensusReport
             }
             #endregion
         }
-//TBC Iso Patient Text Change
+        //TBC Iso Patient Text Change
         private void txtIsoPatientsTBC_TextChanged(object sender, EventArgs e)
         {
             #region Checks ISO Patient TBC Field
@@ -826,7 +827,7 @@ namespace DailyCensusReport
             #endregion
         }
 
-//TBC Dc Text Change
+        //TBC Dc Text Change
         private void txtDischargesTBC_TextChanged(object sender, EventArgs e)
         {
             #region Checks DC TBC Field
@@ -853,10 +854,10 @@ namespace DailyCensusReport
             }
             #endregion
         }
-/*********************************************************************************************/
+        /*********************************************************************************************/
 
 
-//BHU Current Census Text Change
+        //BHU Current Census Text Change
         private void txtCurrentCensusBHU_TextChanged(object sender, EventArgs e)
         {
             #region Checks BHU Current Census Field
@@ -896,14 +897,14 @@ namespace DailyCensusReport
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "ERROR");
             }
             #endregion
         }
 
-//BHU ISO Patients Text Change
+        //BHU ISO Patients Text Change
         private void txtIsoPatientsBHU_TextChanged(object sender, EventArgs e)
         {
             #region Checks ISO Patient BHU Field
@@ -931,7 +932,7 @@ namespace DailyCensusReport
             #endregion
         }
 
-//BHU DC Text Change
+        //BHU DC Text Change
         private void txtDischargesBHU_TextChanged(object sender, EventArgs e)
         {
             #region Checks DC BHU Field
@@ -959,9 +960,9 @@ namespace DailyCensusReport
             #endregion
         }
 
-/***************************************************************************************/
+        /***************************************************************************************/
 
-//Closes Program
+        //Closes Program
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
