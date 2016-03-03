@@ -22,10 +22,8 @@ namespace DailyCensusReport
 {
     public partial class frmDailyCensusReport : Form
     {
-
         #region Unit TextBox Array
         public TextBox[] boxesICU { get; set; }
-        public TextBox[,] allTextChangeUnits { get; set; }
         public TextBox[] boxesT2 { get; set; }
         public TextBox[] boxesPEDI { get; set; }
         public TextBox[] boxesT4 { get; set; }
@@ -33,6 +31,7 @@ namespace DailyCensusReport
         public TextBox[] boxesTBC { get; set; }
         public TextBox[] boxesBHU { get; set; }
         #endregion
+
         public frmDailyCensusReport()
         {
             InitializeComponent();
@@ -44,12 +43,10 @@ namespace DailyCensusReport
             lblGreeting.Text = "Hospital Daily Census Report";
         }
 
-        //Submits Information
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-
-            #region Unit Array
             //Arrays for each unit to hold each variable
+            #region Unit Array            
             string[] varICU = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
             string[] varT2 = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
             string[] varPEDI = new string[] { "currenCensus", "avalBeds", "numOfIsoPatients", "potentialDCs", "notes", "currentCapStat" };
@@ -61,16 +58,16 @@ namespace DailyCensusReport
 
             #region Checks Required Fields
             //Check to make sure all required fields are filled out
-            if (txtIsoPatientsICU.Text == "" || txtDischargesICU.Text == "" ||
-                txtIsoPatientsT2.Text == "" || txtDischargesT2.Text == "" ||
-                txtIsoPatientsPEDI.Text == "" || txtDischargesPEDI.Text == "" ||
-                txtIsoPatientsT4.Text == "" || txtDischargesT4.Text == "" ||
-                txtIsoPatients6ACU.Text == "" || txtDischarges6ACU.Text == "" ||
-                txtIsoPatientsTBC.Text == "" || txtDischargesTBC.Text == "" ||
-                txtIsoPatientsBHU.Text == "" || txtDischargesBHU.Text == ""
+            if (txtIsoPatientsICU.Text == "" || txtDischargesICU.Text == "" || txtCurrentCensusICU.Text == "" ||
+                txtIsoPatientsT2.Text == "" || txtDischargesT2.Text == "" || txtCurrentCensusT2.Text == "" ||
+                txtIsoPatientsPEDI.Text == "" || txtDischargesPEDI.Text == "" || txtCurrentCensusPEDI.Text == "" ||
+                txtIsoPatientsT4.Text == "" || txtDischargesT4.Text == "" || txtCurrentCensusT4.Text == "" ||
+                txtIsoPatients6ACU.Text == "" || txtDischarges6ACU.Text == "" || txtCurrentCensus6ACU.Text == "" ||
+                txtIsoPatientsTBC.Text == "" || txtDischargesTBC.Text == "" || txtCurrentCensusTBC.Text == "" ||
+                txtIsoPatientsBHU.Text == "" || txtDischargesBHU.Text == "" || txtCurrentCensusBHU.Text == ""
                 )
             {
-                MessageBox.Show("Please Provide All Required Information", "ERROR MESSAGE");
+                MessageBox.Show("Please Provide All Required Information", "ERROR");
             }
             #endregion
 
@@ -105,9 +102,12 @@ namespace DailyCensusReport
                   );
                 #endregion
 
+                /*A series of for-loops for each unit that iterates through their unique textboxes
+                and gives them a static unitID of 1-7. We did this because we didn't want to decalre
+                a bunch of different variables and whatnot. The for-loops and arrays seemed like a 
+                better idea.*/
                 #region For Loops for TextBoxes
-                /***********************************************************************************************************************************************************************/
-                /***Gives a unitID for each table***/
+                /***********************************************************************************************************************************************************************/           
                 //ICU
                 int unitID = 1;
                 boxesICU = new TextBox[] { txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU };
@@ -167,12 +167,16 @@ namespace DailyCensusReport
                 #endregion
 
                 //Confirmation for user if they want to save or cancel
-                DialogResult result = MessageBox.Show("Are You Sure You Want To Save?", "Confirmation Message", MessageBoxButtons.YesNo);
+                DialogResult result = MessageBox.Show("Are you sure you want to Submit?", "Confirmation Message", MessageBoxButtons.YesNo);
+
+                /*If the user selects 'Yes', it will raise the PDF Save Box, and when they save
+                and when they click 'OK' on the Save Confirmation for the PDF, it then gets submitted
+                into the database.*/
                 if (result == DialogResult.Yes)
                 {
 
+                    //Calling the PDFView method from the PDFSubmit class.
                     #region PDF Method Call
-                    /***Calling the PDFView method from the PDFSubmit class.***/
                     PDFSubmit.PDFView(
                       //ICU
                       txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU,
@@ -200,8 +204,9 @@ namespace DailyCensusReport
                       );
                     #endregion
 
-                    #region SubmitRecord Method Call
-                    /***Calling the Insert methods from the SubmitRecord class***/
+                    /*Calling the Insert methods from the SubmitRecord class.
+                    Takes in the unitIDs for each unit and an array of variables.*/
+                    #region SubmitRecord Method Call                   
                     SubmitRecord.InsertICU(unitID, varICU);
                     SubmitRecord.InsertT2(unitIDT2, varT2);
                     SubmitRecord.InsertPEDI(unitIDPEDI, varPEDI);
@@ -237,11 +242,16 @@ namespace DailyCensusReport
             openHelp.Show();
         }
 
-        //ICU Current Census Text Change
+        /*These TextChanged events calculate the available beds, check for null
+        or whitespace, and check to see if strings are entered or not. Each check
+        sends out an appropriate error message. We decided to do text changed evernts
+        instead of on the submit click because we felt it was a bit more convienant for
+        the ones filling out the information.*/
+        #region TextChanged Events
+        /*****************************************************************************/
         private void txtCurrentCensusICU_TextChanged(object sender, EventArgs e)
         {
-            #region Checks Current Census ICU Field
-            // Checks to see if it is over 9 patients, if it's over it will clear textbox fields
+            #region Checks Current Census ICU Field           
             int icuCensus = 0;
             Int32.TryParse(txtCurrentCensusICU.Text, out icuCensus);
 
@@ -283,7 +293,6 @@ namespace DailyCensusReport
 
         }
 
-        //ICU ISO Patient Text Change
         private void txtIsoPatientsICU_TextChanged(object sender, EventArgs e)
         {
             #region Checks ISO Patient ICU Field
@@ -311,7 +320,6 @@ namespace DailyCensusReport
             #endregion
         }
 
-        //ICU DC Text Change
         private void txtDischargesICU_TextChanged(object sender, EventArgs e)
         {
             #region Checks DC ICU Field
@@ -338,10 +346,7 @@ namespace DailyCensusReport
             }
             #endregion
         }
-        /*************************************************************************************/
 
-
-        //T2 Current Census Text Change
         private void txtCurrentCensusT2_TextChanged(object sender, EventArgs e)
         {
             #region Checks T2 Current Census Field
@@ -386,7 +391,6 @@ namespace DailyCensusReport
             #endregion
         }
 
-        //T2 ISO Patient Text Change
         private void txtIsoPatientsT2_TextChanged(object sender, EventArgs e)
         {
             #region Checks ISO Patient T2 Field
@@ -414,7 +418,6 @@ namespace DailyCensusReport
             #endregion
         }
 
-        // T2 DC Text Change
         private void txtDischargesT2_TextChanged(object sender, EventArgs e)
         {
             #region Checks DC T2 Field
@@ -442,11 +445,6 @@ namespace DailyCensusReport
             #endregion
         }
 
-        /*******************************************************************************************/
-
-
-
-        //PEDI Current Census Text Change
         private void txtCurrentCensusPEDI_TextChanged(object sender, EventArgs e)
         {
             #region Checks PEDI Current Census Field
@@ -491,7 +489,6 @@ namespace DailyCensusReport
             #endregion
         }
 
-        //PEDI ISO Patient Text Change
         private void txtIsoPatientsPEDI_TextChanged(object sender, EventArgs e)
         {
             #region Checks ISO Patient PEDI Field
@@ -519,7 +516,6 @@ namespace DailyCensusReport
             #endregion
         }
 
-        //PEDI DC Text Change
         private void txtDischargesPEDI_TextChanged(object sender, EventArgs e)
         {
             #region Checks DC PEDI Field
@@ -547,10 +543,6 @@ namespace DailyCensusReport
             #endregion
         }
 
-        /*****************************************************************************************/
-
-
-        //T4 Current Census Text Change
         private void txtCurrentCensusT4_TextChanged(object sender, EventArgs e)
         {
             #region Checks T4 Current Census Field
@@ -596,7 +588,6 @@ namespace DailyCensusReport
             #endregion
         }
 
-        // T4 ISO Patient Text Change
         private void txtIsoPatientsT4_TextChanged(object sender, EventArgs e)
         {
             #region Checks ISO Patient T4 Field
@@ -624,7 +615,6 @@ namespace DailyCensusReport
             #endregion
         }
 
-        // T4 DC Text Change
         private void txtDischargesT4_TextChanged(object sender, EventArgs e)
         {
             #region Checks DC T4 Field
@@ -651,10 +641,7 @@ namespace DailyCensusReport
             }
             #endregion
         }
-        /****************************************************************************************/
 
-
-        //6ACU Current Census Text Change
         private void txtCurrentCensus6ACU_TextChanged(object sender, EventArgs e)
         {
             #region Checks 6ACU Current Census Field
@@ -752,10 +739,7 @@ namespace DailyCensusReport
             }
             #endregion
         }
-        /*****************************************************************************************/
 
-
-        //TBC Current Census Text Change
         private void txtCurrentCensusTBC_TextChanged(object sender, EventArgs e)
         {
             #region Checks TBC Current Census Field
@@ -799,7 +783,7 @@ namespace DailyCensusReport
             }
             #endregion
         }
-        //TBC Iso Patient Text Change
+
         private void txtIsoPatientsTBC_TextChanged(object sender, EventArgs e)
         {
             #region Checks ISO Patient TBC Field
@@ -827,7 +811,6 @@ namespace DailyCensusReport
             #endregion
         }
 
-        //TBC Dc Text Change
         private void txtDischargesTBC_TextChanged(object sender, EventArgs e)
         {
             #region Checks DC TBC Field
@@ -854,10 +837,7 @@ namespace DailyCensusReport
             }
             #endregion
         }
-        /*********************************************************************************************/
 
-
-        //BHU Current Census Text Change
         private void txtCurrentCensusBHU_TextChanged(object sender, EventArgs e)
         {
             #region Checks BHU Current Census Field
@@ -904,7 +884,6 @@ namespace DailyCensusReport
             #endregion
         }
 
-        //BHU ISO Patients Text Change
         private void txtIsoPatientsBHU_TextChanged(object sender, EventArgs e)
         {
             #region Checks ISO Patient BHU Field
@@ -932,7 +911,6 @@ namespace DailyCensusReport
             #endregion
         }
 
-        //BHU DC Text Change
         private void txtDischargesBHU_TextChanged(object sender, EventArgs e)
         {
             #region Checks DC BHU Field
@@ -959,8 +937,8 @@ namespace DailyCensusReport
             }
             #endregion
         }
-
-        /***************************************************************************************/
+        /**************************************************************************/
+        #endregion
 
         //Closes Program
         private void btnExit_Click(object sender, EventArgs e)

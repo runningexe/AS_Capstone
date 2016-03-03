@@ -84,191 +84,191 @@ namespace DailyCensusReport
                     censusHeader.HorizontalAlignment = Element.ALIGN_CENTER;
                     head.AddCell(censusHeader);
                     head.WriteSelectedRows(
-                        // first/last row; -1 writes all rows
+                      // first/last row; -1 writes all rows
                       0, -1,
-                        // left offset
+                      // left offset
                       0,
 
-                        // ** bottom** yPos of the table
+                      // ** bottom** yPos of the table
                       doc.PageSize.Height - doc.TopMargin + head.TotalHeight + 2,
                       wri.DirectContent
                     );
-        #endregion
+                    #endregion
 
-        #region PDF Header Table
+                    #region PDF Header Table
                     iTextSharp.text.Font times = FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
-                        //{ HorizontalAlignment = Element.ALIGN_CENTER, WidthPercentage = 100, HeaderRows = 2 }
-                        PdfPTable table = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
-                        table.WidthPercentage = 100;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                        table.AddCell(new PdfPCell(new Phrase("unit", times)));
-                        table.AddCell(new PdfPCell(new Phrase("Current Census", times)));
-                        table.AddCell(new PdfPCell(new Phrase("Avail Beds", times)));
-                        table.AddCell(new PdfPCell(new Phrase("# Iso Patients", times)));
-                        table.AddCell(new PdfPCell(new Phrase("Potential DC's", times)));
-                        table.AddCell(new PdfPCell(new Phrase("Notes", times)));
-                        table.AddCell(new PdfPCell(new Phrase("Current Capactiy Status", times)));
-                     #endregion
-                        
-        #region ICU Column
-                        PdfPTable tableICU = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
-                        table.WidthPercentage = 100;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                        table.AddCell(new PdfPCell(new Phrase("ICU", times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusICU.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsICU.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsICU.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtDischargesICU.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtNotesICU.Text, times)));
-                        #endregion
+                    //{ HorizontalAlignment = Element.ALIGN_CENTER, WidthPercentage = 100, HeaderRows = 2 }
+                    PdfPTable table = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
+                    table.WidthPercentage = 100;
+                    table.HorizontalAlignment = Element.ALIGN_CENTER;
+                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+                    table.AddCell(new PdfPCell(new Phrase("Unit", times)));
+                    table.AddCell(new PdfPCell(new Phrase("Current Census", times)));
+                    table.AddCell(new PdfPCell(new Phrase("Avail Beds", times)));
+                    table.AddCell(new PdfPCell(new Phrase("# Iso Patients", times)));
+                    table.AddCell(new PdfPCell(new Phrase("Potential DC's", times)));
+                    table.AddCell(new PdfPCell(new Phrase("Notes", times)));
+                    table.AddCell(new PdfPCell(new Phrase("Current Capactiy Status", times)));
+                    #endregion
 
-        #region ICU Color Calculation
+                    #region ICU Row
+                    PdfPTable tableICU = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
+                    table.WidthPercentage = 100;
+                    table.HorizontalAlignment = Element.ALIGN_CENTER;
+                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+                    table.AddCell(new PdfPCell(new Phrase("ICU", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusICU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsICU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsICU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtDischargesICU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtNotesICU.Text, times)));
+                    #endregion
 
-                        int totalICUBeds = 9;
-                        totalICUBeds = Convert.ToInt32(txtCurrentCensusICU.Text);
+                    #region ICU Color Calculation
 
-
-                        if (totalICUBeds <= 2)
-                        {
-                            //ICU Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusICU.Text, times))).BackgroundColor = BaseColor.GREEN; 
-                            
-                           
-                        }
-                        else if (totalICUBeds <= 4)
-                        {
-                            //ICU Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusICU.Text, times))).BackgroundColor = BaseColor.YELLOW; 
-                            
-                        }
-
-                        else if (totalICUBeds <= 5)
-                        {
-                            //ICU Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusICU.Text, times))).BackgroundColor = BaseColor.ORANGE; 
-                            
-                        }
-
-                        else if (totalICUBeds >= 6 && totalICUBeds <= 9)
-                        {
-                            //ICU Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusICU.Text, times))).BackgroundColor = BaseColor.RED;
-
-                        }
-
-                        #endregion
-
-        #region T2 Column
-
-                        PdfPTable tableT2 = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
-                        table.WidthPercentage = 100;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                        table.AddCell(new PdfPCell(new Phrase("T2", times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusT2.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsT2.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsT2.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtDischargesT2.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtNotesT2.Text, times)));
- 
-                        #endregion
-        
-        #region T2 Calculation
-
-                        int totalT2Beds = 28;
-                        totalT2Beds = Convert.ToInt32(txtCurrentCensusT2.Text);
+                    int totalICUBeds = 9;
+                    totalICUBeds = Convert.ToInt32(txtCurrentCensusICU.Text);
 
 
-                        if (totalT2Beds <= 14)
-                        {
-                            //T2 Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusT2.Text, times))).BackgroundColor = BaseColor.GREEN;
-                        }
-                        else if (totalT2Beds <= 17)
-                        {
-                            //T2 Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusT2.Text, times))).BackgroundColor = BaseColor.YELLOW;
-                        }
-                        else if (totalT2Beds <= 20)
-                        {
-                            //T2 Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusT2.Text, times))).BackgroundColor = BaseColor.ORANGE;
-                        }
-
-                        else if (totalT2Beds >= 20 && totalT2Beds <= 28)
-                        {
-                            //T2 Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusT2.Text, times))).BackgroundColor = BaseColor.RED;
-                        }
-
-                        #endregion
+                    if (totalICUBeds <= 2)
+                    {
+                        //ICU Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusICU.Text, times))).BackgroundColor = BaseColor.GREEN;
 
 
-        #region PEDI Column
+                    }
+                    else if (totalICUBeds <= 4)
+                    {
+                        //ICU Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusICU.Text, times))).BackgroundColor = BaseColor.YELLOW;
 
-        PdfPTable tablePEDI = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
-        table.WidthPercentage = 100;
-        table.HorizontalAlignment = Element.ALIGN_CENTER;
-        //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-        table.AddCell(new PdfPCell(new Phrase("PEDI", times)));
-        table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusPEDI.Text, times)));
-        table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsPEDI.Text, times)));
-        table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsPEDI.Text, times)));
-        table.AddCell(new PdfPCell(new Phrase(txtDischargesPEDI.Text, times)));
-        table.AddCell(new PdfPCell(new Phrase(txtNotesPEDI.Text, times)));
-                        
-        #endregion
+                    }
 
-        #region PEDI Color Calculation
+                    else if (totalICUBeds <= 5)
+                    {
+                        //ICU Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusICU.Text, times))).BackgroundColor = BaseColor.ORANGE;
 
-        int totalPEDIBeds = 28;
-        totalPEDIBeds = Convert.ToInt32(txtCurrentCensusPEDI.Text);
+                    }
 
-        if (totalPEDIBeds <= 14)
-        {
-            //PEDI Row Added
-            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusPEDI.Text, times))).BackgroundColor = BaseColor.GREEN;
-        }
-        else if (totalPEDIBeds <= 17)
-        {
-            //PEDI Row Added
-            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusPEDI.Text, times))).BackgroundColor = BaseColor.YELLOW;
-        }
-        else if (totalPEDIBeds <= 20)
-        {
-            //PEDI Row Added
-            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusPEDI.Text, times))).BackgroundColor = BaseColor.ORANGE;
-        }
+                    else if (totalICUBeds >= 6 && totalICUBeds <= 9)
+                    {
+                        //ICU Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusICU.Text, times))).BackgroundColor = BaseColor.RED;
 
-        else if (totalPEDIBeds >= 20 && totalPEDIBeds <= 28)
-        {
-            //PEDI Row Added
-            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusPEDI.Text, times))).BackgroundColor = BaseColor.RED;
-        }
+                    }
+
+                    #endregion
+
+                    #region T2 Row
+
+                    PdfPTable tableT2 = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
+                    table.WidthPercentage = 100;
+                    table.HorizontalAlignment = Element.ALIGN_CENTER;
+                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+                    table.AddCell(new PdfPCell(new Phrase("T2", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusT2.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsT2.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsT2.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtDischargesT2.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtNotesT2.Text, times)));
+
+                    #endregion
+
+                    #region T2 Calculation
+
+                    int totalT2Beds = 28;
+                    totalT2Beds = Convert.ToInt32(txtCurrentCensusT2.Text);
 
 
-        #endregion
+                    if (totalT2Beds <= 14)
+                    {
+                        //T2 Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusT2.Text, times))).BackgroundColor = BaseColor.GREEN;
+                    }
+                    else if (totalT2Beds <= 17)
+                    {
+                        //T2 Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusT2.Text, times))).BackgroundColor = BaseColor.YELLOW;
+                    }
+                    else if (totalT2Beds <= 20)
+                    {
+                        //T2 Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusT2.Text, times))).BackgroundColor = BaseColor.ORANGE;
+                    }
+
+                    else if (totalT2Beds >= 20 && totalT2Beds <= 28)
+                    {
+                        //T2 Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusT2.Text, times))).BackgroundColor = BaseColor.RED;
+                    }
+
+                    #endregion
 
 
-        #region T4 Column
+                    #region PEDI Row
 
-                        PdfPTable tableT4 = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
-                        table.WidthPercentage = 100;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                        table.AddCell(new PdfPCell(new Phrase("T4", times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusT4.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsT4.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsT4.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtDischargesT4.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtNotesT4.Text, times)));
-                      
+                    PdfPTable tablePEDI = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
+                    table.WidthPercentage = 100;
+                    table.HorizontalAlignment = Element.ALIGN_CENTER;
+                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+                    table.AddCell(new PdfPCell(new Phrase("PEDI", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusPEDI.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsPEDI.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsPEDI.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtDischargesPEDI.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtNotesPEDI.Text, times)));
 
-        #endregion
-        
-        #region T4 Color Calculation
+                    #endregion
+
+                    #region PEDI Color Calculation
+
+                    int totalPEDIBeds = 28;
+                    totalPEDIBeds = Convert.ToInt32(txtCurrentCensusPEDI.Text);
+
+                    if (totalPEDIBeds <= 14)
+                    {
+                        //PEDI Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusPEDI.Text, times))).BackgroundColor = BaseColor.GREEN;
+                    }
+                    else if (totalPEDIBeds <= 17)
+                    {
+                        //PEDI Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusPEDI.Text, times))).BackgroundColor = BaseColor.YELLOW;
+                    }
+                    else if (totalPEDIBeds <= 20)
+                    {
+                        //PEDI Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusPEDI.Text, times))).BackgroundColor = BaseColor.ORANGE;
+                    }
+
+                    else if (totalPEDIBeds >= 20 && totalPEDIBeds <= 28)
+                    {
+                        //PEDI Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusPEDI.Text, times))).BackgroundColor = BaseColor.RED;
+                    }
+
+
+                    #endregion
+
+
+                    #region T4 Row
+
+                    PdfPTable tableT4 = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
+                    table.WidthPercentage = 100;
+                    table.HorizontalAlignment = Element.ALIGN_CENTER;
+                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+                    table.AddCell(new PdfPCell(new Phrase("T4", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusT4.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsT4.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsT4.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtDischargesT4.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtNotesT4.Text, times)));
+
+
+                    #endregion
+
+                    #region T4 Color Calculation
 
                     int totalT4Beds = 29;
                     totalT4Beds = Convert.ToInt32(txtCurrentCensusT4.Text);
@@ -302,227 +302,224 @@ namespace DailyCensusReport
 
 
 
-        #endregion
+                    #endregion
 
 
-        #region 6ACU Column
+                    #region 6ACU Row
 
 
                     PdfPTable table6ACU = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
-                        table.WidthPercentage = 100;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                        table.AddCell(new PdfPCell(new Phrase("6ACU", times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCensus6ACU.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtAvailableBeds6ACU.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsICU.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtDischarges6ACU.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtNotes6ACU.Text, times)));
-                       
-
- #endregion
-
-        #region 6ACU Color Changer
-
-                        int total6ACUBeds = 10;
-                        total6ACUBeds = Convert.ToInt32(txtCurrentCensus6ACU.Text);
+                    table.WidthPercentage = 100;
+                    table.HorizontalAlignment = Element.ALIGN_CENTER;
+                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+                    table.AddCell(new PdfPCell(new Phrase("6ACU", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensus6ACU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBeds6ACU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsICU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtDischarges6ACU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtNotes6ACU.Text, times)));
 
 
-                        if (total6ACUBeds <= 3)
-                        {
-                            //6ACU Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatus6ACU.Text, times))).BackgroundColor = BaseColor.GREEN;
+                    #endregion
 
-                        }
-                        else if (total6ACUBeds <= 5)
-                        {
-                            //6ACU Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatus6ACU.Text, times))).BackgroundColor = BaseColor.YELLOW;
-                        }
+                    #region 6ACU Color Changer
 
-                        else if (total6ACUBeds <= 6)
-                        {
-                            //6ACU Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatus6ACU.Text, times))).BackgroundColor = BaseColor.ORANGE;
-                        }
-
-                        else if (total6ACUBeds >= 7 && total6ACUBeds <= 10)
-                        {
-                            //6ACU Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatus6ACU.Text, times))).BackgroundColor = BaseColor.RED;
-                        }
+                    int total6ACUBeds = 10;
+                    total6ACUBeds = Convert.ToInt32(txtCurrentCensus6ACU.Text);
 
 
+                    if (total6ACUBeds <= 3)
+                    {
+                        //6ACU Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatus6ACU.Text, times))).BackgroundColor = BaseColor.GREEN;
+
+                    }
+                    else if (total6ACUBeds <= 5)
+                    {
+                        //6ACU Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatus6ACU.Text, times))).BackgroundColor = BaseColor.YELLOW;
+                    }
+
+                    else if (total6ACUBeds <= 6)
+                    {
+                        //6ACU Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatus6ACU.Text, times))).BackgroundColor = BaseColor.ORANGE;
+                    }
+
+                    else if (total6ACUBeds >= 7 && total6ACUBeds <= 10)
+                    {
+                        //6ACU Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatus6ACU.Text, times))).BackgroundColor = BaseColor.RED;
+                    }
 
 
 
 
 
 
-    #endregion
 
 
-        #region TBC Column
-
-                        PdfPTable tableTBC = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
-                        table.WidthPercentage = 100;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                        table.AddCell(new PdfPCell(new Phrase("TBC", times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusTBC.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsTBC.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsTBC.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtDischargesTBC.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtNotesTBC.Text, times)));
-                        
-
-                        #endregion
-
-        #region TBC Color Calculation
-                        int totalTBCBeds = 10;
-                        totalTBCBeds = Convert.ToInt32(txtCurrentCensusTBC.Text);
+                    #endregion
 
 
-                        if (totalTBCBeds <= 3)
-                        {
-                            //TBC Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusTBC.Text, times))).BackgroundColor = BaseColor.GREEN;
-                        }
-                        else if (totalTBCBeds <= 5)
-                        {
-                            //TBC Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusTBC.Text, times))).BackgroundColor = BaseColor.YELLOW;
-                        }
+                    #region TBC Row
 
-                        else if (totalTBCBeds <= 6)
-                        {
-                            //TBC Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusTBC.Text, times))).BackgroundColor = BaseColor.ORANGE;
-                        }
-
-                        else if (totalTBCBeds >= 7 && totalTBCBeds <= 10)
-                        {
-                            //TBC Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusTBC.Text, times))).BackgroundColor = BaseColor.RED;
-                        }
+                    PdfPTable tableTBC = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
+                    table.WidthPercentage = 100;
+                    table.HorizontalAlignment = Element.ALIGN_CENTER;
+                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+                    table.AddCell(new PdfPCell(new Phrase("TBC", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusTBC.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsTBC.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsTBC.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtDischargesTBC.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtNotesTBC.Text, times)));
 
 
-                        #endregion
+                    #endregion
+
+                    #region TBC Color Calculation
+                    int totalTBCBeds = 10;
+                    totalTBCBeds = Convert.ToInt32(txtCurrentCensusTBC.Text);
 
 
-        #region BHU Column
+                    if (totalTBCBeds <= 3)
+                    {
+                        //TBC Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusTBC.Text, times))).BackgroundColor = BaseColor.GREEN;
+                    }
+                    else if (totalTBCBeds <= 5)
+                    {
+                        //TBC Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusTBC.Text, times))).BackgroundColor = BaseColor.YELLOW;
+                    }
 
-                        PdfPTable tableBHU = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
-                        table.WidthPercentage = 100;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                        table.AddCell(new PdfPCell(new Phrase("BHU", times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusBHU.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsBHU.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsBHU.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtDischargesBHU.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(txtNotesBHU.Text, times)));
-                        
-                        #endregion
+                    else if (totalTBCBeds <= 6)
+                    {
+                        //TBC Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusTBC.Text, times))).BackgroundColor = BaseColor.ORANGE;
+                    }
 
-        #region BHU Color Calculation
-                        int totalBHUBeds = 15;
-                        totalBHUBeds = Convert.ToInt32(txtCurrentCensusBHU.Text);
-
-
-                        if (totalBHUBeds <= 8)
-                        {
-                            //BHU Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusBHU.Text, times))).BackgroundColor = BaseColor.GREEN;
-                        }
-                        else if (totalBHUBeds <= 10)
-                        {
-                            //BHU Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusBHU.Text, times))).BackgroundColor = BaseColor.YELLOW;
-                        }
-
-                        else if (totalBHUBeds <= 11)
-                        {
-                            //BHU Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusBHU.Text, times))).BackgroundColor = BaseColor.ORANGE;
-                        }
-
-                        else if (totalBHUBeds >= 12 && totalBHUBeds <= 15)
-                        {
-                            //BHU Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusBHU.Text, times))).BackgroundColor = BaseColor.RED;
-                        }
-
-                        #endregion
+                    else if (totalTBCBeds >= 7 && totalTBCBeds <= 10)
+                    {
+                        //TBC Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusTBC.Text, times))).BackgroundColor = BaseColor.RED;
+                    }
 
 
-        #region Total Census Column
-
-                        PdfPTable tableTotal = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
-                        table.WidthPercentage = 100;
-                        table.HorizontalAlignment = Element.ALIGN_CENTER;
-                        //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                        table.AddCell(new PdfPCell(new Phrase("Total", times)));
-                        table.AddCell(new PdfPCell(new Phrase(lblCCTotal.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(lblABTotal.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(lblISOTotal.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(lblTotalDC.Text, times)));
-                        table.AddCell(new PdfPCell(new Phrase(lbltotalNotes.Text, times)));
-
-        #endregion
-
-        #region Total Census Color Calculation
-
-                        int totalHospitalCensus = 129;
-                        totalHospitalCensus = Convert.ToInt32(lblCCTotal.Text);
+                    #endregion
 
 
-                        if (totalHospitalCensus <= 70)
-                        {
-                            //Total Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCCSTotal.Text, times))).BackgroundColor = BaseColor.GREEN;
-                        }
-                        else if (totalHospitalCensus <= 80)
-                        {
-                            //Total Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCCSTotal.Text, times))).BackgroundColor = BaseColor.YELLOW;
-                        }
+                    #region BHU Row
 
-                        else if (totalHospitalCensus <= 90)
-                        {
-                            //Total Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCCSTotal.Text, times))).BackgroundColor = BaseColor.ORANGE;
-                        }
+                    PdfPTable tableBHU = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
+                    table.WidthPercentage = 100;
+                    table.HorizontalAlignment = Element.ALIGN_CENTER;
+                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+                    table.AddCell(new PdfPCell(new Phrase("BHU", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusBHU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsBHU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsBHU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtDischargesBHU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtNotesBHU.Text, times)));
 
-                        else if (totalHospitalCensus >= 100 && totalHospitalCensus <= 129)
-                        {
+                    #endregion
 
-                            //Total Row Added
-                            table.AddCell(new PdfPCell(new Phrase(txtCCSTotal.Text, times))).BackgroundColor = BaseColor.RED;
-                        }
+                    #region BHU Color Calculation
+                    int totalBHUBeds = 15;
+                    totalBHUBeds = Convert.ToInt32(txtCurrentCensusBHU.Text);
 
-                        #endregion
 
-                        //Add the table to our document
-                        doc.Add(table);
+                    if (totalBHUBeds <= 8)
+                    {
+                        //BHU Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusBHU.Text, times))).BackgroundColor = BaseColor.GREEN;
+                    }
+                    else if (totalBHUBeds <= 10)
+                    {
+                        //BHU Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusBHU.Text, times))).BackgroundColor = BaseColor.YELLOW;
+                    }
+
+                    else if (totalBHUBeds <= 11)
+                    {
+                        //BHU Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusBHU.Text, times))).BackgroundColor = BaseColor.ORANGE;
+                    }
+
+                    else if (totalBHUBeds >= 12 && totalBHUBeds <= 15)
+                    {
+                        //BHU Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatusBHU.Text, times))).BackgroundColor = BaseColor.RED;
+                    }
+
+                    #endregion
+
+
+                    #region Total Census Row
+
+                    PdfPTable tableTotal = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
+                    table.WidthPercentage = 100;
+                    table.HorizontalAlignment = Element.ALIGN_CENTER;
+                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+                    table.AddCell(new PdfPCell(new Phrase("Total", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lblCCTotal.Text, times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lblABTotal.Text, times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lblISOTotal.Text, times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lblTotalDC.Text, times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lbltotalNotes.Text, times))).BackgroundColor = BaseColor.GRAY;
+
+                    #endregion
+
+                    #region Total Census Color Calculation
+
+                    int totalHospitalCensus = 129;
+                    totalHospitalCensus = Convert.ToInt32(lblCCTotal.Text);
+
+
+                    if (totalHospitalCensus <= 70)
+                    {
+                        //Total Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCCSTotal.Text, times))).BackgroundColor = BaseColor.GREEN;
+                    }
+                    else if (totalHospitalCensus <= 80)
+                    {
+                        //Total Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCCSTotal.Text, times))).BackgroundColor = BaseColor.YELLOW;
+                    }
+
+                    else if (totalHospitalCensus <= 90)
+                    {
+                        //Total Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCCSTotal.Text, times))).BackgroundColor = BaseColor.ORANGE;
+                    }
+
+                    else if (totalHospitalCensus >= 100 && totalHospitalCensus <= 129)
+                    {
+
+                        //Total Row Added
+                        table.AddCell(new PdfPCell(new Phrase(txtCCSTotal.Text, times))).BackgroundColor = BaseColor.RED;
+                    }
+
+                    #endregion
+
+                    //Add the table to our document
+                    doc.Add(table);
                     /*************************************************/
-                   
 
-                    //Adds the inputted data to the PDF Table
-                    
 
                     //Close document
                     doc.Close();
-                }  
-//If PDF File Is Currently Open, This Will Push Out The Error
-
+                }
+                //If PDF File Is Currently Open, error message will appear telling the user
+                //what happened.
                 catch (System.IO.IOException)
                 {
-                   MessageBox.Show(sfd.FileName + "  " + "Is Currently Open. Please Close Your PDF Viewer.", "ERROR MESSAGE");
+                    MessageBox.Show("File has failed to overwrite." + sfd.FileName + "  " + "is currently open. Please close your PDF Viewer and try again.", "ERROR");
                 }
             }
             return false;
         }
-        
+
     }
 }
