@@ -97,18 +97,19 @@ namespace DailyCensusReport
 
                     #region PDF Header Table
                     iTextSharp.text.Font times = FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+                    iTextSharp.text.Font unitFonts = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
                     //{ HorizontalAlignment = Element.ALIGN_CENTER, WidthPercentage = 100, HeaderRows = 2 }
                     PdfPTable table = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
                     //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                    table.AddCell(new PdfPCell(new Phrase("Unit", times)));
-                    table.AddCell(new PdfPCell(new Phrase("Current Census", times)));
-                    table.AddCell(new PdfPCell(new Phrase("Avail Beds", times)));
-                    table.AddCell(new PdfPCell(new Phrase("# Iso Patients", times)));
-                    table.AddCell(new PdfPCell(new Phrase("Potential DC's", times)));
-                    table.AddCell(new PdfPCell(new Phrase("Notes", times)));
-                    table.AddCell(new PdfPCell(new Phrase("Current Capactiy Status", times)));
+                    table.AddCell(new PdfPCell(new Phrase("Unit", unitFonts)));
+                    table.AddCell(new PdfPCell(new Phrase("Current Census", unitFonts)));
+                    table.AddCell(new PdfPCell(new Phrase("Avail Beds", unitFonts)));
+                    table.AddCell(new PdfPCell(new Phrase("# Iso Patients", unitFonts)));
+                    table.AddCell(new PdfPCell(new Phrase("Potential DC's", unitFonts)));
+                    table.AddCell(new PdfPCell(new Phrase("Notes", unitFonts)));
+                    table.AddCell(new PdfPCell(new Phrase("Current Capactiy Status", unitFonts)));
                     #endregion
 
                     #region ICU Row
@@ -116,7 +117,7 @@ namespace DailyCensusReport
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
                     //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                    table.AddCell(new PdfPCell(new Phrase("ICU", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("ICU", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusICU.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsICU.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsICU.Text, times)));
@@ -166,7 +167,7 @@ namespace DailyCensusReport
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
                     //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                    table.AddCell(new PdfPCell(new Phrase("T2", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("T2", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusT2.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsT2.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsT2.Text, times)));
@@ -212,7 +213,7 @@ namespace DailyCensusReport
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
                     //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                    table.AddCell(new PdfPCell(new Phrase("PEDI", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("PEDI", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusPEDI.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsPEDI.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsPEDI.Text, times)));
@@ -258,7 +259,7 @@ namespace DailyCensusReport
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
                     //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                    table.AddCell(new PdfPCell(new Phrase("T4", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("T4", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusT4.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsT4.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsT4.Text, times)));
@@ -312,7 +313,7 @@ namespace DailyCensusReport
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
                     //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                    table.AddCell(new PdfPCell(new Phrase("6ACU", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("6ACU", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensus6ACU.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBeds6ACU.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsICU.Text, times)));
@@ -368,7 +369,7 @@ namespace DailyCensusReport
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
                     //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                    table.AddCell(new PdfPCell(new Phrase("TBC", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("TBC", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusTBC.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsTBC.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsTBC.Text, times)));
@@ -416,7 +417,7 @@ namespace DailyCensusReport
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
                     //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                    table.AddCell(new PdfPCell(new Phrase("BHU", times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("BHU", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusBHU.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsBHU.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsBHU.Text, times)));
@@ -462,12 +463,12 @@ namespace DailyCensusReport
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
                     //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
-                    table.AddCell(new PdfPCell(new Phrase("Total", times))).BackgroundColor = BaseColor.GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(lblCCTotal.Text, times))).BackgroundColor = BaseColor.GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(lblABTotal.Text, times))).BackgroundColor = BaseColor.GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(lblISOTotal.Text, times))).BackgroundColor = BaseColor.GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(lblTotalDC.Text, times))).BackgroundColor = BaseColor.GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(lbltotalNotes.Text, times))).BackgroundColor = BaseColor.GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("Total", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lblCCTotal.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lblABTotal.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lblISOTotal.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lblTotalDC.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lbltotalNotes.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
 
                     #endregion
 

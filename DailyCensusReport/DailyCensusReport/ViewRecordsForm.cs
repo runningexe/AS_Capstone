@@ -48,33 +48,44 @@ namespace DailyCensusReport
 
         private void cboUnitNameSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlConnection connect = DBConnect.GetConnection();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandText = "SELECT * FROM HospitalDepartments JOIN HospitalCensus ON HospitalDepartments.unitID = HospitalCensus.unitID WHERE unitName LIKE '" + cboUnitNameSearch.SelectedValue + "'";
-            cmd.Connection = connect;
+            //SqlConnection connect = DBConnect.GetConnection();
+            //SqlCommand cmd = new SqlCommand();
+            //cmd.CommandText = "SELECT * FROM HospitalDepartments JOIN HospitalCensus ON HospitalDepartments.unitID = HospitalCensus.unitID WHERE unitName LIKE '" + cboUnitNameSearch.SelectedValue + "'";
+            //cmd.Connection = connect;
 
-            DataSet dataSet = new DataSet();
-            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
-            dataAdapter.Fill(dataSet);
+            //DataSet dataSet = new DataSet();
+            //SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+            //dataAdapter.Fill(dataSet);
 
-            vw_GetRecordsDataGridView.DataSource = dataSet.Tables[0];
+            //vw_GetRecordsDataGridView.DataSource = dataSet.Tables[0];
         }
 
         private void LoadGridData(DateTime updateDate)
         {
+            //SqlConnection connect = DBConnect.GetConnection();
+            //String query = "SELECT * FROM HospitalCensus WHERE updateDate LIKE %" + dtpSearchDate.Value + "% ORDER BY unitID ASC";
+            //SqlCommand command = new SqlCommand(query, connect);
+            //command.Parameters.AddWithValue("@updateDate", dtpSearchDate.Value);
+            //SqlDataAdapter da = new SqlDataAdapter(command);
+            //DataSet ds = new DataSet();
+            //da.Fill(ds);
+            //vw_GetRecordsBindingSource.DataSource = ds.Tables[0];
+
             SqlConnection connect = DBConnect.GetConnection();
-            String query = "SELECT * FROM HospitalCensus WHERE updateDate LIKE '" + dtpSearchDate.Value + "'";
-            SqlCommand command = new SqlCommand(query, connect);
-            command.Parameters.AddWithValue("@updateDate", dtpSearchDate.Value);
-            SqlDataAdapter da = new SqlDataAdapter(command);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            vw_GetRecordsBindingSource.DataSource = ds.Tables[0];
+
+            SqlDataAdapter cmd = new SqlDataAdapter("SELECT * FROM HospitalCensus WHERE LIKE % updateDate = @updateDate", connect);
+            cmd.SelectCommand.Parameters.AddWithValue("@updateDate", dtpSearchDate.Value.Date);
+            DataSet ds = new DataSet("HospitalCensus");
+            connect.Open();
+            cmd.Fill(ds);
+            dtpSearchDate.Text = Convert.ToDateTime(dtpSearchDate).ToString();
+            connect.Close();
         }
 
         private void dtpSearchDate_ValueChanged(object sender, EventArgs e)
         {
             LoadGridData(dtpSearchDate.Value);
+            
         }
     }
 }

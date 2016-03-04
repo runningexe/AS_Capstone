@@ -177,6 +177,8 @@
             // 
             // vw_GetRecordsDataGridView
             // 
+            this.vw_GetRecordsDataGridView.AllowUserToAddRows = false;
+            this.vw_GetRecordsDataGridView.AllowUserToDeleteRows = false;
             this.vw_GetRecordsDataGridView.AutoGenerateColumns = false;
             this.vw_GetRecordsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vw_GetRecordsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -191,6 +193,7 @@
             this.vw_GetRecordsDataGridView.DataSource = this.vw_GetRecordsBindingSource;
             this.vw_GetRecordsDataGridView.Location = new System.Drawing.Point(0, 174);
             this.vw_GetRecordsDataGridView.Name = "vw_GetRecordsDataGridView";
+            this.vw_GetRecordsDataGridView.ReadOnly = true;
             this.vw_GetRecordsDataGridView.Size = new System.Drawing.Size(874, 269);
             this.vw_GetRecordsDataGridView.TabIndex = 1;
             this.vw_GetRecordsDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.hospitalCensusDataGridView_CellContentClick);
@@ -200,56 +203,64 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "unitName";
             this.dataGridViewTextBoxColumn1.HeaderText = "unitName";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "currentCensus";
             this.dataGridViewTextBoxColumn2.HeaderText = "currentCensus";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "availBeds";
             this.dataGridViewTextBoxColumn3.HeaderText = "availBeds";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "numberISP";
             this.dataGridViewTextBoxColumn4.HeaderText = "numberISP";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "DC";
             this.dataGridViewTextBoxColumn5.HeaderText = "DC";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "notes";
             this.dataGridViewTextBoxColumn6.HeaderText = "notes";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "currentCap";
             this.dataGridViewTextBoxColumn7.HeaderText = "currentCap";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "updateDate";
             this.dataGridViewTextBoxColumn8.HeaderText = "updateDate";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // lblSearchByUnitName
             // 
             this.lblSearchByUnitName.AutoSize = true;
-            this.lblSearchByUnitName.Font = new System.Drawing.Font("Oswald Regular", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchByUnitName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchByUnitName.Location = new System.Drawing.Point(251, 85);
             this.lblSearchByUnitName.Name = "lblSearchByUnitName";
-            this.lblSearchByUnitName.Size = new System.Drawing.Size(157, 21);
+            this.lblSearchByUnitName.Size = new System.Drawing.Size(183, 20);
             this.lblSearchByUnitName.TabIndex = 2;
             this.lblSearchByUnitName.Text = "Search by Unit Name:";
             // 
@@ -310,10 +321,10 @@
             // lblSearchByDate
             // 
             this.lblSearchByDate.AutoSize = true;
-            this.lblSearchByDate.Font = new System.Drawing.Font("Oswald Regular", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchByDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchByDate.Location = new System.Drawing.Point(495, 85);
             this.lblSearchByDate.Name = "lblSearchByDate";
-            this.lblSearchByDate.Size = new System.Drawing.Size(117, 21);
+            this.lblSearchByDate.Size = new System.Drawing.Size(138, 20);
             this.lblSearchByDate.TabIndex = 7;
             this.lblSearchByDate.Text = "Search by Date:";
             // 
@@ -323,7 +334,7 @@
             this.dtpSearchDate.Name = "dtpSearchDate";
             this.dtpSearchDate.Size = new System.Drawing.Size(183, 20);
             this.dtpSearchDate.TabIndex = 8;
-            this.dtpSearchDate.Value = new System.DateTime(2016, 2, 18, 0, 0, 0, 0);
+            this.dtpSearchDate.Value = new System.DateTime(2016, 3, 3, 18, 16, 59, 0);
             this.dtpSearchDate.ValueChanged += new System.EventHandler(this.dtpSearchDate_ValueChanged);
             // 
             // ViewRecordsForm
