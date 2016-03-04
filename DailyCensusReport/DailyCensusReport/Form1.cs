@@ -230,7 +230,7 @@ namespace DailyCensusReport
         private void btnViewRecord_Click(object sender, EventArgs e)
         {
             this.Show();
-            ViewRecordsForm openVR = new ViewRecordsForm();
+            ViewRecordForm openVR = new ViewRecordForm();
             openVR.Show();
         }
 

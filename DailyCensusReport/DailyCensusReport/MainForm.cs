@@ -32,7 +32,7 @@ namespace DailyCensusReport
         private void btnMainViewRecord_Click(object sender, EventArgs e)
         {
             this.Hide();
-            ViewRecordsForm openVR = new ViewRecordsForm();
+            ViewRecordForm openVR = new ViewRecordForm();
             openVR.Show(); 
         }
     }

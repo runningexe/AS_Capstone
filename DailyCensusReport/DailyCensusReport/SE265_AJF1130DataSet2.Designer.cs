@@ -2440,9 +2440,21 @@ namespace DailyCensusReport {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class HospitalDepartmentsDataTable : global::System.Data.TypedTableBase<HospitalDepartmentsRow> {
             
-            private global::System.Data.DataColumn columnunitID;
-            
             private global::System.Data.DataColumn columnunitName;
+            
+            private global::System.Data.DataColumn columncurrentCensus;
+            
+            private global::System.Data.DataColumn columnavailBeds;
+            
+            private global::System.Data.DataColumn columnnumberISP;
+            
+            private global::System.Data.DataColumn columnDC;
+            
+            private global::System.Data.DataColumn columnnotes;
+            
+            private global::System.Data.DataColumn columncurrentCap;
+            
+            private global::System.Data.DataColumn columnupdateDate;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -2479,17 +2491,65 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn unitIDColumn {
+            public global::System.Data.DataColumn unitNameColumn {
                 get {
-                    return this.columnunitID;
+                    return this.columnunitName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn unitNameColumn {
+            public global::System.Data.DataColumn currentCensusColumn {
                 get {
-                    return this.columnunitName;
+                    return this.columncurrentCensus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn availBedsColumn {
+                get {
+                    return this.columnavailBeds;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn numberISPColumn {
+                get {
+                    return this.columnnumberISP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DCColumn {
+                get {
+                    return this.columnDC;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn notesColumn {
+                get {
+                    return this.columnnotes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn currentCapColumn {
+                get {
+                    return this.columncurrentCap;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn updateDateColumn {
+                get {
+                    return this.columnupdateDate;
                 }
             }
             
@@ -2530,21 +2590,20 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HospitalDepartmentsRow AddHospitalDepartmentsRow(string unitName) {
+            public HospitalDepartmentsRow AddHospitalDepartmentsRow(string unitName, string currentCensus, string availBeds, string numberISP, string DC, string notes, string currentCap, System.DateTime updateDate) {
                 HospitalDepartmentsRow rowHospitalDepartmentsRow = ((HospitalDepartmentsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        unitName};
+                        unitName,
+                        currentCensus,
+                        availBeds,
+                        numberISP,
+                        DC,
+                        notes,
+                        currentCap,
+                        updateDate};
                 rowHospitalDepartmentsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowHospitalDepartmentsRow);
                 return rowHospitalDepartmentsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public HospitalDepartmentsRow FindByunitID(int unitID) {
-                return ((HospitalDepartmentsRow)(this.Rows.Find(new object[] {
-                            unitID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2564,27 +2623,49 @@ namespace DailyCensusReport {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnunitID = base.Columns["unitID"];
                 this.columnunitName = base.Columns["unitName"];
+                this.columncurrentCensus = base.Columns["currentCensus"];
+                this.columnavailBeds = base.Columns["availBeds"];
+                this.columnnumberISP = base.Columns["numberISP"];
+                this.columnDC = base.Columns["DC"];
+                this.columnnotes = base.Columns["notes"];
+                this.columncurrentCap = base.Columns["currentCap"];
+                this.columnupdateDate = base.Columns["updateDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnunitID = new global::System.Data.DataColumn("unitID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnunitID);
                 this.columnunitName = new global::System.Data.DataColumn("unitName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnunitName);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnunitID}, true));
-                this.columnunitID.AutoIncrement = true;
-                this.columnunitID.AutoIncrementSeed = -1;
-                this.columnunitID.AutoIncrementStep = -1;
-                this.columnunitID.AllowDBNull = false;
-                this.columnunitID.ReadOnly = true;
-                this.columnunitID.Unique = true;
+                this.columncurrentCensus = new global::System.Data.DataColumn("currentCensus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncurrentCensus);
+                this.columnavailBeds = new global::System.Data.DataColumn("availBeds", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnavailBeds);
+                this.columnnumberISP = new global::System.Data.DataColumn("numberISP", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumberISP);
+                this.columnDC = new global::System.Data.DataColumn("DC", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDC);
+                this.columnnotes = new global::System.Data.DataColumn("notes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnotes);
+                this.columncurrentCap = new global::System.Data.DataColumn("currentCap", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncurrentCap);
+                this.columnupdateDate = new global::System.Data.DataColumn("updateDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnupdateDate);
                 this.columnunitName.AllowDBNull = false;
                 this.columnunitName.MaxLength = 50;
+                this.columncurrentCensus.AllowDBNull = false;
+                this.columncurrentCensus.MaxLength = 50;
+                this.columnavailBeds.AllowDBNull = false;
+                this.columnavailBeds.MaxLength = 50;
+                this.columnnumberISP.AllowDBNull = false;
+                this.columnnumberISP.MaxLength = 50;
+                this.columnDC.AllowDBNull = false;
+                this.columnDC.MaxLength = 50;
+                this.columnnotes.MaxLength = 50;
+                this.columncurrentCap.AllowDBNull = false;
+                this.columncurrentCap.MaxLength = 50;
+                this.columnupdateDate.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9048,17 +9129,6 @@ namespace DailyCensusReport {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int unitID {
-                get {
-                    return ((int)(this[this.tableHospitalDepartments.unitIDColumn]));
-                }
-                set {
-                    this[this.tableHospitalDepartments.unitIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string unitName {
                 get {
                     return ((string)(this[this.tableHospitalDepartments.unitNameColumn]));
@@ -9066,6 +9136,100 @@ namespace DailyCensusReport {
                 set {
                     this[this.tableHospitalDepartments.unitNameColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string currentCensus {
+                get {
+                    return ((string)(this[this.tableHospitalDepartments.currentCensusColumn]));
+                }
+                set {
+                    this[this.tableHospitalDepartments.currentCensusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string availBeds {
+                get {
+                    return ((string)(this[this.tableHospitalDepartments.availBedsColumn]));
+                }
+                set {
+                    this[this.tableHospitalDepartments.availBedsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string numberISP {
+                get {
+                    return ((string)(this[this.tableHospitalDepartments.numberISPColumn]));
+                }
+                set {
+                    this[this.tableHospitalDepartments.numberISPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DC {
+                get {
+                    return ((string)(this[this.tableHospitalDepartments.DCColumn]));
+                }
+                set {
+                    this[this.tableHospitalDepartments.DCColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string notes {
+                get {
+                    try {
+                        return ((string)(this[this.tableHospitalDepartments.notesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'notes\' in table \'HospitalDepartments\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableHospitalDepartments.notesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string currentCap {
+                get {
+                    return ((string)(this[this.tableHospitalDepartments.currentCapColumn]));
+                }
+                set {
+                    this[this.tableHospitalDepartments.currentCapColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime updateDate {
+                get {
+                    return ((global::System.DateTime)(this[this.tableHospitalDepartments.updateDateColumn]));
+                }
+                set {
+                    this[this.tableHospitalDepartments.updateDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnotesNull() {
+                return this.IsNull(this.tableHospitalDepartments.notesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnotesNull() {
+                this[this.tableHospitalDepartments.notesColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -13607,32 +13771,15 @@ SELECT id, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap, u
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "HospitalDepartments";
-            tableMapping.ColumnMappings.Add("unitID", "unitID");
             tableMapping.ColumnMappings.Add("unitName", "unitName");
+            tableMapping.ColumnMappings.Add("currentCensus", "currentCensus");
+            tableMapping.ColumnMappings.Add("availBeds", "availBeds");
+            tableMapping.ColumnMappings.Add("numberISP", "numberISP");
+            tableMapping.ColumnMappings.Add("DC", "DC");
+            tableMapping.ColumnMappings.Add("notes", "notes");
+            tableMapping.ColumnMappings.Add("currentCap", "currentCap");
+            tableMapping.ColumnMappings.Add("updateDate", "updateDate");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[HospitalDepartments] WHERE (([unitID] = @Original_unitID) AND " +
-                "([unitName] = @Original_unitName))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_unitID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unitID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_unitName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unitName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[HospitalDepartments] ([unitName]) VALUES (@unitName);\r\nSELECT " +
-                "unitID, unitName FROM HospitalDepartments WHERE (unitID = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@unitName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unitName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[HospitalDepartments] SET [unitName] = @unitName WHERE (([unitID] = " +
-                "@Original_unitID) AND ([unitName] = @Original_unitName));\r\nSELECT unitID, unitNa" +
-                "me FROM HospitalDepartments WHERE (unitID = @unitID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@unitName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unitName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_unitID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unitID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_unitName", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unitName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@unitID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "unitID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13648,16 +13795,27 @@ SELECT id, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap, u
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT unitID, unitName FROM dbo.HospitalDepartments";
+            this._commandCollection[0].CommandText = @"SELECT        HospitalDepartments.unitName, HospitalCensus.currentCensus, HospitalCensus.availBeds, HospitalCensus.numberISP, HospitalCensus.DC, HospitalCensus.notes, 
+                         HospitalCensus.currentCap, HospitalCensus.updateDate
+
+FROM dbo.HospitalCensus INNER JOIN
+                         HospitalDepartments ON HospitalDepartments.unitID = HospitalCensus.unitID
+
+WHERE updateDate BETWEEN @Startdate AND @Enddate
+ORDER BY updateDate ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Startdate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "updateDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Enddate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "updateDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.HospitalDepartmentsDataTable dataTable) {
+        public virtual int Fill(SE265_AJF1130DataSet2.HospitalDepartmentsDataTable dataTable, System.DateTime Startdate, System.DateTime Enddate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Startdate));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Enddate));
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -13669,138 +13827,13 @@ SELECT id, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap, u
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.HospitalDepartmentsDataTable GetData() {
+        public virtual SE265_AJF1130DataSet2.HospitalDepartmentsDataTable GetData(System.DateTime Startdate, System.DateTime Enddate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Startdate));
+            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Enddate));
             SE265_AJF1130DataSet2.HospitalDepartmentsDataTable dataTable = new SE265_AJF1130DataSet2.HospitalDepartmentsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2.HospitalDepartmentsDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SE265_AJF1130DataSet2 dataSet) {
-            return this.Adapter.Update(dataSet, "HospitalDepartments");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_unitID, string Original_unitName) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_unitID));
-            if ((Original_unitName == null)) {
-                throw new global::System.ArgumentNullException("Original_unitName");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(Original_unitName));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string unitName) {
-            if ((unitName == null)) {
-                throw new global::System.ArgumentNullException("unitName");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(unitName));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string unitName, int Original_unitID, string Original_unitName, int unitID) {
-            if ((unitName == null)) {
-                throw new global::System.ArgumentNullException("unitName");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(unitName));
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_unitID));
-            if ((Original_unitName == null)) {
-                throw new global::System.ArgumentNullException("Original_unitName");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_unitName));
-            }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(unitID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string unitName, int Original_unitID, string Original_unitName) {
-            return this.Update(unitName, Original_unitID, Original_unitName, Original_unitID);
         }
     }
     
@@ -19663,8 +19696,6 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
         
         private HospitalCensusTableAdapter _hospitalCensusTableAdapter;
         
-        private HospitalDepartmentsTableAdapter _hospitalDepartmentsTableAdapter;
-        
         private ICUTableAdapter _iCUTableAdapter;
         
         private PEDITableAdapter _pEDITableAdapter;
@@ -19743,20 +19774,6 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
             }
             set {
                 this._hospitalCensusTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public HospitalDepartmentsTableAdapter HospitalDepartmentsTableAdapter {
-            get {
-                return this._hospitalDepartmentsTableAdapter;
-            }
-            set {
-                this._hospitalDepartmentsTableAdapter = value;
             }
         }
         
@@ -19865,10 +19882,6 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
                             && (this._hospitalCensusTableAdapter.Connection != null))) {
                     return this._hospitalCensusTableAdapter.Connection;
                 }
-                if (((this._hospitalDepartmentsTableAdapter != null) 
-                            && (this._hospitalDepartmentsTableAdapter.Connection != null))) {
-                    return this._hospitalDepartmentsTableAdapter.Connection;
-                }
                 if (((this._iCUTableAdapter != null) 
                             && (this._iCUTableAdapter.Connection != null))) {
                     return this._iCUTableAdapter.Connection;
@@ -19912,9 +19925,6 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
                     count = (count + 1);
                 }
                 if ((this._hospitalCensusTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._hospitalDepartmentsTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._iCUTableAdapter != null)) {
@@ -20006,15 +20016,6 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._hospitalDepartmentsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.HospitalDepartments.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._hospitalDepartmentsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._hospitalCensusTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.HospitalCensus.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -20099,14 +20100,6 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._hospitalDepartmentsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.HospitalDepartments.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._hospitalDepartmentsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._hospitalCensusTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.HospitalCensus.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -20146,14 +20139,6 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._hospitalCensusTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._hospitalDepartmentsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.HospitalDepartments.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._hospitalDepartmentsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -20272,11 +20257,6 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._hospitalDepartmentsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._hospitalDepartmentsTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._iCUTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._iCUTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -20368,15 +20348,6 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
                     if (this._hospitalCensusTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._hospitalCensusTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._hospitalCensusTableAdapter.Adapter);
-                    }
-                }
-                if ((this._hospitalDepartmentsTableAdapter != null)) {
-                    revertConnections.Add(this._hospitalDepartmentsTableAdapter, this._hospitalDepartmentsTableAdapter.Connection);
-                    this._hospitalDepartmentsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._hospitalDepartmentsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._hospitalDepartmentsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._hospitalDepartmentsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._hospitalDepartmentsTableAdapter.Adapter);
                     }
                 }
                 if ((this._iCUTableAdapter != null)) {
@@ -20497,10 +20468,6 @@ SELECT tbcID, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap
                 if ((this._hospitalCensusTableAdapter != null)) {
                     this._hospitalCensusTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._hospitalCensusTableAdapter]));
                     this._hospitalCensusTableAdapter.Transaction = null;
-                }
-                if ((this._hospitalDepartmentsTableAdapter != null)) {
-                    this._hospitalDepartmentsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._hospitalDepartmentsTableAdapter]));
-                    this._hospitalDepartmentsTableAdapter.Transaction = null;
                 }
                 if ((this._iCUTableAdapter != null)) {
                     this._iCUTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._iCUTableAdapter]));
