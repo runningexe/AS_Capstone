@@ -63,28 +63,34 @@ namespace DailyCensusReport
         private void LoadGridData(DateTime updateDate)
         {
             //SqlConnection connect = DBConnect.GetConnection();
-            //String query = "SELECT * FROM HospitalCensus WHERE updateDate LIKE %" + dtpSearchDate.Value + "% ORDER BY unitID ASC";
+            //String query = "SELECT * FROM HospitalCensus WHERE @updateDate LIKE " + dtpSearchDate.Value.ToString("MM/dd/yyyy") + " ORDER BY unitID ASC";
             //SqlCommand command = new SqlCommand(query, connect);
-            //command.Parameters.AddWithValue("@updateDate", dtpSearchDate.Value);
+            //command.Parameters.AddWithValue("@updateDate", dtpSearchDate.Value.ToString("MM/dd/yyyy"));
             //SqlDataAdapter da = new SqlDataAdapter(command);
             //DataSet ds = new DataSet();
+            //connect.Open();
             //da.Fill(ds);
             //vw_GetRecordsBindingSource.DataSource = ds.Tables[0];
+            //connect.Close();
 
             SqlConnection connect = DBConnect.GetConnection();
 
-            SqlDataAdapter cmd = new SqlDataAdapter("SELECT * FROM HospitalCensus WHERE LIKE % updateDate = @updateDate", connect);
-            cmd.SelectCommand.Parameters.AddWithValue("@updateDate", dtpSearchDate.Value.Date);
+            SqlDataAdapter com = new SqlDataAdapter("SELECT * FROM HospitalCensus WHERE CONVERT(DATE,updateDate) LIKE " + dtpSearchDate.Value.ToShortDateString() , connect);
+            com.SelectCommand.Parameters.AddWithValue("@updateDate", dtpSearchDate.Value.ToShortDateString());
             DataSet ds = new DataSet("HospitalCensus");
             connect.Open();
-            cmd.Fill(ds);
-            dtpSearchDate.Text = Convert.ToDateTime(dtpSearchDate).ToString();
+            com.Fill(ds);
             connect.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DateTime updateDate = Convert.ToDateTime(dtpSearchDate.Value.ToShortDateString());
+            LoadGridData(updateDate);
         }
 
         private void dtpSearchDate_ValueChanged(object sender, EventArgs e)
         {
-            LoadGridData(dtpSearchDate.Value);
             
         }
     }

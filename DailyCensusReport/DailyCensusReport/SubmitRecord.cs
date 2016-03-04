@@ -14,7 +14,6 @@ namespace DailyCensusReport
         //ICU Insert Method
         public static void InsertICU(int unitID, string[] varICU)
         {
-            //Connects to ICU Stored procedure to insert
             //Creating the database connection.
             SqlConnection connect = DBConnect.GetConnection();
 

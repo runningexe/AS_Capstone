@@ -64,6 +64,7 @@
             this.txttest2 = new System.Windows.Forms.TextBox();
             this.lblSearchByDate = new System.Windows.Forms.Label();
             this.dtpSearchDate = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalCensusBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sE265_AJF1130DataSet)).BeginInit();
@@ -334,14 +335,25 @@
             this.dtpSearchDate.Name = "dtpSearchDate";
             this.dtpSearchDate.Size = new System.Drawing.Size(183, 20);
             this.dtpSearchDate.TabIndex = 8;
-            this.dtpSearchDate.Value = new System.DateTime(2016, 3, 3, 18, 16, 59, 0);
+            this.dtpSearchDate.Value = new System.DateTime(2016, 3, 2, 0, 0, 0, 0);
             this.dtpSearchDate.ValueChanged += new System.EventHandler(this.dtpSearchDate_ValueChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(73, 132);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ViewRecordsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 444);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dtpSearchDate);
             this.Controls.Add(this.lblSearchByDate);
             this.Controls.Add(this.txttest2);
@@ -408,5 +420,6 @@
         private System.Windows.Forms.TextBox txttest2;
         private System.Windows.Forms.Label lblSearchByDate;
         private System.Windows.Forms.DateTimePicker dtpSearchDate;
+        private System.Windows.Forms.Button button1;
     }
 }
