@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace DailyCensusReport
@@ -20,20 +21,22 @@ namespace DailyCensusReport
         private void ViewRecordForm_Load(object sender, EventArgs e)
         {
             //Needed to Hard code a set date
-            textBox1.Text = "12/01/3030";
-            textBox1.Visible = false;
+            txtSetDate.Text = "1/01/2090";
+            txtSetDate.Visible = false;
+            txtSearchDate.Text = Convert.ToDateTime(DateTime.Today).ToShortDateString();
+            txtSearchDate.Select();
         }
 
         private void btnSearchDate_Click(object sender, EventArgs e)
         {
             //Converts String to DateTime, so Report will show the data
             DateTime date1 = Convert.ToDateTime(txtSearchDate.Text);
-            DateTime date2 = Convert.ToDateTime(textBox1.Text);
+            DateTime date2 = Convert.ToDateTime(txtSetDate.Text);
 
             //Populates information from the database into the Report Viewer
             this.HospitalDepartmentsTableAdapter.Fill(this.SE265_AJF1130DataSet2.HospitalDepartments, date1, date2);
-
-            this.reportViewer1.RefreshReport();
+            this.rvViewRecords.RefreshReport();
+            
         }
     }
 }

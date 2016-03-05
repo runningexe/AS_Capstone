@@ -90,7 +90,6 @@
     </Compile>
     <Compile Include="SE265_AJF1130DataSet11.cs">
       <DependentUpon>SE265_AJF1130DataSet11.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SE265_AJF1130DataSet11.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -103,7 +102,6 @@
       <DependentUpon>SE265_AJF1130DataSet2.xsd</DependentUpon>
     </Compile>
     <Compile Include="SubmitRecord.cs" />
-    <Compile Include="ViewRecord.cs" />
     <Compile Include="ViewRecordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +131,7 @@
     <EmbeddedResource Include="ViewRecordForm.resx">
       <DependentUpon>ViewRecordForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -10,7 +10,6 @@ C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.csprojResolveAssemblyReference.cache
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.frmDailyCensusReport.resources
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.Properties.Resources.resources
-C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.ViewRecordsForm.resources
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.csproj.GenerateResource.Cache
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.frmMainForm.resources
 C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\bin\Debug\itextsharp.dll
@@ -47,3 +46,4 @@ C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusRepor
 C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\RdlCompile.cache
 C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\RdlCompile.compiled
 C:\Users\Anthony J. Fiori\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.ViewRecordForm.resources
+C:\Users\RunningEXE\Desktop\AS_Capstone\DailyCensusReport\DailyCensusReport\obj\Debug\DailyCensusReport.ViewRecordForm.resources

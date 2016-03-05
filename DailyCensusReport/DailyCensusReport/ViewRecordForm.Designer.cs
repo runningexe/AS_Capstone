@@ -29,72 +29,73 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.btnSearchDate = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblSearchDate = new System.Windows.Forms.Label();
+            this.txtSetDate = new System.Windows.Forms.TextBox();
             this.txtSearchDate = new System.Windows.Forms.TextBox();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.SE265_AJF1130DataSet2 = new DailyCensusReport.SE265_AJF1130DataSet2();
+            this.rvViewRecords = new Microsoft.Reporting.WinForms.ReportViewer();
             this.HospitalDepartmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SE265_AJF1130DataSet2 = new DailyCensusReport.SE265_AJF1130DataSet2();
             this.HospitalDepartmentsTableAdapter = new DailyCensusReport.SE265_AJF1130DataSet2TableAdapters.HospitalDepartmentsTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.SE265_AJF1130DataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HospitalDepartmentsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SE265_AJF1130DataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSearchDate
             // 
-            this.btnSearchDate.Location = new System.Drawing.Point(448, 50);
+            this.btnSearchDate.Location = new System.Drawing.Point(514, 12);
             this.btnSearchDate.Name = "btnSearchDate";
-            this.btnSearchDate.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchDate.Size = new System.Drawing.Size(162, 21);
             this.btnSearchDate.TabIndex = 0;
             this.btnSearchDate.Text = "Search";
             this.btnSearchDate.UseVisualStyleBackColor = true;
             this.btnSearchDate.Click += new System.EventHandler(this.btnSearchDate_Click);
             // 
-            // label1
+            // lblSearchDate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(445, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Search By Date:";
+            this.lblSearchDate.AutoSize = true;
+            this.lblSearchDate.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearchDate.Location = new System.Drawing.Point(230, 9);
+            this.lblSearchDate.Name = "lblSearchDate";
+            this.lblSearchDate.Size = new System.Drawing.Size(122, 24);
+            this.lblSearchDate.TabIndex = 1;
+            this.lblSearchDate.Text = "Search By Date:";
             // 
-            // textBox1
+            // txtSetDate
             // 
-            this.textBox1.Location = new System.Drawing.Point(439, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtSetDate.Location = new System.Drawing.Point(358, 12);
+            this.txtSetDate.Name = "txtSetDate";
+            this.txtSetDate.Size = new System.Drawing.Size(150, 20);
+            this.txtSetDate.TabIndex = 2;
             // 
             // txtSearchDate
             // 
-            this.txtSearchDate.Location = new System.Drawing.Point(439, 24);
+            this.txtSearchDate.Location = new System.Drawing.Point(358, 12);
             this.txtSearchDate.Name = "txtSearchDate";
-            this.txtSearchDate.Size = new System.Drawing.Size(100, 20);
+            this.txtSearchDate.Size = new System.Drawing.Size(150, 20);
             this.txtSearchDate.TabIndex = 3;
             // 
-            // reportViewer1
+            // rvViewRecords
             // 
-            reportDataSource1.Name = "DateSearchViewer";
-            reportDataSource1.Value = this.HospitalDepartmentsBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "DailyCensusReport.Report2.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 96);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(1017, 338);
-            this.reportViewer1.TabIndex = 4;
-            // 
-            // SE265_AJF1130DataSet2
-            // 
-            this.SE265_AJF1130DataSet2.DataSetName = "SE265_AJF1130DataSet2";
-            this.SE265_AJF1130DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            reportDataSource2.Name = "DateSearchViewer";
+            reportDataSource2.Value = this.HospitalDepartmentsBindingSource;
+            this.rvViewRecords.LocalReport.DataSources.Add(reportDataSource2);
+            this.rvViewRecords.LocalReport.ReportEmbeddedResource = "DailyCensusReport.Report2.rdlc";
+            this.rvViewRecords.Location = new System.Drawing.Point(12, 90);
+            this.rvViewRecords.Name = "reportViewer1";
+            this.rvViewRecords.Size = new System.Drawing.Size(1017, 338);
+            this.rvViewRecords.TabIndex = 4;
             // 
             // HospitalDepartmentsBindingSource
             // 
             this.HospitalDepartmentsBindingSource.DataMember = "HospitalDepartments";
             this.HospitalDepartmentsBindingSource.DataSource = this.SE265_AJF1130DataSet2;
+            // 
+            // SE265_AJF1130DataSet2
+            // 
+            this.SE265_AJF1130DataSet2.DataSetName = "SE265_AJF1130DataSet2";
+            this.SE265_AJF1130DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // HospitalDepartmentsTableAdapter
             // 
@@ -104,17 +105,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1041, 436);
-            this.Controls.Add(this.reportViewer1);
+            this.ClientSize = new System.Drawing.Size(1049, 448);
+            this.Controls.Add(this.rvViewRecords);
             this.Controls.Add(this.txtSearchDate);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtSetDate);
+            this.Controls.Add(this.lblSearchDate);
             this.Controls.Add(this.btnSearchDate);
             this.Name = "ViewRecordForm";
             this.Text = "ViewRecordForm";
             this.Load += new System.EventHandler(this.ViewRecordForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.SE265_AJF1130DataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HospitalDepartmentsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SE265_AJF1130DataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,12 +124,12 @@
         #endregion
 
         private System.Windows.Forms.Button btnSearchDate;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblSearchDate;
+        private System.Windows.Forms.TextBox txtSetDate;
         private System.Windows.Forms.TextBox txtSearchDate;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource HospitalDepartmentsBindingSource;
         private SE265_AJF1130DataSet2 SE265_AJF1130DataSet2;
         private SE265_AJF1130DataSet2TableAdapters.HospitalDepartmentsTableAdapter HospitalDepartmentsTableAdapter;
+        private Microsoft.Reporting.WinForms.ReportViewer rvViewRecords;
     }
 }
