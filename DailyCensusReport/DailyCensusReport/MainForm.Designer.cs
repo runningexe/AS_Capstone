@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainForm));
             this.btnMainViewRecord = new System.Windows.Forms.Button();
             this.btnMainAddRecord = new System.Windows.Forms.Button();
+            this.lblGreeting = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnMainViewRecord
@@ -53,12 +54,23 @@
             this.btnMainAddRecord.UseVisualStyleBackColor = true;
             this.btnMainAddRecord.Click += new System.EventHandler(this.btnMainAddRecord_Click);
             // 
+            // lblGreeting
+            // 
+            this.lblGreeting.AutoSize = true;
+            this.lblGreeting.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGreeting.Location = new System.Drawing.Point(27, 55);
+            this.lblGreeting.Name = "lblGreeting";
+            this.lblGreeting.Size = new System.Drawing.Size(317, 37);
+            this.lblGreeting.TabIndex = 14;
+            this.lblGreeting.Text = "Hospital Daily Census Report";
+            // 
             // frmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(370, 227);
+            this.Controls.Add(this.lblGreeting);
             this.Controls.Add(this.btnMainAddRecord);
             this.Controls.Add(this.btnMainViewRecord);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -67,6 +79,7 @@
             this.Text = "Daily Census Report";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -74,5 +87,6 @@
 
         private System.Windows.Forms.Button btnMainViewRecord;
         private System.Windows.Forms.Button btnMainAddRecord;
+        private System.Windows.Forms.Label lblGreeting;
     }
 }
