@@ -21,7 +21,7 @@ namespace DailyCensusReport
         private void ViewRecordForm_Load(object sender, EventArgs e)
         {
             //Needed to Hard code a set date
-            txtSetDate.Text = "1/01/2090";
+            txtSetDate.Text = "1/01/9999";
             txtSetDate.Visible = false;
             txtSearchDate.Text = Convert.ToDateTime(DateTime.Today).ToShortDateString();
             txtSearchDate.Select();

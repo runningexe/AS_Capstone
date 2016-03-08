@@ -90,6 +90,7 @@
     </Compile>
     <Compile Include="SE265_AJF1130DataSet11.cs">
       <DependentUpon>SE265_AJF1130DataSet11.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="SE265_AJF1130DataSet11.Designer.cs">
       <AutoGen>True</AutoGen>
