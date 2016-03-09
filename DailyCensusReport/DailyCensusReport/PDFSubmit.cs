@@ -16,6 +16,7 @@ namespace DailyCensusReport
     public class PDFSubmit
     {
         #region PDF View
+        //This method pulls all the texboxs and inserts the information to the PDF table
         public static bool PDFView(
             /**ICU**/
             TextBox txtCurrentCensusICU, TextBox txtAvailableBedsICU, TextBox txtIsoPatientsICU, TextBox txtDischargesICU, TextBox txtNotesICU, TextBox txtCurrentCapStatusICU,

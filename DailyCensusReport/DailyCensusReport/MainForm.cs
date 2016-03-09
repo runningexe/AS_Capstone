@@ -24,14 +24,14 @@ namespace DailyCensusReport
 
         private void btnMainAddRecord_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             frmDailyCensusReport openFromMain = new frmDailyCensusReport();
             openFromMain.Show();                
         }
 
         private void btnMainViewRecord_Click(object sender, EventArgs e)
         {
-            this.Hide();
+           
             ViewRecordForm openVR = new ViewRecordForm();
             openVR.Show(); 
         }
