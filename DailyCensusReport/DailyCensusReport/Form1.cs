@@ -22,6 +22,9 @@ namespace DailyCensusReport
 {
     public partial class frmDailyCensusReport : Form
     {
+        ViewRecordForm viewRecordForm = null;
+        HelpForm helpForm = null;
+
         #region Unit TextBox Array
         public TextBox[] boxesICU { get; set; }
         public TextBox[] boxesT2 { get; set; }
@@ -229,17 +232,58 @@ namespace DailyCensusReport
         //Brings You To The View Record Form
         private void btnViewRecord_Click(object sender, EventArgs e)
         {
-            this.Show();
-            ViewRecordForm openVR = new ViewRecordForm();
-            openVR.Show();
+        //Opens form and Checks if the same form is open
+                if (viewRecordForm == null || viewRecordForm.Text == "")
+                {
+                    viewRecordForm = new ViewRecordForm();
+
+                    viewRecordForm.Dock = DockStyle.Fill;
+                    viewRecordForm.Show();
+                }
+                else if (CheckOpened(viewRecordForm.Text))
+                {
+                    //If window is open, it will pull up that same window
+                    viewRecordForm.WindowState = FormWindowState.Normal;
+                    viewRecordForm.Dock = DockStyle.Fill;
+                    viewRecordForm.Show();
+                    viewRecordForm.Focus();
+                }
+        }
+
+//Checks to see if View Records form is open
+        private bool CheckOpened(string name)
+        {
+            FormCollection fc = Application.OpenForms;
+
+            foreach (Form frm in fc)
+            {
+                if (frm.Text == name)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         //Brings You To The Help Form
         private void btnHelp_Click(object sender, EventArgs e)
         {
-            this.Show();
-            HelpForm openHelp = new HelpForm();
-            openHelp.Show();
+            //Opens form and Checks if the same form is open
+            if (helpForm == null || helpForm.Text == "")
+            {
+                helpForm = new HelpForm();
+
+                helpForm.Dock = DockStyle.Fill;
+                helpForm.Show();
+            }
+            else if (CheckOpened(helpForm.Text))
+            {
+                //If window is open, it will pull up that same window
+                helpForm.WindowState = FormWindowState.Normal;
+                helpForm.Dock = DockStyle.Fill;
+                helpForm.Show();
+                helpForm.Focus();
+            }
         }
 
         /*These TextChanged events calculate the available beds, check for null

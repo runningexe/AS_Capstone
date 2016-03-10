@@ -12,6 +12,8 @@ namespace DailyCensusReport
 {
     public partial class HelpForm : Form
     {
+       
+
         public HelpForm()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace DailyCensusReport
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            btnBack.Show();
+            
             lblPg2.Text = "Upon loading the program you will be greeted with the form to submit records into the database. \n"
                          + "You will have to fill out all of the fields with information that cannot exceed the maximum \n" 
                          + "number of beds for each unit. \n\n The maximum number of beds for each unit are: \n\n"
@@ -34,18 +36,10 @@ namespace DailyCensusReport
 
         private void HelpForm_Load(object sender, EventArgs e)
         {          
-            btnBack.Hide();
+            
             lblHelpHeader.Text = "Getting Started...";
             lblPg1.Text = "If you are having trouble figuring out how the program works, please refer to the next few pages."
                                 + "\n\n\n\n\n\n Click 'Next' to read further.";
-            btnHelpExit.Hide();
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            
-            pnlPage2.SendToBack();
-            btnNext.Show();
             btnHelpExit.Hide();
         }
 
