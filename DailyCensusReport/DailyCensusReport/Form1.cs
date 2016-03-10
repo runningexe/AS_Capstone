@@ -44,6 +44,9 @@ namespace DailyCensusReport
         {
             lblHospDate.Text = DateTime.Today.ToLongDateString();
             lblGreeting.Text = "Hospital Daily Census Report";
+
+            //So you can use the enter key
+            this.AcceptButton = btnSubmit;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)

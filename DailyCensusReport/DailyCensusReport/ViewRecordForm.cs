@@ -47,6 +47,18 @@ namespace DailyCensusReport
             {
             //Populates information from the database into the Report Viewer
             this.HospitalDepartmentsTableAdapter.FillBy(this.SE265_AJF1130DataSet2.HospitalDepartments, date1, date2);
+            
+            if (SE265_AJF1130DataSet2.HospitalDepartments.Rows.Count == 0)
+            {
+                DialogResult result = MessageBox.Show("No Records Found", "NO RECORDS FOUND", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                if (result == DialogResult.OK)
+                {
+                    DialogResult = DialogResult.None;
+                    this.HospitalDepartmentsTableAdapter.ViewAllRecords(this.SE265_AJF1130DataSet2.HospitalDepartments);
+                }
+            }
+
             this.rvViewRecords.RefreshReport();
             }
             catch (Exception ex)
