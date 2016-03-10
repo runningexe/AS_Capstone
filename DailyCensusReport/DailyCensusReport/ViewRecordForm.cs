@@ -38,6 +38,7 @@ namespace DailyCensusReport
             txtSearchDate.Select();
         }
 
+//Search by Date
         private void btnSearchDate_Click(object sender, EventArgs e)
         {
             //Converts String to DateTime, so Report will show the data
@@ -67,6 +68,8 @@ namespace DailyCensusReport
             }
         }
 
+//Search by Unit Name
+
         private void cbUnitName_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -84,6 +87,7 @@ namespace DailyCensusReport
             
         }
 
+//view all records
         private void btnViewAllRecords_Click(object sender, EventArgs e)
         {
             try

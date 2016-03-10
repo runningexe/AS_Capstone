@@ -97,13 +97,16 @@ namespace DailyCensusReport
                     #endregion
 
                     #region PDF Header Table
+                    //Sets fonts for entire table
                     iTextSharp.text.Font times = FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
                     iTextSharp.text.Font unitFonts = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
-                    //{ HorizontalAlignment = Element.ALIGN_CENTER, WidthPercentage = 100, HeaderRows = 2 }
+                    
+                    //Creates the header table with dimensions
                     PdfPTable table = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
-                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+                    
+                    //populates the table into the pdf
                     table.AddCell(new PdfPCell(new Phrase("Unit", unitFonts)));
                     table.AddCell(new PdfPCell(new Phrase("Current Census", unitFonts)));
                     table.AddCell(new PdfPCell(new Phrase("Avail Beds", unitFonts)));
@@ -114,10 +117,13 @@ namespace DailyCensusReport
                     #endregion
 
                     #region ICU Row
+                    
+                    //Creates the ICU table with dimensions
                     PdfPTable tableICU = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
-                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+
+                    //populates the table into the pdf
                     table.AddCell(new PdfPCell(new Phrase("ICU", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusICU.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsICU.Text, times)));
@@ -128,6 +134,7 @@ namespace DailyCensusReport
 
                     #region ICU Color Calculation
 
+                    //Calculates the Current Census field
                     int totalICUBeds = 9;
                     totalICUBeds = Convert.ToInt32(txtCurrentCensusICU.Text);
 
@@ -164,10 +171,12 @@ namespace DailyCensusReport
 
                     #region T2 Row
 
+                    //Creates the T2 table with dimensions
                     PdfPTable tableT2 = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
-                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+
+                    //populates the table into the pdf
                     table.AddCell(new PdfPCell(new Phrase("T2", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusT2.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsT2.Text, times)));
@@ -179,6 +188,7 @@ namespace DailyCensusReport
 
                     #region T2 Calculation
 
+                    //Calculates the Current Census field
                     int totalT2Beds = 28;
                     totalT2Beds = Convert.ToInt32(txtCurrentCensusT2.Text);
 
@@ -210,10 +220,12 @@ namespace DailyCensusReport
 
                     #region PEDI Row
 
+                    //Creates the PEDI table with dimensions
                     PdfPTable tablePEDI = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
-                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+
+                    //populates the table into the pdf
                     table.AddCell(new PdfPCell(new Phrase("PEDI", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusPEDI.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsPEDI.Text, times)));
@@ -225,6 +237,7 @@ namespace DailyCensusReport
 
                     #region PEDI Color Calculation
 
+                    //Calculates the Current Census field
                     int totalPEDIBeds = 28;
                     totalPEDIBeds = Convert.ToInt32(txtCurrentCensusPEDI.Text);
 
@@ -256,10 +269,12 @@ namespace DailyCensusReport
 
                     #region T4 Row
 
+                    //Creates the T4 table with dimensions
                     PdfPTable tableT4 = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
-                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+
+                    //populates the table into the pdf
                     table.AddCell(new PdfPCell(new Phrase("T4", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusT4.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsT4.Text, times)));
@@ -272,6 +287,7 @@ namespace DailyCensusReport
 
                     #region T4 Color Calculation
 
+                    //Calculates the Current Census field
                     int totalT4Beds = 29;
                     totalT4Beds = Convert.ToInt32(txtCurrentCensusT4.Text);
 
@@ -309,11 +325,12 @@ namespace DailyCensusReport
 
                     #region 6ACU Row
 
-
+                    //Creates the 6ACU table with dimensions
                     PdfPTable table6ACU = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
-                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+
+                    //populates the table into the pdf
                     table.AddCell(new PdfPCell(new Phrase("6ACU", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensus6ACU.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBeds6ACU.Text, times)));
@@ -326,6 +343,7 @@ namespace DailyCensusReport
 
                     #region 6ACU Color Changer
 
+                    //Calculates the Current Census field
                     int total6ACUBeds = 10;
                     total6ACUBeds = Convert.ToInt32(txtCurrentCensus6ACU.Text);
 
@@ -354,22 +372,17 @@ namespace DailyCensusReport
                         table.AddCell(new PdfPCell(new Phrase(txtCurrentCapStatus6ACU.Text, times))).BackgroundColor = BaseColor.RED;
                     }
 
-
-
-
-
-
-
-
                     #endregion
 
 
                     #region TBC Row
 
+                    //Creates the TBC table with dimensions
                     PdfPTable tableTBC = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
-                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+
+                    //populates the table into the pdf
                     table.AddCell(new PdfPCell(new Phrase("TBC", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusTBC.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsTBC.Text, times)));
@@ -381,6 +394,8 @@ namespace DailyCensusReport
                     #endregion
 
                     #region TBC Color Calculation
+
+                    //Calculates the Current Census field
                     int totalTBCBeds = 10;
                     totalTBCBeds = Convert.ToInt32(txtCurrentCensusTBC.Text);
 
@@ -414,10 +429,12 @@ namespace DailyCensusReport
 
                     #region BHU Row
 
+                    //Creates the BHU table with dimensions
                     PdfPTable tableBHU = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
-                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+
+                    //populates the table into the pdf
                     table.AddCell(new PdfPCell(new Phrase("BHU", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusBHU.Text, times)));
                     table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsBHU.Text, times)));
@@ -428,6 +445,8 @@ namespace DailyCensusReport
                     #endregion
 
                     #region BHU Color Calculation
+
+                    //Calculates the Current Census field
                     int totalBHUBeds = 15;
                     totalBHUBeds = Convert.ToInt32(txtCurrentCensusBHU.Text);
 
@@ -460,10 +479,12 @@ namespace DailyCensusReport
 
                     #region Total Census Row
 
+                    //Creates the TBC table with dimensions
                     PdfPTable tableTotal = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
-                    //table.SetWidths(new float[] { 2f, 6f, 6f, 3f, 5f, 8f, 5f, 5f, 5f, 5f });
+
+                    //populates the table into the pdf
                     table.AddCell(new PdfPCell(new Phrase("Total", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(lblCCTotal.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase(lblABTotal.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
@@ -475,6 +496,7 @@ namespace DailyCensusReport
 
                     #region Total Census Color Calculation
 
+                    //Calculates the Current Census field
                     int totalHospitalCensus = 129;
                     totalHospitalCensus = Convert.ToInt32(lblCCTotal.Text);
 
