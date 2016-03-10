@@ -169,7 +169,6 @@
     </None>
     <None Include="SE265_AJF1130DataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SE265_AJF1130DataSet2.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="SE265_AJF1130DataSet2.xss">

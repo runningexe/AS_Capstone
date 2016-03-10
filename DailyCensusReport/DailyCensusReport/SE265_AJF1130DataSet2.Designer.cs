@@ -13792,7 +13792,7 @@ SELECT id, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap, u
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        HospitalDepartments.unitName, HospitalCensus.currentCensus, HospitalCensus.availBeds, HospitalCensus.numberISP, HospitalCensus.DC, HospitalCensus.notes, 
@@ -13801,11 +13801,10 @@ SELECT id, unitID, currentCensus, availBeds, numberISP, DC, notes, currentCap, u
 FROM dbo.HospitalCensus INNER JOIN
                          HospitalDepartments ON HospitalDepartments.unitID = HospitalCensus.unitID
 
-WHERE updateDate BETWEEN @Startdate AND @Enddate
-ORDER BY updateDate ";
+WHERE unitName = @cbUnitName
+ORDER BY unitName ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Startdate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "updateDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Enddate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "updateDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@cbUnitName", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "unitName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = @"SELECT        HospitalDepartments.unitName, HospitalCensus.currentCensus, HospitalCensus.availBeds, HospitalCensus.numberISP, HospitalCensus.DC, HospitalCensus.notes, 
@@ -13819,16 +13818,30 @@ ORDER BY updateDate, unitName";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Startdate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "updateDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Enddate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "updateDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = @"SELECT        HospitalDepartments.unitName, HospitalCensus.currentCensus, HospitalCensus.availBeds, HospitalCensus.numberISP, HospitalCensus.DC, HospitalCensus.notes, 
+                         HospitalCensus.currentCap, HospitalCensus.updateDate
+
+FROM dbo.HospitalCensus INNER JOIN
+                         HospitalDepartments ON HospitalDepartments.unitID = HospitalCensus.unitID
+
+ORDER BY unitName ";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SE265_AJF1130DataSet2.HospitalDepartmentsDataTable dataTable, System.DateTime Startdate, System.DateTime Enddate) {
+        public virtual int SearchByUnitName(SE265_AJF1130DataSet2.HospitalDepartmentsDataTable dataTable, string cbUnitName) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Startdate));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Enddate));
+            if ((cbUnitName == null)) {
+                throw new global::System.ArgumentNullException("cbUnitName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(cbUnitName));
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -13840,10 +13853,14 @@ ORDER BY updateDate, unitName";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SE265_AJF1130DataSet2.HospitalDepartmentsDataTable GetData(System.DateTime Startdate, System.DateTime Enddate) {
+        public virtual SE265_AJF1130DataSet2.HospitalDepartmentsDataTable GetData(string cbUnitName) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Startdate));
-            this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Enddate));
+            if ((cbUnitName == null)) {
+                throw new global::System.ArgumentNullException("cbUnitName");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(cbUnitName));
+            }
             SE265_AJF1130DataSet2.HospitalDepartmentsDataTable dataTable = new SE265_AJF1130DataSet2.HospitalDepartmentsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -13862,6 +13879,30 @@ ORDER BY updateDate, unitName";
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int ViewAllRecords(SE265_AJF1130DataSet2.HospitalDepartmentsDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual SE265_AJF1130DataSet2.HospitalDepartmentsDataTable GetDataBy1() {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            SE265_AJF1130DataSet2.HospitalDepartmentsDataTable dataTable = new SE265_AJF1130DataSet2.HospitalDepartmentsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     

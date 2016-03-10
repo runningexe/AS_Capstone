@@ -20,6 +20,17 @@ namespace DailyCensusReport
 
         private void ViewRecordForm_Load(object sender, EventArgs e)
         {
+            //Puts items into an array to pushes out to the combo box 
+            string[] unitNames = {"Select A Unit Name...", 
+                "ICU", "T2", "PEDI", "T4", 
+                "6ACU", "TBC"};
+
+            foreach (string unitName in unitNames)
+            {
+                cbUnitName.Items.Add(unitName);
+            }
+            cbUnitName.SelectedIndex = 0;
+
             //Needed to Hard code a set date
             txtSetDate.Text = "1/01/9999";
             txtSetDate.Visible = false;
@@ -32,11 +43,47 @@ namespace DailyCensusReport
             //Converts String to DateTime, so Report will show the data
             DateTime date1 = Convert.ToDateTime(txtSearchDate.Text);
             DateTime date2 = Convert.ToDateTime(txtSetDate.Text);
-
+        try
+            {
             //Populates information from the database into the Report Viewer
-            this.HospitalDepartmentsTableAdapter.Fill(this.SE265_AJF1130DataSet2.HospitalDepartments, date1, date2);
+            this.HospitalDepartmentsTableAdapter.FillBy(this.SE265_AJF1130DataSet2.HospitalDepartments, date1, date2);
             this.rvViewRecords.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cbUnitName_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                this.HospitalDepartmentsTableAdapter.SearchByUnitName(this.SE265_AJF1130DataSet2.HospitalDepartments, cbUnitName.SelectedItem.ToString());
+
+                this.rvViewRecords.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             
+        }
+
+        private void btnViewAllRecords_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.HospitalDepartmentsTableAdapter.ViewAllRecords(this.SE265_AJF1130DataSet2.HospitalDepartments);
+
+                this.rvViewRecords.RefreshReport();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
