@@ -69,7 +69,7 @@
             // 
             this.lblSearchDate.AutoSize = true;
             this.lblSearchDate.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearchDate.Location = new System.Drawing.Point(295, 9);
+            this.lblSearchDate.Location = new System.Drawing.Point(349, 9);
             this.lblSearchDate.Name = "lblSearchDate";
             this.lblSearchDate.Size = new System.Drawing.Size(122, 24);
             this.lblSearchDate.TabIndex = 1;
@@ -77,16 +77,17 @@
             // 
             // txtSetDate
             // 
-            this.txtSetDate.Location = new System.Drawing.Point(423, 12);
+            this.txtSetDate.Location = new System.Drawing.Point(477, 12);
             this.txtSetDate.Name = "txtSetDate";
-            this.txtSetDate.Size = new System.Drawing.Size(150, 20);
+            this.txtSetDate.Size = new System.Drawing.Size(70, 20);
             this.txtSetDate.TabIndex = 2;
             // 
             // txtSearchDate
             // 
-            this.txtSearchDate.Location = new System.Drawing.Point(423, 12);
+            this.txtSearchDate.Location = new System.Drawing.Point(477, 12);
+            this.txtSearchDate.MaxLength = 10;
             this.txtSearchDate.Name = "txtSearchDate";
-            this.txtSearchDate.Size = new System.Drawing.Size(150, 20);
+            this.txtSearchDate.Size = new System.Drawing.Size(70, 20);
             this.txtSearchDate.TabIndex = 3;
             // 
             // rvViewRecords

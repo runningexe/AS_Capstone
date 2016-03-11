@@ -73,12 +73,25 @@ namespace DailyCensusReport
                 txtIsoPatientsBHU.Text == "" || txtDischargesBHU.Text == "" || txtCurrentCensusBHU.Text == ""
                 )
             {
+                lblCurrentCensus.BackColor = Color.Red;
+                lblIsolationPts.BackColor = Color.Red;
+                lblPotentialDCs.BackColor = Color.Red;
+
                 MessageBox.Show("Please Provide All Required Information", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               
             }
+            
+            
+               
+            
             #endregion
 
             else
             {
+                lblCurrentCensus.BackColor = Color.Transparent;
+                lblIsolationPts.BackColor = Color.Transparent;
+                lblPotentialDCs.BackColor = Color.Transparent;
+
                 #region CalcColor Method Call
                 /***Calling the CalcColor method from the CalculationColorChanger class***/
                 CalculationColorChanger.CalcColor(
