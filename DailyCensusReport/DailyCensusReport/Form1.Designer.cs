@@ -258,10 +258,10 @@
             // 
             this.txtCurrentCapStatusICU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCapStatusICU.BackColor = System.Drawing.Color.Silver;
-            this.txtCurrentCapStatusICU.Location = new System.Drawing.Point(540, 4);
+            this.txtCurrentCapStatusICU.Location = new System.Drawing.Point(536, 4);
             this.txtCurrentCapStatusICU.Name = "txtCurrentCapStatusICU";
             this.txtCurrentCapStatusICU.ReadOnly = true;
-            this.txtCurrentCapStatusICU.Size = new System.Drawing.Size(131, 20);
+            this.txtCurrentCapStatusICU.Size = new System.Drawing.Size(140, 20);
             this.txtCurrentCapStatusICU.TabIndex = 14;
             this.txtCurrentCapStatusICU.TabStop = false;
             // 
@@ -402,10 +402,10 @@
             // 
             this.txtCurrentCapStatusT2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCapStatusT2.BackColor = System.Drawing.Color.Silver;
-            this.txtCurrentCapStatusT2.Location = new System.Drawing.Point(540, 4);
+            this.txtCurrentCapStatusT2.Location = new System.Drawing.Point(537, 4);
             this.txtCurrentCapStatusT2.Name = "txtCurrentCapStatusT2";
             this.txtCurrentCapStatusT2.ReadOnly = true;
-            this.txtCurrentCapStatusT2.Size = new System.Drawing.Size(132, 20);
+            this.txtCurrentCapStatusT2.Size = new System.Drawing.Size(139, 20);
             this.txtCurrentCapStatusT2.TabIndex = 14;
             this.txtCurrentCapStatusT2.TabStop = false;
             // 
@@ -432,7 +432,7 @@
             this.txtIsoPatientsT2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtIsoPatientsT2.Location = new System.Drawing.Point(168, 4);
             this.txtIsoPatientsT2.Name = "txtIsoPatientsT2";
-            this.txtIsoPatientsT2.Size = new System.Drawing.Size(59, 20);
+            this.txtIsoPatientsT2.Size = new System.Drawing.Size(60, 20);
             this.txtIsoPatientsT2.TabIndex = 2;
             this.txtIsoPatientsT2.TextChanged += new System.EventHandler(this.txtIsoPatientsT2_TextChanged);
             // 
@@ -453,7 +453,7 @@
             this.txtCurrentCensusT2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCensusT2.Location = new System.Drawing.Point(50, 4);
             this.txtCurrentCensusT2.Name = "txtCurrentCensusT2";
-            this.txtCurrentCensusT2.Size = new System.Drawing.Size(47, 20);
+            this.txtCurrentCensusT2.Size = new System.Drawing.Size(48, 20);
             this.txtCurrentCensusT2.TabIndex = 0;
             this.txtCurrentCensusT2.TextChanged += new System.EventHandler(this.txtCurrentCensusT2_TextChanged);
             // 
@@ -501,10 +501,10 @@
             // 
             this.txtCurrentCapStatusPEDI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCapStatusPEDI.BackColor = System.Drawing.Color.Silver;
-            this.txtCurrentCapStatusPEDI.Location = new System.Drawing.Point(541, 4);
+            this.txtCurrentCapStatusPEDI.Location = new System.Drawing.Point(538, 4);
             this.txtCurrentCapStatusPEDI.Name = "txtCurrentCapStatusPEDI";
             this.txtCurrentCapStatusPEDI.ReadOnly = true;
-            this.txtCurrentCapStatusPEDI.Size = new System.Drawing.Size(132, 20);
+            this.txtCurrentCapStatusPEDI.Size = new System.Drawing.Size(138, 20);
             this.txtCurrentCapStatusPEDI.TabIndex = 35;
             this.txtCurrentCapStatusPEDI.TabStop = false;
             // 
@@ -531,7 +531,7 @@
             this.txtIsoPatientsPEDI.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtIsoPatientsPEDI.Location = new System.Drawing.Point(167, 4);
             this.txtIsoPatientsPEDI.Name = "txtIsoPatientsPEDI";
-            this.txtIsoPatientsPEDI.Size = new System.Drawing.Size(59, 20);
+            this.txtIsoPatientsPEDI.Size = new System.Drawing.Size(60, 20);
             this.txtIsoPatientsPEDI.TabIndex = 32;
             this.txtIsoPatientsPEDI.TextChanged += new System.EventHandler(this.txtIsoPatientsPEDI_TextChanged);
             // 
@@ -600,10 +600,10 @@
             // 
             this.txtCurrentCapStatus6ACU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCapStatus6ACU.BackColor = System.Drawing.Color.Silver;
-            this.txtCurrentCapStatus6ACU.Location = new System.Drawing.Point(541, 4);
+            this.txtCurrentCapStatus6ACU.Location = new System.Drawing.Point(538, 4);
             this.txtCurrentCapStatus6ACU.Name = "txtCurrentCapStatus6ACU";
             this.txtCurrentCapStatus6ACU.ReadOnly = true;
-            this.txtCurrentCapStatus6ACU.Size = new System.Drawing.Size(131, 20);
+            this.txtCurrentCapStatus6ACU.Size = new System.Drawing.Size(138, 20);
             this.txtCurrentCapStatus6ACU.TabIndex = 36;
             this.txtCurrentCapStatus6ACU.TabStop = false;
             // 
@@ -649,9 +649,9 @@
             // txtCurrentCensus6ACU
             // 
             this.txtCurrentCensus6ACU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCurrentCensus6ACU.Location = new System.Drawing.Point(50, 4);
+            this.txtCurrentCensus6ACU.Location = new System.Drawing.Point(49, 4);
             this.txtCurrentCensus6ACU.Name = "txtCurrentCensus6ACU";
-            this.txtCurrentCensus6ACU.Size = new System.Drawing.Size(47, 20);
+            this.txtCurrentCensus6ACU.Size = new System.Drawing.Size(49, 20);
             this.txtCurrentCensus6ACU.TabIndex = 13;
             this.txtCurrentCensus6ACU.TextChanged += new System.EventHandler(this.txtCurrentCensus6ACU_TextChanged);
             // 
@@ -697,10 +697,10 @@
             // 
             this.txtCurrentCapStatusT4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCapStatusT4.BackColor = System.Drawing.Color.Silver;
-            this.txtCurrentCapStatusT4.Location = new System.Drawing.Point(540, 5);
+            this.txtCurrentCapStatusT4.Location = new System.Drawing.Point(537, 5);
             this.txtCurrentCapStatusT4.Name = "txtCurrentCapStatusT4";
             this.txtCurrentCapStatusT4.ReadOnly = true;
-            this.txtCurrentCapStatusT4.Size = new System.Drawing.Size(132, 20);
+            this.txtCurrentCapStatusT4.Size = new System.Drawing.Size(139, 20);
             this.txtCurrentCapStatusT4.TabIndex = 36;
             this.txtCurrentCapStatusT4.TabStop = false;
             // 
@@ -727,7 +727,7 @@
             this.txtIsoPatientsT4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtIsoPatientsT4.Location = new System.Drawing.Point(168, 5);
             this.txtIsoPatientsT4.Name = "txtIsoPatientsT4";
-            this.txtIsoPatientsT4.Size = new System.Drawing.Size(59, 20);
+            this.txtIsoPatientsT4.Size = new System.Drawing.Size(60, 20);
             this.txtIsoPatientsT4.TabIndex = 33;
             this.txtIsoPatientsT4.TextChanged += new System.EventHandler(this.txtIsoPatientsT4_TextChanged);
             // 
@@ -760,7 +760,7 @@
             this.txtCurrentCensusT4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCensusT4.Location = new System.Drawing.Point(49, 5);
             this.txtCurrentCensusT4.Name = "txtCurrentCensusT4";
-            this.txtCurrentCensusT4.Size = new System.Drawing.Size(48, 20);
+            this.txtCurrentCensusT4.Size = new System.Drawing.Size(49, 20);
             this.txtCurrentCensusT4.TabIndex = 31;
             this.txtCurrentCensusT4.TextChanged += new System.EventHandler(this.txtCurrentCensusT4_TextChanged);
             // 
@@ -794,10 +794,10 @@
             // 
             this.txtCurrentCapStatusTBC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCapStatusTBC.BackColor = System.Drawing.Color.Silver;
-            this.txtCurrentCapStatusTBC.Location = new System.Drawing.Point(542, 5);
+            this.txtCurrentCapStatusTBC.Location = new System.Drawing.Point(539, 5);
             this.txtCurrentCapStatusTBC.Name = "txtCurrentCapStatusTBC";
             this.txtCurrentCapStatusTBC.ReadOnly = true;
-            this.txtCurrentCapStatusTBC.Size = new System.Drawing.Size(131, 20);
+            this.txtCurrentCapStatusTBC.Size = new System.Drawing.Size(137, 20);
             this.txtCurrentCapStatusTBC.TabIndex = 36;
             this.txtCurrentCapStatusTBC.TabStop = false;
             // 
@@ -843,9 +843,9 @@
             // txtCurrentCensusTBC
             // 
             this.txtCurrentCensusTBC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtCurrentCensusTBC.Location = new System.Drawing.Point(51, 5);
+            this.txtCurrentCensusTBC.Location = new System.Drawing.Point(50, 5);
             this.txtCurrentCensusTBC.Name = "txtCurrentCensusTBC";
-            this.txtCurrentCensusTBC.Size = new System.Drawing.Size(47, 20);
+            this.txtCurrentCensusTBC.Size = new System.Drawing.Size(49, 20);
             this.txtCurrentCensusTBC.TabIndex = 12;
             this.txtCurrentCensusTBC.TextChanged += new System.EventHandler(this.txtCurrentCensusTBC_TextChanged);
             // 
@@ -945,7 +945,7 @@
             this.txtCCSTotal.Location = new System.Drawing.Point(540, 4);
             this.txtCCSTotal.Name = "txtCCSTotal";
             this.txtCCSTotal.ReadOnly = true;
-            this.txtCCSTotal.Size = new System.Drawing.Size(131, 20);
+            this.txtCCSTotal.Size = new System.Drawing.Size(136, 20);
             this.txtCCSTotal.TabIndex = 13;
             // 
             // lblISOTotal
@@ -986,7 +986,7 @@
             this.txtCurrentCensusBHU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCensusBHU.Location = new System.Drawing.Point(50, 4);
             this.txtCurrentCensusBHU.Name = "txtCurrentCensusBHU";
-            this.txtCurrentCensusBHU.Size = new System.Drawing.Size(48, 20);
+            this.txtCurrentCensusBHU.Size = new System.Drawing.Size(49, 20);
             this.txtCurrentCensusBHU.TabIndex = 35;
             this.txtCurrentCensusBHU.TextChanged += new System.EventHandler(this.txtCurrentCensusBHU_TextChanged);
             // 
@@ -1033,10 +1033,10 @@
             // 
             this.txtCurrentCapStatusBHU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtCurrentCapStatusBHU.BackColor = System.Drawing.Color.Silver;
-            this.txtCurrentCapStatusBHU.Location = new System.Drawing.Point(542, 4);
+            this.txtCurrentCapStatusBHU.Location = new System.Drawing.Point(539, 4);
             this.txtCurrentCapStatusBHU.Name = "txtCurrentCapStatusBHU";
             this.txtCurrentCapStatusBHU.ReadOnly = true;
-            this.txtCurrentCapStatusBHU.Size = new System.Drawing.Size(130, 20);
+            this.txtCurrentCapStatusBHU.Size = new System.Drawing.Size(137, 20);
             this.txtCurrentCapStatusBHU.TabIndex = 40;
             this.txtCurrentCapStatusBHU.TabStop = false;
             // 
