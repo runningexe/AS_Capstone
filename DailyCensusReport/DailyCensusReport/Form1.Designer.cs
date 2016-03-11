@@ -269,9 +269,10 @@
             // 
             this.txtNotesICU.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtNotesICU.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNotesICU.Location = new System.Drawing.Point(298, 4);
+            this.txtNotesICU.Location = new System.Drawing.Point(297, 4);
+            this.txtNotesICU.MaxLength = 75;
             this.txtNotesICU.Name = "txtNotesICU";
-            this.txtNotesICU.Size = new System.Drawing.Size(229, 20);
+            this.txtNotesICU.Size = new System.Drawing.Size(232, 20);
             this.txtNotesICU.TabIndex = 4;
             // 
             // txtDischargesICU
@@ -411,9 +412,10 @@
             // txtNotesT2
             // 
             this.txtNotesT2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotesT2.Location = new System.Drawing.Point(300, 4);
+            this.txtNotesT2.Location = new System.Drawing.Point(299, 4);
+            this.txtNotesT2.MaxLength = 75;
             this.txtNotesT2.Name = "txtNotesT2";
-            this.txtNotesT2.Size = new System.Drawing.Size(228, 20);
+            this.txtNotesT2.Size = new System.Drawing.Size(231, 20);
             this.txtNotesT2.TabIndex = 4;
             // 
             // txtDischargesT2
@@ -509,9 +511,10 @@
             // txtNotesPEDI
             // 
             this.txtNotesPEDI.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotesPEDI.Location = new System.Drawing.Point(299, 4);
+            this.txtNotesPEDI.Location = new System.Drawing.Point(297, 4);
+            this.txtNotesPEDI.MaxLength = 75;
             this.txtNotesPEDI.Name = "txtNotesPEDI";
-            this.txtNotesPEDI.Size = new System.Drawing.Size(229, 20);
+            this.txtNotesPEDI.Size = new System.Drawing.Size(234, 20);
             this.txtNotesPEDI.TabIndex = 34;
             // 
             // txtDischargesPEDI
@@ -607,9 +610,10 @@
             // txtNotes6ACU
             // 
             this.txtNotes6ACU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotes6ACU.Location = new System.Drawing.Point(299, 4);
+            this.txtNotes6ACU.Location = new System.Drawing.Point(297, 4);
+            this.txtNotes6ACU.MaxLength = 75;
             this.txtNotes6ACU.Name = "txtNotes6ACU";
-            this.txtNotes6ACU.Size = new System.Drawing.Size(229, 20);
+            this.txtNotes6ACU.Size = new System.Drawing.Size(234, 20);
             this.txtNotes6ACU.TabIndex = 35;
             // 
             // txtDischarges6ACU
@@ -703,9 +707,10 @@
             // txtNotesT4
             // 
             this.txtNotesT4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotesT4.Location = new System.Drawing.Point(298, 5);
+            this.txtNotesT4.Location = new System.Drawing.Point(296, 5);
+            this.txtNotesT4.MaxLength = 75;
             this.txtNotesT4.Name = "txtNotesT4";
-            this.txtNotesT4.Size = new System.Drawing.Size(229, 20);
+            this.txtNotesT4.Size = new System.Drawing.Size(234, 20);
             this.txtNotesT4.TabIndex = 35;
             // 
             // txtDischargesT4
@@ -799,9 +804,10 @@
             // txtNotesTBC
             // 
             this.txtNotesTBC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotesTBC.Location = new System.Drawing.Point(301, 5);
+            this.txtNotesTBC.Location = new System.Drawing.Point(299, 5);
+            this.txtNotesTBC.MaxLength = 75;
             this.txtNotesTBC.Name = "txtNotesTBC";
-            this.txtNotesTBC.Size = new System.Drawing.Size(229, 20);
+            this.txtNotesTBC.Size = new System.Drawing.Size(233, 20);
             this.txtNotesTBC.TabIndex = 35;
             // 
             // txtDischargesTBC
@@ -1017,9 +1023,10 @@
             // txtNotesBHU
             // 
             this.txtNotesBHU.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtNotesBHU.Location = new System.Drawing.Point(301, 4);
+            this.txtNotesBHU.Location = new System.Drawing.Point(299, 4);
+            this.txtNotesBHU.MaxLength = 75;
             this.txtNotesBHU.Name = "txtNotesBHU";
-            this.txtNotesBHU.Size = new System.Drawing.Size(229, 20);
+            this.txtNotesBHU.Size = new System.Drawing.Size(233, 20);
             this.txtNotesBHU.TabIndex = 39;
             // 
             // txtCurrentCapStatusBHU
