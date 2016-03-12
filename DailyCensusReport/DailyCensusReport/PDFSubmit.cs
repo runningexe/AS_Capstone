@@ -63,7 +63,7 @@ namespace DailyCensusReport
                     PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
 
                     //Displays notification when PDF is created
-                    MessageBox.Show("PDF Has Been Saved!", "Save Confirmation");
+                    MessageBox.Show("PDF Has Been Saved To Your Desktop", "Save Confirmation",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     //Open Document.
                     doc.Open();
 
@@ -100,6 +100,7 @@ namespace DailyCensusReport
                     //Sets fonts for entire table
                     iTextSharp.text.Font times = FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
                     iTextSharp.text.Font unitFonts = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
+                    iTextSharp.text.Font totalFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
                     
                     //Creates the header table with dimensions
                     PdfPTable table = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
@@ -107,13 +108,13 @@ namespace DailyCensusReport
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
                     
                     //populates the table into the pdf
-                    table.AddCell(new PdfPCell(new Phrase("Unit", unitFonts)));
-                    table.AddCell(new PdfPCell(new Phrase("Current Census", unitFonts)));
-                    table.AddCell(new PdfPCell(new Phrase("Avail Beds", unitFonts)));
-                    table.AddCell(new PdfPCell(new Phrase("# Iso Patients", unitFonts)));
-                    table.AddCell(new PdfPCell(new Phrase("Potential DC's", unitFonts)));
-                    table.AddCell(new PdfPCell(new Phrase("Notes", unitFonts)));
-                    table.AddCell(new PdfPCell(new Phrase("Current Capactiy Status", unitFonts)));
+                    table.AddCell(new PdfPCell(new Phrase("Unit", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("Current Census", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("Avail Beds", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("# Iso Patients", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("Potential DC's", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("Notes", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("Current Capactiy Status", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     #endregion
 
                     #region ICU Row
@@ -124,12 +125,12 @@ namespace DailyCensusReport
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
 
                     //populates the table into the pdf
-                    table.AddCell(new PdfPCell(new Phrase("ICU", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusICU.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsICU.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsICU.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtDischargesICU.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtNotesICU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase("ICU", unitFonts))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusICU.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsICU.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsICU.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtDischargesICU.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtNotesICU.Text, times))).BackgroundColor = BaseColor.CYAN;
                     #endregion
 
                     #region ICU Color Calculation
@@ -178,11 +179,11 @@ namespace DailyCensusReport
 
                     //populates the table into the pdf
                     table.AddCell(new PdfPCell(new Phrase("T2", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusT2.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsT2.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsT2.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtDischargesT2.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtNotesT2.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusT2.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsT2.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsT2.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtDischargesT2.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtNotesT2.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
 
                     #endregion
 
@@ -226,12 +227,12 @@ namespace DailyCensusReport
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
 
                     //populates the table into the pdf
-                    table.AddCell(new PdfPCell(new Phrase("PEDI", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusPEDI.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsPEDI.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsPEDI.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtDischargesPEDI.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtNotesPEDI.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase("PEDI", unitFonts))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusPEDI.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsPEDI.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsPEDI.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtDischargesPEDI.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtNotesPEDI.Text, times))).BackgroundColor = BaseColor.CYAN;
 
                     #endregion
 
@@ -276,11 +277,11 @@ namespace DailyCensusReport
 
                     //populates the table into the pdf
                     table.AddCell(new PdfPCell(new Phrase("T4", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusT4.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsT4.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsT4.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtDischargesT4.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtNotesT4.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusT4.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsT4.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsT4.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtDischargesT4.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtNotesT4.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
 
 
                     #endregion
@@ -331,12 +332,12 @@ namespace DailyCensusReport
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
 
                     //populates the table into the pdf
-                    table.AddCell(new PdfPCell(new Phrase("6ACU", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensus6ACU.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBeds6ACU.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsICU.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtDischarges6ACU.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtNotes6ACU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase("6ACU", unitFonts))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensus6ACU.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBeds6ACU.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsICU.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtDischarges6ACU.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtNotes6ACU.Text, times))).BackgroundColor = BaseColor.CYAN;
 
 
                     #endregion
@@ -384,11 +385,11 @@ namespace DailyCensusReport
 
                     //populates the table into the pdf
                     table.AddCell(new PdfPCell(new Phrase("TBC", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusTBC.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsTBC.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsTBC.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtDischargesTBC.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtNotesTBC.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusTBC.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsTBC.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsTBC.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtDischargesTBC.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(txtNotesTBC.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
 
 
                     #endregion
@@ -435,12 +436,12 @@ namespace DailyCensusReport
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
 
                     //populates the table into the pdf
-                    table.AddCell(new PdfPCell(new Phrase("BHU", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusBHU.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsBHU.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsBHU.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtDischargesBHU.Text, times)));
-                    table.AddCell(new PdfPCell(new Phrase(txtNotesBHU.Text, times)));
+                    table.AddCell(new PdfPCell(new Phrase("BHU", unitFonts))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtCurrentCensusBHU.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtAvailableBedsBHU.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtIsoPatientsBHU.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtDischargesBHU.Text, times))).BackgroundColor = BaseColor.CYAN;
+                    table.AddCell(new PdfPCell(new Phrase(txtNotesBHU.Text, times))).BackgroundColor = BaseColor.CYAN;
 
                     #endregion
 
@@ -485,12 +486,12 @@ namespace DailyCensusReport
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
 
                     //populates the table into the pdf
-                    table.AddCell(new PdfPCell(new Phrase("Total", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(lblCCTotal.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(lblABTotal.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(lblISOTotal.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(lblTotalDC.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
-                    table.AddCell(new PdfPCell(new Phrase(lbltotalNotes.Text, times))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase("Total:", totalFont))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lblCCTotal.Text, totalFont))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lblABTotal.Text, totalFont))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lblISOTotal.Text, totalFont))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lblTotalDC.Text, totalFont))).BackgroundColor = BaseColor.LIGHT_GRAY;
+                    table.AddCell(new PdfPCell(new Phrase(lbltotalNotes.Text, totalFont))).BackgroundColor = BaseColor.LIGHT_GRAY;
 
                     #endregion
 

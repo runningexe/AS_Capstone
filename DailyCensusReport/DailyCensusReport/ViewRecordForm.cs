@@ -42,33 +42,16 @@ namespace DailyCensusReport
         //Search by Date
         private void btnSearchDate_Click(object sender, EventArgs e)
         {
-            //Converts String to DateTime, so Report will show the data
-
-
-
-            //DateTime Test;
-            //if (DateTime.TryParseExact(txtSearchDate.Text, "M/dd/yyyy", null, DateTimeStyles.None, out Test) == true)
-            //{
-
-            //}
-            //else
-            //    MessageBox.Show("Date Not OK");
-            
-                try
-                {
-                    DateTime date1 = Convert.ToDateTime(txtSearchDate.Text);
-                    DateTime date2 = Convert.ToDateTime(txtSetDate.Text);
-
-                    //Populates information from the database into the Report Viewer
-                    this.HospitalDepartmentsTableAdapter.FillBy(this.SE265_AJF1130DataSet2.HospitalDepartments, date1, date2);
-                }
-                catch
-                {
-                    MessageBox.Show("Incorrect date format \n\n" + "Please try using date formats such as: \n" + "'MM/dd/yyyy' \n" + "'M/d/yyyy' \n" + "'M/dd/yy' \n" + "'MM/d/yyyy' \n" + "'MM/d/yy' \n", "Error");
-                    txtSearchDate.Text = "";
-                }
+            //Converts String to DateTime, so Report will show the date            
             try
             {
+                DateTime date1 = Convert.ToDateTime(txtSearchDate.Text);
+                DateTime date2 = Convert.ToDateTime(txtSetDate.Text);
+
+                //Populates information from the database into the Report Viewer
+                this.HospitalDepartmentsTableAdapter.FillBy(this.SE265_AJF1130DataSet2.HospitalDepartments, date1, date2);
+
+                //Checks to see if there are any records in the DB by the date, if not it pushes out the error
 
                 if (SE265_AJF1130DataSet2.HospitalDepartments.Rows.Count == 0)
                 {
@@ -83,9 +66,9 @@ namespace DailyCensusReport
 
                 this.rvViewRecords.RefreshReport();
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.Message);
+            MessageBox.Show("Incorrect Date Format \n\n" + "Please Try Using Date Formats Such As: \n" + "'MM/DD/YYYY' \n" + "'M/D/YYYY' \n" + "'M/DD/YY' \n" + "'MM/D/YYYY' \n" + "'MM/D/YY' \n", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
