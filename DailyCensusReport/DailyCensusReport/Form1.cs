@@ -43,10 +43,6 @@ namespace DailyCensusReport
         private void frmDailyCensusReport_Load(object sender, EventArgs e)
         {
             lblHospDate.Text = DateTime.Today.ToLongDateString();
-            lblGreeting.Text = "Hospital Daily Census Report";
-
-            //So you can use the enter key
-            this.AcceptButton = btnSubmit;
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -78,12 +74,12 @@ namespace DailyCensusReport
                 lblPotentialDCs.BackColor = Color.Red;
 
                 MessageBox.Show("Please Provide All Required Information", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               
+
             }
-            
-            
-               
-            
+
+
+
+
             #endregion
 
             else
@@ -126,7 +122,7 @@ namespace DailyCensusReport
                 a bunch of different variables and whatnot. The for-loops and arrays seemed like a 
                 better idea.*/
                 #region For Loops for TextBoxes
-                /***********************************************************************************************************************************************************************/           
+                /***********************************************************************************************************************************************************************/
                 //ICU
                 int unitID = 1;
                 boxesICU = new TextBox[] { txtCurrentCensusICU, txtAvailableBedsICU, txtIsoPatientsICU, txtDischargesICU, txtNotesICU, txtCurrentCapStatusICU };
@@ -186,7 +182,7 @@ namespace DailyCensusReport
                 #endregion
 
                 //Confirmation for user if they want to save or cancel
-                DialogResult result = MessageBox.Show("This Record Contains Unsaved Data."+"\n\n"+"Do You Want To Save It?", "Confirmation Message", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                DialogResult result = MessageBox.Show("This Record Contains Unsaved Data." + "\n\n" + "Do You Want To Save It?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                 /*If the user selects 'Yes', it will raise the PDF Save Box, and when they save
                 and when they click 'OK' on the Save Confirmation for the PDF, it then gets submitted
@@ -248,39 +244,24 @@ namespace DailyCensusReport
         //Brings You To The View Record Form
         private void btnViewRecord_Click(object sender, EventArgs e)
         {
-        //Opens form and Checks if the same form is open
-                if (viewRecordForm == null || viewRecordForm.Text == "")
-                {
-                    viewRecordForm = new ViewRecordForm();
-
-                    viewRecordForm.Dock = DockStyle.Fill;
-                    viewRecordForm.Show();
-                }
-                else if (CheckOpened(viewRecordForm.Text))
-                {
-                    //If window is open, it will pull up that same window
-                    viewRecordForm.WindowState = FormWindowState.Normal;
-                    viewRecordForm.Dock = DockStyle.Fill;
-                    viewRecordForm.Show();
-                    viewRecordForm.Focus();
-                }
-        }
-
-//Checks to see if View Records form is open
-        private bool CheckOpened(string name)
-        {
-            FormCollection fc = Application.OpenForms;
-
-            foreach (Form frm in fc)
+            //Opens form and Checks if the same form is open
+            if (viewRecordForm == null || viewRecordForm.Text == "")
             {
-                if (frm.Text == name)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
+                viewRecordForm = new ViewRecordForm();
 
+                viewRecordForm.Dock = DockStyle.Fill;
+                viewRecordForm.Show();
+            }
+            else if (CheckOpened(viewRecordForm.Text))
+            {
+                //If window is open, it will pull up that same window
+                viewRecordForm.WindowState = FormWindowState.Normal;
+                viewRecordForm.Dock = DockStyle.Fill;
+                viewRecordForm.Show();
+                viewRecordForm.Focus();
+            }
+        }
+        
         //Brings You To The Help Form
         private void btnHelp_Click(object sender, EventArgs e)
         {
@@ -294,7 +275,7 @@ namespace DailyCensusReport
             }
             else if (CheckOpened(helpForm.Text))
             {
-                //If window is open, it will pull up that same window
+                //If window is already open, and the button is clicked again, the window will be brought back up.
                 helpForm.WindowState = FormWindowState.Normal;
                 helpForm.Dock = DockStyle.Fill;
                 helpForm.Show();
@@ -324,7 +305,7 @@ namespace DailyCensusReport
                     if (!int.TryParse(txtCurrentCensusICU.Text, out icuNumCheck))
                     {
                         MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        
+
 
                         txtCurrentCensusICU.Text = "";
                     }
@@ -1003,12 +984,47 @@ namespace DailyCensusReport
         /**************************************************************************/
         #endregion
 
+        //Method to check if a form is already open or not.
+        private bool CheckOpened(string name)
+        {
+            FormCollection fc = Application.OpenForms;
+
+            foreach (Form frm in fc)
+            {
+                if (frm.Text == name)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         //Closes Program
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            #region Exit Confirm
+            //Check to make sure all required fields are filled out
+            if (txtIsoPatientsICU.Text != "" || txtDischargesICU.Text != "" || txtCurrentCensusICU.Text != "" ||
+                txtIsoPatientsT2.Text != "" || txtDischargesT2.Text != "" || txtCurrentCensusT2.Text != "" ||
+                txtIsoPatientsPEDI.Text != "" || txtDischargesPEDI.Text != "" || txtCurrentCensusPEDI.Text != "" ||
+                txtIsoPatientsT4.Text != "" || txtDischargesT4.Text != "" || txtCurrentCensusT4.Text != "" ||
+                txtIsoPatients6ACU.Text != "" || txtDischarges6ACU.Text != "" || txtCurrentCensus6ACU.Text != "" ||
+                txtIsoPatientsTBC.Text != "" || txtDischargesTBC.Text != "" || txtCurrentCensusTBC.Text != "" ||
+                txtIsoPatientsBHU.Text != "" || txtDischargesBHU.Text != "" || txtCurrentCensusBHU.Text != ""
+                )
+            {
+                DialogResult exitCheck = MessageBox.Show("This form contains unsaved data. Are you sure you want to exit?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (exitCheck == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                else if (exitCheck == DialogResult.No)
+                {
+                    exitCheck = DialogResult.None;
+                }
+            }
+            #endregion
         }
-
     }
 }
 

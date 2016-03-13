@@ -24,7 +24,7 @@ namespace DailyCensusReport
             //Puts items into an array to pushes out to the combo box 
             string[] unitNames = {"Select A Unit Name...",
                 "ICU", "T2", "PEDI", "T4",
-                "6ACU", "TBC"};
+                "6ACU", "TBC", "BHU"};
 
             foreach (string unitName in unitNames)
             {

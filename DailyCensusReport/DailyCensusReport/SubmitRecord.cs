@@ -229,7 +229,7 @@ namespace DailyCensusReport
         {
             //Connects to BHU Stored procedure to insert
             SqlConnection connect = DBConnect.GetConnection();
-            SqlCommand cmd = new SqlCommand("spInsertBBHU", connect);
+            SqlCommand cmd = new SqlCommand("spInsertBHU", connect);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "spInsertBHU";
 
