@@ -15,7 +15,6 @@ namespace DailyCensusReport
 {
     class CalculationColorChanger
     {
-
         //public TextBox[] colorICUboxes { get; set; }
 
         public static bool CalcColor(

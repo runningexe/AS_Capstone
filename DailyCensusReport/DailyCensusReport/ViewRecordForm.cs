@@ -21,7 +21,7 @@ namespace DailyCensusReport
 
         private void ViewRecordForm_Load(object sender, EventArgs e)
         {
-            //Puts items into an array to pushes out to the combo box 
+            //These array items are for the combobox collection.
             string[] unitNames = {"Select A Unit Name...",
                 "ICU", "T2", "PEDI", "T4",
                 "6ACU", "TBC", "BHU"};
@@ -30,11 +30,17 @@ namespace DailyCensusReport
             {
                 cbUnitName.Items.Add(unitName);
             }
+
+            /*Setting the default value of the combobox to index 0 so it shows the first index of the array
+              which is "Select A Unit Name..."*/
             cbUnitName.SelectedIndex = 0;
 
-            //Needed to Hard code a set date
-            txtSetDate.Text = "01/01/9999";
+            //This takes the current day's date and adds 1 day to it. That way, the end date ("set date") goes on indefinitely.
+            txtSetDate.Text = Convert.ToDateTime(DateTime.Today.AddDays(1)).ToShortDateString();
             txtSetDate.Visible = false;
+
+            /*Pre-populates the search date field with today's date so the user can quickly check all the
+              records for the current date :-)*/
             txtSearchDate.Text = Convert.ToDateTime(DateTime.Today).ToShortDateString();
             txtSearchDate.Select();
         }
@@ -42,9 +48,9 @@ namespace DailyCensusReport
         //Search by Date
         private void btnSearchDate_Click(object sender, EventArgs e)
         {
-            //Converts String to DateTime, so Report will show the date            
             try
             {
+                //Converts the textbox data to DateTime so the database can recognize it.
                 DateTime date1 = Convert.ToDateTime(txtSearchDate.Text);
                 DateTime date2 = Convert.ToDateTime(txtSetDate.Text);
 
@@ -52,7 +58,6 @@ namespace DailyCensusReport
                 this.HospitalDepartmentsTableAdapter.FillBy(this.SE265_AJF1130DataSet2.HospitalDepartments, date1, date2);
 
                 //Checks to see if there are any records in the DB by the date, if not it pushes out the error
-
                 if (SE265_AJF1130DataSet2.HospitalDepartments.Rows.Count == 0)
                 {
                     DialogResult result = MessageBox.Show("No Records Found For That Date", "NO RECORDS FOUND", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -68,13 +73,11 @@ namespace DailyCensusReport
             }
             catch
             {
-            MessageBox.Show("Incorrect Date Format \n\n" + "Please Try Using Date Formats Such As: \n" + "'MM/DD/YYYY' \n" + "'M/D/YYYY' \n" + "'M/DD/YY' \n" + "'MM/D/YYYY' \n" + "'MM/D/YY' \n", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Incorrect Date Format \n\n" + "Please Try Using Date Formats Such As: \n" + "'MM/DD/YYYY' \n" + "'M/D/YYYY' \n" + "'M/DD/YY' \n" + "'MM/D/YYYY' \n" + "'MM/D/YY' \n", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-
         //Search by Unit Name
-
         private void cbUnitName_SelectedIndexChanged(object sender, EventArgs e)
         {
 

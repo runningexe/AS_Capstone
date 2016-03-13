@@ -261,7 +261,7 @@ namespace DailyCensusReport
                 viewRecordForm.Focus();
             }
         }
-        
+
         //Brings You To The Help Form
         private void btnHelp_Click(object sender, EventArgs e)
         {
@@ -285,9 +285,10 @@ namespace DailyCensusReport
 
         /*These TextChanged events calculate the available beds, check for null
         or whitespace, and check to see if strings are entered or not. Each check
-        sends out an appropriate error message. We decided to do text changed evernts
+        sends out an appropriate error message. We decided to do text changed events
         instead of on the submit click because we felt it was a bit more convienant for
-        the ones filling out the information.*/
+        the ones filling out the information. So they can know they put in something wrong
+        right then and there.*/
 
         #region TextChanged Events
         /*****************************************************************************/
@@ -1002,8 +1003,9 @@ namespace DailyCensusReport
         //Closes Program
         private void btnExit_Click(object sender, EventArgs e)
         {
-            #region Exit Confirm
-            //Check to make sure all required fields are filled out
+            /*Saves the user from putting in information and accidentally hitting the Exit button.
+              Brings up a Confirm. message asking if they want to exit only if there's data present in the text fields.*/
+            #region Exit Confirm            
             if (txtIsoPatientsICU.Text != "" || txtDischargesICU.Text != "" || txtCurrentCensusICU.Text != "" ||
                 txtIsoPatientsT2.Text != "" || txtDischargesT2.Text != "" || txtCurrentCensusT2.Text != "" ||
                 txtIsoPatientsPEDI.Text != "" || txtDischargesPEDI.Text != "" || txtCurrentCensusPEDI.Text != "" ||

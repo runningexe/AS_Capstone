@@ -11,9 +11,7 @@ using System.Windows.Forms;
 namespace DailyCensusReport
 {
     public partial class HelpForm : Form
-    {
-       
-
+    {       
         public HelpForm()
         {
             InitializeComponent();

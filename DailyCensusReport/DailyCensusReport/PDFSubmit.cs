@@ -63,7 +63,7 @@ namespace DailyCensusReport
                     PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
 
                     //Displays notification when PDF is created
-                    MessageBox.Show("PDF Has Been Saved To Your Desktop", "Save Confirmation",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("PDF Has Been Saved To Your Desktop", "Save Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //Open Document.
                     doc.Open();
 
@@ -101,12 +101,12 @@ namespace DailyCensusReport
                     iTextSharp.text.Font times = FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
                     iTextSharp.text.Font unitFonts = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
                     iTextSharp.text.Font totalFont = FontFactory.GetFont("Arial", 12, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
-                    
+
                     //Creates the header table with dimensions
                     PdfPTable table = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
                     table.WidthPercentage = 100;
                     table.HorizontalAlignment = Element.ALIGN_CENTER;
-                    
+
                     //populates the table into the pdf
                     table.AddCell(new PdfPCell(new Phrase("Unit", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
                     table.AddCell(new PdfPCell(new Phrase("Current Census", unitFonts))).BackgroundColor = BaseColor.LIGHT_GRAY;
@@ -118,7 +118,7 @@ namespace DailyCensusReport
                     #endregion
 
                     #region ICU Row
-                    
+
                     //Creates the ICU table with dimensions
                     PdfPTable tableICU = new PdfPTable(new float[] { 1, 1, 1, 1, 1, 5, 1 });
                     table.WidthPercentage = 100;
