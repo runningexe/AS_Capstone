@@ -73,7 +73,7 @@ namespace DailyCensusReport
                 lblIsolationPts.BackColor = Color.Red;
                 lblPotentialDCs.BackColor = Color.Red;
 
-                MessageBox.Show("Please Provide All Required Information", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please Provide All Required Information", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -305,7 +305,7 @@ namespace DailyCensusReport
                     int icuNumCheck;
                     if (!int.TryParse(txtCurrentCensusICU.Text, out icuNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
                         txtCurrentCensusICU.Text = "";
@@ -313,7 +313,7 @@ namespace DailyCensusReport
                     else {
                         if (Convert.ToInt32(txtCurrentCensusICU.Text) > 9)
                         {
-                            MessageBox.Show("ICU Current Census cannot exceed 9 patients", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("ICU Current Census cannot exceed 9 patients", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtAvailableBedsICU.Text = "";
                             txtCurrentCensusICU.Text = "";
                         }
@@ -332,7 +332,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
 
@@ -352,7 +352,7 @@ namespace DailyCensusReport
                     int icuIsoNumCheck;
                     if (!int.TryParse(txtIsoPatientsICU.Text, out icuIsoNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtIsoPatientsICU.Text = "";
                     }
                 }
@@ -360,7 +360,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -379,7 +379,7 @@ namespace DailyCensusReport
                     int icuDCNumCheck;
                     if (!int.TryParse(txtDischargesICU.Text, out icuDCNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtDischargesICU.Text = "";
                     }
                 }
@@ -387,7 +387,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -405,14 +405,14 @@ namespace DailyCensusReport
                     int t2NumCheck;
                     if (!int.TryParse(txtCurrentCensusT2.Text, out t2NumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtCurrentCensusT2.Text = "";
                     }
                     else
                     {
                         if (Convert.ToInt32(txtCurrentCensusT2.Text) > 28)
                         {
-                            MessageBox.Show("T2 Current Census cannot exceed 28 patients", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("T2 Current Census cannot exceed 28 patients", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtAvailableBedsT2.Text = "";
                             txtCurrentCensusT2.Text = "";
                         }
@@ -431,7 +431,7 @@ namespace DailyCensusReport
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -450,7 +450,7 @@ namespace DailyCensusReport
                     int t2IsoNumCheck;
                     if (!int.TryParse(txtIsoPatientsT2.Text, out t2IsoNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtIsoPatientsT2.Text = "";
                     }
                 }
@@ -458,7 +458,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -477,7 +477,7 @@ namespace DailyCensusReport
                     int t2DcNumCheck;
                     if (!int.TryParse(txtDischargesT2.Text, out t2DcNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtDischargesT2.Text = "";
                     }
                 }
@@ -485,7 +485,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -503,14 +503,14 @@ namespace DailyCensusReport
                     int pediNumCheck;
                     if (!int.TryParse(txtCurrentCensusPEDI.Text, out pediNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtCurrentCensusPEDI.Text = "";
                     }
                     else
                     {
                         if (Convert.ToInt32(txtCurrentCensusPEDI.Text) > 28)
                         {
-                            MessageBox.Show("PEDI Current Census cannot exceed 28 patients", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("PEDI Current Census cannot exceed 28 patients", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtAvailableBedsPEDI.Text = "";
                             txtCurrentCensusPEDI.Text = "";
                         }
@@ -529,7 +529,7 @@ namespace DailyCensusReport
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -548,7 +548,7 @@ namespace DailyCensusReport
                     int pediDcNumCheck;
                     if (!int.TryParse(txtIsoPatientsPEDI.Text, out pediDcNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtIsoPatientsPEDI.Text = "";
                     }
                 }
@@ -556,7 +556,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -575,7 +575,7 @@ namespace DailyCensusReport
                     int pediDcNumCheck;
                     if (!int.TryParse(txtDischargesPEDI.Text, out pediDcNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtDischargesPEDI.Text = "";
                     }
                 }
@@ -583,7 +583,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -601,14 +601,14 @@ namespace DailyCensusReport
                     int t4NumCheck;
                     if (!int.TryParse(txtCurrentCensusT4.Text, out t4NumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtCurrentCensusT4.Text = "";
                     }
                     else
                     {
                         if (Convert.ToInt32(txtCurrentCensusT4.Text) > 29)
                         {
-                            MessageBox.Show("T4 Current Census cannot exceed 29 patients", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("T4 Current Census cannot exceed 29 patients", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtAvailableBedsT4.Text = "";
                             txtCurrentCensusT4.Text = "";
                         }
@@ -628,7 +628,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -647,7 +647,7 @@ namespace DailyCensusReport
                     int t4IsoNumCheck;
                     if (!int.TryParse(txtIsoPatientsT4.Text, out t4IsoNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtIsoPatientsT4.Text = "";
                     }
                 }
@@ -655,7 +655,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -674,7 +674,7 @@ namespace DailyCensusReport
                     int t4DcNumCheck;
                     if (!int.TryParse(txtDischargesT4.Text, out t4DcNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtDischargesT4.Text = "";
                     }
                 }
@@ -682,7 +682,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -700,14 +700,14 @@ namespace DailyCensusReport
                     int acuNumCheck;
                     if (!int.TryParse(txtCurrentCensus6ACU.Text, out acuNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtCurrentCensus6ACU.Text = "";
                     }
                     else
                     {
                         if (Convert.ToInt32(txtCurrentCensus6ACU.Text) > 10)
                         {
-                            MessageBox.Show("6ACU Current Census cannot exceed 10 patients", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("6ACU Current Census cannot exceed 10 patients", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtAvailableBeds6ACU.Text = "";
                             txtCurrentCensus6ACU.Text = "";
                         }
@@ -726,7 +726,7 @@ namespace DailyCensusReport
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -745,7 +745,7 @@ namespace DailyCensusReport
                     int acuIsoNumCheck;
                     if (!int.TryParse(txtIsoPatients6ACU.Text, out acuIsoNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtIsoPatients6ACU.Text = "";
                     }
                 }
@@ -753,7 +753,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -772,7 +772,7 @@ namespace DailyCensusReport
                     int acuDcNumCheck;
                     if (!int.TryParse(txtDischarges6ACU.Text, out acuDcNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtDischarges6ACU.Text = "";
                     }
                 }
@@ -780,7 +780,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -798,14 +798,14 @@ namespace DailyCensusReport
                     int tbcNumCheck;
                     if (!int.TryParse(txtCurrentCensusTBC.Text, out tbcNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtCurrentCensusTBC.Text = "";
                     }
                     else
                     {
                         if (Convert.ToInt32(txtCurrentCensusTBC.Text) > 10)
                         {
-                            MessageBox.Show("TBC Current Census cannot exceed 10 patients", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("TBC Current Census cannot exceed 10 patients", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtAvailableBedsTBC.Text = "";
                             txtCurrentCensusTBC.Text = "";
                         }
@@ -824,7 +824,7 @@ namespace DailyCensusReport
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -843,7 +843,7 @@ namespace DailyCensusReport
                     int tbcIsoNumCheck;
                     if (!int.TryParse(txtIsoPatientsTBC.Text, out tbcIsoNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtIsoPatientsTBC.Text = "";
                     }
                 }
@@ -851,7 +851,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -870,7 +870,7 @@ namespace DailyCensusReport
                     int tbcDcNumCheck;
                     if (!int.TryParse(txtDischargesTBC.Text, out tbcDcNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtDischargesTBC.Text = "";
                     }
                 }
@@ -878,7 +878,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -896,14 +896,14 @@ namespace DailyCensusReport
                     int bhuNumCheck;
                     if (!int.TryParse(txtCurrentCensusBHU.Text, out bhuNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtCurrentCensusBHU.Text = "";
                     }
                     else
                     {
                         if (Convert.ToInt32(txtCurrentCensusBHU.Text) > 15)
                         {
-                            MessageBox.Show("BHU Current Census cannot exceed 15 patients", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("BHU Current Census cannot exceed 15 patients", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             txtAvailableBedsBHU.Text = "";
                             txtCurrentCensusBHU.Text = "";
                         }
@@ -924,7 +924,7 @@ namespace DailyCensusReport
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -943,7 +943,7 @@ namespace DailyCensusReport
                     int bhuIsoNumCheck;
                     if (!int.TryParse(txtIsoPatientsBHU.Text, out bhuIsoNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtIsoPatientsBHU.Text = "";
                     }
                 }
@@ -951,7 +951,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -970,7 +970,7 @@ namespace DailyCensusReport
                     int bhuDcNumCheck;
                     if (!int.TryParse(txtDischargesBHU.Text, out bhuDcNumCheck))
                     {
-                        MessageBox.Show("Please Enter A Number", "ERROR MESSAGE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Please Enter A Number", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         txtDischargesBHU.Text = "";
                     }
                 }
@@ -978,7 +978,7 @@ namespace DailyCensusReport
 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "ERROR");
+                MessageBox.Show(ex.Message, "Error Message");
             }
             #endregion
         }
@@ -1015,7 +1015,7 @@ namespace DailyCensusReport
                 txtIsoPatientsBHU.Text != "" || txtDischargesBHU.Text != "" || txtCurrentCensusBHU.Text != ""
                 )
             {
-                DialogResult exitCheck = MessageBox.Show("This form contains unsaved data. Are you sure you want to exit?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                DialogResult exitCheck = MessageBox.Show("This Record Contains Unsaved Data." + "\n\n" + "Are you sure you want to exit?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (exitCheck == DialogResult.Yes)
                 {
                     this.Close();
@@ -1024,7 +1024,12 @@ namespace DailyCensusReport
                 {
                     exitCheck = DialogResult.None;
                 }
+                
             }
+                else
+                {
+                    this.Close();
+                }
             #endregion
         }
     }

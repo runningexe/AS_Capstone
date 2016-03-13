@@ -60,7 +60,7 @@ namespace DailyCensusReport
                 //Checks to see if there are any records in the DB by the date, if not it pushes out the error
                 if (SE265_AJF1130DataSet2.HospitalDepartments.Rows.Count == 0)
                 {
-                    DialogResult result = MessageBox.Show("No Records Found For That Date", "NO RECORDS FOUND", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    DialogResult result = MessageBox.Show("No Records Found For That Date", "Warning Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     if (result == DialogResult.OK)
                     {
