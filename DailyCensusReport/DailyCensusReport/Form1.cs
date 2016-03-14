@@ -1015,7 +1015,7 @@ namespace DailyCensusReport
                 txtIsoPatientsBHU.Text != "" || txtDischargesBHU.Text != "" || txtCurrentCensusBHU.Text != ""
                 )
             {
-                DialogResult exitCheck = MessageBox.Show("This Record Contains Unsaved Data." + "\n\n" + "Are you sure you want to exit?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                DialogResult exitCheck = MessageBox.Show("Are you sure you want to exit?", "Confirmation Message", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (exitCheck == DialogResult.Yes)
                 {
                     this.Close();

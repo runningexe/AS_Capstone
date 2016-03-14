@@ -63,7 +63,7 @@ namespace DailyCensusReport
                     PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream(sfd.FileName, FileMode.Create));
 
                     //Displays notification when PDF is created
-                    MessageBox.Show("PDF Has Been Saved To Your Desktop", "Save Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("PDF Has Been Saved To Your " + sfd.FileName, "Save Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //Open Document.
                     doc.Open();
 
