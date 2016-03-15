@@ -60,26 +60,41 @@ namespace DailyCensusReport
 
             #region Checks Required Fields
             //Check to make sure all required fields are filled out
-            if (txtIsoPatientsICU.Text == "" || txtDischargesICU.Text == "" || txtCurrentCensusICU.Text == "" ||
-                txtIsoPatientsT2.Text == "" || txtDischargesT2.Text == "" || txtCurrentCensusT2.Text == "" ||
-                txtIsoPatientsPEDI.Text == "" || txtDischargesPEDI.Text == "" || txtCurrentCensusPEDI.Text == "" ||
-                txtIsoPatientsT4.Text == "" || txtDischargesT4.Text == "" || txtCurrentCensusT4.Text == "" ||
-                txtIsoPatients6ACU.Text == "" || txtDischarges6ACU.Text == "" || txtCurrentCensus6ACU.Text == "" ||
-                txtIsoPatientsTBC.Text == "" || txtDischargesTBC.Text == "" || txtCurrentCensusTBC.Text == "" ||
-                txtIsoPatientsBHU.Text == "" || txtDischargesBHU.Text == "" || txtCurrentCensusBHU.Text == ""
-                )
+            //if (txtIsoPatientsICU.Text == "" || txtDischargesICU.Text == "" || txtCurrentCensusICU.Text == "" ||
+            //    txtIsoPatientsT2.Text == "" || txtDischargesT2.Text == "" || txtCurrentCensusT2.Text == "" ||
+            //    txtIsoPatientsPEDI.Text == "" || txtDischargesPEDI.Text == "" || txtCurrentCensusPEDI.Text == "" ||
+            //    txtIsoPatientsT4.Text == "" || txtDischargesT4.Text == "" || txtCurrentCensusT4.Text == "" ||
+            //    txtIsoPatients6ACU.Text == "" || txtDischarges6ACU.Text == "" || txtCurrentCensus6ACU.Text == "" ||
+            //    txtIsoPatientsTBC.Text == "" || txtDischargesTBC.Text == "" || txtCurrentCensusTBC.Text == "" ||
+            //    txtIsoPatientsBHU.Text == "" || txtDischargesBHU.Text == "" || txtCurrentCensusBHU.Text == ""
+            //    )
+            //        {
+            //            lblCurrentCensus.BackColor = Color.Red;
+            //            lblIsolationPts.BackColor = Color.Red;
+            //            lblPotentialDCs.BackColor = Color.Red;
+
+            //            MessageBox.Show("Please Provide All Required Information", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        }
+             if (txtCurrentCensusICU.Text == "" || txtCurrentCensusT2.Text == "" || txtCurrentCensusPEDI.Text == "" || txtCurrentCensusT4.Text == "" || txtCurrentCensus6ACU.Text == "" || txtCurrentCensusTBC.Text == "" || txtCurrentCensusBHU.Text == "")
             {
                 lblCurrentCensus.BackColor = Color.Red;
-                lblIsolationPts.BackColor = Color.Red;
-                lblPotentialDCs.BackColor = Color.Red;
-
-                MessageBox.Show("Please Provide All Required Information", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                MessageBox.Show("Please Provide Current Census Information", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
+             else if (txtIsoPatientsICU.Text == "" || txtIsoPatientsT2.Text == "" || txtIsoPatientsPEDI.Text == "" || txtIsoPatientsT4.Text == "" || txtIsoPatients6ACU.Text == "" || txtIsoPatientsTBC.Text == "" || txtIsoPatientsBHU.Text == "")
+            {
+                lblIsolationPts.BackColor = Color.Red;
+                MessageBox.Show("Please Provide Isolation Patient Information", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
 
+             else if (txtDischargesICU.Text == "" || txtDischargesT2.Text == "" || txtDischargesPEDI.Text == "" || txtDischargesT4.Text == "" || txtDischarges6ACU.Text == "" || txtDischargesTBC.Text == "" || txtDischargesBHU.Text == "")
+            {
+                lblPotentialDCs.BackColor = Color.Red;
+                MessageBox.Show("Please Provide Potential Discharge Information", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
             #endregion
 
             else
@@ -87,6 +102,8 @@ namespace DailyCensusReport
                 lblCurrentCensus.BackColor = Color.Transparent;
                 lblIsolationPts.BackColor = Color.Transparent;
                 lblPotentialDCs.BackColor = Color.Transparent;
+
+           
 
                 #region CalcColor Method Call
                 /***Calling the CalcColor method from the CalculationColorChanger class***/
