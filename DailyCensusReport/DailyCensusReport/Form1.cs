@@ -75,20 +75,22 @@ namespace DailyCensusReport
 
             //            MessageBox.Show("Please Provide All Required Information", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             //        }
+
+            //Current Census Check
              if (txtCurrentCensusICU.Text == "" || txtCurrentCensusT2.Text == "" || txtCurrentCensusPEDI.Text == "" || txtCurrentCensusT4.Text == "" || txtCurrentCensus6ACU.Text == "" || txtCurrentCensusTBC.Text == "" || txtCurrentCensusBHU.Text == "")
             {
                 lblCurrentCensus.BackColor = Color.Red;
                 MessageBox.Show("Please Provide Current Census Information", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
+            //Iso Patient Check
              else if (txtIsoPatientsICU.Text == "" || txtIsoPatientsT2.Text == "" || txtIsoPatientsPEDI.Text == "" || txtIsoPatientsT4.Text == "" || txtIsoPatients6ACU.Text == "" || txtIsoPatientsTBC.Text == "" || txtIsoPatientsBHU.Text == "")
             {
                 lblIsolationPts.BackColor = Color.Red;
                 MessageBox.Show("Please Provide Isolation Patient Information", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-
+            //Discharge Check
              else if (txtDischargesICU.Text == "" || txtDischargesT2.Text == "" || txtDischargesPEDI.Text == "" || txtDischargesT4.Text == "" || txtDischarges6ACU.Text == "" || txtDischargesTBC.Text == "" || txtDischargesBHU.Text == "")
             {
                 lblPotentialDCs.BackColor = Color.Red;
